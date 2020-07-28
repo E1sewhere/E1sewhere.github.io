@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="google-site-verification" content="jIIp89W5czDndIpDpqacsdM_ooroPfoz-v_D4UrrwmM" />
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #a40000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #a40000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #a40000;    /*上边框颜色*/
+        border-left-color: #a40000;    /*左边框颜色*/
+    }
+</style>
+
+
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="网络," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这是在360培训计算机网络时做的笔记,主要为了考试服务">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络基础笔记">
+<meta property="og:url" content="https://e1sewhere.github.io/2018/12/05/计算机网络基础/index.html">
+<meta property="og:site_name" content="E1sewhere">
+<meta property="og:description" content="这是在360培训计算机网络时做的笔记,主要为了考试服务">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ositcpip.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/mac地址.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/帧结构.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/csmacd.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/internet协议.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ipdz.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ip分类.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ip分类2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/似有地址.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbbb.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbbusd.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbfwlx.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/snzcd.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbbiaozhi.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbbz.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbppy.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbpyl.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbxy.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sbmd.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/默认子网掩码.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/arp1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/dlarp.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/icmp.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/icmp2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/trecer.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/csc.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/cscxy.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/tcpbt.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/scws.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/cc.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/csqr.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/图像446.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/图像448.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/图像449.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/hcyc.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/udp.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/yycgs.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/wlcys.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/cscys.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/idhq.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ipsf.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/zygx.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/dhcpyl.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/dhcpzj.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/fxcx.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ymcx.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/dyc.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ercsb.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec3.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec4.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec5.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec6.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec7.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec8.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec9.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ec10.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc3.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc4.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc5.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc6.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc7.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc8.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc9.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc10.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc11.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc12.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc13.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc14.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc15.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc16.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/sc17.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lybgc.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lycz1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lypp.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ddcz.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/mrlyzf.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lyhl.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/jtly.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/qsly.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/luxy.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lywz.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lyfl.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/yxj.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ripcs.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ripqx1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/qx2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ospf1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/gzgc.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/xzlj.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/llztcd.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/jsly.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/区域管理.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/lsafab.png">
+<meta property="og:updated_time" content="2019-03-20T10:14:56.337Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络基础笔记">
+<meta name="twitter:description" content="这是在360培训计算机网络时做的笔记,主要为了考试服务">
+<meta name="twitter:image" content="https://e1sewhere.github.io/images/ositcpip.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://e1sewhere.github.io/2018/12/05/计算机网络基础/"/>
+
+
+
+
+
+  <title>计算机网络基础笔记 | E1sewhere</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+   
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    
+    <div class="top-scroll-bar"></div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">E1sewhere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header> 
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://e1sewhere.github.io/2018/12/05/计算机网络基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E1se">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/eva1.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E1sewhere">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络基础笔记</h1>
+        
+
+        <div class="post-meta">
+		
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T08:45:25+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T18:14:56+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/05/计算机网络基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/05/计算机网络基础/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/05/计算机网络基础/" class="leancloud_visitors" data-flag-title="计算机网络基础笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  13,830
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  49
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p>这是在360培训计算机网络时做的笔记,主要为了考试服务</p>
+<a id="more"></a>
+<h1 id="初识网络"><a href="#初识网络" class="headerlink" title="初识网络"></a>初识网络</h1><p>集线器:工作在OSI7层模型最底层  转发有延迟 <strong>重要</strong></p>
+<p>二层交:换机工作在OSI7层模型的第二层 转发快速 <strong>重要</strong></p>
+<p>网络组成<br>硬件:计算机,网络设备,线缆<br>软件:应用程序</p>
+<p>按区域范围<br>广域网(wan):大范围内,如国家之间,主要用于互联局域网<br>局域网(lan):通常指几公里以内的，可以通过某种介质互联的计算机、打印机或其它设备的集合。<br>城域网(man):是介于LAN和WAN之间能传输语音与数据的公用网络。MAN是改进LAN（局域网）中的传输介质，扩大局域网的范围，达到包含一个大学校园、城市或都会区。它是较大型的局域网，需要的成本较高，但可以提供更快的传输速率<br>个人区域网(pan):指个人范围（随身携带或数米之内）的计算设备（如计算机、电话、PDA、数字相机等）组成的通信网络。个人网即可用于这些设备之间互相交换数据，也可以用于连接到高层网络或互联网</p>
+<p>按网络类型<br>公用网:<br>专用网:</p>
+<p>屏蔽双绞线 :昂贵抗干扰强<br>非屏蔽双绞线:<br>t568-a:白绿,绿,白橙,蓝,白蓝,橙,白棕,棕<br>!t568-b:白橙,橙,白绿,蓝,白蓝,绿,白棕,棕<br>光纤:<br>多模光纤:纤芯更细,损耗大,传输较单模近,<br>单模光纤:纤芯更粗,损耗小,传输更远,速率更高</p>
+<p>设备的连接:<br>同交异直(同设备交叉线连接,不同设备直接连接),路由器与pc除外.</p>
+<h1 id="网络类型"><a href="#网络类型" class="headerlink" title="网络类型"></a>网络类型</h1><h2 id="拓扑类型"><a href="#拓扑类型" class="headerlink" title="拓扑类型"></a>拓扑类型</h2><ul>
+<li>总线形<br>成本低,易维护,但存在单点故障</li>
+<li>树形<br>特殊的星形</li>
+<li>星形<br>系统可靠性高,但存在单点故障</li>
+<li>环形<br>通过令牌控制传输</li>
+<li>部分网状<br>实际采用部分网状,代替全网状</li>
+<li>网状形<br>任意设备两两连接直接通信,费用极其昂贵</li>
+</ul>
+<h2 id="网络传输模式"><a href="#网络传输模式" class="headerlink" title="网络传输模式"></a>网络传输模式</h2><ul>
+<li>单工: 只有一方向的通信没有反方向通信,如电视</li>
+<li>半双工:通信的双方都可以发送信息,但不能同时发送</li>
+<li>全双工:可同时发送接收信息</li>
+</ul>
+<h2 id="网络通信类型"><a href="#网络通信类型" class="headerlink" title="网络通信类型"></a>网络通信类型</h2><p>ipv4通信类型有单播,组播,广播</p>
+<ul>
+<li>单播:主机之间一对一的通讯模式,如果10个客户机需要相同数据,则需要传输10次</li>
+<li>广播:主机之间1对所有的通讯模式</li>
+<li>组播:主机之间1对1组的通讯模式,加入了一个组的主机可以接受到此组内的所有数据</li>
+</ul>
+<h2 id="OSI分层模型"><a href="#OSI分层模型" class="headerlink" title="OSI分层模型"></a>OSI分层模型</h2><p>ISO:国际标准化组织<br>OSI:开放系统互联模型<br>:ISO创建OSI参考模型,希望不同的供应商网络能够相互协同工作,但迄今为止,仍然是一个伟大的目标.</p>
+<h3 id="OSI优点"><a href="#OSI优点" class="headerlink" title="OSI优点"></a>OSI优点</h3><ul>
+<li>开放的标准化接口</li>
+<li>多厂商兼容性</li>
+<li>易于理解,学习和更新协议标准</li>
+<li>实现模块化工程,降低了开发实现的复杂度</li>
+<li>便于排除故障</li>
+</ul>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ol>
+<li>应用层 网路进程访问应用层 报文 为应用程序进程提供网络服务,提供身份验证</li>
+<li>表示层 数据表示 报文 确保接收系统可以读出数据,格式化数据,构建数据,协商用于应用层的数据传输语法,提供加密<ol>
+<li>确保某一系统的应用层所发送的信息可被另一系统的应用层读取</li>
+</ol>
+</li>
+<li>会话层 主机间通信 报文 <ol>
+<li>可建立管理和终止在应用程序之间的会话</li>
+<li>有差错会恢复能力</li>
+</ol>
+</li>
+<li>传输层 端到端连接 网段 确保数据传输可靠,建立维护终止虚拟电路,通过错误检测和恢复,信息流控制来保障可靠性<ol>
+<li>可在发送主机系统上对数据进行分段,在接受主机系统上将数据段重组为数据流,同时又流量控制能力.</li>
+</ol>
+</li>
+<li>网络层 数据传输 路由数据包,选择传递数据的最佳路径,支持逻辑寻址和路径选择<ol>
+<li>网络层可在位于不同地理位置的网络中的两个主机系统之间提供链接和路径选择</li>
+<li>主要功能:编址;路由选择;拥塞控制;异种网络互联</li>
+</ol>
+</li>
+<li>数据链路层 帧 访问介质,定义如何格式化数据以便进行传输以如何控制对网络的访问,支持错误检测<ol>
+<li>主要功能:帧同步,数据链路的建立,维持和释放;传输资源控制;流量控制;差错控制;寻址(物理mac地址);标识上层数据</li>
+</ol>
+</li>
+<li>物理层 比特位  二进制传输,定义了电气规范,机械规范,过程规范,功能规范,用于激活,维护和终止端系统间的物理链路</li>
+</ol>
+<h3 id="数据封装"><a href="#数据封装" class="headerlink" title="数据封装"></a>数据封装</h3><p>通过网络发送的信息称为数据或数据包<br>如果一台计算机要向另一台计算机发送数据,则必须首先执行数据封装的过程将数据打包,远程设备接收时,必须解封</p>
+<h3 id="对等通信"><a href="#对等通信" class="headerlink" title="对等通信"></a>对等通信</h3><p>每一层只能与对应的对等层通信</p>
+<h1 id="TCP-IP-协议"><a href="#TCP-IP-协议" class="headerlink" title="TCP/IP 协议"></a>TCP/IP 协议</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="https://e1sewhere.github.io/images/ositcpip.jpg" alt="ositcpip.jpg"></p>
+<ul>
+<li>应用层:</li>
+<li>传输层</li>
+<li>Inernet层(网络层)</li>
+<li>网络访问层</li>
+</ul>
+<h1 id="网络接口层"><a href="#网络接口层" class="headerlink" title="网络接口层"></a>网络接口层</h1><h2 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h2><p><img src="https://e1sewhere.github.io/images/mac地址.png" alt="mac地址.png"><br>数据链路层,唯一标识网卡,一台设备可以有多个网卡,多个mac地址</p>
+<h2 id="以太网帧结构"><a href="#以太网帧结构" class="headerlink" title="以太网帧结构"></a>以太网帧结构</h2><p><img src="https://e1sewhere.github.io/images/帧结构.png" alt="帧结构.png"></p>
+<h2 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h2><p><img src="https://e1sewhere.github.io/images/csmacd.png" alt="csmacd.png"></p>
+<p>带冲突控检测的载波监听多路访问技术<br>先听后说,边听边说,一旦冲突立即停说;等待时机然后再说</p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="Internet协议特征"><a href="#Internet协议特征" class="headerlink" title="Internet协议特征"></a>Internet协议特征</h2><p><img src="https://e1sewhere.github.io/images/internet协议.png" alt="协议"></p>
+<h2 id="IP地址作用"><a href="#IP地址作用" class="headerlink" title="IP地址作用"></a>IP地址作用</h2><ul>
+<li>它们可唯一标识IP网络中的每台设备</li>
+<li>每台主机（计算机、网络设备、外围设备）必须具有唯一的地址</li>
+<li>IP网络地址由两部分组成：网络ID+主机ID</li>
+<li>主机ID：<ul>
+<li>标识单个主机</li>
+<li>由组织分配给各设备<h2 id="IP地址的格式"><a href="#IP地址的格式" class="headerlink" title="IP地址的格式"></a>IP地址的格式</h2><img src="https://e1sewhere.github.io/images/ipdz.png" alt="ip地址格式"></li>
+</ul>
+</li>
+</ul>
+<h2 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h2><p><img src="https://e1sewhere.github.io/images/ip分类.png" alt="ip分类.png"></p>
+<p><img src="https://e1sewhere.github.io/images/ip分类2.png" alt="ip分类2.png"></p>
+<p><strong>特殊的网址</strong></p>
+<ul>
+<li>每一个字节都为0的地址（“0.0.0.0”）对应于当前主机；</li>
+<li>IP地址中的每一个字节都为1的IP地址（“255．255．255．255”）是当前子网的广播地址；</li>
+<li>IP地址中凡是以“11110”开头的E类IP地址都保留用于将来和实验使用。</li>
+<li>IP地址中不能以十进制“127”作为开头，该类地址中数字127．0．0．1到127．255．255．255用于回路测试，如：127.0.0.1可以代表本机IP地址，用<code>http://127.0.0.1</code>就可以测试本机中配置的Web服务器。</li>
+<li>网络ID的第一个8位组也不能全置为“0”，全“0”表示本地网络。</li>
+</ul>
+<h2 id="公有IP地址"><a href="#公有IP地址" class="headerlink" title="公有IP地址"></a>公有IP地址</h2><p>A: 0.0.0.1– 9.255.255.255 &amp; 11.0.0.0–126.255.255.255<br>B:128.0.0.0–172.15.255.255 &amp; 172.32.0.0–191.255.255.255<br>C: 192.0.0.0– 192.167.255.255 &amp;192.169.0.0–223.169.255.255<br>Internet主机需要唯一的公有IP地址</p>
+<h2 id="私有IP地址"><a href="#私有IP地址" class="headerlink" title="私有IP地址"></a>私有IP地址</h2><p><img src="https://e1sewhere.github.io/images/似有地址.png" alt="似有地址.png"></p>
+<h2 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h2><p>分为首部和数据部分,首部发送在前<br>下面主要记录首部的信息<br>首部分为固定部分和可变部分</p>
+<h3 id="首部-可变部分"><a href="#首部-可变部分" class="headerlink" title="首部-可变部分"></a>首部-可变部分</h3><p>可变部分占32bit,4个字节,有可选字段,可选字段的长度可变,剩余的部分为空或者为填充.<br>当固定部首+可选字段+数据部分合起来都达不到传输要求的最低数据量时就需要首部的可变部分来填充无意义数据,以满足传输要求</p>
+<h3 id="首部-固定部分"><a href="#首部-固定部分" class="headerlink" title="首部-固定部分"></a>首部-固定部分</h3><h4 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h4><p><img src="https://e1sewhere.github.io/images/sbbb.png" alt="sbbb.png"></p>
+<h4 id="首部长度"><a href="#首部长度" class="headerlink" title="首部长度"></a>首部长度</h4><p><img src="https://e1sewhere.github.io/images/sbbusd.png" alt="sbbusd.png"></p>
+<h4 id="服务类型"><a href="#服务类型" class="headerlink" title="服务类型"></a>服务类型</h4><p><img src="https://e1sewhere.github.io/images/sbfwlx.png" alt="sbfwlx.png"></p>
+<h4 id="总长度"><a href="#总长度" class="headerlink" title="总长度"></a>总长度</h4><p><img src="https://e1sewhere.github.io/images/snzcd.png" alt="snzcd.png"></p>
+<h4 id="标识"><a href="#标识" class="headerlink" title="标识"></a>标识</h4><p><img src="https://e1sewhere.github.io/images/sbbiaozhi.png" alt="sbbiaozhi.png"><br>一个报文被拆分后,每个分片的首部标识和拆分前相同</p>
+<h4 id="标志-flag"><a href="#标志-flag" class="headerlink" title="标志(flag)"></a>标志(flag)</h4><p><img src="https://e1sewhere.github.io/images/sbbz.png" alt="sbbz.png"></p>
+<h4 id="片偏移"><a href="#片偏移" class="headerlink" title="片偏移"></a>片偏移</h4><p><img src="https://e1sewhere.github.io/images/sbppy.png" alt="sbppy.png"></p>
+<p>例题:一个数据报的总长度为3820字节，其数据部分为3800字节长（使用固定首部），需要分片为长度不超过1420字节的数据报片。<br><img src="https://e1sewhere.github.io/images/sbpyl.png" alt="sbpyl.png"></p>
+<h4 id="生存时间"><a href="#生存时间" class="headerlink" title="生存时间"></a>生存时间</h4><p>生存时间（8bit）记为TTL（Time To Live），这是为了限制数据报在网络中的生存时间，其单位最初是秒，但为了方便，现在都用“跳数”作为TTL的单位。<br>数据报每经过一个路由器，其TTL值就减1。</p>
+<h4 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h4><p>协议（8bit）字段指出此数据报携带的数据使用何种协议<br>以便目的主机的IP层将数据部分上交给哪个处理过程<br><img src="https://e1sewhere.github.io/images/sbxy.png" alt="sbxy.png"></p>
+<h4 id="首部检验和"><a href="#首部检验和" class="headerlink" title="首部检验和"></a>首部检验和</h4><p>首部检验和（16bit）字段只检验数据报的首部不包括数据部分。<br>这里不采用CRC检验码而采用简单的计算方法。</p>
+<h5 id="源地址-目的地址"><a href="#源地址-目的地址" class="headerlink" title="源地址/目的地址"></a>源地址/目的地址</h5><p><img src="https://e1sewhere.github.io/images/sbmd.png" alt="sbmd.png"></p>
+<h3 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h3><p>优点</p>
+<ul>
+<li>小型网络易于管理</li>
+<li>总流量减少</li>
+<li>易于应用网络安全策略</li>
+</ul>
+<h4 id="子网掩码的作用"><a href="#子网掩码的作用" class="headerlink" title="子网掩码的作用"></a>子网掩码的作用</h4><ul>
+<li>告知路由器路由时要查找的位数</li>
+<li>定义有效的位数</li>
+<li>用作测量工具,不隐藏任何信息</li>
+<li>将某个ip地址划分为网络地址和主机地址两个部分<br>网络地址:网络号不变,主机号全为0.</li>
+</ul>
+<h4 id="默认子网掩码"><a href="#默认子网掩码" class="headerlink" title="默认子网掩码"></a>默认子网掩码</h4><p><img src="https://e1sewhere.github.io/images/默认子网掩码.png" alt="默认子网掩码.png"></p>
+<h4 id="子网掩码计算"><a href="#子网掩码计算" class="headerlink" title="子网掩码计算"></a>子网掩码计算</h4><p>从主机地址借位来划分子网</p>
+<p>划分:</p>
+<ul>
+<li>确定是adc哪一类地址</li>
+<li>确定子网划分的要求 <code>/x?</code> <code>几个子网?</code> <code>子网内主机数量?</code>,更具要求写出初步的子网掩码二进制,确定1的个数</li>
+<li>借位的和 借位之前的不变,后面的位全为0, 这个ip就是当前子网在内网中的网络地址,后面的就是当前子网的主机地址</li>
+<li>子网掩码就是到ip地址的借位都是1,后面的全为0</li>
+<li>验证两个子网ip是不是同一个:如果两个IP地址在子网掩码的按位与的计算下所得结果相同，即表明它们共属于同一子网中,由于子网ip的前面都是相同的,所以只需要<code>与</code>借位的就可以判断(借位相与)</li>
+</ul>
+<p>ip+子网掩码算 网络地址<br>直接相与</p>
+<p>汇聚:<br>需要汇聚的ip 2进制化;<br>前面相同的位作为网络地址,后面的全为0.<br>得出的地址就是汇聚后的地址,且有类长度(/x)就是前面相同的位数</p>
+<h4 id="子网划分步骤"><a href="#子网划分步骤" class="headerlink" title="子网划分步骤"></a>子网划分步骤</h4><ul>
+<li>子网地址扩展了网络部分，通过从原主机部分借位并将其指定为子网字段来创建子网地址</li>
+<li>子网和主机的最佳数量是由网络类型和所需的主机地址数量所决定的</li>
+<li>可用子网的数量取决于借用的位数可用子网的数量=2^s，其中s是借用的位数</li>
+<li>每个子网中的可用主机的数量取决于未借用的主机ID的位数每个子网中的可用主机的数量=2^h-2，其中h是未借用的主机位数保留一个地址作为网络地址保留一个地址作为广播地址</li>
+</ul>
+<h2 id="ARP-地址解析协议"><a href="#ARP-地址解析协议" class="headerlink" title="ARP(地址解析协议)"></a>ARP(地址解析协议)</h2><ul>
+<li>ARP：地址解析协议（Address Resolution Protocol，）是在仅知道主机的IP地址时确定其物理地址的一种协议</li>
+<li>代理ARP代理:ARP是ARP协议的一个变种。对于没有配置缺省网关的计算机要和其他网络中的计算机实现通信，网关收到源计算机的ARP请求会使用自己的MAC地址与目标计算机的IP地址对源计算机进行应答</li>
+<li>无状态协议,OSI模型中属于数据链路层,TCP/IP模型中属于网络层</li>
+</ul>
+<h2 id="ARP工作过程"><a href="#ARP工作过程" class="headerlink" title="ARP工作过程"></a>ARP工作过程</h2><p><img src="https://e1sewhere.github.io/images/arp1.png" alt="arp1.png"></p>
+<p>发送mac地址全为0的arp请求<strong>广播</strong>,接收方回应带mac地址的<strong>单播</strong>arp回应.</p>
+<h3 id="代理ARP工作过程"><a href="#代理ARP工作过程" class="headerlink" title="代理ARP工作过程"></a>代理ARP工作过程</h3><p>Hosta发送广播arp,路由器收到ARP发送的请求,运行代理arp,发送一个广播arp请求,请求内容和hosta相同,但是发起请求的是路由器.回应方回应请求mac地址是路由器的,ip是hosta的,然后路由器转发.<br><img src="https://e1sewhere.github.io/images/dlarp.png" alt="dlarp.png"></p>
+<h3 id="无故ARP-反向ARP"><a href="#无故ARP-反向ARP" class="headerlink" title="无故ARP/反向ARP"></a>无故ARP/反向ARP</h3><p>无故ARP 主机使用自己的IP地址作为目标地址发送ARP请求:可以检查IP冲突<br>反向ARP  功能和ARP协议相对，其将局域网中某个主机的物理地址转换为IP地址:</p>
+<h2 id="ICMP协议"><a href="#ICMP协议" class="headerlink" title="ICMP协议"></a>ICMP协议</h2><p>IP协议并不是一个可靠的协议，它不保证数据被送达，那么，保证数据送达的工作应该由其他的模块来完成。其中一个重要的模块就是ICMP（网络控制报文）协议。</p>
+<h3 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h3><p>ICMP的消息可以分为错误消息、请求消息和响应消息。一台主机向一个节点发送一个ICMP请求报文，如果途中没有异常（例如被路由器丢弃、目标不回应ICMP或传输失败），则目标返ICMP响应报文，说明这台主机存在。当传送IP数据包发生错误，比如主机不可达、路由不可达等等，ICMP协议将会把错误信息封包，即ICMP差错报文，然后传送回给主机，给主机一个处理错误的机会。<br><img src="https://e1sewhere.github.io/images/icmp.png" alt="icmp.png"></p>
+<h3 id="ICMP消息格式"><a href="#ICMP消息格式" class="headerlink" title="ICMP消息格式"></a>ICMP消息格式</h3><p><img src="https://e1sewhere.github.io/images/icmp2.png" alt="icmp2.png"></p>
+<h3 id="Ping的实现原理"><a href="#Ping的实现原理" class="headerlink" title="Ping的实现原理"></a>Ping的实现原理</h3><p>向网络上的另一个主机系统发送ICMP报文，如果指定系统得到了报文，它将把报文一模一样地传回给发送者，这有点象潜水艇声纳系统中使用的发声装置</p>
+<h3 id="Tracert实现原理"><a href="#Tracert实现原理" class="headerlink" title="Tracert实现原理"></a>Tracert实现原理</h3><p><img src="https://e1sewhere.github.io/images/trecer.png" alt="trecer.png"></p>
+<h2 id="IPv6-地址"><a href="#IPv6-地址" class="headerlink" title="IPv6 地址"></a>IPv6 地址</h2><p>16个二进制八位数</p>
+<p>IPv6地址的长度为128位，由48位的全局前缀、16位的子网ID和64位的接口标识符组成<br>格式：<br>xx.xx.xxxx，其中x是16位的十六进制字段十六进制的A、B、C、D、E和F区分大小写<br>字段中的前导零是可选的连续的零字段可表示为：:每个地址只能用一次</p>
+<p>示例：<br>2031：0000：130F：0000：0000：09C0：876A：130B<br>可表示为2031：0：130f：9c0：876a：130b<br>不能表示为2031：130f：9c0：876a：130b<br>FF01：0：0：0：0：0：0：1→FF01:：1<br>0：0：0：0：0：0：0：1→：:1<br>0：0：0：0：0：0：0→：:</p>
+<p><strong>以下来自维基</strong><br>IPv6具有比IPv4大得多的编码地址空间。这是因为IPv6采用128位的地址，而IPv4使用的是32位。因此新增的地址空间支持2^128（约3.4×1038）个地址，具体数量为340,282,366,920,938,463,463,374,607,431,768,211,456 个，也可以说成16^32个，因为32位地址每位可以取16个不同的值。</p>
+<h3 id="IPv6地址分类"><a href="#IPv6地址分类" class="headerlink" title="IPv6地址分类"></a>IPv6地址分类</h3><ul>
+<li>单播：<br>-地址用于单个接口<br>-IPv6有几种类型（例如，全局地址、保留地址、本地链路地址和本地站点地址）</li>
+<li>组播：-一对多<br>-提高网络的使用效率-使用更大的地址范围</li>
+<li>任播：<br>-一对最近（从单播地址空间分配）<br>-多个设备共享相同的地址<br>-所有任播节点应提供统一服务<br>-源设备将数据包发送到任播地址<br>-路由器确定最近的设备以达到目的地<br>-适合负载均衡和内容传输服务</li>
+</ul>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><img src="https://e1sewhere.github.io/images/csc.png" alt="csc.png"></p>
+<h2 id="传输层协议"><a href="#传输层协议" class="headerlink" title="传输层协议"></a>传输层协议</h2><p><img src="https://e1sewhere.github.io/images/cscxy.png" alt="cscxy.png"></p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h3 id="TCP特点"><a href="#TCP特点" class="headerlink" title="TCP特点"></a>TCP特点</h3><ul>
+<li>TCP/IP协议栈的传输层</li>
+<li>为应用程序访问的网络层</li>
+<li>面向连接的协议,可靠</li>
+<li>全双工模式运行</li>
+<li>错误检查</li>
+<li>数据包序列化</li>
+<li>接收确认</li>
+<li>数据恢复功能</li>
+<li>流量控制</li>
+</ul>
+<h3 id="TCP报头"><a href="#TCP报头" class="headerlink" title="TCP报头"></a>TCP报头</h3><p><img src="https://e1sewhere.github.io/images/tcpbt.png" alt="tcpbt.png"><br>标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：<br>URG：紧急指针（urgent pointer）有效。<br>ACK：确认序号有效。<br>PSH：接收方应该尽快将这个报文交给应用层。<br>RST：重置连接。<br>SYN：发起一个新连接。<br>FIN：释放一个连接</p>
+<h3 id="TCP的连接与拆除"><a href="#TCP的连接与拆除" class="headerlink" title="TCP的连接与拆除"></a>TCP的连接与拆除</h3><p><img src="https://e1sewhere.github.io/images/scws.png" alt="scws.png"></p>
+<p><img src="https://e1sewhere.github.io/images/cc.png" alt="cc.png"><br>第二次握手后客户端<code>-&gt;</code>服务端的连接就释放了,服务端传输完剩余数据,向客户端发起释放请求,就是第三次握手,客户端收到后向服务端发送确认响应,第四次握手.然后服务端关闭,等待两msl,客户端也关闭.</p>
+<h3 id="TCP可靠传输机制"><a href="#TCP可靠传输机制" class="headerlink" title="TCP可靠传输机制"></a>TCP可靠传输机制</h3><p><img src="https://e1sewhere.github.io/images/csqr.png" alt="csqr.png"><br><img src="https://e1sewhere.github.io/images/图像446.png" alt="图像446.png"></p>
+<p><img src="https://e1sewhere.github.io/images/图像448.png" alt="图像448.png"><br><img src="https://e1sewhere.github.io/images/图像449.png" alt="图像449.png"></p>
+<p><img src="https://e1sewhere.github.io/images/hcyc.png" alt="hcyc.png"></p>
+<h3 id="为什么用TCP可以在IP上实现可靠的连接"><a href="#为什么用TCP可以在IP上实现可靠的连接" class="headerlink" title="为什么用TCP可以在IP上实现可靠的连接"></a>为什么用TCP可以在IP上实现可靠的连接</h3><p>我们可以把淘宝买卖双方的关系，比作可靠的传输层TCP，因为他们之间的交易是需要确认的是可靠的。如果买家没有收到货物，肯定不能给卖家确认。但是快递公司可比作不可靠的网络层协议（IP）。卖家把一部销售给买家的手机封在一个包裹内（IP封包的过程），并且把这个包裹交给快递。对于快递的收件员，其实他并不清楚这个包裹内的东西是什么，他只用负责把这个包裹按照上面写的地址送到买家的手中（IP路由的过程）。由于网络层协议（IP）和快递一样不总是都靠谱，所以丢包是难免的。一旦出现丢包，长期没有收到快递的愤怒的买家就会找到卖家，倒霉的卖家只能把那部手机重新再发一次（一般快递都会推脱责任不予赔偿），这个过程就叫做TCP的超时重传。流着泪的卖家把新的包裹再次交给收件员，对于卖家而言这确实是再次。但是对于收件员而言，这只是一个普通的包裹，绝对不可能知道这是上次丢失包裹的一次重传。（这也是网络分层的目的，向下层隐藏上层的工作细节）。非常幸运的是，这次快递公司“不辱使命”成功完成了任务，把包裹交给了淘宝买家，买家对手机进行检查并且给卖家进行确认（TCP对数据的确认），本次会话结束。</p>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h3 id="UDP特点"><a href="#UDP特点" class="headerlink" title="UDP特点"></a>UDP特点</h3><p>·运行于OSI模型和TCP/IP模型的传输层<br>·为应用程序提供网络层接入而无需为可靠性机制付出多余开销<br>·属无连接协议<br>·提供有限的错误检查<br>·提供尽力传输<br>·不具备数据恢复功能</p>
+<h3 id="UDP报头"><a href="#UDP报头" class="headerlink" title="UDP报头"></a>UDP报头</h3><p><img src="https://e1sewhere.github.io/images/udp.png" alt="udp.png"></p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h2 id="应用层概述"><a href="#应用层概述" class="headerlink" title="应用层概述"></a>应用层概述</h2><p><img src="https://e1sewhere.github.io/images/yycgs.png" alt="yycgs.png"></p>
+<p>网路层映射到传输层:<br><img src="https://e1sewhere.github.io/images/wlcys.png" alt="wlcys.png"></p>
+<p>传输层映射到应用层:<br><img src="https://e1sewhere.github.io/images/cscys.png" alt="cscys.png"></p>
+<p>应用协议层:</p>
+<ul>
+<li>使用UDP的应用层协议：<strong>DNS</strong>，TFTP，RIP，BOOTP，DHCP，SNMP，IGMP</li>
+<li>使用TCP的应用层协议：SMTP，TELNET，HTTP，FTP，<strong>DNS</strong></li>
+</ul>
+<h2 id="DHCP协议"><a href="#DHCP协议" class="headerlink" title="DHCP协议"></a>DHCP协议</h2><h3 id="DHCP简介"><a href="#DHCP简介" class="headerlink" title="DHCP简介"></a>DHCP简介</h3><ul>
+<li>ost Configuration Protocol（动态主机配置协议）的缩写；</li>
+<li>DHCP是从BOOTP（Bootstrap Protocol，自举协议）发展而来；</li>
+<li>DHCP采用客户端/服务器模式，服务器负责集中管理，客户端向服务器提出配置申请，服务器根据策略返回相应配置信息；</li>
+<li>DHCP报文采用UDP封装。服务器端的<strong>端口</strong>号是67，客户端的端口号是68。</li>
+</ul>
+<h3 id="DHCP特点"><a href="#DHCP特点" class="headerlink" title="DHCP特点"></a>DHCP特点</h3><ul>
+<li>即插即用性:客户端无须配置即能获得IP地址及相关参数。简化客户端网络配置，降低维护成本。</li>
+<li>统一管理:所有IP地址及相关参数信息由DHCP服务器统一管理，统一分配。</li>
+<li>使用效率高:通过IP地址租期管理，提高IP地址的使用效率。</li>
+<li>可跨网段实现:通过使用DHCP中继，可使处于不同子网中的客户端和DHCP服务器之间实现协议报文交互。</li>
+</ul>
+<h3 id="DHCP系统组成"><a href="#DHCP系统组成" class="headerlink" title="DHCP系统组成"></a>DHCP系统组成</h3><ul>
+<li>DHCP服务器<br>能提供DHCP功能的服务器或具有DHCP功能的网络设备</li>
+<li>DHCP中继<br>一般为路由器或三层交换机等网络设备</li>
+<li>DHCP客户端<br>需要动态获得IP地址的主机</li>
+</ul>
+<h3 id="DHCP地址分配方式"><a href="#DHCP地址分配方式" class="headerlink" title="DHCP地址分配方式"></a>DHCP地址分配方式</h3><ul>
+<li>手工分配<br>根据需求，网络管理员为某些少数特定的主机（如DNS服务器、打印机）绑定固定的IP地址，其地址不会过期。</li>
+<li>自动分配<br>DHCP服务器为DHCP客户端动态分配租期为无限长的IP地址</li>
+<li>动态分配<br>主机申请IP地址最常用的方法。DHCP服务器为客户端指定一个IP地址，同时为此地址规定了一个租用期限，如果租用时间到期，客户端必须重新申请IP地址。</li>
+</ul>
+<h3 id="DHCP报文"><a href="#DHCP报文" class="headerlink" title="DHCP报文"></a>DHCP报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">协议报文</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">报文类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">DHCP Discover</td>
+<td style="text-align:left">客户端发现服务器</td>
+<td style="text-align:left">广播</td>
+</tr>
+<tr>
+<td style="text-align:left">DHCP Offer</td>
+<td style="text-align:left">服务器对DHCP Discover报文的回应</td>
+<td style="text-align:left">单播</td>
+</tr>
+<tr>
+<td style="text-align:left">DHCP Request</td>
+<td style="text-align:left">服务器选择及租期更新</td>
+<td style="text-align:left">单播</td>
+</tr>
+<tr>
+<td style="text-align:left">DHCP Release</td>
+<td style="text-align:left">请求释放已经获得的IP地址资源或取消租期</td>
+<td style="text-align:left">单播</td>
+</tr>
+<tr>
+<td style="text-align:left">DHCP Ack/Nak</td>
+<td style="text-align:left">服务器对收到的请求报文的最终的确认</td>
+<td style="text-align:left">单播</td>
+</tr>
+<tr>
+<td style="text-align:left">DHCP Decline</td>
+<td style="text-align:left">拒绝所获得的IP地址</td>
+<td style="text-align:left">广播</td>
+</tr>
+<tr>
+<td style="text-align:left">DHCP Inform</td>
+<td style="text-align:left">向DHCP服务器索要其他的配置参数</td>
+<td style="text-align:left">单播</td>
+</tr>
+</tbody>
+</table>
+<h3 id="IP获取过程"><a href="#IP获取过程" class="headerlink" title="IP获取过程"></a>IP获取过程</h3><h4 id="IP地址动态获取过程"><a href="#IP地址动态获取过程" class="headerlink" title="IP地址动态获取过程"></a>IP地址动态获取过程</h4><p><img src="https://e1sewhere.github.io/images/idhq.png" alt="idhq.png"></p>
+<h4 id="IP地址拒绝和释放"><a href="#IP地址拒绝和释放" class="headerlink" title="IP地址拒绝和释放"></a>IP地址拒绝和释放</h4><p><img src="https://e1sewhere.github.io/images/ipsf.png" alt="ipsf.png"></p>
+<h4 id="DHCP租约更新"><a href="#DHCP租约更新" class="headerlink" title="DHCP租约更新"></a>DHCP租约更新</h4><p><img src="https://e1sewhere.github.io/images/zygx.png" alt="zygx.png"></p>
+<h4 id="DHCP-工作原理"><a href="#DHCP-工作原理" class="headerlink" title="DHCP 工作原理"></a>DHCP 工作原理</h4><p><img src="https://e1sewhere.github.io/images/dhcpyl.png" alt="dhcpyl.png"></p>
+<h4 id="DHCP中继工作原理"><a href="#DHCP中继工作原理" class="headerlink" title="DHCP中继工作原理"></a>DHCP中继工作原理</h4><p><img src="https://e1sewhere.github.io/images/dhcpzj.png" alt="dhcpzj.png"></p>
+<h2 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h2><h3 id="DNS简介"><a href="#DNS简介" class="headerlink" title="DNS简介"></a>DNS简介</h3><p>DNS系统的作用：</p>
+<ul>
+<li>提供了主机名字和IP地址的相互转换DNS系统的模式：</li>
+<li>采用客户端/服务器模式DNS系统的结构：</li>
+<li>是一个具有树状层次结构，联机分布式数据库系统端口号：53 <strong>重点</strong></li>
+</ul>
+<p>域名:</p>
+<ul>
+<li>域是因特网中一种管理范围的划分顶级域、二级域、三级域等等</li>
+<li>DNS域名结构是包括多级域名的分层结构顶级域名、二级域名、三级域名等等</li>
+<li>不同等级的域名之间使用点号分隔，级别最低的域名写在最左边，而级别最高的域名则写在最右边</li>
+<li>每一级的域名都由字母和数字组成，不区分大小写</li>
+<li>域名的根域用“.”表示，以点号结尾的域名称为完全合格域名FQDN（Full Qualified Domain Name）</li>
+</ul>
+<p>DNS服务的作用:<br>将域名解析为IP地址</p>
+<h3 id="DNS解析原理"><a href="#DNS解析原理" class="headerlink" title="DNS解析原理"></a>DNS解析原理</h3><ul>
+<li>DNS系统采用客户机/服务器架构，使用的传输层协议为TCP或UDP，服务器端口号53</li>
+<li>域名解析工作是通过调用服务器上的解析器软件完成的</li>
+<li>DNS域名解析按照域名空间的分层树状结构自顶至下进行</li>
+</ul>
+<h3 id="DNS服务器类型"><a href="#DNS服务器类型" class="headerlink" title="DNS服务器类型"></a>DNS服务器类型</h3><ul>
+<li>本地域名服务器</li>
+<li>授权域名服务器 </li>
+<li>根域名服务器</li>
+<li>主域名服务器</li>
+<li>辅助域名服务器</li>
+</ul>
+<h3 id="DNS查询"><a href="#DNS查询" class="headerlink" title="DNS查询"></a>DNS查询</h3><h4 id="递归查询"><a href="#递归查询" class="headerlink" title="递归查询"></a>递归查询</h4><ul>
+<li>如果DNS服务器支持递归查询，那么当它接收到递归查询请求后，它将负责把最终的查询结果返回请求发送方。即使执行递归查询的DNS服务器无法从本地数据库返回查询结果，它也必须查询其他的DNS服务器，直到得到确认的查询结果</li>
+<li>一般客户机与本地域名服务器之间的查询交互采用的就是递归查询方式</li>
+</ul>
+<h4 id="迭代查询"><a href="#迭代查询" class="headerlink" title="迭代查询"></a>迭代查询</h4><ul>
+<li>DNS服务器接收到迭代查询请求后，如果无法从本地数据库返回查询结果，它会返回一个可能知道查询结果的DNS服务器地址给请求者，由请求者自行查询该DNS服务器，以此类推，请求者最终将得到查询结果</li>
+<li>一般本地域名服务器发送至根域名服务器的查询采用的就是迭代查询</li>
+</ul>
+<h4 id="反向查询"><a href="#反向查询" class="headerlink" title="反向查询"></a>反向查询</h4><ul>
+<li>DNS反向查询允许DNS客户端根据已知的IP地址查找主机所对应的域<br>名</li>
+<li>因特网域名树中设立了一个特殊的in-addr.arpa反向查询域用于反向查询<br><img src="https://e1sewhere.github.io/images/fxcx.png" alt="fxcx.png"></li>
+</ul>
+<h3 id="DNSS域名解析完整过程"><a href="#DNSS域名解析完整过程" class="headerlink" title="DNSS域名解析完整过程"></a>DNSS域名解析完整过程</h3><p><img src="https://e1sewhere.github.io/images/ymcx.png" alt="ymcx.png"></p>
+<h1 id="主机间通信过程"><a href="#主机间通信过程" class="headerlink" title="主机间通信过程"></a>主机间通信过程</h1><h2 id="各层设备"><a href="#各层设备" class="headerlink" title="各层设备"></a>各层设备</h2><ul>
+<li>第一层设备<br><img src="https://e1sewhere.github.io/images/dyc.png" alt="dyc.png"></li>
+<li>第二层设备<br><img src="https://e1sewhere.github.io/images/ercsb.png" alt="ercsb.png"><br>第二层编址:第二层地址为mac地址</li>
+<li>第三层设备<ul>
+<li>网络层在两个主机系统之间提供连接和路径选择</li>
+<li>对于主机，这是数据链路层和NOS的上层之间的路径</li>
+<li>对于路由器，它是穿越网络的实际路径</li>
+<li>每个NOS都具有各自的第3层地址格式</li>
+<li>OSI使用NSAP</li>
+<li>TCP/IP使用IP地址<h2 id="二层主机通信过程"><a href="#二层主机通信过程" class="headerlink" title="二层主机通信过程"></a>二层主机通信过程</h2><img src="https://e1sewhere.github.io/images/ec1.png" alt="ec1.png"></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://e1sewhere.github.io/images/ec2.png" alt="ec2.png"><br><img src="https://e1sewhere.github.io/images/ec3.png" alt="ec3.png"><br><img src="https://e1sewhere.github.io/images/ec4.png" alt="ec4.png"><br><img src="https://e1sewhere.github.io/images/ec5.png" alt="ec5.png"><br><img src="https://e1sewhere.github.io/images/ec6.png" alt="ec6.png"><br><img src="https://e1sewhere.github.io/images/ec7.png" alt="ec7.png"><br><img src="https://e1sewhere.github.io/images/ec8.png" alt="ec8.png"><br><img src="https://e1sewhere.github.io/images/ec9.png" alt="ec9.png"><br><img src="https://e1sewhere.github.io/images/ec10.png" alt="ec10.png"></p>
+<h2 id="三层主机通信过程"><a href="#三层主机通信过程" class="headerlink" title="三层主机通信过程"></a>三层主机通信过程</h2><p><img src="https://e1sewhere.github.io/images/sc1.png" alt="sc1.png"><br><img src="https://e1sewhere.github.io/images/sc2.png" alt="sc2.png"><br><img src="https://e1sewhere.github.io/images/sc3.png" alt="sc3.png"><br><img src="https://e1sewhere.github.io/images/sc4.png" alt="sc4.png"><br><img src="https://e1sewhere.github.io/images/sc5.png" alt="sc5.png"><br><img src="https://e1sewhere.github.io/images/sc6.png" alt="sc6.png"><br><img src="https://e1sewhere.github.io/images/sc7.png" alt="sc7.png"><br><img src="https://e1sewhere.github.io/images/sc8.png" alt="sc8.png"><br><img src="https://e1sewhere.github.io/images/sc9.png" alt="sc9.png"><br><img src="https://e1sewhere.github.io/images/sc10.png" alt="sc10.png"><br><img src="https://e1sewhere.github.io/images/sc11.png" alt="sc11.png"><br><img src="https://e1sewhere.github.io/images/sc12.png" alt="sc12.png"><br><img src="https://e1sewhere.github.io/images/sc13.png" alt="sc13.png"><br><img src="https://e1sewhere.github.io/images/sc14.png" alt="sc14.png"><br><img src="https://e1sewhere.github.io/images/sc15.png" alt="sc15.png"><br><img src="https://e1sewhere.github.io/images/sc16.png" alt="sc16.png"><br><img src="https://e1sewhere.github.io/images/sc17.png" alt="sc17.png"></p>
+<h1 id="路由基础"><a href="#路由基础" class="headerlink" title="路由基础"></a>路由基础</h1><h2 id="路由原理"><a href="#路由原理" class="headerlink" title="路由原理"></a>路由原理</h2><ul>
+<li>路由是指导IP报文发送的路径信息</li>
+<li>路由器的特点是逐跳转发</li>
+</ul>
+<h3 id="路由表构成"><a href="#路由表构成" class="headerlink" title="路由表构成"></a>路由表构成</h3><p><img src="https://e1sewhere.github.io/images/lybgc.png" alt="lybgc.png"></p>
+<h3 id="路由项的分类"><a href="#路由项的分类" class="headerlink" title="路由项的分类"></a>路由项的分类</h3><ul>
+<li>主机路由：掩码长度是32位的路由，表明此路由匹配单一IP地址。</li>
+<li>子网路由：掩码长度小于32但大于0，表明此路由匹配一个子网。</li>
+<li>默认路由：掩码长度为0，表明此路由匹配全部IP地址</li>
+</ul>
+<h3 id="路由表查找规则"><a href="#路由表查找规则" class="headerlink" title="路由表查找规则"></a>路由表查找规则</h3><h4 id="最长匹配转发原则"><a href="#最长匹配转发原则" class="headerlink" title="最长匹配转发原则"></a>最长匹配转发原则</h4><p><img src="https://e1sewhere.github.io/images/lycz1.png" alt="lycz1.png"><br><img src="https://e1sewhere.github.io/images/lypp.png" alt="lypp.png"><br>172.16.0.0/16开始往里走，下一个我们看到的网络号是172.16.10.0/24，这很明显是应用了VLSM可变长子网掩码之后，得到的一个172.16.0.0/16这个主类网络的一个子网。所以所谓的子网，我们可以理解为是在网络号所属类别的默认掩码长度的基础上，将掩码“拉长”或者向主机位借位从而得到的一个网络号。实际上172.16.0.0/16是将172.16.10.0/24囊括在内的一个区间。那么在这里，如果我们有一个IP：172.16.10.1，实际上这个IP既可以理解为在172.16.0.0/16网络内，也是在172.16.10.0/24网络内，当然，这里我们能看出来，谁更精确呢？很明显是172.16.10.0/24更精确，我们说，它的匹配长度相比172.16.0.0更长</p>
+<h4 id="路由迭代查找"><a href="#路由迭代查找" class="headerlink" title="路由迭代查找"></a>路由迭代查找</h4><p><img src="https://e1sewhere.github.io/images/ddcz.png" alt="ddcz.png"><br>直接寻找目的地址,目的地址不在直连网段,查看下一跳地址,如此迭代,直到下一跳地址在直连网段,从这个接口开始转发.</p>
+<h4 id="默认路由转发"><a href="#默认路由转发" class="headerlink" title="默认路由转发"></a>默认路由转发</h4><p><img src="https://e1sewhere.github.io/images/mrlyzf.png" alt="mrlyzf.png"></p>
+<h3 id="路由表的来源"><a href="#路由表的来源" class="headerlink" title="路由表的来源"></a>路由表的来源</h3><ul>
+<li>直连路由:开销小，配置简单，无需人工维护。只能发现本接口所属网段的路由。</li>
+<li>手工配置的静态路由:无开销，配置简单，需人工维护，适合简单拓扑结构的网络。</li>
+<li>路由协议发现的路由:开销大，配置复杂，无需人工维护，适合复杂拓扑结构的网络。</li>
+</ul>
+<h3 id="路由度量值-Metric"><a href="#路由度量值-Metric" class="headerlink" title="路由度量值(Metric)"></a>路由度量值(Metric)</h3><blockquote>
+<p>路由度量值表示到达目的地址的代价。<br>通常影响路由度量值的因素：<br>线路延迟、带宽、线路使用率、线路可信度、跳数、最大传输单元<br>不同路由协议参考的因素不同</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">路由类型</th>
+<th style="text-align:left">度量值参考因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">静态路由（Static）</td>
+<td style="text-align:left">固定值，0</td>
+</tr>
+<tr>
+<td style="text-align:left">OSPF路由协议</td>
+<td style="text-align:left">带宽</td>
+</tr>
+<tr>
+<td style="text-align:left">RIP路由协议</td>
+<td style="text-align:left">跳数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="路由优先级"><a href="#路由优先级" class="headerlink" title="路由优先级"></a>路由优先级</h3><p>如果到相同目的地址有多个路由来源，则：</p>
+<blockquote>
+<ul>
+<li>以Preference（优先级）确定不同类型优先级；</li>
+<li>Preference值越小，优先级越高；</li>
+<li>优先级最高的路由被添加进路由表;</li>
+</ul>
+</blockquote>
+<h3 id="路由优环路"><a href="#路由优环路" class="headerlink" title="路由优环路"></a>路由优环路</h3><p><img src="https://e1sewhere.github.io/images/lyhl.png" alt="lyhl.png"></p>
+<h3 id="路由原理-1"><a href="#路由原理-1" class="headerlink" title="路由原理"></a>路由原理</h3><ol>
+<li>当一台主机要发送数据包给同一网络中的另一台主机时，它将直接把数据包送到网络上；</li>
+<li>要送给不同IP网络中的主机时，它将选择一个能到达目标网络的路由器或缺省网关（default gateway），由它负责把数据包送到目的地。</li>
+<li>路由器转发数据包时，只根据目标IP地址的网络部分，查找路由表，选择合适的接口，将数据包发送出去。<ol>
+<li>如果路由器的接口所连接的就是目标网络，将直接通过接口把包送到目标网络；</li>
+<li>否则，将选择其他邻居路由器。路由器也可以有它的缺省网关，用来传送不知道往哪儿送的IP包。</li>
+</ol>
+</li>
+<li>路由器把知道如何传送的IP包转发出去，不知道的IP包送给缺省网关，通过不断的转发，数据包最终将送到目的地，送不到目的地的则被丢弃。</li>
+</ol>
+<h2 id="静态路由"><a href="#静态路由" class="headerlink" title="静态路由"></a>静态路由</h2><p><img src="https://e1sewhere.github.io/images/jtly.png" alt="jtly.png"></p>
+<h2 id="缺省路由"><a href="#缺省路由" class="headerlink" title="缺省路由"></a>缺省路由</h2><p>特殊的静态路由<br><img src="https://e1sewhere.github.io/images/qsly.png" alt="qsly.png"></p>
+<h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><h3 id="路由协议与可路由协议"><a href="#路由协议与可路由协议" class="headerlink" title="路由协议与可路由协议"></a>路由协议与可路由协议</h3><ul>
+<li>路由协议<ul>
+<li>路由器用来计算、维护网络路由信息的协议，通常有一定的算法，工  作在网络层或应用层。</li>
+<li>常见的路由协议有OSPF、RIP、BGP等。</li>
+</ul>
+</li>
+<li>可路由协议<ul>
+<li>可被路由器转发的协议，工作在网络层。</li>
+<li>常见的可路由协议有IP、IPX等。</li>
+</ul>
+</li>
+</ul>
+<h3 id="路由协议基本原理"><a href="#路由协议基本原理" class="headerlink" title="路由协议基本原理"></a>路由协议基本原理</h3><ul>
+<li>网络中所有路由器须实现相同的某种路由协议，并已经启动该协议</li>
+<li>邻居发现:路由器发送广播、组播、单播报文给指定的路由器邻居，以主动把自己介绍给网段内的其它路由器。</li>
+<li>交换路由:每台路由器将自己已知的路由相关信息发给相邻路由器。</li>
+<li>计算路由:每台路由器运行某种算法，计算出最终的路由。</li>
+<li>维护路由:路由器之间通过周期性地发送协议报文来维护邻居信息。</li>
+</ul>
+<h3 id="路由协议在协议栈中的位置"><a href="#路由协议在协议栈中的位置" class="headerlink" title="路由协议在协议栈中的位置"></a>路由协议在协议栈中的位置</h3><p><img src="https://e1sewhere.github.io/images/luxy.png" alt="luxy.png"><br><img src="https://e1sewhere.github.io/images/lywz.png" alt="lywz.png"></p>
+<h3 id="路由协议分类"><a href="#路由协议分类" class="headerlink" title="路由协议分类"></a>路由协议分类</h3><p>主机A想要通过路由器与主机B进行通信，路由器上必须要有到达主机A和主机B的路由，以此才能完成双方的数据转发。一旦路由器的一个接口与一台网络设备相连，路由器就会学习到该设备所在的网段的路由，这是直连路由。除此之外，还有静态路由和动态路由两种路由协议来获取路由。</p>
+<ol>
+<li>静态路由<br>手动路由<br>缺省路由</li>
+<li>动态路由<br>距离矢量路由协议：<br>RIP BGP<br>链路状态路由协议<br>OSPF ISIS</li>
+</ol>
+<h4 id="内部-外部协议"><a href="#内部-外部协议" class="headerlink" title="内部/外部协议"></a>内部/外部协议</h4><p><img src="https://e1sewhere.github.io/images/lyfl.png" alt="lyfl.png"></p>
+<h4 id="距离矢量协议与链路状态协议"><a href="#距离矢量协议与链路状态协议" class="headerlink" title="距离矢量协议与链路状态协议"></a>距离矢量协议与链路状态协议</h4><ul>
+<li>距离矢量路由协议<ul>
+<li>RIP</li>
+<li>BGP</li>
+</ul>
+</li>
+<li>链路状态路由协议<ul>
+<li>OSPF</li>
+</ul>
+</li>
+</ul>
+<h4 id="距离矢量协议路由原理"><a href="#距离矢量协议路由原理" class="headerlink" title="距离矢量协议路由原理"></a>距离矢量协议路由原理</h4><p>根据跳数做为度量值来衡量路径的优先，越小优先</p>
+<h3 id="路由选路原则"><a href="#路由选路原则" class="headerlink" title="路由选路原则"></a>路由选路原则</h3><p>当一台路由器使用了多种路由协议时，会通过多种路由协议学习到可以到达同一目的的多条路由，这些路由条目都会存储在路由器数据库中，但在路由表中只显示最优路由。最优路由的选举遵循路由选路原则：</p>
+<ul>
+<li>最长匹配原则：当路由器收到一个IP数据包时，会将数据包的目的IP地址与自己本地路由表中的表项进行bit by bit的逐位查找，直到找到匹配度最长的条目，这叫最长匹配原则。</li>
+<li>路由协议优先级：数值越小越优先。<br><img src="https://e1sewhere.github.io/images/yxj.png" alt="yxj.png"></li>
+<li>度量值metric最小优先：路由协议不同则度量值不能做比较，比如RIP度量值为跳数；OSPF度量值为带宽；EIGRP度量值为带宽+延迟等。所以在不同种协议之间先比较管理距离。</li>
+</ul>
+<h3 id="路由协议的主要指标"><a href="#路由协议的主要指标" class="headerlink" title="路由协议的主要指标"></a>路由协议的主要指标</h3><ul>
+<li>协议计算的正确性<br>协议使用的算法能够计算出最优的路由，且正确无自环。</li>
+<li>路由收敛速度<br>当网络的拓扑结构发生变化之后，能够迅速感知并及时更新相应的路由信息。</li>
+<li>协议占用系统开销<br>路由器在运行路由协议时，需要消耗系统资源（内存、CPU、网络带宽），由于原理的不同，OSPF路由计算所需的资源要大于RIP。</li>
+<li>协议自身的安全性<br>协议自身不易受攻击，有安全机制。OSPF、RIPV2有相应的安全机制，而RIPV1没有。</li>
+<li>协议适用网络规模<br>协议可以应用在何种拓扑结构和规模的网络中。</li>
+</ul>
+<h1 id="RIP路由协议"><a href="#RIP路由协议" class="headerlink" title="RIP路由协议"></a>RIP路由协议</h1><h2 id="协议概述"><a href="#协议概述" class="headerlink" title="协议概述"></a>协议概述</h2><ul>
+<li>RIP:Routing Information Protocol（路由信息协议）</li>
+<li>RIP是一种基于距离矢量（Distance-Vector）算法的路由协议。</li>
+<li>RIP协议适用于中小型网络，分为RIPV1和RIPv2。&gt;RIP支持水平分割、毒性逆转和触发更新等工作机制防止路由环路。</li>
+<li>RIP协议基于UDP传输，端口号520。</li>
+</ul>
+<h2 id="RIP工作原理"><a href="#RIP工作原理" class="headerlink" title="RIP工作原理"></a>RIP工作原理</h2><h3 id="RIP路由表的初始化"><a href="#RIP路由表的初始化" class="headerlink" title="RIP路由表的初始化"></a>RIP路由表的初始化</h3><p><img src="https://e1sewhere.github.io/images/ripcs.png" alt="ripcs.png"></p>
+<h3 id="RIP路由表的更新"><a href="#RIP路由表的更新" class="headerlink" title="RIP路由表的更新"></a>RIP路由表的更新</h3><p>3条原则：<br>（1）对本路由表中已有的路由，邻居相同时，新的替换旧的；<br>（2）对本路由表中已有的路由，邻居不同时，近的替换远的；<br>（3）对本路由表中没有的路由，且度量值&lt;16时，增加。<br>路由器会从每个邻居处发现到达目的地的最佳路径</p>
+<h3 id="RIP定时器"><a href="#RIP定时器" class="headerlink" title="RIP定时器"></a>RIP定时器</h3><p>（1）Update：发送路由更新的时间间隔，默认30秒；<br>（2）Timeout：定义老化时间，如果在老化时间内没有收到某条路由的更新报文，则该条路由的度量值被设置为16，并从路由表中撤销，默认值180秒。<br>（3）Garbage-Collect：定义了一条路由从度量值16开始，直到它从路由表里被删除所经历的时间，默认值120秒。</p>
+<h3 id="RIP路由表维护"><a href="#RIP路由表维护" class="headerlink" title="RIP路由表维护"></a>RIP路由表维护</h3><ul>
+<li>周期性发送Response信息</li>
+<li>从一台路由器到另一台路由器逐步进行更新</li>
+</ul>
+<h3 id="RIP-特点-重点"><a href="#RIP-特点-重点" class="headerlink" title="RIP 特点 (重点)"></a>RIP 特点 (重点)</h3><ol>
+<li>基于距离矢量算法的协议，距离矢量路由协议是根据距离和方向来衡量路径的优劣</li>
+<li>使用跳数来衡量到达目的地的开销（跳数，是指每经过一个三层设备算一跳）</li>
+<li>应用在规模较小的网络，现在几乎被淘汰，现网中几乎看不到，主流是OSPF</li>
+<li>配置简单，易于维护</li>
+<li>周期性的更新，更新周期为30s，每次更新自己所有的路由条目</li>
+<li>RIP规定，最多支持15跳，16跳代表不可达</li>
+<li>直连网络的跳数默认为0</li>
+<li>RIP有两个版本V1和v2，基本都是用v2版本，默认是v1</li>
+</ol>
+<h2 id="RIP路由协议环路避免机制"><a href="#RIP路由协议环路避免机制" class="headerlink" title="RIP路由协议环路避免机制"></a>RIP路由协议环路避免机制</h2><h3 id="路由毒化"><a href="#路由毒化" class="headerlink" title="路由毒化"></a>路由毒化</h3><p>路由毒化（主动把发生故障的路由项度量值设为16）</p>
+<h3 id="水平分割"><a href="#水平分割" class="headerlink" title="水平分割"></a>水平分割</h3><p>水平分割（从某个接口学到的路由，不会再从该接口发送给这个邻居路由器）</p>
+<h3 id="毒性逆转"><a href="#毒性逆转" class="headerlink" title="毒性逆转"></a>毒性逆转</h3><p>毒性逆转（从某个接口学到路由后，将该路由的度量值设置为无穷大（16），并从原接口发回邻居路由器）</p>
+<h3 id="定义最大值"><a href="#定义最大值" class="headerlink" title="定义最大值"></a>定义最大值</h3><p>定义最大值（16）</p>
+<blockquote>
+<p>路由项度量值达到16后，路由器将丢弃到达10.4.0.0的数据包而不再转发；<br>但在最大值到达之前，环路会存在，最大值只是一种补救措施，只能减少环路存在的时间，并不能避免。</p>
+</blockquote>
+<h3 id="抑制时间"><a href="#抑制时间" class="headerlink" title="抑制时间"></a>抑制时间</h3><p>环路避免机制五：抑制时间（当一条路由的度量值变为无穷大，该路由进入抑制状态。只有来自同一邻居且度量值小于16的路由更新才会被接收，取代不可达路由。）</p>
+<h3 id="触发更新"><a href="#触发更新" class="headerlink" title="触发更新"></a>触发更新</h3><p>触发更新（不必等到更新周期到来，路由器马上发送路由更新给相邻路由器）</p>
+<h3 id="总结-记住名字就好"><a href="#总结-记住名字就好" class="headerlink" title="总结(记住名字就好)"></a>总结(记住名字就好)</h3><p>RIP路由协议环路避免机制<br>由于RIP是典型的距离矢最路由协议，具有距离矢量路由协议的所有特点。所以，当网络发生故障时，有可能会发生路由环路现象。<br>RIP设计了一些机制来避免网络中路由环路的产生。这些机制如下：<strong>路由毒化、水平分割、毒性逆转、定义最大值、抑制时间、触发更新</strong><br>环路避免机制一：路由毒化<br>所谓路由毒化(RoutePoisoning)就是路由器主动把路由表中发生故障的路由项以度量值无穷大(16)的形式通告给RIP邻居，以使邻居能够及时得知网络发生故障。<br>在图所示的网络中，当RTC的直连网络10.4.0.0发生故障时，RTC在路由更新信息里把路由项10.4.0.0的度量值置为无穷大(16)，通告给RTB。RTB接收路由更新信息后，更新自已的路由表，路由项10.4.0.0的度量值也置为无穷大(16)。如此将网络10.4.0.0 不可达的信息向全网扩散。<br>通过路由毒化机制，RIP协议能够保证与故障网络直连的路由器有正确的路由信息。<br>环路避免机制二：水平分割<br>分析距离矢量路由协议中产生路由环路的原因，最重要的一条就是因为路由器将从某个邻居学到的路由信息又告诉了这个邻居。<br>水平分割是在距离矢量路由协议中最常用的避免环路发生的解决方案之一。水平分割的思想就是RIP路由器从某个接口学到的路由，不会再从该接口发回给邻居路由器。<br>在图所示的网络中，RTC把它的直连路由10.4.0.0通告给RTB，也就是RTB从RTC那里学习到了路由项10.4.0.0.接口为S1/0。在接口上应用水平分割后，RTB在接口S1/0，上发送路由更新时，就不能包含路由项10.4.0.0。<br>当网络10.4.0.0发生故障时。假如RTC并没有发送路由更新给RTB，而是RTB发送路由更新给RTC，此时由于启用了水平分割，RTB所发的路由更新中不会包含路由项10.4.0.0。这样，也不会使RTC错误地从RTB学习到关于10. 4.0.0的路由项，从而避免了路由环路的产生。<br>为了阻止环路，在RIP协议中水平分割默认是被开启的。<br>环路避免机制三：毒性逆转<br>毒性逆转是另一种避免环路的方法。毒性逆转是指RIP从某个接口学到路由后，将该路由的度量值设置为无穷大(16)，并从原接口发回邻居路由器。<br>在图所示的网络中，应用毒性逆转后，RTB在发送路由更新给RTC时，更新中包含了路由10.4.0.0，度量值为16. 相当于明显地告诉RTC，不可能从RTB到达网络10.4.0.0。<br>毒性逆转与水平分割有相似的应用场合和功能。但与水平分割相比，毒性逆转更加健壮和安全。因为毒性逆转是主动把网络不可达信息通知给其他路由器。毒性逆转的缺点是路由更新中路由项数量增多，浪费网络带宽与系统开销。<br>环路避免机制四：定义最大值（16）<br>在多路径网络环境中，如果产生路由环路，则会使路由器中路由项的跳数不断增大，网络无法收敛。通过给每种距离矢量路由协议度量值定义一个最大值，能够解决上述问题。<br>在RIP路由协议中，规定度量值是跳数，所能达到的最大值为16。其实，在前面的例子中，已经使用跳数16来表示度量值的最大值了。<br>在图所示的网络中，环路已经产生了。RTA向RTB发送路由项10. 4.0.0的更新信息，RTB再向RTC发送，RTC再向RTA发送，每个路由器中路由项10.4.0.0的跳数不断增大，网络长时间无法收敛，去往网络10.4.0.0的数据报文在网络中被循环发送。<br>RIP定义了最大度量值后，当路由项的跳数到达最大值16时，图中网络10.4.0.0被认为是不可达的。路由器会在路由表中显示网络不可达信息，并不再更新到达网络10.4.0.0的路由。此时如果路由器收到去往网络10. 4.0.0的数据包，它会将其丢弃而不再转发。<br>通过定义最大值，距离矢量路由协议可以解决发生环路时路由度量值无限增大的问题，同时也校正了错误的路由信息。但是，在最大度量值到达之前，路由环路还是会存在。也就是说，定义最大值只是一种补救措施，只能减少路由环路存在的时间，并不能避免环路的产生。<br>环路避免机制五：抑制时间<br>抑制时间与路由毒化结合使用，能够在一定程度上避免路由环路产生。抑制时间规定，当一条路由的度最值变为无穷大(16)时，该路由将进人抑制状态。在抑制状态下，只有来自同一邻居且度量值小于无穷大(16)的路由更新才会被路由器接收，取代不可达路由。<br>在图所示网络中，抑制时间机制作用的过程如下:<br>(1)当网络10.4.0.0发生故障时，RTC毒化自己路由表中的路由项10. 4. 0.0，使其度量值为无穷大(16)，以表明网络10.4.0.0不可达。同时给路由项10. 4.0.0设定抑制时间。在更新周期到来后，发送路由更新给RTB。</p>
+<p>(2)RTB收到RTC发出的路由更新信息后，更新自已的路由项10.4.0.0，同时启动抑制时间，在抑制时间结束之前的任何时刻，如果从同一相邻路由器RTC又接收到网络10.4.0.0可达的更新信息，路由器就将路由项10.4.0.0标识为可达，并删除抑制时间。<br>(3)在抑制时间结束之前的任何时刻，如果接收到其他的相邻路由器如RTA的有关网络10.4.0.0的更新信息，路由器RTB会忽略此更新信息，不更新路由表。<br>(4)抑制时间结束后，路由器如果收到任何相邻路由器发出的有关网络10.4.0.0的更新信息，路由器都将会更新路由表.<br>环路避免机制六：触发更新<br>触发更新机制是指当路由表中路由信息产生改变时，路由器不必等到更新周期到来，而立即发送路由更新给相邻路由器。<br>在图所示网络中，当网络10.4.0.0 产生故障后，RTC不必等待更新周期到来，而是立即发送路由更新消息以通告网络10.4.0.0不可达信息，RTA、RTB接收到这个信息后，也立即向邻居发送路由更新消息，这样网络10.4. 0.0不可达信息会很快传播到整个网络。<br>由以上工作机制可以看出，触发更新机制能够使网络不可达信息快速地传播到整个网络，从而极大地加快了网络收敛速度。<br>使用触发更新方法能够在一定程度上避免路由环路发生。但是，仍然存在如下两个问题。<br>(1)触发更新信息在传输过程中可能会被丢掉或损坏。<br>(2)如果触发更新信息还没有来得及发送，路由器就接收到相邻路由器的周期性路由更新信息，则使路由器更新了错误的路由信息。<br>抑制时间和触发更新相结合，就可以解决上述问题。在抑制时间内，路由器不理会从其他路由器传来的相关路由项可达信息，相当于确保路由项的不可达信息不被错误的可达信息所取代。</p>
+<p>在以上机制中，路由毒化、水平分割、毒性逆转能够使RIP协议在单路径网络中避免路由环路，而其余几种主要是针对多路径网络中环路避免而设计的。但在实际网络应用中，以上几种环路避免机制经常被同时应用，以更好地避免环路。<br>环路避免操作示例<br>在实际网络中，各种防止环路机制会结合起来共同使用，从而最大可能地避免环路，加快网络收敛。图所示为一个各种机制综合作用的示例。<br>在图所示网络中，当网络10.4.0.0发生故障时，会有下面的情形发生。<br>(1)路由毒化。当RTC检测到网络10.4.0.0故障时，RTC毒化路由表中路由项10.4.0.0，使到此网络的跳数为无穷大。<br>(2)设定抑制时间。RTC给路由项10.4.0.0设定一个抑制时间，其默认值为120秒。<br>(3)发送触发更新信息。RTC向RTA、RTB发送触发更新信息，指出网络10.4.0.0故障。RTA、RTB接收到触发更新信息以后，使路由项10.4.0.0进人抑制状态，在抑制状态下不接收来自其他路由器的相关更新。然后，RTA和RTB也向其他接口发送网络10.4.0.0故障的触发更新信息。<br>至此，全网所有路由器的路由表中表项10.4.0.0的度量值均为无穷大，并且进人抑制状态，路由器会丢弃目的地为网络10. 4，0.0的数据包。<br>网络10.4.0.0恢复正常后，RTC解除抑制时间。同时用触发更新向RTA、RTB传播。RTA、RTB也解除抑制时间，路由表恢复正常。</p>
+<h2 id="RIPv1缺点"><a href="#RIPv1缺点" class="headerlink" title="RIPv1缺点"></a>RIPv1缺点</h2><blockquote>
+<p>RIPv1发送协议报文时不携带掩码，路由交换过程中有时会造成错误。<br>不支持认证<br>只能以广播方式发布协议报文</p>
+</blockquote>
+<h2 id="RIPv2改进"><a href="#RIPv2改进" class="headerlink" title="RIPv2改进"></a>RIPv2改进</h2><blockquote>
+<p>RIPv2是一种无类别路由协议（Classless Routing Protocol）。<br>RIPv2协议报文中携带掩码信息，支持VLSM（可变长子网掩码）和CIDR。<br>RIPV2支持以组播方式发送路由更新报文，组播地址为224.0.0.9，减少网络与系统资源消耗。<br>RIPV2支持对协议报文进行验证，并提供明文验证和MD5验证两种方式，增强安全性。</p>
+</blockquote>
+<h2 id="v1v2对比"><a href="#v1v2对比" class="headerlink" title="v1v2对比"></a>v1v2对比</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:right">RIPv1</th>
+<th style="text-align:right">RIPv2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">路由协议</td>
+<td style="text-align:right">有类无类</td>
+</tr>
+<tr>
+<td style="text-align:left">是否支持可变长子网掩码？</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td style="text-align:left">子网掩码是否随路由更新一起发送？</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td style="text-align:left">地址类型</td>
+<td style="text-align:right">广播</td>
+<td style="text-align:right">组播</td>
+</tr>
+<tr>
+<td style="text-align:left">定义于</td>
+<td style="text-align:right">RFC 1058</td>
+<td style="text-align:right">RFC 1721、1722和2453</td>
+</tr>
+<tr>
+<td style="text-align:left">是否支持手动路由总结？</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td style="text-align:left">是否支持身份验证？</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">是</td>
+</tr>
+</tbody>
+</table>
+<h1 id="OSPF路由协议"><a href="#OSPF路由协议" class="headerlink" title="OSPF路由协议"></a>OSPF路由协议</h1><h2 id="RIP的缺陷"><a href="#RIP的缺陷" class="headerlink" title="RIP的缺陷"></a>RIP的缺陷</h2><ul>
+<li>以跳数评估的路由并非最优路径<br><img src="https://e1sewhere.github.io/images/ripqx1.png" alt="ripqx1.png"></li>
+<li>最大跳数16导致网络尺度小</li>
+<li>收敛速度慢<br><img src="https://e1sewhere.github.io/images/qx2.png" alt="qx2.png"></li>
+<li>更新发送全部路由表,浪费网络资源</li>
+</ul>
+<h2 id="OSPF基本原理"><a href="#OSPF基本原理" class="headerlink" title="OSPF基本原理"></a>OSPF基本原理</h2><h3 id="链路状态路由协议"><a href="#链路状态路由协议" class="headerlink" title="链路状态路由协议"></a>链路状态路由协议</h3><p>将开销值作为度量值，每台路由器都会收到自己区域内的所有路由信息，自己进行SPF算法（最短路径优先算法），选出最优路径。<br><img src="https://e1sewhere.github.io/images/ospf1.png" alt="ospf1.png"></p>
+<h3 id="什么是OSPF"><a href="#什么是OSPF" class="headerlink" title="什么是OSPF"></a>什么是OSPF</h3><blockquote>
+<p>OSPF（Open Shortest Path First，开放最短路径优先）是基于链路状态的自治系统内部的路由协议；<br>链路或接口的状态：UP/Down、IP地址、掩码、带宽、利用率、时延等；<br>OSPF仅传播对端设备不具备的路由信息，网络收敛迅速，并有效避免了网络资源浪费；<br>OSPF直接工作于IP层之上，IP协议号为89,且自己定义了一些安全机制;<br>OSPF以组播地址发送协议包。</p>
+</blockquote>
+<h3 id="SPF算法"><a href="#SPF算法" class="headerlink" title="SPF算法"></a>SPF算法</h3><p>将每台路由器放置在树的根节点，并根据累计开销计算到达每个目的地的最短路径，开销越低，路径越好<br>开销=参考带宽/接口带宽（b/s）</p>
+<h3 id="工作过程-1"><a href="#工作过程-1" class="headerlink" title="工作过程"></a>工作过程</h3><p><img src="https://e1sewhere.github.io/images/gzgc.png" alt="gzgc.png"><br>OSPF协议工作过程主要有四个阶段：<br>寻找邻居、建立邻接关系、链路状态信息传递、计算路由</p>
+<h4 id="寻找邻居"><a href="#寻找邻居" class="headerlink" title="寻找邻居"></a>寻找邻居</h4><p><img src="https://e1sewhere.github.io/images/xzlj.png" alt="xzlj.png"></p>
+<h4 id="建立邻接关系"><a href="#建立邻接关系" class="headerlink" title="建立邻接关系"></a>建立邻接关系</h4><p>采用DR/BDR方式建立邻接关系</p>
+<h4 id="DR和BDR选举"><a href="#DR和BDR选举" class="headerlink" title="DR和BDR选举"></a>DR和BDR选举</h4><blockquote>
+<p>路由器优先级取值：0~255，优先级最高（Pri最大）的将被宣告为DR，优先级为0的路由器不具备选举资格。<br>邻接关系数R=2（n-2）+1<br>优先级相同，Router ID大的优先。<br>DR和BDR一旦选定，即使新增优先级更高的路由器，DR和BDR也不重新选举，只有当DR和BDR都失效后，才参与选举。<br>一台路由器多个接口启用OSPF，这些接口分别属于不同的网络，这台路由器可能是其中一个网络的DR，而不是其他网络的DR。<br>DR是路由器接口的特性，不是整台路由器的特性。DR是某个网络的DR，而不是全网的DR。<br>邻居关系与邻接关系不同。OSPF区域内的路由器可以互为邻居，但只与DR、BDR建立邻接关系。</p>
+</blockquote>
+<h4 id="链路状态信息传递"><a href="#链路状态信息传递" class="headerlink" title="链路状态信息传递"></a>链路状态信息传递</h4><p><img src="https://e1sewhere.github.io/images/llztcd.png" alt="llztcd.png"><br>为了避免网络资源浪费，路由器采用路由增量更新机制：</p>
+<blockquote>
+<p>只发布邻居缺少的链路状态给邻居；<br>四次握手，避免了RIP发送全部路由浪费网络资源的问题，还可保证路由器之间信息传递的可靠性。<br>当网络变化时，路由器立即向已经建立邻接关系的邻居发送LSA摘要信息；<br>如果网络未发生变化，路由器每隔30分钟向已经建立邻接关系的邻居发送一次LSA摘要信息。</p>
+</blockquote>
+<h4 id="计算路由"><a href="#计算路由" class="headerlink" title="计算路由"></a>计算路由</h4><p><img src="https://e1sewhere.github.io/images/jsly.png" alt="jsly.png"></p>
+<h3 id="等价路由"><a href="#等价路由" class="headerlink" title="等价路由"></a>等价路由</h3><p>目的地相同且cost相同,的不同路由</p>
+<p>作用</p>
+<blockquote>
+<p>路由备份</p>
+<blockquote>
+<p>到相同目的地址的下一跳和优先级都不同<br>优先级高的为主，低的为备</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>负载分担</p>
+<blockquote>
+<p>到相同目的地址的下一跳不同，但优先级相同<br>到目的地的流量将均匀分布</p>
+</blockquote>
+</blockquote>
+<h3 id="OSPF协议分区域管理"><a href="#OSPF协议分区域管理" class="headerlink" title="OSPF协议分区域管理"></a>OSPF协议分区域管理</h3><p><img src="https://e1sewhere.github.io/images/区域管理.png" alt="区域管理.png"><br>OSPF自治系统内的通信将划分为3种类型区域内通信：</p>
+<ul>
+<li>在同一个区域内的路由器之间的通信。</li>
+<li>区域间通信：不同区域的路由器之间的通信。</li>
+<li>区域外部通信：OSPF域内路由器与另一个自治系统内的路由器之间的通信。</li>
+</ul>
+<blockquote>
+<p>骨干区域<br>区域ID号：区域0所有的区域间通信都必须通过该区域<br>非骨干区域<br>所有非骨干区域都必须与骨干区域相连，非骨干区域之间不能直接交换数据包</p>
+</blockquote>
+<blockquote>
+<p>骨干路由器（Bachbone Router，BR）：至少有一个接口与骨干区域相连的路由器<br>区域边界路由器（Area Border Routers，ABR）：连接一个或多个区域到骨干区域的路由器<br>内部路由器（Internal Router）：所有接口都属于同一个区域的路由器<br>自治系统边界路由器（Autonomous System Boundary Router，ASBR）：OSPF区域内的路由器与其他自治系统相连的路由器</p>
+</blockquote>
+<h4 id="OSPF协议区域LSA发布"><a href="#OSPF协议区域LSA发布" class="headerlink" title="OSPF协议区域LSA发布"></a>OSPF协议区域LSA发布</h4><p><img src="https://e1sewhere.github.io/images/lsafab.png" alt="lsafab.png"></p>
+<h3 id="OSPF优势"><a href="#OSPF优势" class="headerlink" title="OSPF优势"></a>OSPF优势</h3><blockquote>
+<p>所有路由器对整个网络的拓扑有相同的认识，在此基础上计算的路由不可能产生环路。<br>网络结构变化，收敛速度快。<br>每台路由器都有自己的RouterID号，能够很好地被跟踪。<br>使用SPF算法计算路由，路由选择与网络能力直接联系，更合理。<br>采用多种手段保证信息传递的可靠性，同时避免了不必要的网络资源浪费（缺失的LSA、30分钟）。</p>
+</blockquote>
+<h2 id="OSPF实施"><a href="#OSPF实施" class="headerlink" title="OSPF实施"></a>OSPF实施</h2><h3 id="配置单区域"><a href="#配置单区域" class="headerlink" title="配置单区域"></a>配置单区域</h3><h3 id="配置环回接口-了解不考"><a href="#配置环回接口-了解不考" class="headerlink" title="配置环回接口(了解不考)"></a>配置环回接口(了解不考)</h3><h3 id="OSPF身份验证"><a href="#OSPF身份验证" class="headerlink" title="OSPF身份验证"></a>OSPF身份验证</h3><p>OSPF 支持以下几种类型的身份验证：</p>
+<blockquote>
+<p>空（无身份验证）(type0)<br>明文（或简单）口令身份验证(type1)<br>MD5身份验证(type2)<br>路由器生成并检查每个OSPF 数据包路由器验证接收到的每个路由更新数据包的来源配置“密钥”（口令）；每个参与的邻居都必须配置相同的密钥</p>
+</blockquote>
+<h1 id="交换网络"><a href="#交换网络" class="headerlink" title="交换网络"></a>交换网络</h1><h2 id="VLAN间路由"><a href="#VLAN间路由" class="headerlink" title="VLAN间路由"></a>VLAN间路由</h2><h2 id="交换式以太网"><a href="#交换式以太网" class="headerlink" title="交换式以太网"></a>交换式以太网</h2><p>交换机比网桥端口多,转发能力强.</p>
+<h3 id="一些场景下的命令"><a href="#一些场景下的命令" class="headerlink" title="一些场景下的命令"></a>一些场景下的命令</h3><h3 id="VLAN作用"><a href="#VLAN作用" class="headerlink" title="VLAN作用"></a>VLAN作用</h3><ol>
+<li>限制广播域：广播域被限制在一个VLAN内，节省了带宽，提高了网络处理能力。</li>
+<li>增强局域网的安全性：不同VLAN内的报文在传输时是相互隔离的，即一个VLAN内的用户不能和其它VLAN内的用户直接通信。</li>
+<li>提高了网络的健壮性：故障被限制在一个VLAN内，本VLA N内的故障不会影响其他VLAN的正常工作。</li>
+<li>灵活构52</li>
+</ol>
+<p>#</p>
+<h1 id="Cisco实验"><a href="#Cisco实验" class="headerlink" title="Cisco实验"></a>Cisco实验</h1><h2 id="基本配置命令"><a href="#基本配置命令" class="headerlink" title="基本配置命令"></a>基本配置命令</h2><p>从用户模式切换到特权模式:<code>enable</code><br>从特权模式到全局配置模式:<code>configure terminal</code>或者<code>conf t</code><br>从全局配置模式到接口模式<code>interface 接口类型 接口号</code><br>推回到之前的模式:<code>exit</code><br>强制回到特权模式:<code>end</code>  或者<code>ctrl+z</code><br>关闭命令查找:<code>no ip domain-lookup</code><br>修改路由器名称:<code>hostname [name]</code><br>撤回命令:<code>no [需要撤回的命令]</code></p>
+<h3 id="特权模式下的命令"><a href="#特权模式下的命令" class="headerlink" title="特权模式下的命令"></a>特权模式下的命令</h3><ol>
+<li>显示所有配置:<code>show running</code></li>
+<li>显示版本号和寄存器值:<code>show version</code></li>
+<li>查看vlan所有的信息:<code>show vlan</code></li>
+<li>查看端口状态:<code>show interfaces</code></li>
+<li>查看所有配置信息:<code>show run</code></li>
+<li>查看接口摘要信息: <code>showip interface brief</code></li>
+<li>查看主机表: <code>show hosts</code></li>
+<li>查看历史记录: <code>show history</code></li>
+<li>将配置文件保存: <code>write</code></li>
+</ol>
+<h3 id="全局配置模式下的命令"><a href="#全局配置模式下的命令" class="headerlink" title="全局配置模式下的命令"></a>全局配置模式下的命令</h3><ol>
+<li>创建vlan10:<code>vlan 10</code></li>
+<li>在vlan模式下给vlan10命名:<code>name xxx</code></li>
+<li>删除vlan10:<code>no vlan 10</code></li>
+<li>检查静态路由配置:<code>show ip route</code></li>
+</ol>
+<h3 id="接口模式下的命令"><a href="#接口模式下的命令" class="headerlink" title="接口模式下的命令"></a>接口模式下的命令</h3><ol>
+<li>关闭接口:<code>shutdown</code></li>
+<li>打开接口:<code>no shutdown</code></li>
+<li>配置ip地址:<code>ip add ip地址 子网掩码</code></li>
+<li>交换机端口转换为access模式:<code>switchport mode access</code></li>
+<li>将这个端口划分给vlan 10: <code>switchport access vlan 10</code></li>
+<li>将这个端口从vlan10中删除: <code>no switchport access vlan 10</code></li>
+</ol>
+<h4 id="TELNET远程登录"><a href="#TELNET远程登录" class="headerlink" title="TELNET远程登录"></a>TELNET远程登录</h4><h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul>
+<li><del>首部 协议的作用?</del></li>
+<li><del>流量控制,拥塞控制的作用,区别</del></li>
+<li><del>UDP的错误检查</del></li>
+<li><del>私有ip为什么不从0开始</del></li>
+<li><del>网络层独立处理数据包</del></li>
+<li><del>网络层 流量控制</del></li>
+<li><del>TCP固定窗口 标签查看</del></li>
+<li><del>固定窗口和滑动窗口区分使用</del></li>
+</ul>
+<h1 id="需要重看的内容"><a href="#需要重看的内容" class="headerlink" title="需要重看的内容"></a>需要重看的内容</h1><ul>
+<li>TCP头,TCP握手过程计算</li>
+<li>OSI模型作用,单位等</li>
+<li>子网划分合并练习题</li>
+<li>Cioc命令</li>
+<li>二层主机通信,三层通信</li>
+<li>telnet 远程登录</li>
+</ul>
+<div><h1>RECOMMEND</h1><ul><li><a href="https://lailin.xyz/post/50628.html">linux下天翼飞扬认证上网的一个解决方法</a></li></ul></div>
+          
+          <div>    
+ 
+ 
+    <div class="post-copyright">
+    	如果文章有问题欢迎指出,或者你也可以联系我
+      <div class="post-copyright-author">
+          <strong>本文作者：</strong>E1se
+      </div>
+      <div class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/12/05/计算机网络基础/" title="计算机网络基础笔记">2018/12/05/计算机网络基础/</a>
+      </div>
+      <div class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络/" rel="tag"> <i class="fa fa-tag"></i>网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/30/数据库学习笔记/" rel="next" title="数据库学习笔记">
+                <i class="fa fa-chevron-left"></i> 数据库学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/27/使用PHPStudy后本机MySQL无法启动服务/" rel="prev" title="使用PHPStudy后本机MySQL无法启动服务">
+                使用PHPStudy后本机MySQL无法启动服务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/eva1.ico"
+                alt="E1se" />
+            
+              <p class="site-author-name" itemprop="name">E1se</p>
+              <p class="site-description motion-element" itemprop="description">none</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/e1sewhere" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="elsewhere997@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐站点
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://e1sewhere.github.io/EdenPage/11111/" title="什么也没有" target="_blank">什么也没有</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("02/20/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+  
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识网络"><span class="nav-number">1.</span> <span class="nav-text">初识网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络类型"><span class="nav-number">2.</span> <span class="nav-text">网络类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拓扑类型"><span class="nav-number">2.1.</span> <span class="nav-text">拓扑类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络传输模式"><span class="nav-number">2.2.</span> <span class="nav-text">网络传输模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络通信类型"><span class="nav-number">2.3.</span> <span class="nav-text">网络通信类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI分层模型"><span class="nav-number">2.4.</span> <span class="nav-text">OSI分层模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI优点"><span class="nav-number">2.4.1.</span> <span class="nav-text">OSI优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">2.4.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据封装"><span class="nav-number">2.4.3.</span> <span class="nav-text">数据封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对等通信"><span class="nav-number">2.4.4.</span> <span class="nav-text">对等通信</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-协议"><span class="nav-number">3.</span> <span class="nav-text">TCP/IP 协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">3.1.</span> <span class="nav-text">模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络接口层"><span class="nav-number">4.</span> <span class="nav-text">网络接口层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC地址"><span class="nav-number">4.1.</span> <span class="nav-text">MAC地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以太网帧结构"><span class="nav-number">4.2.</span> <span class="nav-text">以太网帧结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSMA-CD"><span class="nav-number">4.3.</span> <span class="nav-text">CSMA/CD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">5.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Internet协议特征"><span class="nav-number">5.1.</span> <span class="nav-text">Internet协议特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP地址作用"><span class="nav-number">5.2.</span> <span class="nav-text">IP地址作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP地址的格式"><span class="nav-number">5.3.</span> <span class="nav-text">IP地址的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP地址分类"><span class="nav-number">5.4.</span> <span class="nav-text">IP地址分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公有IP地址"><span class="nav-number">5.5.</span> <span class="nav-text">公有IP地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#私有IP地址"><span class="nav-number">5.6.</span> <span class="nav-text">私有IP地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP数据报"><span class="nav-number">5.7.</span> <span class="nav-text">IP数据报</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首部-可变部分"><span class="nav-number">5.7.1.</span> <span class="nav-text">首部-可变部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首部-固定部分"><span class="nav-number">5.7.2.</span> <span class="nav-text">首部-固定部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#版本"><span class="nav-number">5.7.2.1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#首部长度"><span class="nav-number">5.7.2.2.</span> <span class="nav-text">首部长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务类型"><span class="nav-number">5.7.2.3.</span> <span class="nav-text">服务类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总长度"><span class="nav-number">5.7.2.4.</span> <span class="nav-text">总长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识"><span class="nav-number">5.7.2.5.</span> <span class="nav-text">标识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标志-flag"><span class="nav-number">5.7.2.6.</span> <span class="nav-text">标志(flag)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#片偏移"><span class="nav-number">5.7.2.7.</span> <span class="nav-text">片偏移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生存时间"><span class="nav-number">5.7.2.8.</span> <span class="nav-text">生存时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协议"><span class="nav-number">5.7.2.9.</span> <span class="nav-text">协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#首部检验和"><span class="nav-number">5.7.2.10.</span> <span class="nav-text">首部检验和</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#源地址-目的地址"><span class="nav-number">5.7.2.10.1.</span> <span class="nav-text">源地址/目的地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子网划分"><span class="nav-number">5.7.3.</span> <span class="nav-text">子网划分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子网掩码的作用"><span class="nav-number">5.7.3.1.</span> <span class="nav-text">子网掩码的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认子网掩码"><span class="nav-number">5.7.3.2.</span> <span class="nav-text">默认子网掩码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子网掩码计算"><span class="nav-number">5.7.3.3.</span> <span class="nav-text">子网掩码计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子网划分步骤"><span class="nav-number">5.7.3.4.</span> <span class="nav-text">子网划分步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP-地址解析协议"><span class="nav-number">5.8.</span> <span class="nav-text">ARP(地址解析协议)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP工作过程"><span class="nav-number">5.9.</span> <span class="nav-text">ARP工作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代理ARP工作过程"><span class="nav-number">5.9.1.</span> <span class="nav-text">代理ARP工作过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无故ARP-反向ARP"><span class="nav-number">5.9.2.</span> <span class="nav-text">无故ARP/反向ARP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP协议"><span class="nav-number">5.10.</span> <span class="nav-text">ICMP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作过程"><span class="nav-number">5.10.1.</span> <span class="nav-text">工作过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ICMP消息格式"><span class="nav-number">5.10.2.</span> <span class="nav-text">ICMP消息格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ping的实现原理"><span class="nav-number">5.10.3.</span> <span class="nav-text">Ping的实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tracert实现原理"><span class="nav-number">5.10.4.</span> <span class="nav-text">Tracert实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv6-地址"><span class="nav-number">5.11.</span> <span class="nav-text">IPv6 地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IPv6地址分类"><span class="nav-number">5.11.1.</span> <span class="nav-text">IPv6地址分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传输层"><span class="nav-number">6.</span> <span class="nav-text">传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传输层协议"><span class="nav-number">6.1.</span> <span class="nav-text">传输层协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">6.2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP特点"><span class="nav-number">6.2.1.</span> <span class="nav-text">TCP特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP报头"><span class="nav-number">6.2.2.</span> <span class="nav-text">TCP报头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP的连接与拆除"><span class="nav-number">6.2.3.</span> <span class="nav-text">TCP的连接与拆除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP可靠传输机制"><span class="nav-number">6.2.4.</span> <span class="nav-text">TCP可靠传输机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么用TCP可以在IP上实现可靠的连接"><span class="nav-number">6.2.5.</span> <span class="nav-text">为什么用TCP可以在IP上实现可靠的连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">6.3.</span> <span class="nav-text">UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP特点"><span class="nav-number">6.3.1.</span> <span class="nav-text">UDP特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP报头"><span class="nav-number">6.3.2.</span> <span class="nav-text">UDP报头</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">7.</span> <span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层概述"><span class="nav-number">7.1.</span> <span class="nav-text">应用层概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP协议"><span class="nav-number">7.2.</span> <span class="nav-text">DHCP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DHCP简介"><span class="nav-number">7.2.1.</span> <span class="nav-text">DHCP简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DHCP特点"><span class="nav-number">7.2.2.</span> <span class="nav-text">DHCP特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DHCP系统组成"><span class="nav-number">7.2.3.</span> <span class="nav-text">DHCP系统组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DHCP地址分配方式"><span class="nav-number">7.2.4.</span> <span class="nav-text">DHCP地址分配方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DHCP报文"><span class="nav-number">7.2.5.</span> <span class="nav-text">DHCP报文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP获取过程"><span class="nav-number">7.2.6.</span> <span class="nav-text">IP获取过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址动态获取过程"><span class="nav-number">7.2.6.1.</span> <span class="nav-text">IP地址动态获取过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址拒绝和释放"><span class="nav-number">7.2.6.2.</span> <span class="nav-text">IP地址拒绝和释放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DHCP租约更新"><span class="nav-number">7.2.6.3.</span> <span class="nav-text">DHCP租约更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DHCP-工作原理"><span class="nav-number">7.2.6.4.</span> <span class="nav-text">DHCP 工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DHCP中继工作原理"><span class="nav-number">7.2.6.5.</span> <span class="nav-text">DHCP中继工作原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS协议"><span class="nav-number">7.3.</span> <span class="nav-text">DNS协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS简介"><span class="nav-number">7.3.1.</span> <span class="nav-text">DNS简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS解析原理"><span class="nav-number">7.3.2.</span> <span class="nav-text">DNS解析原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS服务器类型"><span class="nav-number">7.3.3.</span> <span class="nav-text">DNS服务器类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS查询"><span class="nav-number">7.3.4.</span> <span class="nav-text">DNS查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归查询"><span class="nav-number">7.3.4.1.</span> <span class="nav-text">递归查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代查询"><span class="nav-number">7.3.4.2.</span> <span class="nav-text">迭代查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向查询"><span class="nav-number">7.3.4.3.</span> <span class="nav-text">反向查询</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNSS域名解析完整过程"><span class="nav-number">7.3.5.</span> <span class="nav-text">DNSS域名解析完整过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主机间通信过程"><span class="nav-number">8.</span> <span class="nav-text">主机间通信过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#各层设备"><span class="nav-number">8.1.</span> <span class="nav-text">各层设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二层主机通信过程"><span class="nav-number">8.2.</span> <span class="nav-text">二层主机通信过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三层主机通信过程"><span class="nav-number">8.3.</span> <span class="nav-text">三层主机通信过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由基础"><span class="nav-number">9.</span> <span class="nav-text">路由基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#路由原理"><span class="nav-number">9.1.</span> <span class="nav-text">路由原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由表构成"><span class="nav-number">9.1.1.</span> <span class="nav-text">路由表构成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由项的分类"><span class="nav-number">9.1.2.</span> <span class="nav-text">路由项的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由表查找规则"><span class="nav-number">9.1.3.</span> <span class="nav-text">路由表查找规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最长匹配转发原则"><span class="nav-number">9.1.3.1.</span> <span class="nav-text">最长匹配转发原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由迭代查找"><span class="nav-number">9.1.3.2.</span> <span class="nav-text">路由迭代查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认路由转发"><span class="nav-number">9.1.3.3.</span> <span class="nav-text">默认路由转发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由表的来源"><span class="nav-number">9.1.4.</span> <span class="nav-text">路由表的来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由度量值-Metric"><span class="nav-number">9.1.5.</span> <span class="nav-text">路由度量值(Metric)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由优先级"><span class="nav-number">9.1.6.</span> <span class="nav-text">路由优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由优环路"><span class="nav-number">9.1.7.</span> <span class="nav-text">路由优环路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由原理-1"><span class="nav-number">9.1.8.</span> <span class="nav-text">路由原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态路由"><span class="nav-number">9.2.</span> <span class="nav-text">静态路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺省路由"><span class="nav-number">9.3.</span> <span class="nav-text">缺省路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由协议"><span class="nav-number">9.4.</span> <span class="nav-text">路由协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议与可路由协议"><span class="nav-number">9.4.1.</span> <span class="nav-text">路由协议与可路由协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议基本原理"><span class="nav-number">9.4.2.</span> <span class="nav-text">路由协议基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议在协议栈中的位置"><span class="nav-number">9.4.3.</span> <span class="nav-text">路由协议在协议栈中的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议分类"><span class="nav-number">9.4.4.</span> <span class="nav-text">路由协议分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内部-外部协议"><span class="nav-number">9.4.4.1.</span> <span class="nav-text">内部/外部协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#距离矢量协议与链路状态协议"><span class="nav-number">9.4.4.2.</span> <span class="nav-text">距离矢量协议与链路状态协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#距离矢量协议路由原理"><span class="nav-number">9.4.4.3.</span> <span class="nav-text">距离矢量协议路由原理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由选路原则"><span class="nav-number">9.4.5.</span> <span class="nav-text">路由选路原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议的主要指标"><span class="nav-number">9.4.6.</span> <span class="nav-text">路由协议的主要指标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RIP路由协议"><span class="nav-number">10.</span> <span class="nav-text">RIP路由协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协议概述"><span class="nav-number">10.1.</span> <span class="nav-text">协议概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RIP工作原理"><span class="nav-number">10.2.</span> <span class="nav-text">RIP工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP路由表的初始化"><span class="nav-number">10.2.1.</span> <span class="nav-text">RIP路由表的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP路由表的更新"><span class="nav-number">10.2.2.</span> <span class="nav-text">RIP路由表的更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP定时器"><span class="nav-number">10.2.3.</span> <span class="nav-text">RIP定时器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP路由表维护"><span class="nav-number">10.2.4.</span> <span class="nav-text">RIP路由表维护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP-特点-重点"><span class="nav-number">10.2.5.</span> <span class="nav-text">RIP 特点 (重点)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RIP路由协议环路避免机制"><span class="nav-number">10.3.</span> <span class="nav-text">RIP路由协议环路避免机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由毒化"><span class="nav-number">10.3.1.</span> <span class="nav-text">路由毒化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平分割"><span class="nav-number">10.3.2.</span> <span class="nav-text">水平分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#毒性逆转"><span class="nav-number">10.3.3.</span> <span class="nav-text">毒性逆转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义最大值"><span class="nav-number">10.3.4.</span> <span class="nav-text">定义最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抑制时间"><span class="nav-number">10.3.5.</span> <span class="nav-text">抑制时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发更新"><span class="nav-number">10.3.6.</span> <span class="nav-text">触发更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-记住名字就好"><span class="nav-number">10.3.7.</span> <span class="nav-text">总结(记住名字就好)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RIPv1缺点"><span class="nav-number">10.4.</span> <span class="nav-text">RIPv1缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RIPv2改进"><span class="nav-number">10.5.</span> <span class="nav-text">RIPv2改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v1v2对比"><span class="nav-number">10.6.</span> <span class="nav-text">v1v2对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSPF路由协议"><span class="nav-number">11.</span> <span class="nav-text">OSPF路由协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RIP的缺陷"><span class="nav-number">11.1.</span> <span class="nav-text">RIP的缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSPF基本原理"><span class="nav-number">11.2.</span> <span class="nav-text">OSPF基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链路状态路由协议"><span class="nav-number">11.2.1.</span> <span class="nav-text">链路状态路由协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是OSPF"><span class="nav-number">11.2.2.</span> <span class="nav-text">什么是OSPF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SPF算法"><span class="nav-number">11.2.3.</span> <span class="nav-text">SPF算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作过程-1"><span class="nav-number">11.2.4.</span> <span class="nav-text">工作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找邻居"><span class="nav-number">11.2.4.1.</span> <span class="nav-text">寻找邻居</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立邻接关系"><span class="nav-number">11.2.4.2.</span> <span class="nav-text">建立邻接关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DR和BDR选举"><span class="nav-number">11.2.4.3.</span> <span class="nav-text">DR和BDR选举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链路状态信息传递"><span class="nav-number">11.2.4.4.</span> <span class="nav-text">链路状态信息传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算路由"><span class="nav-number">11.2.4.5.</span> <span class="nav-text">计算路由</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等价路由"><span class="nav-number">11.2.5.</span> <span class="nav-text">等价路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF协议分区域管理"><span class="nav-number">11.2.6.</span> <span class="nav-text">OSPF协议分区域管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OSPF协议区域LSA发布"><span class="nav-number">11.2.6.1.</span> <span class="nav-text">OSPF协议区域LSA发布</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF优势"><span class="nav-number">11.2.7.</span> <span class="nav-text">OSPF优势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSPF实施"><span class="nav-number">11.3.</span> <span class="nav-text">OSPF实施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置单区域"><span class="nav-number">11.3.1.</span> <span class="nav-text">配置单区域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环回接口-了解不考"><span class="nav-number">11.3.2.</span> <span class="nav-text">配置环回接口(了解不考)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF身份验证"><span class="nav-number">11.3.3.</span> <span class="nav-text">OSPF身份验证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#交换网络"><span class="nav-number">12.</span> <span class="nav-text">交换网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VLAN间路由"><span class="nav-number">12.1.</span> <span class="nav-text">VLAN间路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换式以太网"><span class="nav-number">12.2.</span> <span class="nav-text">交换式以太网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些场景下的命令"><span class="nav-number">12.2.1.</span> <span class="nav-text">一些场景下的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VLAN作用"><span class="nav-number">12.2.2.</span> <span class="nav-text">VLAN作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cisco实验"><span class="nav-number">13.</span> <span class="nav-text">Cisco实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本配置命令"><span class="nav-number">13.1.</span> <span class="nav-text">基本配置命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特权模式下的命令"><span class="nav-number">13.1.1.</span> <span class="nav-text">特权模式下的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置模式下的命令"><span class="nav-number">13.1.2.</span> <span class="nav-text">全局配置模式下的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口模式下的命令"><span class="nav-number">13.1.3.</span> <span class="nav-text">接口模式下的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TELNET远程登录"><span class="nav-number">13.1.3.1.</span> <span class="nav-text">TELNET远程登录</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">14.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要重看的内容"><span class="nav-number">15.</span> <span class="nav-text">需要重看的内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">RECOMMEND</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">E1se</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">190.2k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>|
+</span>
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz',
+        appKey: '9wRib5jaIuQL2dVmtXx24smG',
+        placeholder: 'Just go go',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz", "9wRib5jaIuQL2dVmtXx24smG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+
+<!-- �Զ����js�ļ� -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+ 
+ <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+ 
+</body>
+</html>
+<!-- 页面点击价值观 -->
+<script type="text/javascript" src="/js/src/jiazhiguan.js"></script>
+
+ <!--动态背景轮播-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script>
+  $.backstretch([  
+          "/images/background/1.jpg",
+          "/images/background/2.jpg",
+          "/images/background/3.jpg"
+    ], { duration: 30000, fade: 1500 }); 
+</script>
+
+
+

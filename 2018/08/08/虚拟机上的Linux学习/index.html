@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="google-site-verification" content="jIIp89W5czDndIpDpqacsdM_ooroPfoz-v_D4UrrwmM" />
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #a40000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #a40000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #a40000;    /*上边框颜色*/
+        border-left-color: #a40000;    /*左边框颜色*/
+    }
+</style>
+
+
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="开始学习Linux了,还没有掌握系统完全备份的技术,所以不敢直接在物理机器上安装Linux,我选择使用虚拟机安装.由于时间不多,我会略过部分内容的笔记,但基本保证书本内容都过一遍.">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟机上的Linux学习">
+<meta property="og:url" content="https://e1sewhere.github.io/2018/08/08/虚拟机上的Linux学习/index.html">
+<meta property="og:site_name" content="E1sewhere">
+<meta property="og:description" content="开始学习Linux了,还没有掌握系统完全备份的技术,所以不敢直接在物理机器上安装Linux,我选择使用虚拟机安装.由于时间不多,我会略过部分内容的笔记,但基本保证书本内容都过一遍.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://e1sewhere.github.io/images/文件系统.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/文件系统3.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/文件系统2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/文件属性2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/文件属性.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/权限格式.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/">
+<meta property="og:image" content="https://e1sewhere.github.io/images/chmod2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/chmod1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/main.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/man_help.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/date.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/wget.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/ps命令.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/freeh.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/文件管理4.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/touchu.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/Vim模式.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/脚本参数.png">
+<meta property="og:updated_time" content="2019-03-29T11:08:32.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="虚拟机上的Linux学习">
+<meta name="twitter:description" content="开始学习Linux了,还没有掌握系统完全备份的技术,所以不敢直接在物理机器上安装Linux,我选择使用虚拟机安装.由于时间不多,我会略过部分内容的笔记,但基本保证书本内容都过一遍.">
+<meta name="twitter:image" content="https://e1sewhere.github.io/images/文件系统.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://e1sewhere.github.io/2018/08/08/虚拟机上的Linux学习/"/>
+
+
+
+
+
+  <title>虚拟机上的Linux学习 | E1sewhere</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+   
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    
+    <div class="top-scroll-bar"></div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">E1sewhere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header> 
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://e1sewhere.github.io/2018/08/08/虚拟机上的Linux学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E1se">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/eva1.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E1sewhere">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">虚拟机上的Linux学习</h1>
+        
+
+        <div class="post-meta">
+		
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T15:48:28+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-29T19:08:32+08:00">
+                2019-03-29
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/08/虚拟机上的Linux学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/08/虚拟机上的Linux学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/08/虚拟机上的Linux学习/" class="leancloud_visitors" data-flag-title="虚拟机上的Linux学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  17,085
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  68
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p>开始学习Linux了,还没有掌握系统完全备份的技术,所以不敢直接在物理机器上安装Linux,我选择使用虚拟机安装.由于时间不多,我会略过部分内容的笔记,但基本保证书本内容都过一遍.<br><a id="more"></a></p>
+<h1 id="个人补充"><a href="#个人补充" class="headerlink" title="个人补充"></a>个人补充</h1><ul>
+<li>linux下基本上都严格区分大小写包括目录</li>
+</ul>
+<h1 id="使用虚拟机安装Linux"><a href="#使用虚拟机安装Linux" class="headerlink" title="使用虚拟机安装Linux"></a>使用虚拟机安装Linux</h1><ul>
+<li>最开始参考的网上书籍《linux就该这么学》，所以根据书籍选择的RHEL-server-7发行版作为学习环境。 *</li>
+</ul>
+<h2 id="下载基本环境"><a href="#下载基本环境" class="headerlink" title="下载基本环境"></a>下载基本环境</h2><blockquote>
+<p>VM12<br>RHEL-server-7</p>
+</blockquote>
+<h2 id="虚拟机安装RHEL-7"><a href="#虚拟机安装RHEL-7" class="headerlink" title="虚拟机安装RHEL 7"></a>虚拟机安装RHEL 7</h2><blockquote>
+<p>新建虚拟机<br>典型安装<br>稍后安装操作系统<br>客户机操作系统:Linux Red Hat Enterprise Linux 7 64 位<br>最大磁盘大小:20GB<br>自定义硬件修改</p>
+<blockquote>
+<p>内存:2GB<br>处理器:默认;勾选虚拟化vt;虚拟化cpu计数器<br>光驱:使用ISO镜像文件:选择下载好的RHEL iso文件<br>网卡:我选择的是仅主机模式,你可以自行修改<br>打印机等设备可以根据需求修改或者删除</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>配置完成</p>
+</blockquote>
+<blockquote>
+<p>虚拟机管理界面单机”开启此虚拟机”<br>Linux安装</p>
+<blockquote>
+<p>回车开始加载安装镜像 30-60s<br>选择语言(最好英语) ;单击continue<br>单击SOFTWARE SELECTION选项<br>单击Server with GUI ;单击Done<br>单击 NETWORK&amp;HOSTNAME,将Hostname字段设置为l<code>inuxprobe.com</code>单击Done<br>单击INSTALL ATION DESTINATION,不做任何修改单击Done<br>单击Begin Installation<br>选择ROOT PASSWORD<br>设置root密码,若使用弱密码则需要单击两次Done(我使用的密码是我常用的密码)<br>等待30-60min<br>Reboot<br>单击LICENSE INFORMATION<br>选中I accept the license agreement ;单击Done<br>单击FINISH CONFIGURATION<br>单击Forward<br>选中 No,Iprefer to register at alater time<br>单击Finish(此处设置为不注册系统对后续的实验操作和生产工作均无影响)<br>选择语言(我选的英语) next next<br>创建一个本地普通用户 名称(我的是e1se) 密码(我的密码是通用密码) 单击Next<br>选择中国的时区 Next<br>单击Start using Red Hat Enterprise Linux Server</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>RHEL7 安装部署工作完成</p>
+</blockquote>
+<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="一些符号"><a href="#一些符号" class="headerlink" title="一些符号"></a>一些符号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[user@localhost /]$ cd</span><br><span class="line">[user@localhost ~]$ cd</span><br></pre></td></tr></table></figure>
+<p>上面的<code>~</code>代表你的<code>/home/user</code>目录<br><code>/</code>代表根目录<br><code>$</code>代表普通用户<br><code>#</code>代表超级(root)用户</p>
+<h2 id="使用者与群组"><a href="#使用者与群组" class="headerlink" title="使用者与群组"></a>使用者与群组</h2><p>群组内的成员具有相同的权限,root用户有所有权限.<br>默认,系统上的所有账户信息都是记录在<code>/etc/passwd</code>文件内<br>个人密码记录在<code>/etc/shadow/</code>文件,群组名称记录在<code>/etc/group</code>内</p>
+<h3 id="用户类型"><a href="#用户类型" class="headerlink" title="用户类型"></a>用户类型</h3><ul>
+<li>超级用户</li>
+<li>普通用户:需要由root用户或者其他管理员创建,拥有的权限收到限制,通常只在自己的<code>home</code>目录中拥有完全权限.</li>
+<li>虚拟用户:大多是在安装系统及部分程序自动添加的. 虚拟用户不能登录系统,他们的存在是为了方便系统管理,用于维持系统或者某个程序正常运行.</li>
+</ul>
+<h3 id="用户组类型"><a href="#用户组类型" class="headerlink" title="用户组类型"></a>用户组类型</h3><p>为了方便检查,设置文件或目录的访问权限.每个用户账号至少属于一个组,这个组称为该用户的基本组.<br>创建一个用户账号就会自动创建一个与该帐号同名的用户组.每创建一个用户账号就会自动创建一个与该帐号同名的用户组.<br>每个用户可以同时加入多个组,除去基本组,其余的都称为附加组.</p>
+<h3 id="UID和GID"><a href="#UID和GID" class="headerlink" title="UID和GID"></a>UID和GID</h3><h4 id="UID"><a href="#UID" class="headerlink" title="UID"></a>UID</h4><p>uid是每一个用户账号的唯一标识符.<br>Root账号UID:0<br>虚拟用户账号UID:1~499<br>普通用户账号UID:500~65535</p>
+<h4 id="GID"><a href="#GID" class="headerlink" title="GID"></a>GID</h4><p>每个用户组的唯一标识符<br>ROOT UID:0<br>虚拟组账号GID:1~499<br>普通组账号UID:500~65535</p>
+<h3 id="用户配置文件"><a href="#用户配置文件" class="headerlink" title="用户配置文件"></a>用户配置文件</h3><p>登录时系统会查阅<code>/etc/passwd</code>文件,查看是否有这个账号,然后确定<code>UID</code>,通过<code>UID</code>确认用户和身份,存在账号则读取<code>/etc/shadow</code>文件中所对应的密码,密码无误,登录系统.</p>
+<h4 id="用户账号文件"><a href="#用户账号文件" class="headerlink" title="用户账号文件"></a>用户账号文件</h4><p><code>passwd</code>文件每行代表一个用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash  </span><br><span class="line">//用户名:密码:uid:gid:注释性描述:home目录:Shell类型</span><br></pre></td></tr></table></figure></p>
+<p>用户登录时所用的shell类型默认是<code>bin/bash</code></p>
+<h4 id="用户影子文件-shadow"><a href="#用户影子文件-shadow" class="headerlink" title="用户影子文件(shadow)"></a>用户影子文件(shadow)</h4><p>shadow文件只有root用户才能查看.</p>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="useradd创建用户"><a href="#useradd创建用户" class="headerlink" title="useradd创建用户"></a>useradd创建用户</h4><p>用法:useradd [参数] [用户名]<br>部分参数:<br>|参数|作用|<br>| :———– | :———————— |<br>| -u | 指定UID |<br>| -d | 指定用户home目录 |<br>| -g | 指定用户的基本组 |<br>| -G  |指定用户的附加组 |<br>| -e | 指定用户账号失效时间,yyyy-mm–dd |<br>| -M | 不建立用户的home目录  |<br>| -s | 指定用户的登录Shell |</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -e 2018-05-01 temp01 #创建一个失效时间是2080501的用户 temp01</span><br><span class="line">useradd -s /sbin/nologin -M ftpuser #创建一个禁止登录的,不创建home目录的用户ftpuser</span><br></pre></td></tr></table></figure>
+<h4 id="passwd为用户设置密码"><a href="#passwd为用户设置密码" class="headerlink" title="passwd为用户设置密码"></a>passwd为用户设置密码</h4><p>用法:passwd [参数] 用户名<br>部分参数<br>| 参数 | 作用 |<br>| :———–| :—————————————– |<br>| -d | 清空密码,只有系统管理员才能使用 |<br>| -l | 锁住账号 |<br>| -u | 解开已经上锁的账号 |</p>
+<h4 id="su-切换用户身份"><a href="#su-切换用户身份" class="headerlink" title="su 切换用户身份"></a>su 切换用户身份</h4><p>用法:su [用户名]</p>
+<h4 id="userdel删除用户账号"><a href="#userdel删除用户账号" class="headerlink" title="userdel删除用户账号"></a>userdel删除用户账号</h4><p>用法:userdel [参数] 用户名<br>部分参数:<br>-r: 删除用户账号及其home目录</p>
+<h4 id="usermod-修改用户账号属性"><a href="#usermod-修改用户账号属性" class="headerlink" title="usermod 修改用户账号属性"></a>usermod 修改用户账号属性</h4><p>用法: usermod [参数] 用户名<br>| 参数 | 描述 |<br>| :————– | :—————————————- |<br>| -d | 修改用户home目录 |<br>| -g | 修改用户基本组 |<br>| -G | 修改用户附加组 |<br>| -l | 修改用户账号名称 |</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -l admin horse #将horse重命名为admin</span><br></pre></td></tr></table></figure>
+<h4 id="groupadd-新建用户组"><a href="#groupadd-新建用户组" class="headerlink" title="groupadd 新建用户组"></a>groupadd 新建用户组</h4><p>用法:groupadd [选项] 组名<br>部分参数: -g :指定gid号</p>
+<h4 id="gpasswd添加删除组成员"><a href="#gpasswd添加删除组成员" class="headerlink" title="gpasswd添加删除组成员"></a>gpasswd添加删除组成员</h4><p>用法: gpasswd [选项] 用户名 组名<br>| 参数 | 描述 |<br>| :————– | :—————————————- |<br>| -d | 指定组删除用户 |<br>| -a | 添加用户到指定组 |</p>
+<h4 id="groupdel删除用户组"><a href="#groupdel删除用户组" class="headerlink" title="groupdel删除用户组"></a>groupdel删除用户组</h4><p>用法:groupdel [组名]</p>
+<h4 id="groups-查询某个用户所属组"><a href="#groups-查询某个用户所属组" class="headerlink" title="groups 查询某个用户所属组"></a>groups 查询某个用户所属组</h4><p>usage:groups [用户名]</p>
+<h2 id="Linux目录结构和文件类型"><a href="#Linux目录结构和文件类型" class="headerlink" title="Linux目录结构和文件类型"></a>Linux目录结构和文件类型</h2><h3 id="Linux系统结构"><a href="#Linux系统结构" class="headerlink" title="Linux系统结构"></a>Linux系统结构</h3><p><img src="https://e1sewhere.github.io/images/文件系统.png" alt="文件系统.png"><br><img src="https://e1sewhere.github.io/images/文件系统3.png" alt="文件系统.png"><br><img src="https://e1sewhere.github.io/images/文件系统2.png" alt="文件系统.png"></p>
+<ul>
+<li>Linux中只有一个根目录<code>/</code></li>
+<li>home目录类似用户配置文件夹,用于存放个人数据</li>
+<li>Linux 系统中所有用户的home目录都集中在<code>/home</code>目录中,如<code>/home/test</code>,除了root用户的home目录是<code>/root</code>.</li>
+</ul>
+<h3 id="Linux文件基本属性"><a href="#Linux文件基本属性" class="headerlink" title="Linux文件基本属性"></a>Linux文件基本属性</h3><h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>使用命令<code>ls -ld bin</code>查看<code>bin</code>这个文件的详细信息且不显示这个文件下的子目录<br><img src="https://e1sewhere.github.io/images/文件属性2.png" alt="文件属性2.png"><br><img src="https://e1sewhere.github.io/images/文件属性.png" alt="文件属性.png"></p>
+<ol>
+<li>代表这个文件类型<ol>
+<li>为[d]表示目录</li>
+<li>为[-]表示文件</li>
+<li>[l]表示链接文档</li>
+<li>[b]表示装置文件里面的可供存储的接口设备(可随机存取装置);</li>
+<li>[c]表示装置文件里面的串行端口设备(如键盘,鼠标等)</li>
+</ol>
+</li>
+<li>代表这个文件的权限</li>
+<li>硬连接的数量(文件默认是1,目录默认是2)</li>
+<li>文件所有者</li>
+<li>文件所有组(文件所有者不一定属于文件所有组)</li>
+<li>文件大小默认大小为b,可在命令后加-h,显示mb,gb等单位</li>
+<li>文件创建时间或修改时间</li>
+<li>文件名称</li>
+</ol>
+<p>Linux文件的属性包括:文件节点,种类,权限模式,链接数量,归属用户,归属用户组,最近访问或修改的时间等内容.</p>
+<h4 id="Linux文件权限"><a href="#Linux文件权限" class="headerlink" title="Linux文件权限"></a>Linux文件权限</h4><h5 id="权限对目录树的作用"><a href="#权限对目录树的作用" class="headerlink" title="权限对目录树的作用"></a>权限对目录树的作用</h5><p>r: 查询目录下文件名的权限(ls)<br>w:具有修改目录结构的权限,如新建目录和文件,删除目录下的文件和目录,重命名次目录下的文件等(touch rm mv cp)<br>x: 可以进入目录的权限(cd)</p>
+<h5 id="权限对文件的作用"><a href="#权限对文件的作用" class="headerlink" title="权限对文件的作用"></a>权限对文件的作用</h5><p>r:可读取文件内容(cat more head tail)<br>w:可编辑新增修改文件内容(vi vim),但不包含删除文件<br>x:可执行权限</p>
+<p>权限格式:(2号位置)<br><img src="https://e1sewhere.github.io/images/权限格式.png" alt="权限格式.png"></p>
+<h4 id="默认权限"><a href="#默认权限" class="headerlink" title="默认权限"></a>默认权限</h4><p>文件在创建时如果不指定具体的权限，那么系统会给它分配一个默认的权限<br>使用<code>umask</code>查看umask值 例如  0002<br>第一个0是特殊默认权限,可以先不管,后面的002就是我们需要的值,由于普通文件没有<code>可执行权限</code>,只有r,w权限,所以浅显最大值为(-rw-rw-rw)666.目录需要进入访问权限,最大权限为777.</p>
+<p><strong>计算</strong><br>文件默认权限最大值为666,默认权限需要换算成字母再相减.建立文件后的默认权限,为666减去umask值的后三个.目录就是777减去umask值的后三个<br><img src="https://e1sewhere.github.io/images/" alt="默认权限计算.png"><br><strong>修改umask值</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umask 0027</span><br></pre></td></tr></table></figure></p>
+<p>umask命令只能临时修改umask值，系统重启之后umask将还原成默认值。如果要永久修改umask值，需要修改/etc/profile文件或是修改/etc/bashrc文件，例如要将默认umask值设置为027，那么可以在文件中增加一行“umask 027”</p>
+<h5 id="改变文件的属性与权限"><a href="#改变文件的属性与权限" class="headerlink" title="改变文件的属性与权限"></a>改变文件的属性与权限</h5><ul>
+<li>charp[选项][组][文件]:改变文件所属群组<br>-c当发生改变时输出调试信息<br>-R处理指定目录极其子目录下的所有文件<br>-v运行时显示详细信息的处理信息</li>
+<li>chown[选项]…[所有者][:[组]]文件…:改变文件拥有者<br>-c显示更改部分的信息<br>-R处理指定目录及其子目录下的所有文件<br>-v显示详细的处理信息</li>
+<li>chmod[选项][指定文件的权限模式或者要改变权限的文件]:改变文件的权限,suid,sgid,sbid等特性<br><img src="https://e1sewhere.github.io/images/chmod2.png" alt="chmod2.png"><br><img src="https://e1sewhere.github.io/images/chmod1.png" alt="chmod1.png"><br>例如:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x,g+w f01  //为文件设置自己可以执行,组员可以写入的权限</span><br></pre></td></tr></table></figure>
+<h4 id="强制位-冒险位"><a href="#强制位-冒险位" class="headerlink" title="强制位,冒险位"></a>强制位,冒险位</h4><p>强制位有:SUID和SGID,主要用于文件及目录<br>冒险位有:SBIT,只用于目录,多数是共享目录</p>
+<p><strong>强制位和冒险位的表现方式</strong>：<br>强制位与冒险位都是添加在执行权限的位置上，强制位使用S和s来表示，冒险位使用T和t来表示。如果该位置上原已有执行权限，则强制位与冒险位以小写字母的方式表示。否则，以大写字母表示。即：<br>强制位<br>S：表示该位没有x位<br>s：表示该位有x位<br>冒险位<br>T：表示该位没有x位<br>t：表示该位有x位</p>
+<h5 id="SUID"><a href="#SUID" class="headerlink" title="SUID"></a>SUID</h5><p>setuid(在u的x位置上使用一个s)对文件进行设置<br>默认情况下用户执行一个指令,会以该用户的身份来运行进程.当一个文件设置了SUID后,所有用户执行这个文件都是以这个用户的所有者的权限来执行.<strong>相当于让对此文件没有执行权限的用户执行此文件</strong></p>
+<h5 id="SGID"><a href="#SGID" class="headerlink" title="SGID"></a>SGID</h5><p>setgid(在g的x位置上使用一个s)对目录设置<br>对目录作用:默认情况下,用户建立的文件夹属于当前所在的组,但是设置SGID后,表示在此目录中,任何人建立的文件,都会属于目录所属的组,但是用户还是属于之创建的用户.</p>
+<h5 id="SBIT"><a href="#SBIT" class="headerlink" title="SBIT"></a>SBIT</h5><p>sticky(o的x位置上使用一个t)对目录设置<br>默认情况下，如果一个目录o上有w和x权限，则任何人可以在此目录中建立与删除文件。一旦目录上设置了冒险位（SBIT），则表示在此目录中，只有文件的拥有者、目录的拥有者与系统管理员可以删除文件。其他用户则不能。注意：直接在文件上面设置冒险位是没有作用的，冒险位要创建在目录上面</p>
+<h5 id="设置强制位和冒险位"><a href="#设置强制位和冒险位" class="headerlink" title="设置强制位和冒险位"></a>设置强制位和冒险位</h5><p>通过<code>+</code>,<code>-</code>设置强制位和冒险位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod u+s filename //对文件添加强制位</span><br><span class="line">chmod u-s filename //对文件取消强制位</span><br><span class="line">chmod g+s dir //对目录添加冒险位</span><br><span class="line">//注意设置强制位,冒险位需要用小写字母,否则设置无意义</span><br></pre></td></tr></table></figure>
+<p>通过数字设置强制位和冒险位<br>需要放在”读,写,执行”的三位数字前来指定,权限值为:<br>4(set uid)2(set gid)1(sticky)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 4--- document 设置suid</span><br></pre></td></tr></table></figure>
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><h3 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h3><p> shell是你（用户）和Linux（或者更准确的说，是你和Linux内核）之间的接口程序。你在提示符下输入的每个命令都由shell先解释然后传给Linux内核。<br>     shell 是一个命令语言解释器（command-language interpreter）。拥有自己内建的 shell 命令集。此外，shell也能被系统中其他有效的Linux 实用程序和应用程序（utilities and application programs）所调用。<br>    不论何时你键入一个命令，它都被Linux shell所解释。一些命令，比如打印当前工作目录命令（pwd），是包含在Linux bash内部的（就象DOS的内部命令）。其他命令，比如拷贝命令（cp）和移动命令（rm），是存在于文件系统中某个目录下的单独的程序。而对用户来说，你不知道（或者可能不关心）一个命令是建立在shell内部还是一个单独的程序。<br>    shell 首先检查命令是否是内部命令，不是的话再检查是否是一个应用程序，这里的应用程序可以是Linux本身的实用程序，比如ls 和 rm，也可以是购买的商业程序，比如 xv，或者是公用软件（public domain software），就象 ghostview。然后shell试着在搜索路径($PATH)里寻找这些应用程序。搜索路径是一个能找到可执行程序的目录列表。如果你键入的命令不是一个内部命令并且在路径里没有找到这个可执行文件，将会显示一条错误信息。而如果命令被成功的找到的话，shell的内部命令或应用程序将被分解为系统调用并传给Linux内核。<br>    shell的另一个重要特性是它自身就是一个解释型的程序设计语言，shell 程序设计语言支持在高级语言里所能见到的绝大多数程序控制结构，比如循环，函数，变量和数组。shell 编程语言很易学，并且一旦掌握后它将成为你的得力工具。任何在提示符下能键入的命令也能放到一个可执行的shell程序里，这意味着用shell语言能简单地重复执行某一任务。</p>
+<h3 id="bash和Shell的关系"><a href="#bash和Shell的关系" class="headerlink" title="bash和Shell的关系"></a>bash和Shell的关系</h3><p>最常用的shell:在Linux 和 UNIX系统里可以使用多种不同的shell可以使用。最常用的几种是 Bourne shell (sh), C shell (csh), 和 Korn shell (ksh)。三种shell 都有它们的优点和缺点。(自行查阅)<br>Linux 系统默认使用的终端是Bash(Bourne Again shell ), 正如它的名字所暗示的，是 Bourne shell (sh)的扩展。</p>
+<p> 主流 Linux 系统选择 Bash 解释器作为命令行终端主要有以下 4 项优势</p>
+<blockquote>
+<p>通过上下方向键来调取过往执行过的 Linux 命令；<br>命令或参数仅需输入前几位就可以用 Tab 键补全；<br>具有强大的批处理脚本；<br>具有实用的环境变量功能;</p>
+</blockquote>
+<h2 id="RPM红帽软件包管理器"><a href="#RPM红帽软件包管理器" class="headerlink" title="RPM红帽软件包管理器"></a>RPM红帽软件包管理器</h2><p>RPM类似于控制面板,大大简化Linux系统安装管理软件的步骤.建<br>立统一的数据库文件，详细记录软件信息并能够自动分析依赖关系。<br>常用RPM软件包命令</p>
+<blockquote>
+<p>安装软件的命令格式 <code>rpm -ivh filename.rpm</code><br>升级软件的命令格式 <code>rpm -Uvh filename.rpm</code><br>卸载软件的命令格式 <code>rpm -e filename.rpm</code><br>查询软件描述信息的命令格式 <code>rpm -qpi filename.rpm</code><br>列出软件文件信息的命令格式 <code>rpm -qpl filename.rpm</code><br>查询文件属于哪个 RPM 的命令格式 <code>rpm -qf filename</code></p>
+</blockquote>
+<h2 id="YUM软件仓库"><a href="#YUM软件仓库" class="headerlink" title="YUM软件仓库"></a>YUM软件仓库</h2><p>尽管 RPM 能够帮助用户查询软件相关的依赖关系，但问题还是要运维人员自己来解决，<br>而有些大型软件可能与数十个程序都有依赖关系，在这种情况下安装软件会是非常痛苦的。<br>Yum 软件仓库便是为了进一步降低软件安装难度和复杂度而设计的技术。Yum 软件仓库可以<br>根据用户的要求分析出所需软件包及其相关的依赖关系，然后自动从服务器下载软件包并安<br>装到系统。</p>
+<p>常见的Yum命令</p>
+<blockquote>
+<p>yum repolist all 列出所有仓库<br>yum list all 列出仓库中所有软件包<br>yum info 软件包名称 查看软件包信息<br>yum install 软件包名称 安装软件包<br>yum reinstall 软件包名称 重新安装软件包<br>yum update 软件包名称 升级软件包<br>yum remove 软件包名称 移除软件包<br>yum clean all 清除所有仓库缓存<br>yum check-update 检查可更新的软件包<br>yum grouplist   查看系统中已经安装的软件包组<br>yum groupinstall软件包组 安装指定的软件包组<br>yum groupremove软件包组 移除指定的软件包组<br>yum groupinfo软件包组 查询指定的软件包组信息</p>
+</blockquote>
+<p>RPM 与 Yum 软件仓库的作用: RPM 是为了简化安装的复杂度，而 Yum软件仓库是为了解决软件包之间的依赖关系。</p>
+<h1 id="基础Linux命令"><a href="#基础Linux命令" class="headerlink" title="基础Linux命令"></a>基础Linux命令</h1><h2 id="Linux命令格式"><a href="#Linux命令格式" class="headerlink" title="Linux命令格式"></a>Linux命令格式</h2><p><code>命令名称 [命令参数] [命令对象 ]</code><br>注意，命令名称、命令参数、命令对象之间请用空格键分隔。</p>
+<p>命令对象一般是指要处理的文件、目录、用户等资源，而命令参数可以用长格式（完整的选<br>项名称），也可以用短格式（单个字母的缩写），两者分别用–与-作为前缀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">执行查看帮助命令</span><br><span class="line">*/</span><br><span class="line">man --help //长格式</span><br><span class="line">man -h  //短格式</span><br></pre></td></tr></table></figure></p>
+<h2 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h2><h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><p>默认登录时,是我们新建的普通用户,在正式进入系统前我们要点击”Not listed(未列出)”来切换到root身份,输入用户名(root)和密码,就可以登录到root用户了,依然会要求选择语言,然后进入欢迎界面.<br>root用户拥有更高的权限,普通用户下man的一些命令会因为权限不足而无法执行.</p>
+<h3 id="使用Linux系统命令行终端"><a href="#使用Linux系统命令行终端" class="headerlink" title="使用Linux系统命令行终端"></a>使用Linux系统命令行终端</h3><p>桌面单击右键选择Open in Terminal打开终端<br>输入<code>man man</code>命令就可以查看到一大长传man命令的帮助信息，它提示了<code>man</code>命令所能使用的参数.</p>
+<h4 id="man命令下常用按键"><a href="#man命令下常用按键" class="headerlink" title="man命令下常用按键"></a>man命令下常用按键</h4><p>由于<code>man man</code>查看到的帮助信息很长,所以要熟练的使用Terminal中的常用按键.如下图</p>
+<p><img src="https://e1sewhere.github.io/images/main.png" alt="main"></p>
+<h4 id="man命令帮助信息的结构"><a href="#man命令帮助信息的结构" class="headerlink" title="man命令帮助信息的结构"></a>man命令帮助信息的结构</h4><p>man帮助信息包含大量内容,通常是如下的结构</p>
+<p><img src="https://e1sewhere.github.io/images/man_help.png" alt="man_help"></p>
+<h2 id="常用系统命令"><a href="#常用系统命令" class="headerlink" title="常用系统命令"></a>常用系统命令</h2><h3 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h3><p>用于在终端输出字符串或变量提取后的值,格式为<code>echo[字符串]|[$变量]</code>.</p>
+<p>输出字符串haha</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo haha</span><br></pre></td></tr></table></figure>
+<p>输出变量SHELL的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $SELL</span><br></pre></td></tr></table></figure>
+<h3 id="date命令"><a href="#date命令" class="headerlink" title="date命令"></a>date命令</h3><p>用于显示以及设置系统的时间或者日期,格式为<code>date[选项][+指定的格式]</code>.</p>
+<p><img src="https://e1sewhere.github.io/images/date.png" alt="date"></p>
+<p>按照默认格式查看当前系统时间:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ date</span><br><span class="line">Fri Oct  5 12:03:01 CST 2018</span><br></pre></td></tr></table></figure>
+<p>按照“年-月-日 小时:分钟:秒”的格式查看当前系统时间的 date 命令如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[e1se@linuxprobe Desktop]$ date &quot;+%Y-%m-%d %H:%M:%S&quot;</span><br><span class="line">2018-10-05 12:09:34</span><br></pre></td></tr></table></figure>
+<p>将系统的当前时间设置为 2017 年 9 月 1 日 8 点 30 分的 date 命令如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ date -s &quot;20170901 8:30:00&quot;</span><br><span class="line">Fri Sep 1 08:30:00 CST 2017</span><br></pre></td></tr></table></figure>
+<p>date 命令中的参数%j 可用来查看今天是当年中的第几天。这个参数能够很好地区分备份时<br>间的新旧，即数字越大，越靠近当前时间。该参数的使用方式以及显示结果如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ date &quot;+%j&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><p>p55<br>用于重启系统,需要root权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<h3 id="poweroff"><a href="#poweroff" class="headerlink" title="poweroff"></a>poweroff</h3><p>用于关闭系统,需要root权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ poweroff</span><br></pre></td></tr></table></figure>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>用于在网络终端中下载网络文件格式为<code>wet[参数] 下载地址</code><br><img src="https://e1sewhere.github.io/images/wget.png" alt="wget"></p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><h4 id="ps简介"><a href="#ps简介" class="headerlink" title="ps简介"></a>ps简介</h4><p>用于查看系统中的进程状态,格式为<code>ps[参数]</code><br>ps命令会有很多输出值,通常会与管道符技术搭配使用,用来抓取与摸个指定服务进程相对于的PID号码,管道符技术第三章会学习.<br><img src="https://e1sewhere.github.io/images/ps命令.png" alt="ps命令"></p>
+<h4 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h4><p>Linux系统中时刻运行着许多进程，如果能够合理地管理它们，则可以优化系统的性能。在 Linux 系统中，有 5 种常见的进程状态，分别为运行、中断、不可中断、僵死与停止，其各自 含义如下所示。</p>
+<ul>
+<li>R(运行)进程正在运行或在运行队列中等待。 </li>
+<li>S(中断)进程处于休眠中，当某个条件形成后或者接收到信号时，则脱离该状态。 </li>
+<li>D(不可中断)进程不响应系统异步信号，即便用 kill 命令也不能将其中断。 </li>
+<li>Z(僵死)进程已经终止，但进程描述符依然存在, 直到父进程调用 wait4()系统函数后将进程释放。 </li>
+<li>T(停止)进程收到停止信号后停止运行。 </li>
+</ul>
+<p>使用<code>ps aux</code>命令后就会显示上图描述的信息.</p>
+<p><em>在Linux系统中命令的参数 有长短格式之分,长格式之间不能合并,长短之间也不能,但是全为短格式是可以合并的,合并后仅仅保留一个最前端的减号.所以<code>ps -a -u -x</code>可以合并为<code>ps -aux</code>,另外ps命令允许参数不加减号所以最终合并为<code>ps aux</code>.</em></p>
+<h3 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h3><p>用于动态监视进程活动与系统负载信息,格式为<code>top</code><br>top 命令相当强大，能够动态地查看系统运维状态，完全将它看作 Linux 中的“强化版的 Windows 任务管理器”。<br>执行top后,结果的前5行为系统整体统计信息.</p>
+<ul>
+<li>第一行:系统时间,运行时间,登录终端数目,系统负载(三个数值为1,5,15分钟内的平均值)</li>
+<li>第二行:进程总数,运行中的进程数,睡眠中的进程数,停止的进程数,僵死的进程数</li>
+<li>第三行:用户占用资源百分比,系统内核占用资源百分百,改变过优先级的进程资源百分比,空闲的资源百分比等.</li>
+<li>第四行:物理内存总量,内存总使用量,使用量,空闲量,已被提前加载的内存量</li>
+<li>第五行:虚拟内存总量、虚拟内存使用量、虚拟内存空闲量、已被提前加载的内存量</li>
+</ul>
+<h3 id="pidof命令"><a href="#pidof命令" class="headerlink" title="pidof命令"></a>pidof命令</h3><p>用于查询某个指定服务进程的PID值,格式为<code>pidof[参数][服务名称]</code><br>每个进程的进程号码值（PID）是唯一的，因此可以通过 PID 来区分不同的进程。例如， 可以使用如下命令来查询本机上 sshd 服务程序的 PID： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pidof sshd</span><br><span class="line">1634</span><br></pre></td></tr></table></figure>
+<h3 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h3><p>用于终值某个指定PID的服务进程,格式为<code>kill[参数][PID]</code><br>终止掉刚才查询的sshd进程:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$kill 1634</span><br></pre></td></tr></table></figure>
+<p>相当于强制停止sshd服务,需要root,执行成功后不会有任何提示,没有消息就是最大的好消息.</p>
+<h3 id="killall命令"><a href="#killall命令" class="headerlink" title="killall命令"></a>killall命令</h3><p>killall 命令用于终止某个指定名称的服务所对应的全部进程，格式为<code>killall[参数][服务名称]</code></p>
+<p>通常来讲，复杂软件的服务程序会有多个进程协同为用户提供服务，如果逐个去结束这 些进程会比较麻烦，此时可以使用 killall 命令来批量结束某个服务程序带有的全部进程。下 面以 httpd 服务程序为例，来结束其全部进程。由于 RHEL7 系统默认没有安装 httpd 服务程 序，因此大家此时只需看操作过程和输出结果即可，等学习了相关内容之后再来实践。 </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# pidof httpd 13581 13580 13579 13578 13577 13576 [root@linuxprobe ~]# killall httpd [root@linuxprobe ~]# pidof httpd [root@linuxprobe ~]#</span><br></pre></td></tr></table></figure>
+<p>*在terminal中执行了一个命令后想立即停止,使用<code>ctrl+c</code>中指该命令的进程,如果有些命令在执行时不断的在屏幕上输出信息,影响后续输入,则可以在执行命令时在末尾加一个<code>&amp;</code>符号,这样命令将进入系统后台来执行</p>
+<h2 id="系统状态检测命令"><a href="#系统状态检测命令" class="headerlink" title="系统状态检测命令"></a>系统状态检测命令</h2><h3 id="ifconfig命令"><a href="#ifconfig命令" class="headerlink" title="ifconfig命令"></a>ifconfig命令</h3><p>用于获取网卡配置与网络状态等信息,格式为`ifconfig[网络设备][参数]<br>使用 ifconfig 命令来查看本机当前的网卡配置与网络状态等信息时，其实主要查看的就 是网卡名称、inet 参数后面的 IP 地址、ether 参数后面的网卡物理地址（又称为 MAC 地址）， 以及 RX、TX 的接收数据包与发送数据包的个数及累计流量： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# ifconfig eno16777728: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500         inet 192.168.10.10  netmask 255.255.255.0  broadcast 192.168.10.255         inet6 fe80::20c:29ff:fec4:a409  prefixlen 64  scopeid 0x20&lt;link&gt;         ether 00:0c:29:c4:a4:09  txqueuelen 1000  (Ethernet)         RX packets 36  bytes 3176 (3.1 KiB)         RX errors 0  dropped 0  overruns 0  frame 0</span><br></pre></td></tr></table></figure>
+<h3 id="uname命令"><a href="#uname命令" class="headerlink" title="uname命令"></a>uname命令</h3><p>用于查看系统内核与系统版本等信息,格式为<code>uname [-a]</code><br>在使用 uname 命令时，一般会固定搭配上-a 参数来完整地查看当前系统的内核名称、主 机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名 称等信息。 </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> [root@linuxprobe Desktop]# uname -a</span><br><span class="line">Linux linuxprobe.com 3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<p>如果要查看当前系统版本的详细信息，则需要查看 redhat-release 文件，其命 令以及相应的结果如下： </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# cat /etc/redhat-release Red Hat Enterprise Linux Server release 7.0 (Maipo)</span><br></pre></td></tr></table></figure>
+<h3 id="uptime命令"><a href="#uptime命令" class="headerlink" title="uptime命令"></a>uptime命令</h3><p>uptime 用于查看系统的负载信息，格式为<code>uptime</code><br>uptime 命令真的很棒，它可以显示当前系统时间、系统已运行时间、启用终端数量以 及平均负载值等信息。平均负载值指的是系统在最近 1 分钟、5 分钟、15 分钟内的压力情 况（下面加粗的信息部分）；负载值越低越好，尽量不要长期超过 1，在生产环境中不要超 过 5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# uptime</span><br><span class="line"> 17:17:24 up  7:48,  2 users,  load average: 0.45, 0.19, 0.17</span><br></pre></td></tr></table></figure>
+<h3 id="free命令"><a href="#free命令" class="headerlink" title="free命令"></a>free命令</h3><p>free 用于显示当前系统中内存的使用量信息，格式为<code>free [-h]</code><br>在使用 free 命令时，可以结合使用-h 参数以更人性化的方式输出当前内存的实时使用量信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# free -h</span><br><span class="line">             total       used       free     shared    buffers     cached</span><br><span class="line">Mem:          1.8G       1.4G       419M        10M       1.4M       522M</span><br><span class="line">-/+ buffers/cache:       883M       943M</span><br><span class="line">Swap:         2.0G        24K       2.0G</span><br></pre></td></tr></table></figure>
+<p><img src="https://e1sewhere.github.io/images/freeh.png" alt="freeh"></p>
+<h3 id="who命令"><a href="#who命令" class="headerlink" title="who命令"></a>who命令</h3><p>who 用于查看当前登入主机的用户终端信息，格式为<code>who [参数]</code><br>这三个简单的字母可以快速显示出所有正在登录本机的用户的名称以及他们正在开启的 终端信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# who</span><br><span class="line">root     :0           2018-10-08 16:05 (:0)</span><br><span class="line">root     pts/0        2018-10-08 16:52 (:0)</span><br></pre></td></tr></table></figure>
+<h3 id="last命令"><a href="#last命令" class="headerlink" title="last命令"></a>last命令</h3><p>last 命令用于查看所有系统的登录记录，格式为<code>last [参数]</code><br>使用 last 命令可以查看本机的登录记录。但是，由于这些信息都是以日志文件的形式保 存在系统中，因此黑客可以很容易地对内容进行篡改。千万不要单纯以该命令的输出信息而 判断系统有无被恶意入侵！ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# last</span><br><span class="line">root     pts/0        :0               Mon Oct  8 16:52   still logged in   </span><br><span class="line">root     pts/0        :0               Mon Oct  8 16:40 - 16:47  (00:07)    </span><br><span class="line">root     pts/0        :0               Mon Oct  8 16:36 - 16:40  (00:03)    </span><br><span class="line">root     pts/0        :0               Mon Oct  8 16:33 - 16:35  (00:02)    </span><br><span class="line">root     pts/0        :0               Mon Oct  8 16:32 - 16:33  (00:00)    </span><br><span class="line">root     pts/1        :0               Mon Oct  8 16:32 - 16:32  (00:00)    </span><br><span class="line">root     pts/1        :0               Mon Oct  8 16:28 - 16:31  (00:02)    </span><br><span class="line">root     pts/0        :0               Mon Oct  8 16:05 - 16:32  (00:26)    </span><br><span class="line">root     :0           :0               Mon Oct  8 16:05   still logged in   </span><br><span class="line">(unknown :0           :0               Mon Oct  8 16:05 - 16:05  (00:00)    </span><br><span class="line">e1se     pts/0        :0               Mon Oct  8 15:44 - 16:05  (00:20)    </span><br><span class="line">e1se     :0           :0               Mon Oct  8 09:32 - 16:05  (06:32)    </span><br><span class="line">(unknown :0           :0               Mon Oct  8 09:29 - 09:32  (00:03)    </span><br><span class="line">reboot   system boot  3.10.0-123.el7.x Mon Oct  8 17:28 - 17:35  (00:06)    </span><br><span class="line">e1se     pts/0        :0               Mon Oct  8 09:27 - 09:28  (00:01)    </span><br><span class="line">e1se     :0           :0               Mon Oct  8 09:25 - 09:28  (00:02)    </span><br><span class="line">(unknown :0           :0               Mon Oct  8 09:24 - 09:25  (00:00)    </span><br><span class="line">reboot   system boot  3.10.0-123.el7.x Mon Oct  8 17:24 - 09:28  (-7:-55)   </span><br><span class="line">(unknown :0           :0               Mon Oct  8 09:23 - crash  (08:00)    </span><br><span class="line">reboot   system boot  3.10.0-123.el7.x Mon Oct  8 17:22 - 09:28  (-7:-54)</span><br></pre></td></tr></table></figure>
+<h3 id="history命令"><a href="#history命令" class="headerlink" title="history命令"></a>history命令</h3><p>history 命令用于显示历史执行过的命令，格式为<code>history [-c]</code><br>。执行 history 命令能显示出当前用户在本地计算机 中执行过的最近 1000 条命令记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# history</span><br><span class="line">    1  tar -zxvf VMwareTools-10.1.6-5214329.tar.gz</span><br><span class="line">    2  pidof sshd</span><br><span class="line">    3  kill 1634</span><br><span class="line">    4  top&amp;</span><br><span class="line">    5  tar -zxvf VMwareTools-10.1.6-5214329.tar.gz</span><br><span class="line">    6  ./configure</span><br><span class="line">    7  make</span><br><span class="line">    8  make install</span><br><span class="line">    9  chmod vmware-install.pl</span><br><span class="line">   10  ./vmware-install.pl</span><br><span class="line">   11  yes</span><br><span class="line">   12  ./vmware-install.pl</span><br><span class="line">   13  uname -a</span><br><span class="line">   14  uptime</span><br><span class="line">   15  free -h</span><br><span class="line">   16  who</span><br><span class="line">   17  last</span><br><span class="line">   18  history</span><br></pre></td></tr></table></figure>
+<p>在使用 history 命令时，如果使用-c 参数则会清空所有的命令历史记录,还可以使用“!编码数字”的方式来重复执行某一次的命令,历史命令会被保存到用户Home目录中的<code>.bash_history</code>文件中<br>，可以用 cat 命令查看其文件 内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# cat ~/.bash_history</span><br></pre></td></tr></table></figure>
+<h3 id="sosreport命令"><a href="#sosreport命令" class="headerlink" title="sosreport命令"></a>sosreport命令</h3><p>用于手机系统配置及架构信息并输出诊断文档,格式为<code>sosreport</code><br>当 Linux 系统出现故障需要联系技术支持人员时，大多数时候都要先使用这个命令来简 单收集系统的运行状态和服务配置信息，以便让技术支持人员能够远程解决一些小问题，亦 或让他们能提前了解某些复杂问题。</p>
+<h2 id="工作目录切换命令"><a href="#工作目录切换命令" class="headerlink" title="工作目录切换命令"></a>工作目录切换命令</h2><p>工作目录指的是用户当前在系统中所处的位置。由于工作目录会牵涉系统存储结构相关 的知识，因此第 6 章将详细讲解这部分内容。读者只需简单了解一下这里的操作实验即可， 如果不能完全掌握也没有关系，毕竟 Linux 系统的知识体系太过庞大，每一位初学人员都需 要经历这么一段时期</p>
+<h3 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h3><p>pwd 命令用于显示用户当前所处的工作目录，格式为<code>pwd [选项]</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# pwd</span><br><span class="line">/root/Desktop</span><br></pre></td></tr></table></figure>
+<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p>cd 命令用于切换工作路径，格式为<code>cd [目录名称]</code><br>这个命令应该是最常用的一个 Linux 命令了。可以通过 cd 命令迅速、灵活地切换到不同 的工作目录。除了常见的切换目录方式，还可以使用<code>cd -</code>命令返回到上一次所处的目录， 使用<code>cd..</code>命令进入上级目录，以及使用<code>cd ~</code>命令切换到当前用户的家目录，亦或使用 <code>cd ~username</code>切换到其他用户的Home录.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# cd /etc</span><br></pre></td></tr></table></figure>
+<p>此时，要返回到上一次的目录（即/etc 目录），可执行如下命令： </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe bin]# cd - /etc </span><br><span class="line">[root@linuxprobe etc]#</span><br></pre></td></tr></table></figure>
+<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>ls 命令用于显示目录中的文件信息，格式为<code>ls [选项] [文件]</code><br>使用 ls 命令的<code>-a</code>参数看 到全部文件（包括隐藏文件），使用<code>-l</code>参数可以查看文件的属性、大小等详细信息。将这 两个参数整合之后，再执行 ls 命令即可查看当前目录中的所有文件并输出这些文件的属性 信息:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# ls -al</span><br><span class="line">total 56</span><br><span class="line">dr-xr-x---. 14 root root 4096 Oct  8 16:31 .</span><br><span class="line">drwxr-xr-x. 17 root root 4096 Oct  8 17:28 ..</span><br><span class="line">-rw-------.  1 root root 1032 Aug  9 02:57 anaconda-ks.cfg</span><br><span class="line">-rw-------.  1 root root  270 Oct  8 19:06 .bash_history</span><br><span class="line">-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout</span><br><span class="line">-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile</span><br><span class="line">-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc</span><br><span class="line">drwx------. 11 root root 4096 Oct  8 16:26 .cache</span><br><span class="line">drwx------. 16 root root 4096 Oct  8 16:26 .config</span><br></pre></td></tr></table></figure>
+<p>如果想要查看目录属性信息，则需要额外添加一个-d 参数。例如，可使用如下命令查看 /etc 目录的权限与属性信息： </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# ls -ld /etc</span><br><span class="line">drwxr-xr-x. 132 root root 8192 Jul 10 10:48 /etc</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">显示所有文件,包括隐藏文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-A</td>
+<td style="text-align:left">显示所有文件,不包括.和..</td>
+</tr>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">显示文件或目录的详细信息</td>
+</tr>
+<tr>
+<td style="text-align:left">-al</td>
+<td style="text-align:left">显示文件或目录的详细信息,包括隐藏文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-o</td>
+<td style="text-align:left">在-l的基础上取消了所属组的显示</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">仅显示目录名,而不显示目录下的内容列表 .显示符号链接文件本身,而不显示所指向的目录列表</td>
+</tr>
+<tr>
+<td style="text-align:left">-m</td>
+<td style="text-align:left">使用<code>,</code>分割显示的文件/目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-n</td>
+<td style="text-align:left">以用户识别码和群组识别码替代其名称</td>
+</tr>
+<tr>
+<td style="text-align:left">-S</td>
+<td style="text-align:left">按照文件/目录的大小排序,降序</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">反向排序</td>
+</tr>
+</tbody>
+</table>
+<p>ls的显示结果以颜色来区分:<br><img src="https://e1sewhere.github.io/images/文件管理4.png" alt="ls颜色对照表"></p>
+<h2 id="文本文件编辑命令"><a href="#文本文件编辑命令" class="headerlink" title="文本文件编辑命令"></a>文本文件编辑命令</h2><p>Linux 系统中“一切都是文件”，而对服务程序进行配置自然也就是编辑程序的配置文件。本节将讲解几 条用于查看文本文件内容的命令。至于编辑器使用起来比较复杂，因此将放到第 4 章与 Shell 脚本内容一起讲解。 </p>
+<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>用于查看纯文本文件(内容较少的),格式为<code>cat[参数][文件]</code><br>如果在查看文本内容时还想顺便显示行号的话，不妨在cat命令后面追加一个-n参数： </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# cat -n initial-setup-ks.cfg       </span><br><span class="line">1    #version=RHEL7      </span><br><span class="line">2    # X Window System configuration information      </span><br><span class="line">3    xconfig  --startxonboot      </span><br><span class="line">4          </span><br><span class="line">5    # License agreement      </span><br><span class="line">6    eula --agreed      </span><br><span class="line">7    # System authorization information      </span><br><span class="line">8    auth --enableshadow --passalgo=sha512      </span><br><span class="line">9    # Use CDROM installation media     </span><br><span class="line">10    cdrom     </span><br><span class="line">11    # Run the Setup Agent on first boot     </span><br><span class="line">12    firstboot --enable     </span><br><span class="line">13    # Keyboard layouts     </span><br><span class="line">14    keyboard --vckeymap=us --xlayouts=&apos;us&apos;     </span><br><span class="line">15    # System language     </span><br><span class="line">16    lang en_US.UTF-8 </span><br><span class="line">………………省略部分输出信息………………</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-n</td>
+<td style="text-align:left">由1开始对所有输出的行数编号</td>
+</tr>
+<tr>
+<td style="text-align:left">-b</td>
+<td style="text-align:left">同-n，但是空白行不进行编行</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">将多个空行压缩为一行</td>
+</tr>
+</tbody>
+</table>
+<h3 id="more-less命令"><a href="#more-less命令" class="headerlink" title="more/less命令"></a>more/less命令</h3><p>用于查看纯文本文件（内容较多的），格式为<code>more/less [选项]文件</code><br>一旦使用 cat 命令阅读长篇的文本内容，信息就会在屏幕上快速翻滚，导致自己还没有来得 及看到，内容就已经翻篇了。因此对于长篇的文本内容，推荐使用 more 命令来查看。<br>。more 命 令会在最下面使用百分比的形式来提示您已经阅读了多少内容。您还可以使用空格键或回车 键向下翻页.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# more anaconda-ks.cfg</span><br><span class="line">#version=RHEL7</span><br><span class="line"># System authorization information</span><br><span class="line">auth --enableshadow --passalgo=sha512</span><br><span class="line"></span><br><span class="line"># Use CDROM installation media</span><br><span class="line">cdrom</span><br><span class="line"># Run the Setup Agent on first boot</span><br><span class="line">firstboot --enable</span><br><span class="line">ignoredisk --only-use=sda</span><br><span class="line"># Keyboard layouts</span><br><span class="line">keyboard --vckeymap=us --xlayouts=&apos;us&apos;</span><br><span class="line"># System language</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line"></span><br><span class="line"># Network information</span><br><span class="line">network  --bootproto=dhcp --device=eno16777728 --onboot=off --ipv6=auto</span><br><span class="line">network  --hostname=linuxprobe.com</span><br><span class="line"># Root password</span><br><span class="line">rootpw --iscrypted $6$YBKGLQqneFUOPVyj$RDA3.2gfi5jogqurPhWi60L6EQrYNK9HNh.Qcsj4R</span><br><span class="line">ujNhMBlEX3yq79WDEXrPVR0ySs49NikeY14SkkIl6Zn10</span><br><span class="line"># System timezone</span><br><span class="line">timezone America/New_York --isUtc</span><br><span class="line"># X Window System configuration information</span><br><span class="line">--More--(64%)</span><br></pre></td></tr></table></figure>
+<p>more命令和less命令的用法是一样的，包括按键命令都差不多。more命令和less命令最大的区别是，more命令只能向下翻页，而less命令不仅可以向下翻页，还可以向前翻页；还有，more命令和less命令都有在显示的内容中查找字符串的功能，但是more命令只可以向下查找，不可以向上查找字符串，而less命令既可以向下查找，也可以向上查找。</p>
+<h3 id="head命令"><a href="#head命令" class="headerlink" title="head命令"></a>head命令</h3><p>用于查看纯文本文档的前N行,格式为<code>head[选项][文件]</code><br>查看前5行<br>  -n Num选项：显示显示前num</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# head -n 5 anaconda-ks.cfg</span><br><span class="line">#version=RHEL7</span><br><span class="line"># System authorization information</span><br><span class="line">auth --enableshadow --passalgo=sha512</span><br><span class="line"></span><br><span class="line"># Use CDROM installation media</span><br></pre></td></tr></table></figure>
+<h3 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h3><p>tail 命令用于查看纯文本文档的后 N 行或持续刷新内容，格式为<code>tail [选项] [文件]</code><br>。tail 命令的操作方法与 head 命令非常相似，只需要执行<code>tail -n 20 文件名</code>命令 就可以达到这样的效果。tail 命令最强悍的功能是可以持续刷新一个文件的内容，当想要实时 查看最新日志文件时，这特别有用，此时的命令格式为<code>tail -f 文件名</code>： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# tail -f /var/log/messages</span><br><span class="line">Oct  8 21:00:01 linuxprobe systemd: Started Session 83 of user root.</span><br><span class="line">Oct  8 21:01:01 linuxprobe systemd: Starting Session 84 of user root.</span><br><span class="line">Oct  8 21:01:01 linuxprobe systemd: Started Session 84 of user root.</span><br><span class="line">Oct  8 21:01:01 linuxprobe systemd: Failed to mark scope session-84.scope as abandoned : Stale file handle</span><br><span class="line">Oct  8 21:10:01 linuxprobe systemd: Starting Session 85 of user root.</span><br><span class="line">Oct  8 21:10:01 linuxprobe systemd: Started Session 85 of user root.</span><br><span class="line">Oct  8 21:20:01 linuxprobe systemd: Starting Session 86 of user root.</span><br><span class="line">Oct  8 21:20:01 linuxprobe systemd: Started Session 86 of user root.</span><br><span class="line">Oct  8 21:30:01 linuxprobe systemd: Starting Session 87 of user root.</span><br><span class="line">Oct  8 21:30:01 linuxprobe systemd: Started Session 87 of user root.</span><br></pre></td></tr></table></figure>
+<h3 id="tr命令"><a href="#tr命令" class="headerlink" title="tr命令"></a>tr命令</h3><p>tr 命令用于替换文本文件中的字符，格式为<code>tr [原始字符] [目标字符]</code><br>在很多时候，我们想要快速地替换文本中的一些词汇，又或者把整个文本内容都进行替 换，如果进行手工替换，难免工作量太大，尤其是需要处理大批量的内容时，进行手工替换更 是不现实。这时，就可以先使用 <code>cat</code>命令读取待处理的文本，然后通过<code>管道符</code>（详见第 3 章） 把这些文本内容传递给 <code>tr</code>命令进行替换操作即可。例如，把某个文本内容中的英文全部替换 为大写： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> [ rootelinuxprobe ～]# cat anaconda-ka. cfg I tr [a-z][A-2]</span><br><span class="line"># VERSION=RHEL7</span><br><span class="line"># SYSTEM AUTHORIZATION INFORMATION AUTH --ENABLESHADOW--PASSALGO=SHA512</span><br><span class="line"># USE CDROM INSTALLATION MEDIA CDROM</span><br><span class="line"># RUN THE SETUP AGENT ON FIRST BOOT FIRSTBOOT--ENABLE IGNOREDISK--ONLY-USE=SDA</span><br><span class="line"># KEYBOARD LAYOUTS KEYBOARD--VCKEYMAP=US--XLAYOUTS=&apos; US,</span><br><span class="line"># SYSTEM LANGUAGE LANG EN_US. UTE-8</span><br><span class="line"># NETWORK INFORMATION NETWORK--BOOTPROTO=DHCP--DEVICE=ENO16777728--ONBOOT=OFE --IPV6=AUTO NETWORK--HOSTNAME=LOCALHOST. LOCALDOMAIN</span><br><span class="line"># ROOT PASSWORD</span><br></pre></td></tr></table></figure>
+<h3 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h3><p>wc 命令用于统计指定文本的行数、字数、字节数，格式为<code>wc [参数] 文本</code><br>参数:</p>
+<ul>
+<li>-l :只显示行数</li>
+<li>-w:只显示单词数</li>
+<li>-c:只显示字节数</li>
+</ul>
+<p>在 Linux 系统中，passwd 是用于保存系统账户信息的文件，要统计当前系统中有多少个 用户，可以使用下面的命令来进行查询，是不是很神奇： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# wc -l /etc/passwd </span><br><span class="line">38 /etc/passwd</span><br></pre></td></tr></table></figure>
+<h3 id="stat命令"><a href="#stat命令" class="headerlink" title="stat命令"></a>stat命令</h3><p>stat 命令用于查看文件的具体存储信息和时间等信息，格式为<code>stat 文件名称</code>.<br>stat命令可以用于于查看文件的存储信息和时间等信息，命令<code>stat anaconda-ks.cfg</code>会显示出 文件的三种时间状态：<code>Access</code>、<code>Modify</code>、<code>Change</code>。这三种时间的区别将在下面的<code>touch</code> 命令中详细详解： </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> [root@linuxprobe ~]# stat anaconda-ks.cfg</span><br><span class="line">  File: ‘anaconda-ks.cfg’</span><br><span class="line">  Size: 1032      	Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: fd01h/64769d	Inode: 69122924    Links: 1</span><br><span class="line">Access: (0600/-rw-------)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Context: system_u:object_r:admin_home_t:s0</span><br><span class="line">Access: 2018-10-08 19:33:00.596075247 +0800</span><br><span class="line">Modify: 2018-08-09 02:57:19.481052343 +0800</span><br><span class="line">Change: 2018-08-09 02:57:19.481052343 +0800</span><br><span class="line"> Birth: -</span><br></pre></td></tr></table></figure>
+<h3 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h3><p>cut 命令用于按<code>列</code>提取文本字符，格式为<code>cut [参数] 文本</code><br>一般 而言，按基于“行”的方式来提取数据是比较简单的，只需要设置好要搜索的关键词即可。但是 如果按列搜索，不仅要使用-f 参数来设置需要看的列数，还需要使用-d 参数来设置间隔符号。 passwd在保存用户数据信息时，用户信息的每一项值之间是采用冒号来间隔的，接下来我们使用 下述命令尝试提取出 passwd 文件中的用户名信息，即提取以冒号（：）为间隔符号的第一列内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# head -n 2 /etc/passwd    //查看这个文件开头两行,确定格式</span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">[root@linuxprobe ~]# cut -d: -f1 /etc/passwd  //使用参数提取列文本</span><br><span class="line">root</span><br><span class="line">bin</span><br><span class="line">daemon</span><br><span class="line">adm</span><br><span class="line">lp</span><br><span class="line">sync</span><br><span class="line">shutdown</span><br><span class="line">halt</span><br><span class="line">mail</span><br><span class="line">operator</span><br><span class="line">games</span><br><span class="line">ftp</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">d分隔符</td>
+<td style="text-align:left">指定分隔符，默认为Tab</td>
+</tr>
+<tr>
+<td style="text-align:left">f</td>
+<td style="text-align:left">指定显示的列数</td>
+</tr>
+<tr>
+<td style="text-align:left">c</td>
+<td style="text-align:left">单位改为字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diff命令"><a href="#diff命令" class="headerlink" title="diff命令"></a>diff命令</h3><p>diff 命令用于比较多个文本文件的差异，格式为<code>diff [参数] 文件</code><br>在使用 diff 命令时，不仅可以使用–brief 参数来确认两个文件是否不同，还可以使用-c 参 数来详细比较出多个文件的差异之处.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# diff --brief diff_A.txt diff_B.txt </span><br><span class="line">Files diff_A.txt and diff_B.txt differ</span><br></pre></td></tr></table></figure>
+<h2 id="文件目录管理命令"><a href="#文件目录管理命令" class="headerlink" title="文件目录管理命令"></a>文件目录管理命令</h2><h3 id="ln命令"><a href="#ln命令" class="headerlink" title="ln命令"></a>ln命令</h3><p>为文件或目录建立连接<br>格式:<code>ln [选项] 源文件 目标文件</code><br>-s :创建软连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1n/etc/passwd passwd</span><br><span class="line">1n-s/etc/passwd password02</span><br></pre></td></tr></table></figure>
+<h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>touch 命令用于创建空白文件或设置文件的时间，格式为<code>touch [选项] [文件]</code><br>，<code>touch linuxprobe</code>命令可以创建出一个名为<code>linuxprobe</code>的空白文本文件<br>。对 touch 命 令来讲，有难度的操作主要是体现在设置文件内容的修改时间（mtime）、文件权限或属性 的更改时间（ctime）与文件的读取时间（atime）上面。touch 命令的参数及其作用如表<br><img src="https://e1sewhere.github.io/images/touchu.png" alt="touchu"><br>-t 使用指定时间而非现在时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch -d &quot;2018-06-01&quot; test  #将test文件的时间戳修改为指定时间2018-06-01</span><br></pre></td></tr></table></figure>
+<h3 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h3><p>p71<br>mkdir 命令用于创建空白的目录，格式为<code>mkdir [选项] 目录</code><br>除了创建单个空白目录外，mkdir命令还可以结合<code>-p</code>参数来递归创建出具有嵌套叠层关系的文件目录.或者当前目录下创建n个目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@e1se~]# mkdir linuxprobe</span><br><span class="line">[root@e1se~]# cd linuxprobe</span><br><span class="line">[root@e1se linuxprobe]# mkdir -p a/b/c/d/e</span><br><span class="line">[root@e1se linuxprobe]# cd a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@e1se linuxprobe]# mkdir test1 test2 test3</span><br></pre></td></tr></table></figure>
+<h3 id="rmdir命令"><a href="#rmdir命令" class="headerlink" title="rmdir命令"></a>rmdir命令</h3><p>删除空目录<br>格式:rmdir [选项] 目录名</p>
+<ul>
+<li>-v显示指令执行过程</li>
+<li>-p 当子目录被删除后使它也成为空目录的话，则顺便一并删除</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmdir -p /test0/test1  //删除/test0和test1目录</span><br></pre></td></tr></table></figure>
+<h3 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h3><p>用于复制文件或目录,格式为<code>cp[参数] 源文件 目标文件</code><br>复制分为三种情况:</p>
+<ul>
+<li>如果目标文件是目录,则把源文件复制到该目录中;</li>
+<li>如果目标文件也是普通文件,则会询问是否覆盖它;</li>
+<li>如果目标文件不存在,则执行正常的复制操作;</li>
+</ul>
+<p>cp命令的参数机器作用:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">保留原始文件的属性</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">若对象为”链接文件”,则保留该”链接文件”的属性</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">递归持续复制(用于目录)</td>
+</tr>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">若目标文件存在则询问是否覆盖</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">相当于-pdr</td>
+</tr>
+</tbody>
+</table>
+<p>下面的例子使用touch创建一个名为<code>install.log</code>的普通空白文件,然后将其复制为<code>x.log</code>的备份文件,最后再使用<code>ls</code>命令查看目录中的文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># touch install.log</span><br><span class="line"># cp install.log x.log</span><br><span class="line"># ls</span><br><span class="line">install.log x.log</span><br></pre></td></tr></table></figure>
+<h3 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h3><p>用于剪切文件或将文件重命名,格式为<code>mv[参数] 源文件 [目标路径|目标文件名]</code><br>在同一个目录中对一个文件进行剪切操作,就是对这个文件重命名.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mv x.log linux.log</span><br><span class="line"># ls</span><br><span class="line">install.log linux.log //刚才这个目录下是install.log x.log,x.log被重命名了~</span><br></pre></td></tr></table></figure>
+<h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h3><p>用于删除文件或者目录,格式为<code>rm[参数] 文件</code><br>-f参数,不用确认直接强制删除<br>-r参数,递归删除,删除目录的时候必须加上</p>
+<p>我们常说删库跑路用的命令就是<code>rm -rf</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f /tmp/*.txt #强制删除/tmp目录下所有的txt文件</span><br></pre></td></tr></table></figure>
+<h3 id="dd命令"><a href="#dd命令" class="headerlink" title="dd命令"></a>dd命令</h3><p>用于按照指定大小和个数的数据块来复制文件或者转换文件,格式为<code>dd[参数]</code><br><code>dd</code>能够让用户按照指定大小和个数的数据块来复制文件的内容,同时也可以在复制过程中转换其中的数据.<br><strong>dd命令的参数及作用</strong><br>| 参数 | 作用 |<br>| :—– | :——————– |<br>| if | 输入文件名称 |<br>| of | 输出文件夹名称 |<br>| bs | 设置每个”块”的大小 |<br>| count | 设置复制’块’的个数 |</p>
+<p><em>Linux系统中有一个名为<code>/dev/zero</code>的设备文件,这个文件不会占用系统存储空间,却可以搭配<code>dd</code>创建无穷无尽的数据</em></p>
+<p>例如使用<code>/dev/zerp</code>作为输入搭配<code>dd</code>从设备文件中取出一个大小为560mb的数据块,然后保存成名为560_file的文件.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># dd if=/dev/zero of=560_file count=1 bs=560m</span><br><span class="line">1+0 records in</span><br><span class="line">1+0 records out</span><br><span class="line">57802560 bytes(578mb) copied,27.0000s,21.6 mb/s</span><br></pre></td></tr></table></figure>
+<p>理解了上面的这个例子就可以随意创建任意大小的文件了.</p>
+<p>下例展示使用dd命令将文件压制为光盘映像文件(iso):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># dd if=/dev/cdrom of=REHEL.iso</span><br><span class="line">7311360+0 records in</span><br><span class="line">7311360+0 records out</span><br><span class="line">3743416320 bytes(3.7GB) copied,370.758s10.1MB/s</span><br></pre></td></tr></table></figure>
+<h3 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h3><p>用于查看文件的类型,格式为<code>file 文件名</code><br>Linux系统中文本,目录,设备等一切都成为文件,我们无法凭借后缀就知道具体文件类型,所以使用file命令查看文件类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># file anaconda-ks.cfg</span><br><span class="line">anaconda-ks.cfg :ASCCII text</span><br></pre></td></tr></table></figure>
+<h2 id="打包压缩与搜索命令"><a href="#打包压缩与搜索命令" class="headerlink" title="打包压缩与搜索命令"></a>打包压缩与搜索命令</h2><h3 id="Tar-命令"><a href="#Tar-命令" class="headerlink" title="Tar 命令"></a>Tar 命令</h3><p>用于对文件进行打包压缩或解压，格式为<code>tar [参数] [文件]</code><br>在Linux系统中，常见的文件格式比较多，其中主要使用的是.tar或.tar.gz或.tar.bz2格式,其实这些格式大部分都是由 tar 命令来生成的</p>
+<p>tar 命令的参数及其作用 :<br>| 参数 | 作用 |<br>| :———- | :————————————- |<br>| -c | 创建压缩文件指定名称 |<br>| -x | 解开压缩文件 |<br>| -t | 查看压缩包内有哪些文件 |<br>| -z | 用Gzip压缩或者解压 |<br>| -j | 用bzip2压缩或者解压 |<br>| -v | 显示压缩或者解压的过程 |<br>| -f | 目标文件名 |<br>| -P(大写) | 保留原始的权限与属性 |<br>| -p | 使用绝对路径来压缩 |<br>| -C(大写) | 指定解压到的目录 |<br><code>-C</code> 参数用于指定要解压到哪个指定的目录。<code>-f</code> 参数特别重要，它必须放到压缩参数的最后一位，代表要压缩或解压的软件包名</p>
+<p>下例使用<code>tar</code>命令把<code>/etc</code>目录通过<code>gzip</code>格式进行打包压缩,并把文件命名为<code>etc.tar.gz</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# tar -czvf etc.tar.gz /etc</span><br><span class="line">tar: Removing leading `/&apos; from member names</span><br><span class="line">/etc/</span><br><span class="line">/etc/fstab</span><br><span class="line">/etc/crypttab</span><br><span class="line">/etc/mtab</span><br><span class="line">/etc/fonts/</span><br><span class="line">/etc/fonts/conf.d/</span><br><span class="line">/etc/fonts/conf.d/65-0-lohit-bengali.conf</span><br><span class="line">/etc/fonts/conf.d/59-liberation-sans.conf</span><br><span class="line">...省略部分信息...</span><br></pre></td></tr></table></figure>
+<p>下例将打包后的压缩包文件指定解压到<code>/root/etc</code>目录中(先使用mkdir命令来创建<code>/root/etc目录</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# tar xzvf etc.tar.gz -C /root/etc</span><br><span class="line">etc/</span><br><span class="line">etc/fstab</span><br><span class="line">etc/crypttab</span><br><span class="line">etc/mtab</span><br><span class="line">etc/fonts/</span><br><span class="line">etc/fonts/conf.d/</span><br><span class="line">etc/fonts/conf.d/65-0-lohit-bengali.conf</span><br><span class="line">etc/fonts/conf.d/59-liberation-sans.conf</span><br><span class="line">etc/fonts/conf.d/65-0-khmeros-base.conf</span><br><span class="line">etc/fonts/conf.d/59-liberation-mono.conf</span><br><span class="line">etc/fonts/conf.d/31-cantarell.conf</span><br><span class="line">etc/fonts/conf.d/67-lohit-malayalam.conf</span><br><span class="line">etc/fonts/conf.d/10-scale-bitmap-fonts.conf</span><br><span class="line">etc/fonts/conf.d/65-0-lohit-kannada.conf</span><br><span class="line">etc/fonts/conf.d/20-unhint-small-vera.conf</span><br><span class="line">etc/fonts/conf.d/65-0-madan.conf</span><br><span class="line">etc/fonts/conf.d/25-no-bitmap-fedora.conf</span><br><span class="line">etc/fonts/conf.d/65-0-lohit-tamil.conf</span><br><span class="line">etc/fonts/conf.d/25-unhint-nonlatin.conf</span><br><span class="line">...省略部分...</span><br></pre></td></tr></table></figure>
+<h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><p>用于在文本中执行关键词搜索,并显示匹配的结果行,格式为<code>grep [参数] [文件]</code></p>
+<p>部分grep参数:<br>| 参数 | 作用 |<br>| :——– | :——————————————– |<br>| -b | 将可执行文件(binary)当作文本文件 (text)来搜索 |<br>| -c | 仅显示找到的行数 |<br>| -i | 忽略大小写 |<br>| -n | 显示行号 |<br>| -v | 反向选择 仅列出没有”关键词”的行 |</p>
+<p>在 Linux 系统中，/etc/passwd 文件是保存着所有的用户信息，而一旦用户的登录终端被 设置成/sbin/nologin，则不再允许登录系统，因此可以使用 grep 命令来查找出当前系统中不允 许登录系统的所有用户信息： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# grep /sbin/nologin /etc/passwd</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</span><br><span class="line">lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</span><br><span class="line">mail:x:8:12:mail:/var/spool/mail:/sbin/nologin</span><br><span class="line">省略部分输出</span><br></pre></td></tr></table></figure>
+<p>反选并显示在第几行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# grep -nv /sbin/nologin /etc/passwd</span><br><span class="line">1:root:x:0:0:root:/root:/bin/bash</span><br><span class="line">6:sync:x:5:0:sync:/sbin:/bin/sync</span><br><span class="line">7:shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</span><br><span class="line">8:halt:x:7:0:halt:/sbin:/sbin/halt</span><br><span class="line">38:e1se:x:1000:1000:e1se:/home/e1se:/bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>用于按照指定的条件来递归查找文件,格式为<code>find [查找路径] 寻找条件 操作</code><br>它可以使用不同的文件特性作为寻找条件(文件名称,大小,修改时间,权限等),一旦匹配成功则默认将信息显示到 屏幕上.</p>
+<p>部分find参数:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-maxdepth&lt;目录层级&gt;</td>
+<td style="text-align:left">设置最大目录层级</td>
+</tr>
+<tr>
+<td style="text-align:left">-name</td>
+<td style="text-align:left">匹配名称</td>
+</tr>
+<tr>
+<td style="text-align:left">-perm</td>
+<td style="text-align:left">匹配权限(mode为完全匹配,-mode为包含即可)</td>
+</tr>
+<tr>
+<td style="text-align:left">-user</td>
+<td style="text-align:left">匹配所有者</td>
+</tr>
+<tr>
+<td style="text-align:left">-group</td>
+<td style="text-align:left">匹配所有组</td>
+</tr>
+<tr>
+<td style="text-align:left">-mtime -n +n</td>
+<td style="text-align:left">匹配修改内容的时间(-n指n天内,+n指的是n天前)</td>
+</tr>
+<tr>
+<td style="text-align:left">-atime -n +n</td>
+<td style="text-align:left">匹配访问文件的时间</td>
+</tr>
+<tr>
+<td style="text-align:left">-ctime -n +n</td>
+<td style="text-align:left">匹配修改文件权限的时间</td>
+</tr>
+<tr>
+<td style="text-align:left">-nouser</td>
+<td style="text-align:left">匹配无所有者的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-nogroup</td>
+<td style="text-align:left">匹配无所有组的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-newer f1 !f2</td>
+<td style="text-align:left">匹配比文件f1新但比f2旧的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">–type b/d/c/p/l/f</td>
+<td style="text-align:left">匹配文件类型（后面的字母参数依次表示块设备、目录、字符设备、管道,连接文件,文本文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-size</td>
+<td style="text-align:left">匹配文件的大小(+50KB 为查找超过 50KB 的文件，而-50KB 为查找小 于的)</td>
+</tr>
+<tr>
+<td style="text-align:left">-prume</td>
+<td style="text-align:left">忽略某个目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-exec …… {}\;</td>
+<td style="text-align:left">后面可跟用于进一步处理搜索结果的命令（下文会有演示）</td>
+</tr>
+</tbody>
+</table>
+<p>如果想要获取etc目录下以host开头的文件列表:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# find /etc -name &quot;host*&quot; -print</span><br><span class="line">/etc/avahi/hosts</span><br><span class="line">/etc/host.conf</span><br><span class="line">/etc/hosts</span><br><span class="line">/etc/hosts.allow</span><br><span class="line">/etc/hosts.deny</span><br><span class="line">/etc/selinux/targeted/modules/active/modules/hostname.pp</span><br><span class="line">/etc/hostname</span><br></pre></td></tr></table></figure>
+<p>如果要在整个系统中搜索权限中包括 SUID 权限的所有文件，只需使用4000 即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># find / -perm -40000 -print</span><br></pre></td></tr></table></figure>
+<p>在整个系统文件中找出所有归属于<code>linuxprobe</code>用户的文件,并复制到<code>/root/findresults</code>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># find / -user linuxprobe -exec cp -a &#123;&#125; /root/findresults/ \;</span><br><span class="line"></span><br><span class="line">// / 代表所有系统文件,cp是复制命令,&#123;&#125;代表查找到的文件</span><br></pre></td></tr></table></figure>
+<p>向下距离当前目录最大深度限制为3,搜索文本文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -mindepth 3 - type f</span><br></pre></td></tr></table></figure>
+<h1 id="第三章-管道符-重定向与环境变量"><a href="#第三章-管道符-重定向与环境变量" class="headerlink" title="第三章 管道符,重定向与环境变量"></a>第三章 管道符,重定向与环境变量</h1><h2 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h2><p>输入重定向是指把文件导入到命令中,输出重定向是把输出写入到指定文件中.</p>
+<ul>
+<li>标准输入重定向(STDIN,文件描述符为0):默认键盘输入,也可以从其他文件或命令输入</li>
+<li>标准输出重定向(STDOUT,文件描述符为1):默认输出到屏幕</li>
+<li>错误输出重定向(STDERR,文件描述符为2):默认输出到屏幕</li>
+</ul>
+<p>使用<code>ls</code>查看两个文件属性,其中第二个不存在,会输出错误信息:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe Desktop]# touch linuxprobe</span><br><span class="line">[root@linuxprobe Desktop]# ls -l linuxprobe</span><br><span class="line">-rw-r--r--. 1 root root 0 Nov 13 09:28 linuxprobe</span><br><span class="line">[root@linuxprobe Desktop]# ls -l xxx</span><br><span class="line">ls: cannot access xxx: No such file or directory</span><br></pre></td></tr></table></figure>
+<p>重定向时区别对待两种信息.</p>
+<p>对于输入重定向来讲，用到的符号及其作用如表 3-1 所示。<br><img src="https://e1sewhere.github.io/images/%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91.png" alt="输入重定向.png"></p>
+<p>对于输出重定向来讲，用到的符号及其作用如表 3-2 所示。<br><img src="https://e1sewhere.github.io/images/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91.png" alt="输出重定向.png"></p>
+<p>输出重定向中,标准输出模式,可以省略文件描述符1不写,而错误输出模式的文件描述符2必须要写.</p>
+<p>下例通过标准输出重定向将<code>man bash</code>命令的输出写入到文件<code>readme.ext</code>中,然后显示<code>readme.txt</code>文件中的内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># man bash &gt; readme.txt</span><br><span class="line"># cat readme.txt</span><br></pre></td></tr></table></figure>
+<p>输入重定向相对来说有些冷门，在工作中遇到的概率会小一点。输入重定向的作用是把 文件直接导入到命令中。接下来使用输入重定向把 readme.txt 文件导入给 <code>wc -l</code>命令，统计一下文件中的内容行数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wc -l &lt;readme.txt</span><br></pre></td></tr></table></figure>
+<h2 id="管道命令符"><a href="#管道命令符" class="headerlink" title="管道命令符"></a>管道命令符</h2><p>管道命令符的作 用也可以用一句话来概括“把前一个命令原本要输出到屏幕的标准正常数据当作是后一个命 令的标准输入”。<br>将<code>|</code>左边的命令的输出作为输入传入<code>|</code>右边的命令<br>执行格式为<code>命令A|命令B</code><br> 找出被限制登录用户的命令是 <code>grep &quot;/sbin/nologin&quot; /etc/passwd</code>统计文本行数的命令则是 <code>wc</code>,现在要做的就是把搜索命令的输出值传递给统计命令，即把原本要输出到屏幕的用户信 息列表再交给 wc 命令作进一步的加工，因此只需要把管道符放到两条命令之间即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># grep  &quot;/sbin/nologin&quot; /etc/passwd | wc -l </span><br><span class="line">33</span><br></pre></td></tr></table></figure></p>
+<h2 id="命令行的通配符"><a href="#命令行的通配符" class="headerlink" title="命令行的通配符"></a>命令行的通配符</h2><p>星号（*）代 表匹配零个或多个字符，问号（?）代表匹配单个字符，中括号内加上数字[0-9]代表匹配 0～ 9 之间的单个数字的字符，而中括号内加上字母[abc]则是代表匹配 a、b、c 三个字符中的任意 一个字符…..</p>
+<p>除了使用[0-9]来匹配 0~9 之间的单个数字，也可以用[135]这样的方式仅匹配这三个指定 数字中的一个，若没有匹配到，则不会显示出来： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# ls -l /dev/sda[0-9] </span><br><span class="line">brw-rw----. 1 root disk 8, 1 May 4 15:55 /dev/sda1 </span><br><span class="line">brw-rw----. 1 root disk 8, 2 May 4 15:55 /dev/sda2 </span><br><span class="line">[root@linuxprobe ~]# ls -l /dev/sda[135] </span><br><span class="line">brw-rw----. 1 root disk 8, 1 May 4 15:55 /dev/sda1</span><br></pre></td></tr></table></figure>
+<h2 id="常用的转义字符"><a href="#常用的转义字符" class="headerlink" title="常用的转义字符"></a>常用的转义字符</h2><p>常用转义符:</p>
+<ul>
+<li>反斜杠<code>\</code>:使反斜杠后面的一个变量变为单纯的字符串</li>
+<li>单引号<code>&#39;&#39;</code>:转译其中所有的变量为淡出的字符串</li>
+<li>双引号<code>&quot;&quot;</code>:保留其中的变量属性,不做转义处理</li>
+<li>反引号`:把其中的命令执行后返回结果</li>
+</ul>
+<h2 id="重要的环境变量"><a href="#重要的环境变量" class="headerlink" title="重要的环境变量"></a>重要的环境变量</h2><p>变量是计算机系统用于保存可变值的数据类型。在 Linux 系统中，变量名称一般都是大 写的.<br>Linux 系统中的环境变量是用来定义系统运行环境的一些参数，比如每个用户不同的家目录、邮件 存放位置等。 </p>
+<p>Linux系统中重要的10个环境变量</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">变量名称</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">HOME</td>
+<td style="text-align:left">用户的主目录</td>
+</tr>
+<tr>
+<td style="text-align:left">SHELL</td>
+<td style="text-align:left">用户在使用的Shell解释器名称</td>
+</tr>
+<tr>
+<td style="text-align:left">HISTSIZE</td>
+<td style="text-align:left">输出的历史命令记录条数</td>
+</tr>
+<tr>
+<td style="text-align:left">HISTFILESIZE</td>
+<td style="text-align:left">保存的历史命令记录跳出</td>
+</tr>
+<tr>
+<td style="text-align:left">MAIL</td>
+<td style="text-align:left">右键保存路径</td>
+</tr>
+<tr>
+<td style="text-align:left">LANG</td>
+<td style="text-align:left">系统语言,语系名称</td>
+</tr>
+<tr>
+<td style="text-align:left">RANDOM</td>
+<td style="text-align:left">生成一个随机数字</td>
+</tr>
+<tr>
+<td style="text-align:left">PSI</td>
+<td style="text-align:left">Bash解释器的提示符</td>
+</tr>
+<tr>
+<td style="text-align:left">PATH</td>
+<td style="text-align:left">定义解释器搜索用户执行命令的路径</td>
+</tr>
+<tr>
+<td style="text-align:left">EDITOR</td>
+<td style="text-align:left">用户默认的文本编辑器</td>
+</tr>
+</tbody>
+</table>
+<p><strong>自行创建变量</strong>例如设置一个名称为<code>WORKDIR</code>的变量,方便进入一个层次较为深的目录:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /home/workdir</span><br><span class="line"># WORKDIR=/home/workdir</span><br><span class="line"># cd $WORKDIR</span><br></pre></td></tr></table></figure>
+<p>这样定义的变量只能在当前用户下使用,使用<code>export</code>可以将这个变量提升为全局变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd $WORKDIR</span><br><span class="line">$ echo $WORKDIR</span><br></pre></td></tr></table></figure>
+<h1 id="第四章-Vim编辑器与Shell命令脚本"><a href="#第四章-Vim编辑器与Shell命令脚本" class="headerlink" title="第四章 Vim编辑器与Shell命令脚本"></a>第四章 Vim编辑器与Shell命令脚本</h1><h2 id="Vim文本编辑器"><a href="#Vim文本编辑器" class="headerlink" title="Vim文本编辑器"></a>Vim文本编辑器</h2><p>三种模式:</p>
+<ol>
+<li>命令模式:控制光标移动,可对文本进行复制粘贴删除查找等工作</li>
+<li>输入模式:正常的文本录入</li>
+<li>末行模式:保存或退出文档,以及设置编辑环境<br><img src="https://e1sewhere.github.io/images/Vim模式.png" alt="Vim模式.png"><br>在每次运行 Vim 编辑器时，默认进入命令模式，此时需要先切换到输入模式后再进行文 档编写工作，而每次在编写完文档后需要先返回命令模式，然后再进入末行模式，执行文档 的保存或退出操作。在 Vim 中，无法直接从输入模式切换到末行模式</li>
+</ol>
+<p><strong>Vim 中命令行模式常用的命令</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">删除光标所在位置的“后面”一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">#x</td>
+<td style="text-align:left">删除光标所在位置后面的<code>#</code>个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">X</td>
+<td style="text-align:left">删除光标所在位置前面的一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">#X</td>
+<td style="text-align:left">删除光标所在位置的前面的<code>#</code>个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">删除光标所在的字符并开始插入</td>
+</tr>
+<tr>
+<td style="text-align:left">S</td>
+<td style="text-align:left">删除光标所在行并开始插入</td>
+</tr>
+<tr>
+<td style="text-align:left">dd</td>
+<td style="text-align:left">删除(剪切)光标所在整行</td>
+</tr>
+<tr>
+<td style="text-align:left">5dd</td>
+<td style="text-align:left">删除(剪切)从光标开始的5行</td>
+</tr>
+<tr>
+<td style="text-align:left">yy</td>
+<td style="text-align:left">复制光标所在整行(到缓冲区)</td>
+</tr>
+<tr>
+<td style="text-align:left">5yy</td>
+<td style="text-align:left">复制从光标出开始的5行</td>
+</tr>
+<tr>
+<td style="text-align:left">yw</td>
+<td style="text-align:left">将光标所在之处到字尾的字符复制到缓冲区中</td>
+</tr>
+<tr>
+<td style="text-align:left">#yw</td>
+<td style="text-align:left">复制#个字到缓冲区</td>
+</tr>
+<tr>
+<td style="text-align:left">n</td>
+<td style="text-align:left">显示搜索命令定位到的下一个字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">N</td>
+<td style="text-align:left">显示搜索命令定位道德上一个字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">替换光标所在处的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">R</td>
+<td style="text-align:left">替换光标所到之处的字符，直到按下「ESC]键为止</td>
+</tr>
+<tr>
+<td style="text-align:left">u</td>
+<td style="text-align:left">撤销上一步的操作</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl+u</td>
+<td style="text-align:left">撤销上一步’撤销’的操作</td>
+</tr>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left">将之前删除(dd)或复制(yy)过的数据粘贴到光标后面(其实是缓冲区)</td>
+</tr>
+<tr>
+<td style="text-align:left">c#w</td>
+<td style="text-align:left">改写光标后#个词</td>
+</tr>
+<tr>
+<td style="text-align:left">c#l</td>
+<td style="text-align:left">改写光标后#个字母</td>
+</tr>
+<tr>
+<td style="text-align:left">ctr l+g</td>
+<td style="text-align:left">列出光标所在行号</td>
+</tr>
+<tr>
+<td style="text-align:left">#G</td>
+<td style="text-align:left">移动光标至文章的第#行行首</td>
+</tr>
+</tbody>
+</table>
+<p>末行模式主要用于保存或退出文件，以及设置 Vim 编辑器的工作环境，还可以让用户执 行外部的 Linux 命令或跳转到所编写文档的特定行数。要想切换到末行模式，在命令模式中 输入一个冒号就可以了</p>
+<p><strong>末行模式中可用的命令</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>:w</code></td>
+<td style="text-align:left">保存</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:q</code></td>
+<td style="text-align:left">退出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:q!</code></td>
+<td style="text-align:left">强制退出（放弃对文档的修改内容）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:wq!</code></td>
+<td style="text-align:left">强制保存退出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>w filename</code></td>
+<td style="text-align:left">当前内容另存为filename</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:set nu</code></td>
+<td style="text-align:left">显示行号</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:set nonu</code></td>
+<td style="text-align:left">不显示行号</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:命令</code></td>
+<td style="text-align:left">执行该命令</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:整数</code></td>
+<td style="text-align:left">跳转到该行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:s/one/two</code></td>
+<td style="text-align:left">将当前光标所在行的第一个 one 替换成 two</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:s/one/two/g</code></td>
+<td style="text-align:left">将当前光标所在行的所有 one 替换成 two</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:%s/one/two/g</code></td>
+<td style="text-align:left">将全文中的所有 one 替换成 two</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>?字符串</code></td>
+<td style="text-align:left">在文本中从下至上搜索该字符串如果第一次找的关键字不是您想要的，可以一直按[n]会往后寻找到您要的关键字为止</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/字符串</code></td>
+<td style="text-align:left">在文本中从上至下搜索该字符串如果第一次找的关键字不是您想要的，可以一直按[n]会往后寻找到您要的关键字为止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="编写简单文档"><a href="#编写简单文档" class="headerlink" title="编写简单文档"></a>编写简单文档</h3><ol>
+<li>使用命令<code>vim [文件名]</code>,如果文件存在则打开它,如果不存在,则创建一个临时输入文件.</li>
+<li>直接进入的是Vim命令模式,执行<code>a</code> <code>i</code> <code>o</code> 三个键就可以从命令模式切换到输入模式(insert按键也可以)<ol start="3">
+<li>a:在光标后面一位切换到输入模式</li>
+<li>i:在光标当前位置切换到输入模式</li>
+<li>o:在光标下面再创建一个空行,进入到编辑器的输入模式</li>
+</ol>
+</li>
+<li>进入输入模式后，可以随意输入文本内容，Vim 编辑器不会把您输入的文本内容当作命令而执行</li>
+<li>编写完成后,esc退出输入模式,返回命令模式,然后输入<code>:</code>进入末行模式然后输入<code>wq!</code>强制保存退出</li>
+<li>这个文件就已经创建且有内容了</li>
+<li>使用<code>cat</code>命令查看保存的文档内容</li>
+</ol>
+<h3 id="配置主机名称"><a href="#配置主机名称" class="headerlink" title="配置主机名称"></a>配置主机名称</h3><p>为了便于在局域网中查找某台特定的主机，或者对主机进行区分，除了要有 IP 地址外， 还要为主机配置一个主机名，主机之间可以通过这个类似于域名的名称来相互访问。在 Linux 系统中，主机名大多保存在/etc/hostname 文件中.</p>
+<ul>
+<li>使用 Vim 编辑器修改“/etc/hostname”主机名称文件。 </li>
+<li>把原始主机名称删除后追加“linuxprobe.com”。注意，使用 Vim 编辑器修改主<br>机名称文件后，要在末行模式下执行:wq!命令才能保存并退出文档。 </li>
+<li>保存并退出文档，然后使用 hostname 命令检查是否修改成功。 </li>
+</ul>
+<h3 id="配置网卡信息"><a href="#配置网卡信息" class="headerlink" title="配置网卡信息"></a>配置网卡信息</h3><p>p99 略  实操配置失败</p>
+<h3 id="配置Yum仓库"><a href="#配置Yum仓库" class="headerlink" title="配置Yum仓库"></a>配置Yum仓库</h3><p>，Yum软件仓库的作用是为了进一步简化RPM管理软件的难度以及自动分析 所需软件包及其依赖关系的技术,可以把 Yum想象成是一个硕大的软件仓库，里面保存有几乎所 有常用的工具，而且只需要说出所需的软件包名称，系统就会自动为您搞定一切。<br>略p99</p>
+<h3 id="编写简单的脚本"><a href="#编写简单的脚本" class="headerlink" title="编写简单的脚本"></a>编写简单的脚本</h3><p>使用 Vim 编辑器把 Linux 命令按照顺序依次写入到一 个文件中，这就是一个简单的脚本了<br>例如，如果想查看当前所在工作路径并列出当前目录下所有的文件及属性信息，实现这 个功能的脚本应该类似于下面这样： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# vim example.sh </span><br><span class="line">#!/bin/bash  //脚本声明(#!)告诉系统使用哪种Shell解释器来执行该脚本</span><br><span class="line">#for Example By e1se //(#)脚本注释,用于介绍脚本等</span><br><span class="line">pwd   //脚本内容</span><br><span class="line">ls -al  //脚本内容</span><br></pre></td></tr></table></figure>
+<p><em>Shell 脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将.sh 后缀加上</em><br>然后执行这个脚本:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@else Desktop]# bash example.sh</span><br><span class="line">/root/Desktop</span><br><span class="line">total 8892</span><br><span class="line">drwxr-xr-x.  2 root root    4096 Nov 23 21:34 .</span><br><span class="line">dr-xr-x---. 15 root root    4096 Nov 23 21:34 ..</span><br><span class="line">-rw-r--r--.  1 root root 8764090 Nov 10 16:34 etc.tar.gz</span><br><span class="line">-rw-r--r--.  1 root root      45 Nov 23 21:34 example.sh</span><br><span class="line">-rw-r--r--.  1 root root       0 Nov 13 09:28 linuxprobe</span><br><span class="line">-rw-r--r--.  1 root root      13 Nov 16 16:54 practice2.txt</span><br><span class="line">-rw-r--r--.  1 root root       0 Nov 16 16:32 practice.txt</span><br><span class="line">-rw-r--r--.  1 root root  320443 Nov 13 09:35 readme.txt</span><br></pre></td></tr></table></figure>
+<p>除了上面用bash解释器命令直接运行Shell脚本外,第二种运行方式是通过输入完整路径的方式来执行。但默认会因为权限不足而提示报错信息，此时只需要为脚 本文件增加执行权限即可（详见第 5 章）初次学习 Linux 系统的读者不用心急，等下一章学 完用户身份和权限后再来做这个实验也不迟： </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# ./example.sh </span><br><span class="line">bash: ./Example.sh: Permission denied </span><br><span class="line">[root@linuxprobe ~]# chmod u+x example.sh </span><br><span class="line">[root@linuxprobe ~]# ./example.sh </span><br><span class="line">/root/Desktop </span><br><span class="line">total 8 </span><br><span class="line">drwxr-xr-x. 2 root root 23 Jul 23 17:31 . </span><br><span class="line">dr-xr-x---. 14 root root 4096 Jul 23 17:31 .. </span><br><span class="line">-rwxr--r--. 1 root root 55 Jul 23 17:31 example.sh</span><br></pre></td></tr></table></figure>
+<h3 id="接收用户的参数"><a href="#接收用户的参数" class="headerlink" title="接收用户的参数"></a>接收用户的参数</h3><p>为了 让 Shell 脚本程序更好地满足用户的一些实时需求，以便灵活完成工作，必须要让脚本程序能 够像之前执行命令时那样，接收用户输入的参数。<br>用于接收参数的变 量，变量之间可以使用空格间隔。例如$0 对应的是当前 Shell 脚本程序的名称，$#对应的是总共 有几个参数，$*对应的是所有位置的参数值，$?对应的是显示上一次命令的执行返回值，而$1、 $2、$3……则分别对应着第 N 个位置的参数值，如图 </p>
+<p><img src="https://e1sewhere.github.io/images/脚本参数.png" alt="脚本参数.png"></p>
+<h1 id="linux配置"><a href="#linux配置" class="headerlink" title="linux配置"></a>linux配置</h1><h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><p>Command:ping<br>Function：测试网络连通性<br>命令所在路径：/bin/ping<br>执行权限：所有用户<br>语法：ping[选项]IP地址<br>-c指定发送次数<br>范例：ping 1.1.1.1</p>
+<h3 id="last"><a href="#last" class="headerlink" title="last"></a>last</h3><p>Command:last<br>Function：显示用户最近登录信息<br>单独执行last命令，它会读取/var/log/wtmp的文件，并把该给文件的内容记录的登入系统的用户名单全部显示出来。<br>语法：last（选项）（参数）<br>-n〈显示列数〉或-〈显示列数〉：设置显示列数<br>-R：不显示登入系统的主机名称或IP地址；<br>-x：显示系统关机，重新开机，以及执行等级的改变等信息</p>
+<h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><p>Command:ifconfig<br>Function：<br>1、ifconfig输出网络接口配置、调优和debug的各种选项。<br>2、可以快捷地查看IP地址和其它网络接口的信息。<br>3、键入ifconfig查看所有启用的网络接口的状态，包括它们的名字。<br>4、可以指定网络接口的名字来只显示这一个接口的信息。<br>命合参数：<br>up 后动指定网络设备/网卡。<br>down 关闭指定网络设备/网卡。该参数可以有效地阻止通过指定接口的<br>-a显示全部接口信息<br>-s显示摘要信息（类似于netstat-i）<br>add 给指定网卡配置IPv6地址<br>del删除指定网卡的IPV6地址<br>&lt;硬件地址&gt;配置网卡最大的传输单元<br>mtu&lt;字节数&gt;设置网卡的最大传输单元（bytes）<br>netmask&lt;子网掩码&gt;设置网卡的子网掩码。掩码可以是有前缀0x的32位十六进制数，也可以是用点分开的4个+进制数。如果不打算捋网络分成子网，可以不管这一选项；如果要使用子网，那么请记住，网络中每一个系统必须有相同子网掩码</p>
+<p>实例2：后动关闭指定网卡<br>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 up</span><br><span class="line">ifconfig eth0 down</span><br></pre></td></tr></table></figure>
+<p>实例3：为网卡配置和删除IPV6地址<br>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 add 33ffe：3240：800：1005：2/64</span><br><span class="line">ifconfig eth0 del 33ffe：3240：800：1005：2/64</span><br></pre></td></tr></table></figure>
+<p>实例5：配置IP地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|[root@localhost-]4ifconfig etho 192.168.120.56</span><br><span class="line">[root@localhost-]4 ifconfig eth0 192.168.120.56 netmask 255.255.255.0</span><br><span class="line">|[root@localhost～]4ifcontig etho 192.168.120.56 netmask 255.255.255.0 broadcast 192.168.120.255</span><br></pre></td></tr></table></figure>
+<p>3 p13</p>
+<h1 id="实际使用"><a href="#实际使用" class="headerlink" title="实际使用"></a>实际使用</h1><p>来源:<a href="https://www.jianshu.com/p/6b77a27762b4" target="_blank" rel="noopener">https://www.jianshu.com/p/6b77a27762b4</a></p>
+<h2 id="配置网卡"><a href="#配置网卡" class="headerlink" title="配置网卡"></a>配置网卡</h2><p>使用Centos7 minimal(无图形化界面)<br>网卡是 eth-33<br>由于centos 内查看ip地址不再是<code>ifconfig</code>而是<code>ip addr</code><br>我们使用<code>ip addr</code>查看.如果看不到<code>eth33</code>的ip<br>尝试修改为<code>eht0</code></p>
+<h3 id="修改网卡名称"><a href="#修改网卡名称" class="headerlink" title="修改网卡名称"></a>修改网卡名称</h3><ol>
+<li>编辑网卡的配置文件 vi /etc/sysconfig/network-scripts/ifcfg-ens33 将里面的NAME和DEVICE项修改为eth0，ONBOOT=yes</li>
+<li>重命名网卡配置文件ifcfg-ens33为ifcfg-eth0<br>cd /etc/sysconfig/network-scripts/<br>mv ifcfg-ens33 ifcfg-eth0</li>
+<li>编辑/etc/default/grub并加入“net.ifnames=0 biosdevname=0 ”到GRUBCMDLINELINUX变量<br>如：GRUB_CMDLINE_LINUX=”crashkernel=auto net.ifnames=0 biosdevname=0 rhgb quiet”</li>
+<li>运行命令grub2-mkconfig -o /boot/grub2/grub.cfg 来重新生成GRUB配置并更新内核参数。<br>5.重启系统reboot</li>
+</ol>
+<h2 id="安装-deb文件"><a href="#安装-deb文件" class="headerlink" title="安装.deb文件"></a>安装.deb文件</h2><p>以kali安装 nessus为例子<br>我的kali是debian7.x</p>
+<p>直接进入deb文件所在目录,执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i Nessus-6.10.5-debian6_amd64.deb  //文件名用tab自动补全</span><br></pre></td></tr></table></figure>
+<p>等待安装完成.<br>这样就安装成功了<br>后续步骤是nessus特有的</p>
+<p>启动nessus</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/nessusd start</span><br></pre></td></tr></table></figure>
+<p>查看启动状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ntpl | grep nessus</span><br></pre></td></tr></table></figure>
+<div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2019/02/27/Linux-Vulhub安装过程的学习/">Linux Vulhub安装过程的学习</a></li><li><a href="https://e1sewhere.github.io/2019/03/11/Linux下安装redis/">Linux下安装redis</a></li><li><a href="https://e1sewhere.github.io/2019/04/18/渗透常用操作系统命令/">渗透常用操作系统命令</a></li><li><a href="https://atomrq.gitee.io/2019-09-day/2019-09-23-LinuxNoPASSWD/">Linux ssh免密码登录</a></li></ul></div>
+          
+          <div>    
+ 
+ 
+    <div class="post-copyright">
+    	如果文章有问题欢迎指出,或者你也可以联系我
+      <div class="post-copyright-author">
+          <strong>本文作者：</strong>E1se
+      </div>
+      <div class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/08/08/虚拟机上的Linux学习/" title="虚拟机上的Linux学习">2018/08/08/虚拟机上的Linux学习/</a>
+      </div>
+      <div class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"> <i class="fa fa-tag"></i>linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/18/Git-学习笔记/" rel="next" title="Git 学习笔记">
+                <i class="fa fa-chevron-left"></i> Git 学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/LOFTER-迁移/" rel="prev" title="LOFTER 迁移">
+                LOFTER 迁移 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/eva1.ico"
+                alt="E1se" />
+            
+              <p class="site-author-name" itemprop="name">E1se</p>
+              <p class="site-description motion-element" itemprop="description">none</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/e1sewhere" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="elsewhere997@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐站点
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://e1sewhere.github.io/EdenPage/11111/" title="什么也没有" target="_blank">什么也没有</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("02/20/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+  
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#个人补充"><span class="nav-number">1.</span> <span class="nav-text">个人补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用虚拟机安装Linux"><span class="nav-number">2.</span> <span class="nav-text">使用虚拟机安装Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载基本环境"><span class="nav-number">2.1.</span> <span class="nav-text">下载基本环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机安装RHEL-7"><span class="nav-number">2.2.</span> <span class="nav-text">虚拟机安装RHEL 7</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预备知识"><span class="nav-number">3.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些符号"><span class="nav-number">3.1.</span> <span class="nav-text">一些符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用者与群组"><span class="nav-number">3.2.</span> <span class="nav-text">使用者与群组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户类型"><span class="nav-number">3.2.1.</span> <span class="nav-text">用户类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户组类型"><span class="nav-number">3.2.2.</span> <span class="nav-text">用户组类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UID和GID"><span class="nav-number">3.2.3.</span> <span class="nav-text">UID和GID</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UID"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">UID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GID"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">GID</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户配置文件"><span class="nav-number">3.2.4.</span> <span class="nav-text">用户配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户账号文件"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">用户账号文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户影子文件-shadow"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">用户影子文件(shadow)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户管理"><span class="nav-number">3.2.5.</span> <span class="nav-text">用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#useradd创建用户"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">useradd创建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd为用户设置密码"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">passwd为用户设置密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#su-切换用户身份"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">su 切换用户身份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#userdel删除用户账号"><span class="nav-number">3.2.5.4.</span> <span class="nav-text">userdel删除用户账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usermod-修改用户账号属性"><span class="nav-number">3.2.5.5.</span> <span class="nav-text">usermod 修改用户账号属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groupadd-新建用户组"><span class="nav-number">3.2.5.6.</span> <span class="nav-text">groupadd 新建用户组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gpasswd添加删除组成员"><span class="nav-number">3.2.5.7.</span> <span class="nav-text">gpasswd添加删除组成员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groupdel删除用户组"><span class="nav-number">3.2.5.8.</span> <span class="nav-text">groupdel删除用户组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groups-查询某个用户所属组"><span class="nav-number">3.2.5.9.</span> <span class="nav-text">groups 查询某个用户所属组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux目录结构和文件类型"><span class="nav-number">3.3.</span> <span class="nav-text">Linux目录结构和文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux系统结构"><span class="nav-number">3.3.1.</span> <span class="nav-text">Linux系统结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux文件基本属性"><span class="nav-number">3.3.2.</span> <span class="nav-text">Linux文件基本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例子"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux文件权限"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Linux文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#权限对目录树的作用"><span class="nav-number">3.3.2.2.1.</span> <span class="nav-text">权限对目录树的作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#权限对文件的作用"><span class="nav-number">3.3.2.2.2.</span> <span class="nav-text">权限对文件的作用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认权限"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">默认权限</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#改变文件的属性与权限"><span class="nav-number">3.3.2.3.1.</span> <span class="nav-text">改变文件的属性与权限</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制位-冒险位"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">强制位,冒险位</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SUID"><span class="nav-number">3.3.2.4.1.</span> <span class="nav-text">SUID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SGID"><span class="nav-number">3.3.2.4.2.</span> <span class="nav-text">SGID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SBIT"><span class="nav-number">3.3.2.4.3.</span> <span class="nav-text">SBIT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置强制位和冒险位"><span class="nav-number">3.3.2.4.4.</span> <span class="nav-text">设置强制位和冒险位</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell"><span class="nav-number">3.4.</span> <span class="nav-text">Shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Shell"><span class="nav-number">3.4.1.</span> <span class="nav-text">什么是Shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bash和Shell的关系"><span class="nav-number">3.4.2.</span> <span class="nav-text">bash和Shell的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPM红帽软件包管理器"><span class="nav-number">3.5.</span> <span class="nav-text">RPM红帽软件包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YUM软件仓库"><span class="nav-number">3.6.</span> <span class="nav-text">YUM软件仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础Linux命令"><span class="nav-number">4.</span> <span class="nav-text">基础Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux命令格式"><span class="nav-number">4.1.</span> <span class="nav-text">Linux命令格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#man命令"><span class="nav-number">4.2.</span> <span class="nav-text">man命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到root用户"><span class="nav-number">4.2.1.</span> <span class="nav-text">切换到root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Linux系统命令行终端"><span class="nav-number">4.2.2.</span> <span class="nav-text">使用Linux系统命令行终端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#man命令下常用按键"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">man命令下常用按键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man命令帮助信息的结构"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">man命令帮助信息的结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用系统命令"><span class="nav-number">4.3.</span> <span class="nav-text">常用系统命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo命令"><span class="nav-number">4.3.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#date命令"><span class="nav-number">4.3.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reboot"><span class="nav-number">4.3.3.</span> <span class="nav-text">reboot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#poweroff"><span class="nav-number">4.3.4.</span> <span class="nav-text">poweroff</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wget"><span class="nav-number">4.3.5.</span> <span class="nav-text">wget</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">4.3.6.</span> <span class="nav-text">ps</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ps简介"><span class="nav-number">4.3.6.1.</span> <span class="nav-text">ps简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程状态"><span class="nav-number">4.3.6.2.</span> <span class="nav-text">进程状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top命令"><span class="nav-number">4.3.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pidof命令"><span class="nav-number">4.3.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill命令"><span class="nav-number">4.3.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#killall命令"><span class="nav-number">4.3.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统状态检测命令"><span class="nav-number">4.4.</span> <span class="nav-text">系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">4.4.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uname命令"><span class="nav-number">4.4.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uptime命令"><span class="nav-number">4.4.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free命令"><span class="nav-number">4.4.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#who命令"><span class="nav-number">4.4.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#last命令"><span class="nav-number">4.4.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history命令"><span class="nav-number">4.4.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sosreport命令"><span class="nav-number">4.4.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录切换命令"><span class="nav-number">4.5.</span> <span class="nav-text">工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd命令"><span class="nav-number">4.5.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd命令"><span class="nav-number">4.5.2.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls命令"><span class="nav-number">4.5.3.</span> <span class="nav-text">ls命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本文件编辑命令"><span class="nav-number">4.6.</span> <span class="nav-text">文本文件编辑命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat命令"><span class="nav-number">4.6.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more-less命令"><span class="nav-number">4.6.2.</span> <span class="nav-text">more/less命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head命令"><span class="nav-number">4.6.3.</span> <span class="nav-text">head命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tail命令"><span class="nav-number">4.6.4.</span> <span class="nav-text">tail命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr命令"><span class="nav-number">4.6.5.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc命令"><span class="nav-number">4.6.6.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stat命令"><span class="nav-number">4.6.7.</span> <span class="nav-text">stat命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut命令"><span class="nav-number">4.6.8.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#diff命令"><span class="nav-number">4.6.9.</span> <span class="nav-text">diff命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件目录管理命令"><span class="nav-number">4.7.</span> <span class="nav-text">文件目录管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ln命令"><span class="nav-number">4.7.1.</span> <span class="nav-text">ln命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#touch命令"><span class="nav-number">4.7.2.</span> <span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir命令"><span class="nav-number">4.7.3.</span> <span class="nav-text">mkdir命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir命令"><span class="nav-number">4.7.4.</span> <span class="nav-text">rmdir命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp命令"><span class="nav-number">4.7.5.</span> <span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv命令"><span class="nav-number">4.7.6.</span> <span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm命令"><span class="nav-number">4.7.7.</span> <span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dd命令"><span class="nav-number">4.7.8.</span> <span class="nav-text">dd命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file命令"><span class="nav-number">4.7.9.</span> <span class="nav-text">file命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包压缩与搜索命令"><span class="nav-number">4.8.</span> <span class="nav-text">打包压缩与搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tar-命令"><span class="nav-number">4.8.1.</span> <span class="nav-text">Tar 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep命令"><span class="nav-number">4.8.2.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find命令"><span class="nav-number">4.8.3.</span> <span class="nav-text">find命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-管道符-重定向与环境变量"><span class="nav-number">5.</span> <span class="nav-text">第三章 管道符,重定向与环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出重定向"><span class="nav-number">5.1.</span> <span class="nav-text">输入输出重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道命令符"><span class="nav-number">5.2.</span> <span class="nav-text">管道命令符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行的通配符"><span class="nav-number">5.3.</span> <span class="nav-text">命令行的通配符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的转义字符"><span class="nav-number">5.4.</span> <span class="nav-text">常用的转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要的环境变量"><span class="nav-number">5.5.</span> <span class="nav-text">重要的环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-Vim编辑器与Shell命令脚本"><span class="nav-number">6.</span> <span class="nav-text">第四章 Vim编辑器与Shell命令脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim文本编辑器"><span class="nav-number">6.1.</span> <span class="nav-text">Vim文本编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编写简单文档"><span class="nav-number">6.1.1.</span> <span class="nav-text">编写简单文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置主机名称"><span class="nav-number">6.1.2.</span> <span class="nav-text">配置主机名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置网卡信息"><span class="nav-number">6.1.3.</span> <span class="nav-text">配置网卡信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Yum仓库"><span class="nav-number">6.1.4.</span> <span class="nav-text">配置Yum仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写简单的脚本"><span class="nav-number">6.1.5.</span> <span class="nav-text">编写简单的脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收用户的参数"><span class="nav-number">6.1.6.</span> <span class="nav-text">接收用户的参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux配置"><span class="nav-number">7.</span> <span class="nav-text">linux配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络配置"><span class="nav-number">7.1.</span> <span class="nav-text">网络配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ping"><span class="nav-number">7.1.1.</span> <span class="nav-text">ping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#last"><span class="nav-number">7.1.2.</span> <span class="nav-text">last</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig"><span class="nav-number">7.1.3.</span> <span class="nav-text">ifconfig</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际使用"><span class="nav-number">8.</span> <span class="nav-text">实际使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置网卡"><span class="nav-number">8.1.</span> <span class="nav-text">配置网卡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网卡名称"><span class="nav-number">8.1.1.</span> <span class="nav-text">修改网卡名称</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-deb文件"><span class="nav-number">8.2.</span> <span class="nav-text">安装.deb文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">RECOMMEND</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">E1se</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">190.2k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>|
+</span>
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz',
+        appKey: '9wRib5jaIuQL2dVmtXx24smG',
+        placeholder: 'Just go go',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz", "9wRib5jaIuQL2dVmtXx24smG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+
+<!-- �Զ����js�ļ� -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+ 
+ <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+ 
+</body>
+</html>
+<!-- 页面点击价值观 -->
+<script type="text/javascript" src="/js/src/jiazhiguan.js"></script>
+
+ <!--动态背景轮播-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script>
+  $.backstretch([  
+          "/images/background/1.jpg",
+          "/images/background/2.jpg",
+          "/images/background/3.jpg"
+    ], { duration: 30000, fade: 1500 }); 
+</script>
+
+
+

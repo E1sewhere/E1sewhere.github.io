@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="google-site-verification" content="jIIp89W5czDndIpDpqacsdM_ooroPfoz-v_D4UrrwmM" />
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #a40000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #a40000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #a40000;    /*上边框颜色*/
+        border-left-color: #a40000;    /*左边框颜色*/
+    }
+</style>
+
+
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文记录Android 第一行代码(第2版)的读书笔记,同时也会记录学习中的其他非本书知识.基本按照章节分段,方便其他使用">
+<meta name="keywords" content="android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《第一行代码》读书笔记">
+<meta property="og:url" content="https://e1sewhere.github.io/2018/09/07/第一行代码读书笔记/index.html">
+<meta property="og:site_name" content="E1sewhere">
+<meta property="og:description" content="本文记录Android 第一行代码(第2版)的读书笔记,同时也会记录学习中的其他非本书知识.基本按照章节分段,方便其他使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://e1sewhere.github.io/images/code1.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/intent1.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/cycle1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/standard.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/singleTop.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/singleTask.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/singleInstance.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/View1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/FragmentCycle.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/query.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/androidsql.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/context.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/as1.png">
+<meta property="og:updated_time" content="2019-03-20T10:11:01.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《第一行代码》读书笔记">
+<meta name="twitter:description" content="本文记录Android 第一行代码(第2版)的读书笔记,同时也会记录学习中的其他非本书知识.基本按照章节分段,方便其他使用">
+<meta name="twitter:image" content="https://e1sewhere.github.io/images/code1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://e1sewhere.github.io/2018/09/07/第一行代码读书笔记/"/>
+
+
+
+
+
+  <title>《第一行代码》读书笔记 | E1sewhere</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+   
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    
+    <div class="top-scroll-bar"></div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">E1sewhere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header> 
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://e1sewhere.github.io/2018/09/07/第一行代码读书笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E1se">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/eva1.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E1sewhere">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《第一行代码》读书笔记</h1>
+        
+
+        <div class="post-meta">
+		
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T20:55:54+08:00">
+                2018-09-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T18:11:01+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/07/第一行代码读书笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/07/第一行代码读书笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/07/第一行代码读书笔记/" class="leancloud_visitors" data-flag-title="《第一行代码》读书笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  15,603
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  60
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p><em>本文记录Android 第一行代码(第2版)的读书笔记,同时也会记录学习中的其他非本书知识.基本按照章节分段,方便其他使用</em><br><a id="more"></a></p>
+<h1 id="第一章-初识安卓"><a href="#第一章-初识安卓" class="headerlink" title="第一章 初识安卓"></a>第一章 初识安卓</h1><h2 id="安卓简介"><a href="#安卓简介" class="headerlink" title="安卓简介"></a>安卓简介</h2><p>安卓系统有四大组件: 活动(Activity),服务(Service),广播接收器(Broadcast Receiver),内容提供器(Content Provider)<br>这四个东西还是挺熟悉的,以前折腾安卓手机,控制唤醒就是在控制应用的这四个东西.</p>
+<h2 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h2><p>参看上一篇搭建时遇到的问题以及解决方案\</p>
+<h2 id="AS目录结构"><a href="#AS目录结构" class="headerlink" title="AS目录结构"></a>AS目录结构</h2><p>默认结构为AS转换过的,实际目录结构应该是和eclios差不多的,将目录结构切换为Project,这样的目录结构就是项目实际目录了.</p>
+<h3 id="大体目录结构"><a href="#大体目录结构" class="headerlink" title="大体目录结构"></a>大体目录结构</h3><ol>
+<li>.gradle和.idea<br>本目录下是AS自动生成文件,无需关心,不用编辑.</li>
+<li>app<br>项目的代码,资源几乎都在这里,开发工作基本在这里进行</li>
+<li>build<br>包含编译时自动生成的文件</li>
+<li>gradle<br>包含gradle wrapper的配置文件</li>
+<li>.gitignore<br>这个文件是将指定目录或文件排除在版本控制之外的.</li>
+<li>build.gradle<br>这个文件是醒目全局的gradle构建脚本</li>
+<li>gradle.properties<br>全局gradle配置文件</li>
+<li>gradlew和gradlew.bat<br>用来在命令行界面执行gradle命令</li>
+<li>Helloworld.iml<br>iml文件是所有intelij IDEA项目都会自动生成的一个文件(Android Studio是基于IntelliJIDEA开发的)用于标识这是一个IntelliJIDEA项目</li>
+<li>local.properties<br>这个文件用于指定本机中的Android SDK路径 ,自动生成,除非项目开发中sdk发生了更改才需要手动更改</li>
+<li>settings.gradle<br>这个文件用于指定项目中所有引入的模块.</li>
+</ol>
+<h3 id="app下的目录分析"><a href="#app下的目录分析" class="headerlink" title="app下的目录分析"></a>app下的目录分析</h3><p><strong>实际上除了app目录外,大多数的文件都是自动生成的,app才是工作的重点</strong></p>
+<ol>
+<li>build<br>和外层build相似</li>
+<li>libs<br>项目中的第三方jar包,都在本目录下,本目录下的jar包都会被自动添加到构建路径里.</li>
+<li>androidTest<br>用于编写android test测试用例,可以对项目做一些自动化测试</li>
+<li>main下java<br>放置所有java代码的目录</li>
+<li>main下res<br>所有资源文件放置这里,图片,布局,字符串等资源都放在这里,每种资源放置在不同目录下<ol>
+<li>drawable开头用来放图片</li>
+<li>mipmap开头放应用图标</li>
+<li>values开头放字符串,样式,颜色等配置</li>
+<li>layout文件夹用来放布局文件 </li>
+</ol>
+</li>
+<li>androidmanifes.xml<br>整个项目的配置文件,程序中定义的所有四大组建都在本文件内注册,还可以给程序添加权限声明.</li>
+<li>test<br>用来编写unit test测试用例.</li>
+<li>.gitignore<br>和外层.gitignore作用类似</li>
+<li>app.iml<br>IntelliJIDEA自动生成文件</li>
+<li>build.gradle<br>app模块的gradle构建脚本.</li>
+<li>proguard-rules.pro<br>指定代码混淆规则</li>
+</ol>
+<h2 id="HelloWorld程序简单分析"><a href="#HelloWorld程序简单分析" class="headerlink" title="HelloWorld程序简单分析"></a>HelloWorld程序简单分析</h2><h3 id="逻辑和视图分离"><a href="#逻辑和视图分离" class="headerlink" title="逻辑和视图分离"></a>逻辑和视图分离</h3><p>先查看java下的mainactivity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>mainActivity这个活动中实际上是没有”HelloWorld”字符的,android程序设计讲究逻辑和视图分离的,因此活动中一般不会直接写界面.<br>onCreate方法的第二行,使用setContentView给这个活动设置了一个布局activity_main,我们用ctrl进入这个文件可以看到文件位于<code>layout/activity_main.xml</code>文件切换为text视图,可以看<br>到有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:text=&quot;Hello World!&quot;</span><br></pre></td></tr></table></figure></p>
+<p>所以本程序中的文字是在这个文件内定义的.</p>
+<h3 id="res下内容引用"><a href="#res下内容引用" class="headerlink" title="res下内容引用"></a>res下内容引用</h3><p>打开values/strings.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;string name=&quot;app_name&quot;&gt;HelloWorld3&lt;/string&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里定义了”app_name”的字符串,而我们再打开androidmanifest.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;application</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里<code>android:label=&quot;@string/app_name&quot;</code>对于app名称做了引用.</p>
+<p>我们引用这些资源时有两种方式</p>
+<ul>
+<li>在代码中通过R.string.name获得该字符串的引用</li>
+<li>在XML中通过@string/name获得该字符串的引用</li>
+</ul>
+<p>基本语法是上面的这两种形式,其中string是可以被替换的,例如引用图片资源替换为drawable,引用图标变为mupmap,布局替换为layout,以此类推.<br>lable也是可以替换的,对应后面的string.</p>
+<h3 id="详解build-gradle文件"><a href="#详解build-gradle文件" class="headerlink" title="详解build.gradle文件"></a>详解build.gradle文件</h3><p>AS采用Gradle来构建项目,build.gradle一个在外层一个在app目录下.</p>
+<h4 id="外层"><a href="#外层" class="headerlink" title="外层"></a>外层</h4><p>两处repositories闭包中申明了jcenter():这是一个代码托管仓库,声明后就可以在醒目中引用jcenter上的开源项目.<br>dependencies闭包中用classpath声明了一个Gradle插件,要想使用Gradle构建安卓项目就必须声明这个插件.(Gradle可以支持多种项目构建java,c++等都有专门的插件)<br>通常不需要修改外层build.gradle,除非需要修改这个,除非像添加一些全局的项目构建配置</p>
+<h4 id="app下的"><a href="#app下的" class="headerlink" title="app下的"></a>app下的</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.android.application&apos; //第一行</span><br></pre></td></tr></table></figure>
+<p>应用了一个插件<code>com.android.application</code>,代表这是一个应用程序模块,<br>还有一个值可选<code>com.android.library</code>,代表这是一个库模块.<br>这两个模块区别为,一个可以直接运行,一个只能作为代码库依附于别的应用程序模块运行.<br>之后的<strong>android</strong>闭包,可以配置项目构建的各种属性.</p>
+<blockquote>
+<p>compileSdkVersion 指定编译版本,这里28是8.1系统的sdk</p>
+</blockquote>
+<p>android闭包内嵌套了个<strong>defaultConfig</strong>闭包</p>
+<blockquote>
+<p>applicationID用于指定项目包名,之前创建项目已经指定过包名,如果要修改就在这里修改.<br>minSdkVersion 用于指定项目最低兼容的android系统版本<br>targetSdkVersion 指定的值表示已经在该版本上做了充分的测试,系统将会为这个应用启动吸血最新的特性和功能.<br>versionCode用于指定项目版本号<br>versionName用于指定醒目的版本名</p>
+</blockquote>
+<p>buildTypes闭包,指定当前项目所有的依赖关系.<br>通常as项目有三种依赖:</p>
+<blockquote>
+<p>本地依赖,对本地的jar包或者目录添加依赖关系<br>库依赖,对项目中的库模块添加依赖关系<br>远程依赖,对jcenter库上的开源项目添加依赖关系.</p>
+</blockquote>
+<p>buildTypes闭包第一行<code>implementation fileTree</code>就是本地声明,他的参数<code>dir: &#39;libs&#39;, include: [&#39;*.jar&#39;]</code>将libs下所有<code>.jar</code>后缀的文件都添加到项目的构建路径当中.<br>第二行是远程依赖声明,参数<code>com.android.support:appcompat-v7:28.0.0-rc02</code>是远程依赖库格式,<code>com.android.support</code>是域名部分,<code>appcompat-v7</code>是组名,<code>28.0.0-rc02</code>是版本号.加入这局声明后,Gradle构建项目时会首先检查本地时候又这个库的缓存,没有就会自动下载.<br>库依赖声明这里(HelloWorld程序)没有基本格式为,<code>implementation project</code>后面加上要依赖的库名称.</p>
+<p>后面的<code>testImplementation</code>是用于声明测试用例的库,忽略</p>
+<h2 id="使用日志工具Log"><a href="#使用日志工具Log" class="headerlink" title="使用日志工具Log"></a>使用日志工具Log</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>这个日志工具类是<code>Log(android.util.Log)</code>,在这个类中提供五个方法打印日志.</p>
+<ul>
+<li>Log.v() 用于打印琐碎的日志.对应级别为verbose,是级别最低的一种</li>
+<li>Log.d() 打印调试信息.对应级别debug.比verbose高一级</li>
+<li>Log.i() 打印比较重要的数据,这些是可以分析用户行为的数据.对应级别info,比debug高一级.</li>
+<li>Log.w() 打印警告信息,提示程序在这个地方可能会存在风险,最好去修复下警告出现的地方.对应级别warn,比info高一级</li>
+<li>Log.e() 用于打印程序错误信息,当有错误信息打印时代表程序出现严重问题必须修复.对应级别error比warn高一级.</li>
+</ul>
+<p>总共五个方法可以被重载.</p>
+<h3 id="习惯使用Log"><a href="#习惯使用Log" class="headerlink" title="习惯使用Log"></a>习惯使用Log</h3><p>Log可以发挥和System.out相同的作用,而且拥有分级,过滤器….很多优点.<br>Log可以使用快捷输入:如<code>Log.d</code>就可以使用<code>logd</code>然后按下TAB.<br>另外,由于Log的所有打印方法都要求传入一个tag参数,我们可以在<code>onCreate()</code>方法外部输入一个<code>logt</code>,按下TAB,就会以当前的类名自动生成一个TAG常量,之后使用快捷方法生产Log()就不用再输入tag参数了.</p>
+<h4 id="Logcat中的过滤器"><a href="#Logcat中的过滤器" class="headerlink" title="Logcat中的过滤器"></a>Logcat中的过滤器</h4><p>在logcat工具中可以添加过滤器</p>
+<ul>
+<li>show only selected aplication 只显示当前选中程序的日志(默认)</li>
+<li>Firebase 谷歌提供的分析工具</li>
+<li>No Filters 没有过滤器</li>
+<li>Edit Filter Configuration 自定义过滤器</li>
+</ul>
+<p>自定义过滤器中Fiter Name是过滤器的名称,Log Tag是过滤器tag的值,例如我们Log Tag的值为<code>data</code>那么我们选定这个自定义过滤器后logcat就只会显示tag值为<code>data</code>的日志.后面的Log Message就对应的msg参数….之后都是同理</p>
+<h4 id="Logcat中的日志级别"><a href="#Logcat中的日志级别" class="headerlink" title="Logcat中的日志级别"></a>Logcat中的日志级别</h4><p>就是上文说的五个方法作为五个级别<br>当选中级别为verbose(最低等级),这意味这不管是用什么方法打印日志一定会显示,如使用<code>Log.d()</code>也会显示打印;当选中debug级别时,只显示debug及以上的日志,例如使用<code>Log.v</code>就不会显示打印.</p>
+<h4 id="关键字过滤"><a href="#关键字过滤" class="headerlink" title="关键字过滤"></a>关键字过滤</h4><p>Logcat中间的搜索框就是关键字过滤,全日制过滤你想要的关键字,支持<strong>正则表达式</strong>.</p>
+<h1 id="第二章-活动"><a href="#第二章-活动" class="headerlink" title="第二章 活动"></a>第二章 活动</h1><h2 id="活动的基本用法"><a href="#活动的基本用法" class="headerlink" title="活动的基本用法"></a>活动的基本用法</h2><h3 id="手动创建活动"><a href="#手动创建活动" class="headerlink" title="手动创建活动"></a>手动创建活动</h3><p>右击Project下java下的com.example.activitytest包→new→activity-Empty Activity,弹出创建活动的对话,名称我们创建为FirstActivity<br>会话中<code>Generate Layout File</code>代表勾选后自动为这个活动创建一个对应的布局文件.<br><code>Launcher Activity</code>代表勾选后会将这个活动设置为主活动.<br>为了更好的学习活动,这两个都不勾选.<br><code>Backwards Compatibility</code>勾选后表示会为项目启用向下兼容模式,勾选.<br>点击Finish完成创建.</p>
+<p>这是一个几乎空的活动,但是里面仍然有<code>onCreate()</code>方法,因为任何活动中都应该重写这个方法,所以AS自动帮我们完成了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Override  </span><br><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>小知识点:<code>@Override</code> 这个声明告诉编译器下面的方法是重写而不是一个新的方法,如果我们声明了一个洗的方法,编译器就会报错.</em><br>可以看到这个方法非常简单.</p>
+<h3 id="创建和加载布局"><a href="#创建和加载布局" class="headerlink" title="创建和加载布局"></a>创建和加载布局</h3><p><strong>android设计讲究逻辑视图分离,最好每一个活动对应一个布局,布局用来显示界面内容</strong></p>
+<h4 id="创建布局"><a href="#创建布局" class="headerlink" title="创建布局"></a>创建布局</h4><p>右击app/src/main/res目录-New-Directory,弹出新建目录窗口,这里创建一个layout目录,对layout右键-new-Layout resource file,出现新建布局资源文件的窗口.命名为first_layout,<code>root element(根元素)</code>默认选择<code>LinearLayout</code>.<br>点击ok就进入了布局编辑器(Design/Text)默认是Design可视化视图,点击text切换到文本视图.并且创建一个按钮</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">     &lt;Button</span><br><span class="line">        android:id=&quot;@+id/button_1&quot; //定义元素唯一标识符</span><br><span class="line">        android:text=&quot;Button 1&quot; //指定元素显示内容</span><br><span class="line">        android:layout_width=&quot;match_parent&quot; //指定元素宽度,和父元素一样宽</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot; //指定元素高度,和内容一样高 </span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout&gt; //刚才选择的LinearLayout作为根元素</span><br></pre></td></tr></table></figure>
+<p><code>android:id</code>是定义当前元素的标识符,它的参数<code>@+id/button_1</code><br>上文说到<code>@string/name</code>是在xml中引用string资源的语法<br>这里<code>@+id/name</code>是定义id的语法</p>
+<p>我们可以看到右侧的preview已经显示按钮了</p>
+<h4 id="活动中加载布局"><a href="#活动中加载布局" class="headerlink" title="活动中加载布局"></a>活动中加载布局</h4><p>回到FirstActivity,在<code>onCreate()</code>方法中加入代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class FirstActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.first_layout); //加入的代码</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里调用了<code>setContentView()</code>方法,<code>R.layout.first_layout</code>是一个在代码中对资源的引用.<br>项目中添加任何资源都会在R文件中生成一个相应的资源id,使用<code>R.layout.first_layout</code>引用就会得到一个<code>first_layout.xml</code>布局的id,这个id传入了<code>setContentView()</code></p>
+<h3 id="注册活动"><a href="#注册活动" class="headerlink" title="注册活动"></a>注册活动</h3><p>所有活动要在<code>AndroidManifest.xml</code>中注册才生效,我们使用右键new活动的时候,这个活动已经被AS注册了,如果手动创建一个活动就需要自己去注册.<br>打开<code>AndroidManifest.xml</code>查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;com.example.elsewhere997.activitytest&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;application</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.FirstActivity&quot;&gt;&lt;/activity&gt; //注册的活动</span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure></p>
+<p>活动注册声明要放在application标签内,活动通过activity标签注册,其中<code>android:name</code>用来指定注册哪个活动,后面的<code>.FirstActivity</code>是<code>com.example.activetytest.FirstActivity</code>的缩写,因为这个xml文档的最外层标签已经有了这样的代码<code>package=&quot;com.example.elsewhere997.activitytest</code>这通过package属性指定了程序包名<code>com.example.elsewhere997.activitytest</code>所以前半部分可以不写,直接写缩写了.</p>
+<h4 id="主活动"><a href="#主活动" class="headerlink" title="主活动"></a>主活动</h4><p>主活动是程序运行时最先启动的活动,程序必须有主活动才能运行,所以必须配置一个主活动.<br>在<code>&lt;activity&gt;</code>标签内部加入一个<code>&lt;intent-filter&gt;</code>标签并在这个标签的内部添加<code>&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</code>和<code>&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</code>这两句声明.<br>此外在<code>&lt;activity&gt;</code>标签头内还可以加入<code>android:label</code>用来指定活动中标题栏的内容,这个内容还会成为启动器中程序显示的名称.</p>
+<h3 id="活动中的Toast"><a href="#活动中的Toast" class="headerlink" title="活动中的Toast"></a>活动中的Toast</h3><p>定义一个Toast触发点,直接使用<code>FirstActivity</code>这个活动的按钮作为出发点,点击后弹出Toast.在<code>onCreate()</code>中添加如下代码(自己导入相关类):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Button button1 = (Button) findViewById(R.id.button_1);</span><br><span class="line">button1.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        Toast.makeText(FirstActivity.this, &quot;You clicked Button 1&quot;, Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>活动中通过<code>findViewById()</code>获取布局中定义的元素返回一个对象,<code>R.id.button_1</code>我们已经很熟悉了,其中<code>button_1</code>是我们再<code>first_lay_out.xml</code>中通过<code>android:id</code>定义了的.<br>这个方法返回一个view对象,我们通过<code>(Button)</code>向下强转为button对象来得到按钮的实例,然后 通过声明的button1来调用<code>setOnClickListener()</code>方法为按钮注册一个监听器.<br>点击按钮就会执行<code>OnClickListener()</code>监听器中的<code>Onclick()</code>方法<br>Tosat方法,通过静态方法<code>makeText()</code>创建Toast对象,其中三个参数,第一个是上下文(Context),活动就是一个上下文(Context)对象,直接传入<code>FirstActivity.this</code>;第二个是文本内容;第三个是显示时常.然后调用show()显示</p>
+<h3 id="活动中的Menu"><a href="#活动中的Menu" class="headerlink" title="活动中的Menu"></a>活动中的Menu</h3><h4 id="创建布局-1"><a href="#创建布局-1" class="headerlink" title="创建布局"></a>创建布局</h4><p>在res目录下新建一个<code>menu</code>文件夹,再在menu下新建一个名为<code>main</code>的<strong>菜单文件(Menu resource file)</strong>,创建出了一个<code>main.xml</code><br>在<code>&lt;menu&gt;</code>标签加入如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;item</span><br><span class="line">    android:id=&quot;@+id/add_item&quot;</span><br><span class="line">    android:title=&quot;Add&quot; /&gt;</span><br><span class="line">&lt;item</span><br><span class="line">    android:id=&quot;@id/remove_item&quot;</span><br><span class="line">    android:title=&quot;Remove&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里我们创建了两个<strong>菜单项</strong>,<code>&lt;item&gt;</code>标签用来创建菜单项,其中,我们通过<code>android:id</code>来指定这个菜单项的唯一标识符,通过<code>android:title</code>给菜单项指定一个名称.</p>
+<h4 id="显示menu"><a href="#显示menu" class="headerlink" title="显示menu"></a>显示menu</h4><p>接着在活动中重写<code>onCreateOptionsMenu</code>方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean onCreateOptionsMenu(Menu menu) &#123;</span><br><span class="line">    getMenuInflater().inflate(R.menu.main, menu);</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>getMenuInflater()</code>获得MenuInflater对象,调用它的<code>inflate()</code>方法创建当前活动的菜单,<code>inflate()</code>有两个参数,一个指定通过哪个资源文件创建菜单,这个参数值的形式我们已经很熟悉了,另一个是指定菜单添加到哪个Menu对象中,这个值直接由外部的<code>onCreateOptionsMenu(Menu menu)</code>方法传入所以我们直接填入<code>menu</code><br><code>onCreateOptionsMenu(Menu menu)</code>方法返回值为布尔型.返回ture代表菜单允许显示,false表示创建的菜单无法显示.</p>
+<h4 id="添加菜单响应事件"><a href="#添加菜单响应事件" class="headerlink" title="添加菜单响应事件"></a>添加菜单响应事件</h4><p>依然是活动中重写方法,重写<code>onOptionsItemSelected()</code>方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean onOptionsItemSelected(MenuItem item) &#123;</span><br><span class="line">    switch (item.getItemId())&#123;</span><br><span class="line">        case R.id.add_item:</span><br><span class="line">            Toast.makeText(this,&quot;You clicked add&quot;, Toast.LENGTH_LONG).show();</span><br><span class="line">            break;</span><br><span class="line">        case R.id.remove_item:</span><br><span class="line">            Toast.makeText(this, &quot;clicked remove&quot;, Toast.LENGTH_LONG).show();</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过调用<code>item.getItemId()</code>判断点击的是哪一个菜单项(传入了一个菜单项的id),然后在下面的case中判断,执行case下的语句</p>
+<h3 id="销毁活动"><a href="#销毁活动" class="headerlink" title="销毁活动"></a>销毁活动</h3><p>在安卓设备中可以通过back键销毁当前活动.<br>通过代码的方式:<br>调用活动类的<code>finish()</code>方法,销毁当前活动.<br>修改按钮监听器中的代码,把Toast显示代码改成销毁活动的方法,这个按钮就和back按键的功能相同了</p>
+<h2 id="活动间的跳转"><a href="#活动间的跳转" class="headerlink" title="活动间的跳转"></a>活动间的跳转</h2><p>创建一个新的活动<code>SecondActivity</code>这次创建时勾选<code>Generate Layout File</code>系统会自动创建一个名为<code>activity_second.xml</code>的布局文件,布局文件过于复杂我们修改其中代码,使用之前的<code>&lt;LinearLayout&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/button_2&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;Button 2&quot;</span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>上述代码中还定义了一个按钮id为button_2.<br>我们回到活动去加载这个布局,但是惊奇的发现!这个布局文件已经被AS在活动中加载了.<br>我们同样没有忘记在<code>AndroidManifest.xml</code>中注册活动,又惊奇的发现后动已经被注册好了.</p>
+<h3 id="使用显示Intent"><a href="#使用显示Intent" class="headerlink" title="使用显示Intent"></a>使用显示Intent</h3><p>Intent是安卓程序中各个组件之间进行交互的重要方式,它致命当前组件想要执行的动作,还可以在不同组件之间传递数据.一般可用于启动活动,启动服务,发送广播.这里学习启动活动.<br>Intent分为显示和隐式,这里学习显示<br><img src="https://e1sewhere.github.io/images/code1.jpg" alt="code1"></p>
+<p>首先构建出了一个<code>Intent</code>传入了<code>FirstActivity.this</code>作为上下文,传入<code>SecondActivity.class</code>作为目标活动,这个<code>Intent</code>的意思就是在<code>FirstActivity</code>这个活动的基础上打开目标活动.<br>然后把<code>intent</code>传入<code>startActivity()</code>方法,执行<code>Intent</code>启动活动<br>这时运行程序,点击firstactivity的按钮就打开了第二个活动.</p>
+<h3 id="隐式Intent"><a href="#隐式Intent" class="headerlink" title="隐式Intent"></a>隐式Intent</h3><p>隐式活动不明确指出要启动哪一个活动,而是指定了一些列抽象的<code>action</code>和<code>category</code>等信息,然后由系统去分析这个Intent,并帮我们找出适合的活动去启动.</p>
+<p>通过在<code>&lt;activity&gt;</code>标签下配置<code>&lt;intent-filter&gt;</code>的内容,可以指定当前活动能响应的action和categroy.<br>我们再<code>AndroidManifest.xml</code>的SecondActivity的注册activity标签中添加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;intent-filter&gt;</span><br><span class="line">    &lt;action android:name=&quot;com.example.activitytest.ACTION_START&quot; /&gt;</span><br><span class="line">    &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;</span><br><span class="line">&lt;/intent-filter&gt;</span><br></pre></td></tr></table></figure>
+<p>在<code>&lt;action&gt;</code>标签中我们指明了当前活动可以响应<code>ACTION_START</code>这个action,而<code>&lt;category&gt;</code>包含一些附加信息,更精确的指明了当前的活动能够响应的Intent中还可能带有的<code>category</code>.只有<code>&lt;action&gt;</code> 和<code>&lt;category&gt;</code>中的内容能够同时匹配上Intent中指定的action和category时,这个活动才能响应该Inent.</p>
+<p>现在我们为Intent添加匹配条件,其他部分和显示是相同的<br>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void onClick(View v)&#123;</span><br><span class="line">    Intent intent= new Intent(&quot;com.example.activitytest.ACTION_START&quot;);</span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们使用了Intent的另一个构造函数<code>Intent(action)</code>,直接把action的字符串<code>&quot;com.example.activitytest.ACTION_START&quot;</code>传了进去,表明这个Intent能够响应<code>&quot;com.example.activitytest.ACTION_START&quot;</code>这个action的活动.<br>action和category同时匹配才能响应,但是这个Intent没有指明category.但是前面<code>SecondActivity</code>注册的<code>&lt;action&gt;</code>标签中指明了category的信息<code>&quot;android.intent.category.DEFAULT&quot;</code>这是一种默认的<code>category</code>,在调用<code>startActivity()</code>方法时这个category会自动添加到Intent中.</p>
+<p>每个Intent中只能指定一个action,但能够指定多个category<br>现在添加一个category<br>修改FirstActivity中的点击事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void onClick(View v)&#123;</span><br><span class="line">    Intent intent= new Intent(&quot;com.example.activitytest.ACTION_START&quot;);</span><br><span class="line">    intent.addCategory(&quot;com.example.activitytest.MY_CATEGORY&quot;);</span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>添加了一个,调用intent中的addCategory()方法来添加一个category,值为<code>&quot;com.example.activitytest.MY_CATEGORY&quot;</code></p>
+<p>直接运行程序,点击主活动的按钮,程序闪退了,Logcat也报错了.intent匹配不到对应的活动当然会出问题,但是是什么问题了,现在看看Logcat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Process: com.example.elsewhere997.activitytest, PID: 24662</span><br><span class="line">android.content.ActivityNotFoundException: No Activity found to handle Intent &#123; act=com.example.activitytest.ACTION_START cat=[com.example.activitytest.MY_CATEGORY] &#125;</span><br></pre></td></tr></table></figure>
+<p>上述错误信息意思是没有一个活动可以响应我们的Intent,和我们的推测一致.</p>
+<p>修复bug,我们再添加一个可以响应category的声明就好了,回到AndroidManifest,为SecondActivity添加一个.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;intent-filter&gt;</span><br><span class="line">    &lt;action android:name=&quot;com.example.activitytest.ACTION_START&quot; /&gt;</span><br><span class="line">    &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;</span><br><span class="line">    &lt;category android:name=&quot;com.example.activitytest.MY_CATEGORY&quot; /&gt;</span><br><span class="line">&lt;/intent-filter&gt;</span><br></pre></td></tr></table></figure>
+<p>再次运行点击按钮,成功了</p>
+<p>只要intent里的要求目标活动都能达到那么就能调用这个活动.所以在<code>&lt;intent-filter&gt;</code>添加几个其他的category一样可以运行.</p>
+<h3 id="更多隐式Intent用法"><a href="#更多隐式Intent用法" class="headerlink" title="更多隐式Intent用法"></a>更多隐式Intent用法</h3><p>使用隐式Intent我们还能够启动其他程序的活动.<br>修改FirstActivity中按钮点击事件的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onClick(View v)&#123;</span><br><span class="line">    Intent intent= new Intent(Intent.ACTION_VIEW);</span><br><span class="line">    intent.setData(Uri.parse(&quot;http://www.baidu.com&quot;));</span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里首先指定了Intent的action为<code>Intent.ACTION_VIEW</code>这是一个安卓系统内置的动作,其常量值为<code>android.Intent.action.VIEW</code>.<br>然后通过<code>Uri.parse()</code>方法,把一个网址字符串解析为Uri对象再调用Intent的<code>setData()</code>方法把Uri对象传递进去.<br>这个<code>setData()</code>没有讲过,它接收一个Uri对象,用于指定当前Intent正在操作的数据,这些数据通常以字符串的形式传入到<code>Uri.parse()</code>方法中解析为Uri对象.<br>与此对应的我们还可以在<code>&lt;intent-filter&gt;</code>标签中再配置一个<code>&lt;data&gt;</code>标签用来指定当前活动能够响应什么类型的数据.<code>&lt;data&gt;</code>标签主要可以配置以下内容.<br><img src="https://e1sewhere.github.io/images/intent1.jpg" alt="intent1"></p>
+<p>除了http协议外,还能指定许多其他协议,比如geo表示地理位置,tel表示电话….</p>
+<p>下面展示如何调用系统拨号界面.<br>修改按钮点击事件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onClick(View v)&#123;</span><br><span class="line">    Intent intent= new Intent(Intent.ACTION_DIAL);</span><br><span class="line">    intent.setData(Uri.parse(&quot;tel:10000&quot;));</span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先指定Intent的action为<code>Intent.ACTION_DIAL</code>.这也是一个android内置action,然后在data指定了协议是tel<br>启动,点击按钮,成功了.</p>
+<h3 id="向下个活动传递数据"><a href="#向下个活动传递数据" class="headerlink" title="向下个活动传递数据"></a>向下个活动传递数据</h3><p>使用Intent<br>Intent中提供了<code>putExtra()</code>方法的重载,可以把想要的数据暂存在Intent中,启动另一个活动后把数据从Intent中取出.<br>例如FirstActivity中的字符串传递到SecondActivity中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onClick(View v)&#123;</span><br><span class="line">    String data=&quot;Hello SecondActivity&quot;;</span><br><span class="line">    Intent intent= new Intent(FirstActivity.this,SecondActivity.class);</span><br><span class="line">    intent.putExtra(&quot;extra_data&quot;,data);</span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们使用了显示Intent启动SecondActivity,通过<code>putExtra()</code>方法传递了一个字符串,它的第一个参数是键,用于后面Intent中取值,第二个参数是值,真正要传递的数据.</p>
+<p>然后在SecondActivity中将数据取并打印:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_second);</span><br><span class="line">    Intent intent= getIntent();</span><br><span class="line">    String data= intent.getStringExtra(&quot;extra_data&quot;);</span><br><span class="line">    Log.d(&quot;SecondActivity&quot;,data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过<code>getIntent()</code>方法获取到了用于启动SecondActivity的Intent,然后调用intent的<code>getStringExtra()</code>方法,传入相应的键值,得到传递的数据,赋值给我们声明的data.<br>然后使用Log打印,d是debug级.</p>
+<p>运行,点击活动的按钮,产看Logcat我们传入的字符串打印出来了.</p>
+<h3 id="返回数据给上一个活动"><a href="#返回数据给上一个活动" class="headerlink" title="返回数据给上一个活动"></a>返回数据给上一个活动</h3><p>我们之前启动活动使用的方法<code>startActivity()</code>,Activity中还有一个<code>startActivityForResult()</code>方法也是用于启动活动的,这个方法期望在活动销毁时能够返回一个结果给上个活动.<br><code>startActivityForResult()</code>方法接收两个参数,一个Intent,另一个是请求码,用于在之后的回调中判断数据的来源.<br>修改FirstActivity中的按钮点击事件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">            @Override</span><br><span class="line">            public void onClick(View v)&#123;</span><br><span class="line">                String data=&quot;Hello SecondActivity&quot;;</span><br><span class="line">                Intent intent= new Intent(FirstActivity.this,SecondActivity.class);</span><br><span class="line">//                intent.putExtra(&quot;extra_data&quot;,data);</span><br><span class="line">//                startActivity(intent);</span><br><span class="line">                startActivityForResult(intent,1);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>这里请求码只要是唯一的就可以了,我们随便传入一个数字1,接下来在SecondActivity中给按钮注册点击事件,并在点击事件中添加返回数据的逻辑:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_second);</span><br><span class="line">        Button button2=(Button) findViewById(R.id.button_2);</span><br><span class="line">        button2.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                Intent intent =new Intent();</span><br><span class="line">                intent.putExtra(&quot;data_return&quot;,&quot;Hello FirstActivity&quot;);</span><br><span class="line">                setResult(RESULT_OK,intent);</span><br><span class="line">                finish();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">//        String data= intent.getStringExtra(&quot;extra_data&quot;);</span><br><span class="line">//        Log.d(&quot;SecondActivity&quot;,data);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>我们还是构建了一个Intent用于传递数据,但这个Intent没有任何”意图”.通过<code>putExtra()</code>方法把数据存在Intent中.然后调用<code>setResult()</code>方法,这个方法是专门用于向上一个活动返回数据的,它接收两个参数,第一个用于向上个活动返回处理结果,一般只使用<code>RESULT_OK</code>和<code>RESULT_CANCELED</code>两个值,第二个参数把带有数据的intent传递回去.<br>最后用<code>finish()</code>方法销毁当前活动.<br>由于使用的<code>startActivityForResult()</code>方法来启动这个活动,销毁这个活动后会回调上一个活动的,<code>onActivityResult()</code>方法,因此我们重写FirstActivity中的这个方法来取得返回数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onActivityResult(int requestCode, int resultCode, Intent data) &#123;</span><br><span class="line">    switch (requestCode)&#123;</span><br><span class="line">        case 1:</span><br><span class="line">            if (resultCode==RESULT_OK)&#123;</span><br><span class="line">                String returnedData=data.getStringExtra(&quot;data_return&quot;);</span><br><span class="line">                Log.d(&quot;FirstActivity&quot;, &quot;returnedData&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>onActivityResult()</code>有三个参数,<code>requestCode</code>启动活动传入的请求码;<code>resultCode</code>返回数据时传入的处理结果;<code>data</code>携带着返回数据的Intent.</p>
+<p>此时我们点击button2按钮就会返回数据并打印,但是如果我们直接按返回键就不会反悔数据,这时我们重写<code>onBackPress()</code>方法,它返回后执行的过程和点击按钮相同,所以方法体的内容应该和<code>onClick()</code>相同:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onBackPressed() &#123;</span><br><span class="line">    Intent intent =new Intent();</span><br><span class="line">    intent.putExtra(&quot;data_return&quot;,&quot;Hello FirstActivity&quot;);</span><br><span class="line">    setResult(RESULT_OK,intent);</span><br><span class="line">    finish();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>值得注意的是这里重写了<code>onBackPress()</code>方法,也就是点击返回按钮时执行的方法,如果方法体里不加上<code>finish()</code>那么点击返回按钮是不会返回的.</p>
+<h2 id="活动的生命周期"><a href="#活动的生命周期" class="headerlink" title="活动的生命周期"></a>活动的生命周期</h2><h3 id="返回栈"><a href="#返回栈" class="headerlink" title="返回栈"></a>返回栈</h3><p>从之前的例子中可以看出,android的活动是可以层叠的,每启动一个新活动就会覆盖再原活动上.销毁上面的活动,之前的活动就会重新显示出来.</p>
+<p>android使用任务(task)来管理活动.<br>一个任务就是一组存放在栈里的活动集合,这个栈称为返回栈(Back Stack).新活动处于栈顶,销毁新活动(出栈)前一个活动就出现了,系统总是显示处于栈顶的活动给用户.</p>
+<h3 id="活动状态"><a href="#活动状态" class="headerlink" title="活动状态"></a>活动状态</h3><ul>
+<li>运行状态</li>
+<li>暂停状态 活动不处于栈顶,但仍然可见时</li>
+<li>停止状态 活动不处于栈顶,且完全不可见时.</li>
+<li>销毁状态 依然占用内存知道系统回收它(最倾向被回收的状态)</li>
+</ul>
+<h3 id="生存周期"><a href="#生存周期" class="headerlink" title="生存周期"></a>生存周期</h3><p>活动的七个方法与三个阶段：</p>
+<ol>
+<li><p>onCreate() 每个活动都会有的方法，在活动第一次被创建的时候调用</p>
+</li>
+<li><p>OnStart() 这个活动在活动由不可见变为可见的时候调用</p>
+</li>
+<li><p>OnResume() 这个方法在活动准备好和用户进行交互的时候调用，此时的活动一定位于返回栈的栈顶，并且处于运行状态。</p>
+</li>
+<li><p>onPause() 这个方法在系统准备去启动或者恢复另一个活动的时候调用。 我们通常会在这个方法中将一些消耗 CPU 的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。</p>
+</li>
+<li><p>onStop() 这个方法在活动完全不可见的时候调用。它和 onPause()方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么 onPause()方法会得到执行，而 onStop()方法并不会执行。</p>
+</li>
+<li><p>onDestroy()这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。</p>
+</li>
+<li><p>onRestart() 这个方法在活动由停止状态变为运行状态之前调用，也就是活动被重新启动了。</p>
+</li>
+</ol>
+<p>以上七个方法中除了 onRestart()方法，其他都是两两相对的，从而又可以将活动分为三种生存期。</p>
+<p> 三个阶段：</p>
+<ol>
+<li><p>开始Activity：在这个阶段依次执行3个生命周期的方法,分别是：onCreate、onStart和onResume方法</p>
+</li>
+<li><p>Activity重新获得焦点：如果Activity重新获得焦点，会依次执行3个方法，onRestart、onStart和onResume</p>
+</li>
+<li><p>关闭Activity：当Activity被关闭时系统会依次执行3个方法，onPause、onStop和onDestory。</p>
+</li>
+</ol>
+<p><img src="https://e1sewhere.github.io/images/cycle1.png" alt="活动周期"></p>
+<h3 id="生存周期体验"><a href="#生存周期体验" class="headerlink" title="生存周期体验"></a>生存周期体验</h3><p><em>页码:P67  为了提高看书效率从这里开始,这样的实际操练就简略记录</em></p>
+<h4 id="设置为对话框-Dialog-活动"><a href="#设置为对话框-Dialog-活动" class="headerlink" title="设置为对话框(Dialog)活动"></a>设置为对话框(Dialog)活动</h4><p>进入<code>AndroidManifest.xml</code>对要注册为Dialog的活动的<code>&lt;activity&gt;</code>标签头加入代码<code>android:theme</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.DialogActivity&quot;</span><br><span class="line">            android:theme=&quot;@android:style/Theme.Dialog&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+<p><code>android:theme</code>用于指定当前活动主题,我们使用的内置主题.<em>这里出现了问题 参看:<a href="#dialog">打开Dialog活动</a></em></p>
+<h3 id="活动回收前保存参数"><a href="#活动回收前保存参数" class="headerlink" title="活动回收前保存参数"></a>活动回收前保存参数</h3><p>停止状态的活动有可能被回收<br><code>onSaveInstanceState()</code>方法可以保证在活动回收前一定会调用,通过这个方法来解决活动被回收时临时数据没有保存的问题.<br><code>onSaveInstanceState()</code>方法会携带一个Bundle类型参数,Bundle提供了一些列方法保存数据.例如<code>putString()</code>用来保存字符串,这个方法第一个参数为键,第二个参数才是数据.<br>在<code>onCreate()</code>方法中也有个Bundle类型参数,默认为null当我们用<code>onSaveInstanceState()</code>方法保存过数据就会把这个Bundle传递进来,使用Bundle响应的方法取出数据即可.</p>
+<h2 id="活动的启动模式"><a href="#活动的启动模式" class="headerlink" title="活动的启动模式"></a>活动的启动模式</h2><p>四种启动模式: standard, singleTop, singleTask, 在<code>AndroidManifest.xml</code>中通过<code>&lt;activity&gt;</code>标签指定<code>android:launchMode</code>属性来选择启动模式</p>
+<h3 id="standard-默认"><a href="#standard-默认" class="headerlink" title="standard(默认)"></a>standard(默认)</h3><p>standard,标准启动模式,是活动默认启动模式.<br>使用standard模式的活动,系统不会在乎活动是否已经在返回栈中存在,每次启动都会创建该活动的一个新实例.</p>
+<p><img src="https://e1sewhere.github.io/images/standard.jpg" alt="standard"></p>
+<h3 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h3><p>启动活动时如果发现返回栈的栈顶已经是这个活动,则认为可以直接使用它,不会再创建新的活动实例.<br><img src="https://e1sewhere.github.io/images/singleTop.jpg" alt="singleTop"></p>
+<h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><p>每次启动活动系统首先在返回栈中检查是否存在该活动的实例,如果发现已经存在则直接使用这个实例,并把在这个活动之上的所有活动全部出栈,如果没有发现就会创建这个活动的实例.<br><img src="https://e1sewhere.github.io/images/singleTask.jpg" alt="singleTask"></p>
+<h3 id="singleInstance"><a href="#singleInstance" class="headerlink" title="singleInstance"></a>singleInstance</h3><p>这个模式的活动会启用一个新的返回栈来管理这个活动.<br>返回时,无论上个活动是谁,只返回当前活动所在的返回栈,返回栈为空后才返回上个调用这个活动的返回栈.<br><img src="https://e1sewhere.github.io/images/singleInstance.jpg" alt="singleInstance"></p>
+<h2 id="活动实践"><a href="#活动实践" class="headerlink" title="活动实践"></a>活动实践</h2><h3 id="知晓当前是哪一个活动"><a href="#知晓当前是哪一个活动" class="headerlink" title="知晓当前是哪一个活动"></a>知晓当前是哪一个活动</h3><p>P81</p>
+<h3 id="随时退出活动"><a href="#随时退出活动" class="headerlink" title="随时退出活动"></a>随时退出活动</h3><p>p82</p>
+<h3 id="启动活动的最佳写法"><a href="#启动活动的最佳写法" class="headerlink" title="启动活动的最佳写法"></a>启动活动的最佳写法</h3><p>p84</p>
+<h1 id="第三章-UI开发"><a href="#第三章-UI开发" class="headerlink" title="第三章 UI开发"></a>第三章 UI开发</h1><h2 id="常用控件的使用"><a href="#常用控件的使用" class="headerlink" title="常用控件的使用"></a>常用控件的使用</h2><h3 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h3><p><code>android:layout_width</code>和<code>:layout_height</code>指定了控件的宽度和高度,安卓所有控件都有着两个属性.<br>可选值:</p>
+<ul>
+<li>match_parent 当前控件大小和父布局一样(官方推荐)</li>
+<li>fill_parent 当前控件大小和父布局一样</li>
+<li>wrap_content 当前控件大小刚好包住内容</li>
+</ul>
+<p>除了这样也可以指定宽高为固定大小,但是在屏幕适配上会出问题.</p>
+<p>使用<code>android:gravity</code>指定当前控件文字对其方式,可以用<code>|</code>来指定多个值<br>例如: <code>center</code>值的意义就和<code>center_vertical|center_horizontal</code>相同</p>
+<p>使用<code>android:textSize</code>控制文字大小,单位是<code>sp</code><br><code>android:textColor</code>控制文字颜色</p>
+<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><p><em>侦听器的另一种使用方式</em><br>前面的学习中已经熟练的使用了匿名内部类的方式注册监听器,下面是实现接口的方式来注册,代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener&#123; //此处实现了一个OnclickListener接口,这个活动具有了监听器类的特性,&quot;单继承,但可以多实现&quot;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        Button button=(Button) findViewById(R.id.button);</span><br><span class="line">        button.setOnClickListener(this); //本类现在属于监听器,所以可以传入this</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123; </span><br><span class="line">        switch (v.getId())&#123;</span><br><span class="line">            case R.id.button:</span><br><span class="line">                // 此处添加逻辑</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="EditText"><a href="#EditText" class="headerlink" title="EditText"></a>EditText</h3><p>允许用户在控件里输入和编辑内容.<br>属性<code>android:hint</code>实现显示提示性文本,输入文字文本消失.<br><code>android:maxLines</code>制定它的最大行数,超过行数后组件不再继续向下拉伸</p>
+<h3 id="ImageView"><a href="#ImageView" class="headerlink" title="ImageView"></a>ImageView</h3><p>图片控件,图片通常放在<code>drawable</code>开头的目录下<br><code>android:src=&quot;@drawable/img_1&quot;/&gt;</code>属性指定图片,后面是对图片资源的引用</p>
+<p>在活动中还可以动态覆盖xml中设置好的图片.使用ImageView的<code>setImageResource()</code>方法.</p>
+<h3 id="ProgressBar-进度条"><a href="#ProgressBar-进度条" class="headerlink" title="ProgressBar(进度条)"></a>ProgressBar(进度条)</h3><p>控件的可见属性:<code>android:visibility</code>在布局文件中设置<br>可选值:</p>
+<ul>
+<li>visible,默认的,可见的</li>
+<li>invisible,控件透明,依然占据位置</li>
+<li>gone,不可见且不占用空间</li>
+</ul>
+<p>也可以在活动中,通过<code>setVisibility()</code>方法传入类似<code>View.VISIBLE</code>的值.</p>
+<p>另外可以在布局文件中通过<code>style</code>属性给它指定进度条样式.<br>通过<code>android:max</code>属性指定进度条的最大值<br>在活动中通过<code>setProgerss</code>设置进度.</p>
+<h3 id="AlertDialog"><a href="#AlertDialog" class="headerlink" title="AlertDialog"></a>AlertDialog</h3><p>弹出对话框,且对话框置于最上方,屏蔽其他控件的交互能力,用于提示重要内容或者警告.<br>在活动中通过<code>AlertDialog.Builder</code>创建一个AlertDialog实例,用这个实例的方法设置镖旗内容是否可取消等属性,<code>setPositiveButton()</code>方法设置确定按钮点击事件,<code>setNegativeButton()</code>按钮设置取消点击事件.最后使用<code>show()</code>方法显示出来</p>
+<h3 id="ProgressDialog"><a href="#ProgressDialog" class="headerlink" title="ProgressDialog"></a>ProgressDialog</h3><p>同AlertDialog相似,但是会显示一个进度条,表示后台忙请等待.</p>
+<h2 id="四种基本布局"><a href="#四种基本布局" class="headerlink" title="四种基本布局"></a>四种基本布局</h2><p>p105</p>
+<h3 id="线性布局"><a href="#线性布局" class="headerlink" title="线性布局"></a>线性布局</h3><p>LinearLayout,在线性方向上依次排列排列.<br><code>android:orientation</code>属性指定排列方向<code>vertical</code>是竖直方向,<code>horizontal</code>是水平方向(默认).</p>
+<p><code>android:layout_gravity</code>属性指定控件在布局中的对其方式.</p>
+<p><code>android:layout_weight</code>允许使用比例的方式指定控件大小</p>
+<h3 id="相对布局"><a href="#相对布局" class="headerlink" title="相对布局"></a>相对布局</h3><p>RelativeLayout<br><code>android:layout_alignParentXXX</code>相对父的<code>xxx</code>位置可以是上下左右.<br><code>android:layout_centerInParent=&quot;true&quot;</code>相对于父的中间.<br>上面的属性需要布尔值</p>
+<p><code>android:layout_above`</code>android:layout_below<code>指定当前控件位于另一个控件的上/下方</code>android:layout_toRightOf<code>android:layout_toLeftOf`指定当前控件位于另一个控件的左/右方.
+`android:layout_alignLeft</code>android:layout_alignRight<code>android:layout_alignTop</code>android:layout_alignBottom`当前控件边缘和另一个控件左/右/上/下边缘对齐<br>上面的属性需要引用相对控件的id</p>
+<h3 id="帧布局"><a href="#帧布局" class="headerlink" title="帧布局"></a>帧布局</h3><p>FrameLayout,所有控件默认摆放左上角,控件默认会按照先后顺序叠加.<br>但是可以使用<code>android:layout_gravity</code>指定对其方式</p>
+<h3 id="百分比布局"><a href="#百分比布局" class="headerlink" title="百分比布局"></a>百分比布局</h3><p>只有LinearLayout(线性)布局支持使用<code>layout_weight</code>属性来实现按比例指定控件大小的功能.其他两种布局都不支持</p>
+<p>android引入了新的布局方式实现百分比布局<br><code>PercentFrameLayout`</code>PercentRelativeLayout`</p>
+<p>PercentFrameLayou:<br>为了让老版本android支持新的布局,在项目的<code>build.gradle</code>中添加百分比布局库的依赖,就能保证百分比布局的兼容性<br>打开App/build.gradle文件,在<code>dependencies</code>闭包中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.android.support:percent:对应版本号&apos;</span><br></pre></td></tr></table></figure>
+<p>修改布局文件<code>&lt;android.support.percent.PercentFrameLayou&gt;t</code>因为不是内置sdk必须把完整的包路径写下来<br>在布局文件头加入<br><code>xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</code>这样一个命名空间,这样才能使用百分百布局的自定义属性.<br>使用<code>app:layout_widthPercent</code>属性将各个按钮的宽度指定为布局的50%,高度同理,这里能够使用<code>app</code>前缀的属性是因为我们刚才定义了<code>app</code>的命名空间,当然我们一直能够使用<code>android</code>前缀的属性也是同理.<br>PercentFrameLayou会继承FrameLayout的特效,控件默认左上角,使用<code>layout_gravity</code>属性让四个按钮不重叠</p>
+<p>PercentRelativeLayout:<br>同理</p>
+<h2 id="创建自定义控件"><a href="#创建自定义控件" class="headerlink" title="创建自定义控件"></a>创建自定义控件</h2><p>先来看看常用控件和布局的继承结构<br><img src="https://e1sewhere.github.io/images/View1.png" alt="View1"><br>所有控件直接简介继承View,View是安卓中最基本UI组件,可在屏幕回执矩形区域,并能响应这个区域的各种事件.ViewGroup是一种特殊的View包含很多子ViewGroup和子View,是一种容器.<br>利用这种继承关系可以自定义控件.</p>
+<h3 id="引入布局"><a href="#引入布局" class="headerlink" title="引入布局"></a>引入布局</h3><p>创建布局文件在另一个布局文件使用类似代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;include layout=&quot;@layout/title&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>引入这个布局文件</p>
+<p>下面是隐藏自带标题栏代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ActionBar actionbar=getSupportActionBar(); //调用actionbar实例</span><br><span class="line">   if(actionbar!=null)&#123;</span><br><span class="line">       actionbar.hide(); //影藏actionbar</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建自定义控件-1"><a href="#创建自定义控件-1" class="headerlink" title="创建自定义控件"></a>创建自定义控件</h3><p>p122<br>新建TitleLayout继承自LinearLayout,让它成为我们自定义的标题栏控件.</p>
+<p>非activity类中调用<code>startActivity(intent)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startActivity(intent);  //改为getContext().startActivity(intent)； //这个</span><br></pre></td></tr></table></figure>
+<p>非活动类调用finish();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((Activity)getContext()).finish(); //getcontext取得context,然后强转为活动类,外面加一个括号区分顺序,实际就是一个 Activity.finish()类似this.finish();</span><br></pre></td></tr></table></figure>
+<h2 id="常用-amp-难用控件-ListView"><a href="#常用-amp-难用控件-ListView" class="headerlink" title="常用&amp;难用控件 ListView"></a>常用&amp;难用控件 ListView</h2><h3 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h3><p>p124</p>
+<h3 id="定制ListView界面"><a href="#定制ListView界面" class="headerlink" title="定制ListView界面"></a>定制ListView界面</h3><h3 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h3><p>p131</p>
+<h2 id="RecyclerView"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView</h2><p>同ListView一样,但是更强大,官方推荐</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>新增控件,在support库中,首相在build.gradle中添加依赖才能使用.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation &apos;com.android.support:recyclerview-v7:28.0.0-rc02&apos;</span><br></pre></td></tr></table></figure>
+<p>由于不是系统内置SDK使用时需要写出完整包名<code>&lt;android.support.v7.widget.RecyclerView&gt;</code></p>
+<h3 id="横向滚动和瀑布流布局"><a href="#横向滚动和瀑布流布局" class="headerlink" title="横向滚动和瀑布流布局"></a>横向滚动和瀑布流布局</h3><p>P137</p>
+<h3 id="RecyclerView点击事件"><a href="#RecyclerView点击事件" class="headerlink" title="RecyclerView点击事件"></a>RecyclerView点击事件</h3><p>p139</p>
+<h2 id="编写界面实践"><a href="#编写界面实践" class="headerlink" title="编写界面实践"></a>编写界面实践</h2><p>P142</p>
+<h3 id="制作Nine-Pach图片"><a href="#制作Nine-Pach图片" class="headerlink" title="制作Nine_Pach图片"></a>制作Nine_Pach图片</h3><p>第一行代码中的方式不适用,工具已经集成到了AS中,对着导入的<strong>png</strong>图片右键,点击 Creat-9-patch file .</p>
+<h1 id="第四章-碎片Fragment"><a href="#第四章-碎片Fragment" class="headerlink" title="第四章 碎片Fragment"></a>第四章 碎片Fragment</h1><h2 id="Fragment是什么"><a href="#Fragment是什么" class="headerlink" title="Fragment是什么"></a>Fragment是什么</h2><p>是一种可以嵌入在活动中的UI片段</p>
+<h2 id="Fragment的使用方式"><a href="#Fragment的使用方式" class="headerlink" title="Fragment的使用方式"></a>Fragment的使用方式</h2><h3 id="Fragment的简单用法"><a href="#Fragment的简单用法" class="headerlink" title="Fragment的简单用法"></a>Fragment的简单用法</h3><p>建议使用support-4库的类不使用系统内置的,兼容差.<br><code>build.gradle</code>已经注册了库的依赖我们不需要手动注册.</p>
+<p>LeftFragment这个自己创建的控件加入主控件的时候需要使用android:name属性指定LeftFragment的包.</p>
+<h3 id="动态添加碎片"><a href="#动态添加碎片" class="headerlink" title="动态添加碎片"></a>动态添加碎片</h3><p>p155<br>添加碎片的方法内部包含步骤:</p>
+<ol>
+<li>创建待添加碎片实例</li>
+<li>获取FragmentManager,在活动中通过调用<code>getSupportFragmentManager()</code>方法得到</li>
+<li>开启一个事物,通过fragmentManager调用<code>buginTransaction()</code>开启</li>
+<li>使用开启的事物调用<code>replace()</code>方法实现,参数为需要传入容器的id和待添加的碎片实例.</li>
+<li>使用事物调用commti()提交事物.</li>
+</ol>
+<h3 id="碎片中模拟返回栈-BackStack"><a href="#碎片中模拟返回栈-BackStack" class="headerlink" title="碎片中模拟返回栈(BackStack)"></a>碎片中模拟返回栈(BackStack)</h3><p>活动中动态添加碎片后,按返回键会直接退出当前活动,如果要只退出碎片,需要模拟返回栈.<br>使用FragmentTransaction的<code>addToBackStack()</code>方法,将事物添加到一个返回栈中,参数是一个名字用于描述返回栈状态,一般为null就可以.</p>
+<h3 id="碎片和活动通信"><a href="#碎片和活动通信" class="headerlink" title="碎片和活动通信"></a>碎片和活动通信</h3><p>在活动中使用FragmentManager的<code>findFragmentById()</code>方法获取碎片实例,类似活动中<code>findViewById()</code>获取控件实例的方法.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RightFragment rightFragment = (RightFragment) getFragmentManager().findFragmentById(R.id.right_fragment);</span><br></pre></td></tr></table></figure>
+<p>得到实例后就能轻松使用实例的方法了.</p>
+<p>在碎片中使用活动的<code>getActivity()</code>方法获得和当前碎片关联的活动实例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MainActivity activity =(MainActivity)getActivity();</span><br></pre></td></tr></table></figure>
+<p>活动中需要使用Context对象时也可以使用这个方法,活动本身就是一个context.</p>
+<p>碎片和碎片之间的通信就通过上面两个方法的组合实现.</p>
+<h2 id="碎片的生命周期"><a href="#碎片的生命周期" class="headerlink" title="碎片的生命周期"></a>碎片的生命周期</h2><h3 id="碎片的状态和回调"><a href="#碎片的状态和回调" class="headerlink" title="碎片的状态和回调"></a>碎片的状态和回调</h3><p>状态:</p>
+<ol>
+<li>运行状态: 碎片可见且关联的活动处于运行状态</li>
+<li>暂停状态: 当一个活动进入暂停状态,关联的碎片就进入到暂停状态</li>
+<li>停止状态: 当活动进入停止状态,与之关联的碎片进入停止状态.或者通过调用FragmentTransaction的remove(),replace()方法将碎片从活动中移除且调用addToBackStack()方法.</li>
+<li>销毁状态: 活动销毁时相关的碎片进入销毁,通过调用FragmentTransaction的remove(),replace()方法将碎片从活动中移除且没有调用addToBackStack()方法.</li>
+</ol>
+<p>回调:<br>活动中有得回调方法,碎片中都有,除此之外还有额外的方法.</p>
+<ol>
+<li>onAttach(),当碎片和活动建立关联的时候调用.</li>
+<li>onCreatView(),为碎片创建视图(加载布局)的时候调用</li>
+<li>onActivityCreated().当与碎片相关联的活动一定已经创建完成的时候调用</li>
+<li>onDetach(),当碎片和活动解除关联的时候调用.<br><img src="https://e1sewhere.github.io/images/FragmentCycle.png" alt="FragmentCycle"></li>
+</ol>
+<h3 id="体验碎片的生命周期"><a href="#体验碎片的生命周期" class="headerlink" title="体验碎片的生命周期"></a>体验碎片的生命周期</h3><p>p163<br>碎片中的数据也可以通过”savedInstanceStanceState()”方法保存在Bundle参数中,防止停止的时候被消除.</p>
+<h2 id="动态加载布局的技巧"><a href="#动态加载布局的技巧" class="headerlink" title="动态加载布局的技巧"></a>动态加载布局的技巧</h2><p>p166</p>
+<h3 id="使用限定符-Qualifiers"><a href="#使用限定符-Qualifiers" class="headerlink" title="使用限定符(Qualifiers)"></a>使用限定符(Qualifiers)</h3><p>p167</p>
+<h3 id="最小宽度限定符"><a href="#最小宽度限定符" class="headerlink" title="最小宽度限定符"></a>最小宽度限定符</h3><p>p168</p>
+<h2 id="碎片的实践-延迟"><a href="#碎片的实践-延迟" class="headerlink" title="碎片的实践 (延迟)"></a>碎片的实践 (延迟)</h2><h1 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h1><p><strong>标准广播</strong>: Normal broadcasts,完全异步广播,发出广播所有接收器会在同一时刻接收,接收率比较高,但无法被截断.<br><strong>有序广播</strong>: Ordered broadcasts,同步执行广播,广播发出后同一时刻只有一个广播接收器能够接受消息.广播接收器逻辑执行完毕后广播才会继续传递.广播接收器有优先级,优先级高的广播接收器先收到消息.优先级高的接收器还能截断广播</p>
+<h2 id="接收系统广播"><a href="#接收系统广播" class="headerlink" title="接收系统广播"></a>接收系统广播</h2><h3 id="动态注册监听网络变化"><a href="#动态注册监听网络变化" class="headerlink" title="动态注册监听网络变化"></a>动态注册监听网络变化</h3><p>广播接收器可以注册广播,有两种方式:</p>
+<ul>
+<li>代码中注册 称为动态注册</li>
+<li>AndroidManifest.xml注册 称为静态注册</li>
+</ul>
+<p>创建广播接收器,需要创建一个类继承自<code>BroadcastReceiver</code>,并重写onReceive()方法.</p>
+<p>在监听网络变化的时候由于会监听网络,所以需要在<code>AndroidManifest</code>中声明权限.</p>
+<h3 id="静态注册实现开机启动"><a href="#静态注册实现开机启动" class="headerlink" title="静态注册实现开机启动"></a>静态注册实现开机启动</h3><p>动态注册广播接收器可以自由控制注册与注销,但是必须在程序启动后才能收到广播.静态注册可以在程序未启动的情况下收到广播.</p>
+<p>可以直接使用AS直接new一个广播接收器,名字下方的复选框,<code>Exported</code>代表允许接收器接受程序外的广播,<code>enabled</code>代表是否启用这个接收器.</p>
+<p><strong>广播接收器的<code>onReceive()</code>方法中不能执行较多的逻辑或者耗时长的操作,因为广播接收器不允许开启线程,这个方法长时间没有结束程序就会报错.</strong></p>
+<h2 id="发送自定义广播"><a href="#发送自定义广播" class="headerlink" title="发送自定义广播"></a>发送自定义广播</h2><h3 id="发送标准广播"><a href="#发送标准广播" class="headerlink" title="发送标准广播"></a>发送标准广播</h3><p>P189</p>
+<h3 id="发送有序广播"><a href="#发送有序广播" class="headerlink" title="发送有序广播"></a>发送有序广播</h3><p>p191<br>有序广播使用方法<code>sendOrderedBroadcast()</code>接受两个参数第一个为Intent第二个是与权限相关的字符串.</p>
+<p>注册广播时可以通过<code>android:priority</code>属性给广播设置优先级<br>在代码中还可以在<code>Onreceive()</code>方法中通过<code>abortBroadcast()</code>方法截断广播,阻止广播继续传播.</p>
+<h2 id="使用本地广播"><a href="#使用本地广播" class="headerlink" title="使用本地广播"></a>使用本地广播</h2><p>p192<br>为了安全让程序内的广播不泄露,需要使用本地广播,android提供了一个<code>LocalBroadcastManager</code>来对广播进行管理,并提供发送广播和注册广播接收器的方法.</p>
+<p>本地广播接收器无法在<code>AndroidManifest.xml</code>中通过静态注册,本地广播更安全,更高效.</p>
+<h2 id="广播实践-强制下线"><a href="#广播实践-强制下线" class="headerlink" title="广播实践-强制下线"></a>广播实践-强制下线</h2><p>p195<br><em>这里我的接收器有问题?反正没有接受广播成功</em></p>
+<h1 id="第六章-持久化技术"><a href="#第六章-持久化技术" class="headerlink" title="第六章 持久化技术"></a>第六章 持久化技术</h1><p>p206</p>
+<h2 id="文件存储"><a href="#文件存储" class="headerlink" title="文件存储"></a>文件存储</h2><p>p207</p>
+<h3 id="将数据存储到文件中"><a href="#将数据存储到文件中" class="headerlink" title="将数据存储到文件中"></a>将数据存储到文件中</h3><p>context类提供一个方法<code>openFileOutput()</code>,用于将数据存储到指定文件中,两个参数,一个指定文件名称一个指定文件操作模式:<code>MODE_PRIVATE</code>如果存在直接覆盖;<code>MODE_APPEND</code>如果存在则追加.</p>
+<p>通过<code>openFileOutput()</code>方法返回一个<code>FileOutputStream</code>对象,用它构建一个<code>OutputStreamWriter</code>对象,接着用这个对象构建一个<code>BufferedWriter</code>对象.然后使用BufferedWriter对象将数据写到文件中.</p>
+<h3 id="从文件中读取数据"><a href="#从文件中读取数据" class="headerlink" title="从文件中读取数据"></a>从文件中读取数据</h3><p>p211<br>对应的Context类中提供了<code>openFileInput()</code>方法用于从文件中读取数据,接受一个参数,即要读取的文件名,返回一个<code>FileInputStream</code>对象.然后通过它构建出<code>InputStreamReader</code>对象,使用这个对象构建出<code>BuffereReader</code>对象,然后通过这个对象一步步读取,并存放在一个<code>StringBuilder</code>对象中,最后将读取的内容返回就可以了.</p>
+<h2 id="SharedPreferences存储"><a href="#SharedPreferences存储" class="headerlink" title="SharedPreferences存储"></a>SharedPreferences存储</h2><p>p213<br>使用键值对的方式来存储.</p>
+<h3 id="将数据存储到SharedPreferences中"><a href="#将数据存储到SharedPreferences中" class="headerlink" title="将数据存储到SharedPreferences中"></a>将数据存储到SharedPreferences中</h3><p>android中提供了三种获取SharedPreferences对象的方法:</p>
+<ul>
+<li>Context类中的<code>getSharePreferences()</code>方法 :两个参数一个指定文件名称,一个用于指定操作模式,目前就只有<code>MODE_WORLD_READABLE</code>这个模式推荐,也可以输入<code>0</code>等同于这个模式.</li>
+<li>Activity类中<code>getPreferences()</code>方法:雷士上一个方法,但是只有一个参数就是操作模式,文件名称自动用当前活动的类名称.</li>
+<li>PreferenceManager类中<code>getDefaultSharedPreferences()</code>方法: 静态方法,接受一个Context参数,并自动使用当前应用程序的包名作为前缀.</li>
+</ul>
+<p>存储步骤:<br>使用<code>SharedPreferences</code>对象的<code>edit()</code>方法来获取一个<code>SharedPreferences.Editor</code>对象,向<code>SharedPreferences.Editor</code>对象中添加数据(使用类似<code>putString()</code> <code>putBoolean()</code>的方法),调用<code>apply()</code>方法,将添加的数据提交完成存储操作</p>
+<p>SharedPreferences文件使用xml格式对数据存储.</p>
+<h3 id="从SharedPreferences中读取数据"><a href="#从SharedPreferences中读取数据" class="headerlink" title="从SharedPreferences中读取数据"></a>从SharedPreferences中读取数据</h3><p>直接使用<code>SharedPreferences</code>对象对象提供的get方法(getString(),getBoolean()….),两个参数,第一个是键,第二个是默认值即找不到键时以什么样的默认值返回.</p>
+<h3 id="实现记住密码功能"><a href="#实现记住密码功能" class="headerlink" title="实现记住密码功能"></a>实现记住密码功能</h3><p>p218</p>
+<h2 id="SQLite数据库存储"><a href="#SQLite数据库存储" class="headerlink" title="SQLite数据库存储"></a>SQLite数据库存储</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>使用<code>SQLiteOpenHelper</code>帮助类,实现简单的数据库创建升级.<br>这是抽象类,两个抽象方法<code>onCreate()</code>    <code>onUpgrade()</code>实现创建,升级数据库逻辑.<br>两个实例方法:<code>getReadableDatabase()</code>和<code>getWritableDatabase()</code>.这两个方法创建或打开一个数据库,并返回一个可对数据库读写操作的对象.不同的是当数据库不可写入的时候<code>getReadableDatabase()</code>方法返回的对象以只读的方式打开,而<code>getWritableDatabase()</code>方法将出现异常.</p>
+<p><code>SQLiteOpenHelper</code>有两个构造方法可提供重写,一般使用参数少的那个构造方法.接受四个参数,<code>Context</code>,<code>数据库名</code>,<code>自定义Cursor</code>数据库查询的时候返回一个自定义cursor一般传入null,<code>当前数据库版本号</code>可用于对数据库升级操作.<br>构建出实例后再调用两个实例方法就能够直接创建数据库了,然后重写的<code>onCreate()</code>方法会的到执行,这里通常会处理一些创建表的逻辑.</p>
+<h3 id="使用adb-shell查看数据库"><a href="#使用adb-shell查看数据库" class="headerlink" title="使用adb shell查看数据库"></a>使用adb shell查看数据库</h3><p>p225<br>使用adb shell进入数据库目录,输入<code>sqlite3 数据库名称</code>就可以打开数据库</p>
+<h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><p><code>getReadableDatabase()</code>和<code>getWritableDatabase()</code>.这两个方法创建或打开一个数据库,并返回一个SQLiteDatebase对象,除了使用sql语句外,SQLiteDatebase,中提供了各种方法对数据库进行操作.<br><code>insert()</code>方法用于添加数据:三个参数,第一个参数表名,第二个参数指定未添加数据时给耨些可空的列自动赋值null(一般用不到直接传入null即可),第三个是<code>ContentValues</code>对象它提供了一系列put()方法重载用于向ContentValues中添加数据只需要将表中没得列名及相应的待添加数据传入即可.</p>
+<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><p>p232<br>同样SQLiteDatabase提供了<code>updata()</code>方法四个参数:</p>
+<ol>
+<li>表名</li>
+<li>ContentValues对象,把更新的数据在这里装进去</li>
+<li>第三第四用于约束更新某一行或者某几行中的数据,不指定默认更新所有行.</li>
+</ol>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><p>p234<br>同样SQLiteDatabase提供了<code>delete</code>方法,三个参数:</p>
+<ol>
+<li>表名</li>
+<li>第二第三用于约束删除某行或某几行数据,不指定默认删除所有行.</li>
+</ol>
+<h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><p>p235<br>SQLiteDatabase提供了<code>query()</code>方法用于查询数据<br>这个方法最短的方法重载也需要7个参数.</p>
+<ol>
+<li>表名</li>
+<li>第二个用于指定查询哪几列,不指定这查询所有</li>
+<li>第三四用于约束查询某一行或者某几行数据</li>
+<li>第五用于指定要去<code>group by</code>的列,不指定则代表不进行group by操作.</li>
+<li>第六个用于对group by之后的数据进行进一步过滤,不指定则代表不过滤</li>
+<li>第七格用于指定查询结果的排序方式,不指定则默认.</li>
+</ol>
+<p>下面是详细参考</p>
+<p><img src="https://e1sewhere.github.io/images/query.jpg" alt="query"></p>
+<p>query()方法会返回一个<code>Cursor</code>对象查询到的所有数据从这个对象取出.</p>
+<h3 id="使用SQL操作数据库"><a href="#使用SQL操作数据库" class="headerlink" title="使用SQL操作数据库"></a>使用SQL操作数据库</h3><p><img src="https://e1sewhere.github.io/images/androidsql.jpg" alt="sql"></p>
+<h2 id="使用LitePal操作数据库"><a href="#使用LitePal操作数据库" class="headerlink" title="使用LitePal操作数据库"></a>使用LitePal操作数据库</h2><p>p240<br>LitePal是一个开源android数据库框架,采用对象关系映射(ORM)模式,地址是:<a href="https://github.com/LitePalFramework/LitePal" target="_blank" rel="noopener">https://github.com/LitePalFramework/LitePal</a></p>
+<h3 id="配置LitePal"><a href="#配置LitePal" class="headerlink" title="配置LitePal"></a>配置LitePal</h3><p>直接在<code>app/build.gradle</code>中声明开源库的引用就可以了<br>在<code>dependencies</code>闭包中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation &apos;org.litepal.android:core:2.0.0&apos;</span><br></pre></td></tr></table></figure>
+<p>接下来配置<code>litepal.xml</code>文件.右击app/src/main新建一个<code>assets</code>目录,然后在assets目录下再新建一个<code>litepal.xml</code>文件,编辑如下内容.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</span><br><span class="line">&lt;litepal&gt;</span><br><span class="line">    &lt;dbname value=&quot;BookStore&quot;&gt;&lt;/dbname&gt;  //指定数据库名</span><br><span class="line">    &lt;version value=&quot;1&quot;&gt;&lt;/version&gt;  //指定数据库版本号</span><br><span class="line">    &lt;list&gt;  //指定所有映射模型</span><br><span class="line">        </span><br><span class="line">    &lt;/list&gt;</span><br><span class="line">&lt;/litepal&gt;</span><br></pre></td></tr></table></figure>
+<p>然后配置<code>LitePalApplication</code>,修改AndroidManifest中的代码<br>在<code>&lt;application&gt;</code>中添加<code>android:name=&quot;org.litepal.LitePalApplication&quot;</code></p>
+<h3 id="创建和升级数据库"><a href="#创建和升级数据库" class="headerlink" title="创建和升级数据库"></a>创建和升级数据库</h3><p>创建一个java bean,这个类Book就是一个sql中对应的book表,接下来将Bool类添加到映射模型当中,修改<code>litepal.xml</code>中的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</span><br><span class="line">&lt;litepal&gt;</span><br><span class="line">    &lt;dbname value=&quot;BookStore&quot;&gt;&lt;/dbname&gt;</span><br><span class="line">    &lt;version value=&quot;1&quot;&gt;&lt;/version&gt;</span><br><span class="line">    &lt;list&gt;</span><br><span class="line">        &lt;mapping class=&quot;com.example.elsewhere997.litepaltest.Book&quot;&gt;&lt;/mapping&gt;</span><br><span class="line">    &lt;/list&gt;</span><br><span class="line">&lt;/litepal&gt;</span><br></pre></td></tr></table></figure>
+<p>这里使用<code>&lt;mapping&gt;</code>标签来声明我们要配置的映射模型类,注意一定要使用完整的类名称.不论有多少模型要映射都使用同样的方式配置在<code>&lt;list&gt;</code>标签中.</p>
+<p>所有配置工作完成,只要进行任意一次数据库操作,数据库就会自动创建出来.</p>
+<h3 id="使用LitePal添加数据"><a href="#使用LitePal添加数据" class="headerlink" title="使用LitePal添加数据"></a>使用LitePal添加数据</h3><p>之前创建的Book是没有继承关系的,LitePal在进行表管理操作的时候不需要模型类有继承结构,但是进行CRUD(增删改查)就必须继承<code>DataSupport</code>类.<br>这个类提供了<code>sava</code>方法用来完成数据添加的操作.也提供了其他的CRUD方法</p>
+<h3 id="使用LitePal更新数据"><a href="#使用LitePal更新数据" class="headerlink" title="使用LitePal更新数据"></a>使用LitePal更新数据</h3><p>249</p>
+<h3 id="删除数据-1"><a href="#删除数据-1" class="headerlink" title="删除数据"></a>删除数据</h3><p>两种方式<br>第一种直接调用已存储对象的delete()方法.<br>第二种调用DataSupport的deleteAll()方法,三个参数,第一个表名称,第二三个限制条件</p>
+<h3 id="查询数据-1"><a href="#查询数据-1" class="headerlink" title="查询数据"></a>查询数据</h3><hr>
+
+<h1 id="自己查询学习的知识"><a href="#自己查询学习的知识" class="headerlink" title="自己查询学习的知识"></a>自己查询学习的知识</h1><p><em>包括一些学过然后忘记的知识</em></p>
+<h2 id="Android-Studio技巧"><a href="#Android-Studio技巧" class="headerlink" title="Android Studio技巧"></a>Android Studio技巧</h2><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p><em>学习过程中我觉得需要牢记的快捷键</em><br><strong>Android Studio 平台 Win10</strong></p>
+<blockquote>
+<p>ALT+ENTER 快速import类<br>Ctrl+O 重写某个方法<br>ctrl+shift+/ 注释段<br>ctrl+/ 注释行<br>alt+insert 快捷生成getter,setter方法</p>
+</blockquote>
+<h3 id="文件名颜色的意思"><a href="#文件名颜色的意思" class="headerlink" title="文件名颜色的意思"></a>文件名颜色的意思</h3><p><em>颜色主要与版本控制(version control)有关</em></p>
+<ul>
+<li>绿色，已经加入控制暂未提交</li>
+<li>红色，未加入版本控制</li>
+<li>蓝色，加入，已提交，有改动</li>
+<li>白色，加入，已提交，无改动 </li>
+<li>灰色：版本控制已忽略文件</li>
+</ul>
+<h2 id="JSON-简单学习"><a href="#JSON-简单学习" class="headerlink" title="JSON 简单学习"></a>JSON 简单学习</h2><h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h3><p>一切都是对象,对象表示为键值对,数据由分号间隔,花括号保存对象,方括号保存数组.</p>
+<h3 id="键值对"><a href="#键值对" class="headerlink" title="键值对"></a>键值对</h3><p>键在前面用<code>&quot;&quot;</code>包裹,值在<code>:</code>后面如果是字符串也用<code>&quot;&quot;</code>包裹,值可以是任何数据,也可以是对象或者数组<br>对象(花括号的那个)里存放键值对,用<code>,</code>隔开.<br>同时数组里也可以存放键值对,但是更多的数组里是存放索引,像这样<code>[&quot;java&quot;,&quot;c#&quot;,&quot;html&quot;]</code></p>
+<h2 id="java内部类调用外部类的方法"><a href="#java内部类调用外部类的方法" class="headerlink" title="java内部类调用外部类的方法"></a>java内部类调用外部类的方法</h2><p>直接使用外部类名称.this.方法即可，例如Inner是内部类，Outer是外部类，在Inner中调用Outer.this.Print()即可使用Outer的print方法</p>
+<h2 id="关于context"><a href="#关于context" class="headerlink" title="关于context"></a>关于context</h2><h3 id="建议阅读"><a href="#建议阅读" class="headerlink" title="建议阅读"></a>建议阅读</h3><ul>
+<li><a href="https://www.jianshu.com/p/94e0f9ab3f1d" target="_blank" rel="noopener">Context都没弄明白，还怎么做Android开发？</a>  </li>
+</ul>
+<h3 id="Context是什么"><a href="#Context是什么" class="headerlink" title="Context是什么"></a>Context是什么</h3><p>Activity,Serverce都算Context.把场景抽象为一个Context类,用户的每次交互都是在场景里,还有一些没有界面的场景,如服务.一个程序可以看作为一个工作环境,在环境有不同场景,我们会在其中切换.android程序的四大组件,其他的控件等都要在context环境下工作<br>它是一个纯抽象类,如图是它的实现<br><img src="https://e1sewhere.github.io/images/context.png" alt="context"></p>
+<h2 id="关于侦听器中的"><a href="#关于侦听器中的" class="headerlink" title="关于侦听器中的"></a>关于侦听器中的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new view.onclicklistener()&#123;.....&#125;</span><br></pre></td></tr></table></figure>
+<p>首先我们可以确定的是这个用法是属于java语法范畴的：<br><strong>new 后面肯定是个构造器</strong>，构造器后面是有括号的，所以onClickListener是构造器（要new出来的类），前面的View表示命名空间，这个onClickListener是View中的。<br>查看View.class的源码可以发现：<br>public interface OnClickListener {<br>void onClick(View var1);<br>}<br>onClickListener这是View内部的接口（成员接口），new的时候要实现onClick（）方法。</p>
+<h2 id="this与activity-this"><a href="#this与activity-this" class="headerlink" title="this与activity.this"></a>this与activity.this</h2><p><a href="https://www.zhihu.com/question/55565290" target="_blank" rel="noopener">知乎问题</a> <em>未读</em></p>
+<p><em>学习过程中我觉得需要牢记的快捷键</em><br><strong>win系统</strong></p>
+<blockquote>
+<p>ALT+ENTER 快速import类<br>Ctrl+O 重写某个方法<br>ctrl+shift+/ 注释段<br>ctrl+/ 注释行<br>alt+insert 快捷生成getter,setter方法</p>
+</blockquote>
+<hr>
+
+
+<h1 id="遇到的问题-amp-解决方法"><a href="#遇到的问题-amp-解决方法" class="headerlink" title="遇到的问题&amp;解决方法"></a>遇到的问题&amp;解决方法</h1><h2 id="“android-content-res-Resources-NotFoundException-String-resource-ID-0x2”错误"><a href="#“android-content-res-Resources-NotFoundException-String-resource-ID-0x2”错误" class="headerlink" title="“android.content.res.Resources$NotFoundException: String resource ID #0x2”错误"></a>“android.content.res.Resources$NotFoundException: String resource ID #0x2”错误</h2><p><strong>解决方案</strong> 当调用setText()方法时如果传入int型是不会被当成内容而是resourceID来使用！</p>
+<p>所以报错！</p>
+<p>转为String传入即可</p>
+<h2 id="No-resource-identifier-found-for-attribute-‘roundIcon’-in-package-‘android’"><a href="#No-resource-identifier-found-for-attribute-‘roundIcon’-in-package-‘android’" class="headerlink" title="No resource identifier found for attribute ‘roundIcon’ in package ‘android’"></a>No resource identifier found for attribute ‘roundIcon’ in package ‘android’</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>报错:    ERROR:No resource identifier found for attribute ‘roundIcon’ in package ‘android’</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p><code>roundlcon</code>是高版本才有特性,一般是由于调节targetSdkVersion版本造成的,<br>删除清单文件AndroidManifest.xml里的 android:roundIcon=”@mipmap/ic_launcher_round”<br> 这句话就OK了<br>只要看到Error:No resource identifier……，肯定是xml文件里面出问题了，盯着找就好了<br>如果是in package ‘XXX’，这个多半就是自己定义的控件在应用的时候出了问题</p>
+<p>参考博客:<a href="https://blog.csdn.net/androidfszl/article/details/61919384" target="_blank" rel="noopener">https://blog.csdn.net/androidfszl/article/details/61919384</a></p>
+<h2 id="Git如何将本地仓库合并到远程-未解决"><a href="#Git如何将本地仓库合并到远程-未解决" class="headerlink" title="Git如何将本地仓库合并到远程(未解决)"></a>Git如何将本地仓库合并到远程(未解决)</h2><p><em>这样一个情景:远程仓库的dev分支已经有内容,我在本地新建了一个仓库代码写完了,准备把这个本地仓库关联到远程仓库并推送到dev分支.</em></p>
+<p>可能的解决方案:<a href="https://blog.csdn.net/zhouhuacai/article/details/78284990" target="_blank" rel="noopener">https://blog.csdn.net/zhouhuacai/article/details/78284990</a></p>
+<h2 id="安装时遇到的问题"><a href="#安装时遇到的问题" class="headerlink" title="安装时遇到的问题"></a>安装时遇到的问题</h2><p><a href="https://e1sewhere.github.io/2018/09/07/Android-Studio%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91/">Android Studio安装踩坑</a></p>
+<h2 id="创建控件不显示"><a href="#创建控件不显示" class="headerlink" title="创建控件不显示"></a>创建控件不显示</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>在按照书本布局章节创建第一个控件时,手动输入代码创建控件(button)不显示,但是控件有一个警告,大致意思是<code>android:text=&quot;haha&quot;</code>等号后面不建议接输入内容(但依然可以直接输入),建议使用引用<code>@string/button_1</code>这样的引用格式来引用资源,可以手动在values下的<code>strings.xml</code>创建,也可以直接用警告中的快速修复,编译器自动帮你创建并引用,结果相同.<br>修复后并没有解决问题,依然不显示.直接在Design中拖一个控件也不显示.<br>但是直接运行项目是能够现实的,只是在preview中不显示.</p>
+<h3 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h3><p>两种方法原理都不知道…应该是AS的bug</p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>直接修改布局的主题,直接在preview内修改,似乎只要主题不是AppThem就能够显示<br><img src="https://e1sewhere.github.io/images/as1.png" alt="as1"></p>
+<h4 id="方法二-我使用的方法"><a href="#方法二-我使用的方法" class="headerlink" title="方法二(我使用的方法)"></a>方法二(我使用的方法)</h4><p>修改app目录下的build.gradle文件内的 dependencies依赖<br><code>implementation &#39;com.android.support:appcompat-v7:28.0.0-alpha3&#39;</code> 改为 <code>implementation &#39;com.android.support:appcompat-v7:28.0.0-alpha1&#39;</code><br>重启(刷新)AS即可.</p>
+<h2 id="运行项目问题1"><a href="#运行项目问题1" class="headerlink" title="运行项目问题1"></a>运行项目问题1</h2><p>错误提示:<br>Instant Run performed a full build and install since<br>the installation on the device does not match the local build on disk.</p>
+<p>解决方法:可忽略</p>
+<h2 id="activity响应http的action问题"><a href="#activity响应http的action问题" class="headerlink" title="activity响应http的action问题"></a>activity响应http的action问题</h2><h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h3><p>第二章有一个这样的示例，让自己的activity可以响应http的action,但是在<code>AndroidManifest.xml</code>中报错.<br>提示为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activity supporting action_view is not set as browsable</span><br></pre></td></tr></table></figure>
+<p>按这个意思看，应该是要把这个activity设为brosable</p>
+<p>实际上忽略这个错误直接运行还是能够达到预期效果,但Logcat会报一个错,虽然没有影响程序运行.</p>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>添加一个category把activity设置为BROSABLE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.ThirdActivity&quot;&gt;</span><br><span class="line">        &lt;intent-filter&gt;</span><br><span class="line">            &lt;action android:name=&quot;android.intent.action.VIEW&quot;/&gt;</span><br><span class="line">            &lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;</span><br><span class="line">            &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot;/&gt;</span><br><span class="line">            &lt;data android:scheme=&quot;http&quot;/&gt;</span><br><span class="line">        &lt;/intent-filter&gt;</span><br><span class="line">    &lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+<p>错误消失</p>
+<p><span id="dialog"></span></p>
+<h2 id="打开对话框式的活动"><a href="#打开对话框式的活动" class="headerlink" title="打开对话框式的活动"></a>打开对话框式的活动</h2><h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h3><p>操作书上P69页例子时出错<br>点击按钮打开DialogActivity运行报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.RuntimeException: Unable to start activity ComponentInfo&#123;com.example.elsewhere997.activityliffecycletest/com.example.elsewhere997.activityliffecycletest.DialogActivity&#125;: java.lang.IllegalStateException: You need to use a Theme.AppCompat theme (or descendant) with this activity.</span><br><span class="line">Caused by: java.lang.IllegalStateException: You need to use a Theme.AppCompat theme (or descendant) with this activity.</span><br></pre></td></tr></table></figure>
+<p>不能启动活动,从caused可以看出是活动的主题出问题了,要使用Theme.AppCompat的主题.因为我们之前的DialogActivity继承自AppComjpatActivity</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class DialogActivity extends AppCompatActivity</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="方法一-修改主题"><a href="#方法一-修改主题" class="headerlink" title="方法一 修改主题"></a>方法一 修改主题</h4><p>修改AndroidManifest.xml中的dialog活动主题的代码为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:theme=&quot;@style/Theme.AppCompat.Dialog&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>重新编译运行,成功了</p>
+<h4 id="方法二-直接继承Activity"><a href="#方法二-直接继承Activity" class="headerlink" title="方法二 直接继承Activity"></a>方法二 直接继承Activity</h4><p>如果不需要继承AppCompatActivity，直接继承Activity,就可以使用<code>@android:style/Theme.Dialog</code>主题了<br>重新编译运行,成功了</p>
+<h2 id="Cannot-resolve-symbol-R"><a href="#Cannot-resolve-symbol-R" class="headerlink" title="Cannot resolve symbol R"></a>Cannot resolve symbol R</h2><h3 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h3><p>提示为:Cannot resolve symbol R<br>R文件识别不了但是确实存在,正常情况应该不会报错.<br>Android Studio 无法识别同一个 package 里的其他类，将其显示为红色，但是 compile 没有问题。鼠标放上去后显示 “Cannot resolve symbol XXX”，重启 Android Studio，重新 sync gradle，Clean build 都没有用。</p>
+<h3 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h4><p>菜单栏Build–Rebuild Project<br>但是本错误并没有解决.以后备用</p>
+<h4 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h4><p>点击菜单中的 “File” -&gt; “Invalidate Caches / Restart”，然后点击对话框中的 “Invalidate and Restart”，清空 cache 并且重启。没有解决,备用</p>
+<h4 id="方案三-重点"><a href="#方案三-重点" class="headerlink" title="方案三(重点)"></a>方案三(重点)</h4><p>重新检查查看build窗口,发现错误提示,布局文件,代码<code>layout_alignParentleft</code>出错,not found<br>检查后发现没有大写<code>left</code>的<code>L</code>修复解决.<br>仔细检查代码!善用提示窗口,不要光看代码提示</p>
+<h2 id="Cannot-set-the-value-of-read-only-property-‘outputFile’-待解决"><a href="#Cannot-set-the-value-of-read-only-property-‘outputFile’-待解决" class="headerlink" title="Cannot set the value of read-only property ‘outputFile’(待解决)"></a>Cannot set the value of read-only property ‘outputFile’(待解决)</h2><h3 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h3><p>我在完成任务<a href="mailto:`git@lawyer5.cn" target="_blank" rel="noopener">`git@lawyer5.cn</a>:selection-coolcode/android.git`<br>clone后在AS运行,build的时候报错:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot set the value of read-only property &apos;outputFile&apos; for......</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案-4"><a href="#解决方案-4" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="方案一-备用"><a href="#方案一-备用" class="headerlink" title="方案一(备用)"></a>方案一(备用)</h4><p>然后照着网上的帖子[ As Android plugin 3.0 migration guide suggests:] 修改了bulid.gradle中的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">variant.outputs.all &#123; output -&gt;</span><br><span class="line">def outputFile = output.outputFile</span><br><span class="line">if (outputFile != null &amp;&amp; outputFile.name.endsWith(&apos;.apk&apos;)) &#123;</span><br><span class="line">// def fileName = &quot;coolcode_v$&#123;defaultConfig.versionName&#125;_$&#123;releaseTime()&#125;_$&#123;variant.productFlavors[0].name&#125;.apk&quot;</span><br><span class="line">// output.outputFile = new File(outputFile.parent, fileName)</span><br><span class="line">outputFileName = &quot;coolcode_v$&#123;defaultConfig.versionName&#125;_$&#123;releaseTime()&#125;_$&#123;variant.productFlavors[0].name&#125;.apk&quot;  //改动的</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后try again…  继续错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">All of them match the consumer attributes:.......</span><br></pre></td></tr></table></figure>
+<p>照着帖子:<a href="https://blog.csdn.net/qqcrazyboy/article/details/77900183" target="_blank" rel="noopener">https://blog.csdn.net/qqcrazyboy/article/details/77900183</a>  基本配置好apt到annotationProcessor </p>
+<p>还是有一个错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">All flavors must now belong to a named flavor dimension</span><br></pre></td></tr></table></figure>
+<p>查看error后面给的网站,于是又在app的build.gradle里的 defaultConfig加了一句 <code>flavorDimensions &quot;versionCode&quot;</code></p>
+<p>继续错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">failed linking references.</span><br></pre></td></tr></table></figure>
+<p>然后禁用aapt2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.enableAapt2=false</span><br></pre></td></tr></table></figure>
+<p>然后,就是 <code>java complier: 50errors</code>,哇心累.</p>
+<p>这个方法没有解决问题,留作备用</p>
+<h4 id="方案二-1"><a href="#方案二-1" class="headerlink" title="方案二"></a>方案二</h4><p>一开始运行这个项目的时候,我选择了更新<code>Android Gradle Plugin</code>然后就报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot set the value of read-only property &apos;outputFile&apos; for......</span><br></pre></td></tr></table></figure></p>
+<p>不断的google后还是一直报不同的错误,最后直接错变成了 <code>java complier: 78errors</code>,搞了一下午成这样,哇心累.<br>然后用git清空了所有修改,重新打开项目,没有更新gradle,运行成功了.</p>
+<h2 id="必须定义为final变量"><a href="#必须定义为final变量" class="headerlink" title="必须定义为final变量"></a>必须定义为final变量</h2><h3 id="错误描述-1"><a href="#错误描述-1" class="headerlink" title="错误描述"></a>错误描述</h3><p>错误的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">private class ForceOfflineReceiver extends BroadcastReceiver&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">        AlertDialog.Builder builder =new AlertDialog.Builder(context);</span><br><span class="line">        builder.setTitle(&quot;Warning&quot;);</span><br><span class="line">        builder.setMessage(&quot;You are forced to be offline. Please try to login again.&quot;);</span><br><span class="line">        builder.setCancelable(false);</span><br><span class="line">        builder.setPositiveButton(&quot;OK&quot;,new DialogInterface.OnClickListener()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                ActivityCollector.finishAll(); //销毁所有活动</span><br><span class="line">                Intent intent=new Intent(context,LoginActivity.class);  //这里的context会报错</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)  //设置确定标签</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>错误提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Variable &apos;context&apos; is accessed from within inner class, needs to be declared final</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决方式-1"><a href="#解决方式-1" class="headerlink" title="解决方式"></a>解决方式</h3><p> java中规定，内部类只能访问外部类中的成员变量，不能访问方法中定义的变量，如果要访问方法中的变量，就要把方法中的变量声明为final（常量）的，因为这样可以使变量全局化，就相当于是在外部定义的而不是在方法里定义的</p>
+<p>这里需要把<code>onReceive()</code>中的参数Context 加上final修饰.</p>
+<h2 id="使用adb-Shell拒绝"><a href="#使用adb-Shell拒绝" class="headerlink" title="使用adb Shell拒绝"></a>使用adb Shell拒绝</h2><h3 id="错误描述-2"><a href="#错误描述-2" class="headerlink" title="错误描述"></a>错误描述</h3><p>使用adb Shell进入data/data…文件夹的时候提示Permission denied,全校被拒绝</p>
+<h3 id="解决方案-5"><a href="#解决方案-5" class="headerlink" title="解决方案"></a>解决方案</h3><p>在命令行继续输入 su root,然后手机确认授root权限.</p>
+<h2 id="使用sqlite3工具-not-found"><a href="#使用sqlite3工具-not-found" class="headerlink" title="使用sqlite3工具 not found"></a>使用sqlite3工具 not found</h2><h3 id="错误描述-3"><a href="#错误描述-3" class="headerlink" title="错误描述"></a>错误描述</h3><p>用adb shell 打开数据库文件,提示没有sqlite3,查看了手机system/bin/目录有sqlite3.exe文件,root也给了,android7.1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2|D6503:/ $ sqlite3 BookStore.db</span><br><span class="line">/system/bin/sh: sqlite3: not found</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案-6"><a href="#解决方案-6" class="headerlink" title="解决方案"></a>解决方案</h3><div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/10/02/跳过谷歌开机验证的方法/">跳过谷歌开机验证的方法</a></li><li><a href="https://xugaoxiang.com/2018/05/15/Android版ffmpeg的编译/">Android版ffmpeg的编译</a></li></ul></div>
+          
+          <div>    
+ 
+ 
+    <div class="post-copyright">
+    	如果文章有问题欢迎指出,或者你也可以联系我
+      <div class="post-copyright-author">
+          <strong>本文作者：</strong>E1se
+      </div>
+      <div class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/09/07/第一行代码读书笔记/" title="《第一行代码》读书笔记">2018/09/07/第一行代码读书笔记/</a>
+      </div>
+      <div class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"> <i class="fa fa-tag"></i>android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/07/Android-Studio安装踩坑/" rel="next" title="Android Studio安装踩坑">
+                <i class="fa fa-chevron-left"></i> Android Studio安装踩坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/07/HEXO-使用Github作为图床/" rel="prev" title="HEXO 使用Github作为图床">
+                HEXO 使用Github作为图床 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/eva1.ico"
+                alt="E1se" />
+            
+              <p class="site-author-name" itemprop="name">E1se</p>
+              <p class="site-description motion-element" itemprop="description">none</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/e1sewhere" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="elsewhere997@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐站点
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://e1sewhere.github.io/EdenPage/11111/" title="什么也没有" target="_blank">什么也没有</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("02/20/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+  
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-初识安卓"><span class="nav-number">1.</span> <span class="nav-text">第一章 初识安卓</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓简介"><span class="nav-number">1.1.</span> <span class="nav-text">安卓简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境搭建"><span class="nav-number">1.2.</span> <span class="nav-text">开发环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS目录结构"><span class="nav-number">1.3.</span> <span class="nav-text">AS目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大体目录结构"><span class="nav-number">1.3.1.</span> <span class="nav-text">大体目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app下的目录分析"><span class="nav-number">1.3.2.</span> <span class="nav-text">app下的目录分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HelloWorld程序简单分析"><span class="nav-number">1.4.</span> <span class="nav-text">HelloWorld程序简单分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑和视图分离"><span class="nav-number">1.4.1.</span> <span class="nav-text">逻辑和视图分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#res下内容引用"><span class="nav-number">1.4.2.</span> <span class="nav-text">res下内容引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详解build-gradle文件"><span class="nav-number">1.4.3.</span> <span class="nav-text">详解build.gradle文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外层"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">外层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app下的"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">app下的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用日志工具Log"><span class="nav-number">1.5.</span> <span class="nav-text">使用日志工具Log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.5.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习惯使用Log"><span class="nav-number">1.5.2.</span> <span class="nav-text">习惯使用Log</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Logcat中的过滤器"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">Logcat中的过滤器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logcat中的日志级别"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">Logcat中的日志级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键字过滤"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">关键字过滤</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-活动"><span class="nav-number">2.</span> <span class="nav-text">第二章 活动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#活动的基本用法"><span class="nav-number">2.1.</span> <span class="nav-text">活动的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动创建活动"><span class="nav-number">2.1.1.</span> <span class="nav-text">手动创建活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建和加载布局"><span class="nav-number">2.1.2.</span> <span class="nav-text">创建和加载布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建布局"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">创建布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#活动中加载布局"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">活动中加载布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册活动"><span class="nav-number">2.1.3.</span> <span class="nav-text">注册活动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主活动"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">主活动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动中的Toast"><span class="nav-number">2.1.4.</span> <span class="nav-text">活动中的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动中的Menu"><span class="nav-number">2.1.5.</span> <span class="nav-text">活动中的Menu</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建布局-1"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">创建布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示menu"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">显示menu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加菜单响应事件"><span class="nav-number">2.1.5.3.</span> <span class="nav-text">添加菜单响应事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#销毁活动"><span class="nav-number">2.1.6.</span> <span class="nav-text">销毁活动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动间的跳转"><span class="nav-number">2.2.</span> <span class="nav-text">活动间的跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用显示Intent"><span class="nav-number">2.2.1.</span> <span class="nav-text">使用显示Intent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式Intent"><span class="nav-number">2.2.2.</span> <span class="nav-text">隐式Intent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多隐式Intent用法"><span class="nav-number">2.2.3.</span> <span class="nav-text">更多隐式Intent用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向下个活动传递数据"><span class="nav-number">2.2.4.</span> <span class="nav-text">向下个活动传递数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回数据给上一个活动"><span class="nav-number">2.2.5.</span> <span class="nav-text">返回数据给上一个活动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动的生命周期"><span class="nav-number">2.3.</span> <span class="nav-text">活动的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#返回栈"><span class="nav-number">2.3.1.</span> <span class="nav-text">返回栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动状态"><span class="nav-number">2.3.2.</span> <span class="nav-text">活动状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生存周期"><span class="nav-number">2.3.3.</span> <span class="nav-text">生存周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生存周期体验"><span class="nav-number">2.3.4.</span> <span class="nav-text">生存周期体验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置为对话框-Dialog-活动"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">设置为对话框(Dialog)活动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动回收前保存参数"><span class="nav-number">2.3.5.</span> <span class="nav-text">活动回收前保存参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动的启动模式"><span class="nav-number">2.4.</span> <span class="nav-text">活动的启动模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#standard-默认"><span class="nav-number">2.4.1.</span> <span class="nav-text">standard(默认)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#singleTop"><span class="nav-number">2.4.2.</span> <span class="nav-text">singleTop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#singleTask"><span class="nav-number">2.4.3.</span> <span class="nav-text">singleTask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#singleInstance"><span class="nav-number">2.4.4.</span> <span class="nav-text">singleInstance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动实践"><span class="nav-number">2.5.</span> <span class="nav-text">活动实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#知晓当前是哪一个活动"><span class="nav-number">2.5.1.</span> <span class="nav-text">知晓当前是哪一个活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随时退出活动"><span class="nav-number">2.5.2.</span> <span class="nav-text">随时退出活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动活动的最佳写法"><span class="nav-number">2.5.3.</span> <span class="nav-text">启动活动的最佳写法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-UI开发"><span class="nav-number">3.</span> <span class="nav-text">第三章 UI开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用控件的使用"><span class="nav-number">3.1.</span> <span class="nav-text">常用控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextView"><span class="nav-number">3.1.1.</span> <span class="nav-text">TextView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button"><span class="nav-number">3.1.2.</span> <span class="nav-text">Button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EditText"><span class="nav-number">3.1.3.</span> <span class="nav-text">EditText</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageView"><span class="nav-number">3.1.4.</span> <span class="nav-text">ImageView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressBar-进度条"><span class="nav-number">3.1.5.</span> <span class="nav-text">ProgressBar(进度条)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AlertDialog"><span class="nav-number">3.1.6.</span> <span class="nav-text">AlertDialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressDialog"><span class="nav-number">3.1.7.</span> <span class="nav-text">ProgressDialog</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种基本布局"><span class="nav-number">3.2.</span> <span class="nav-text">四种基本布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性布局"><span class="nav-number">3.2.1.</span> <span class="nav-text">线性布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对布局"><span class="nav-number">3.2.2.</span> <span class="nav-text">相对布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帧布局"><span class="nav-number">3.2.3.</span> <span class="nav-text">帧布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百分比布局"><span class="nav-number">3.2.4.</span> <span class="nav-text">百分比布局</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建自定义控件"><span class="nav-number">3.3.</span> <span class="nav-text">创建自定义控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入布局"><span class="nav-number">3.3.1.</span> <span class="nav-text">引入布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建自定义控件-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">创建自定义控件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用-amp-难用控件-ListView"><span class="nav-number">3.4.</span> <span class="nav-text">常用&amp;难用控件 ListView</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单用法"><span class="nav-number">3.4.1.</span> <span class="nav-text">简单用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定制ListView界面"><span class="nav-number">3.4.2.</span> <span class="nav-text">定制ListView界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点击事件"><span class="nav-number">3.4.3.</span> <span class="nav-text">点击事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView"><span class="nav-number">3.5.</span> <span class="nav-text">RecyclerView</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">3.5.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横向滚动和瀑布流布局"><span class="nav-number">3.5.2.</span> <span class="nav-text">横向滚动和瀑布流布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RecyclerView点击事件"><span class="nav-number">3.5.3.</span> <span class="nav-text">RecyclerView点击事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写界面实践"><span class="nav-number">3.6.</span> <span class="nav-text">编写界面实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#制作Nine-Pach图片"><span class="nav-number">3.6.1.</span> <span class="nav-text">制作Nine_Pach图片</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-碎片Fragment"><span class="nav-number">4.</span> <span class="nav-text">第四章 碎片Fragment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fragment是什么"><span class="nav-number">4.1.</span> <span class="nav-text">Fragment是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fragment的使用方式"><span class="nav-number">4.2.</span> <span class="nav-text">Fragment的使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment的简单用法"><span class="nav-number">4.2.1.</span> <span class="nav-text">Fragment的简单用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态添加碎片"><span class="nav-number">4.2.2.</span> <span class="nav-text">动态添加碎片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碎片中模拟返回栈-BackStack"><span class="nav-number">4.2.3.</span> <span class="nav-text">碎片中模拟返回栈(BackStack)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碎片和活动通信"><span class="nav-number">4.2.4.</span> <span class="nav-text">碎片和活动通信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片的生命周期"><span class="nav-number">4.3.</span> <span class="nav-text">碎片的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#碎片的状态和回调"><span class="nav-number">4.3.1.</span> <span class="nav-text">碎片的状态和回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体验碎片的生命周期"><span class="nav-number">4.3.2.</span> <span class="nav-text">体验碎片的生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态加载布局的技巧"><span class="nav-number">4.4.</span> <span class="nav-text">动态加载布局的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用限定符-Qualifiers"><span class="nav-number">4.4.1.</span> <span class="nav-text">使用限定符(Qualifiers)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小宽度限定符"><span class="nav-number">4.4.2.</span> <span class="nav-text">最小宽度限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片的实践-延迟"><span class="nav-number">4.5.</span> <span class="nav-text">碎片的实践 (延迟)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广播"><span class="nav-number">5.</span> <span class="nav-text">广播</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接收系统广播"><span class="nav-number">5.1.</span> <span class="nav-text">接收系统广播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态注册监听网络变化"><span class="nav-number">5.1.1.</span> <span class="nav-text">动态注册监听网络变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态注册实现开机启动"><span class="nav-number">5.1.2.</span> <span class="nav-text">静态注册实现开机启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发送自定义广播"><span class="nav-number">5.2.</span> <span class="nav-text">发送自定义广播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送标准广播"><span class="nav-number">5.2.1.</span> <span class="nav-text">发送标准广播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送有序广播"><span class="nav-number">5.2.2.</span> <span class="nav-text">发送有序广播</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用本地广播"><span class="nav-number">5.3.</span> <span class="nav-text">使用本地广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广播实践-强制下线"><span class="nav-number">5.4.</span> <span class="nav-text">广播实践-强制下线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章-持久化技术"><span class="nav-number">6.</span> <span class="nav-text">第六章 持久化技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件存储"><span class="nav-number">6.1.</span> <span class="nav-text">文件存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将数据存储到文件中"><span class="nav-number">6.1.1.</span> <span class="nav-text">将数据存储到文件中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从文件中读取数据"><span class="nav-number">6.1.2.</span> <span class="nav-text">从文件中读取数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SharedPreferences存储"><span class="nav-number">6.2.</span> <span class="nav-text">SharedPreferences存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将数据存储到SharedPreferences中"><span class="nav-number">6.2.1.</span> <span class="nav-text">将数据存储到SharedPreferences中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从SharedPreferences中读取数据"><span class="nav-number">6.2.2.</span> <span class="nav-text">从SharedPreferences中读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现记住密码功能"><span class="nav-number">6.2.3.</span> <span class="nav-text">实现记住密码功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLite数据库存储"><span class="nav-number">6.3.</span> <span class="nav-text">SQLite数据库存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">6.3.1.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用adb-shell查看数据库"><span class="nav-number">6.3.2.</span> <span class="nav-text">使用adb shell查看数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加数据"><span class="nav-number">6.3.3.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新数据"><span class="nav-number">6.3.4.</span> <span class="nav-text">更新数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据"><span class="nav-number">6.3.5.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">6.3.6.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SQL操作数据库"><span class="nav-number">6.3.7.</span> <span class="nav-text">使用SQL操作数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用LitePal操作数据库"><span class="nav-number">6.4.</span> <span class="nav-text">使用LitePal操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置LitePal"><span class="nav-number">6.4.1.</span> <span class="nav-text">配置LitePal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建和升级数据库"><span class="nav-number">6.4.2.</span> <span class="nav-text">创建和升级数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用LitePal添加数据"><span class="nav-number">6.4.3.</span> <span class="nav-text">使用LitePal添加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用LitePal更新数据"><span class="nav-number">6.4.4.</span> <span class="nav-text">使用LitePal更新数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据-1"><span class="nav-number">6.4.5.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据-1"><span class="nav-number">6.4.6.</span> <span class="nav-text">查询数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自己查询学习的知识"><span class="nav-number">7.</span> <span class="nav-text">自己查询学习的知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio技巧"><span class="nav-number">7.1.</span> <span class="nav-text">Android Studio技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键"><span class="nav-number">7.1.1.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件名颜色的意思"><span class="nav-number">7.1.2.</span> <span class="nav-text">文件名颜色的意思</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON-简单学习"><span class="nav-number">7.2.</span> <span class="nav-text">JSON 简单学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法规则"><span class="nav-number">7.2.1.</span> <span class="nav-text">语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键值对"><span class="nav-number">7.2.2.</span> <span class="nav-text">键值对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java内部类调用外部类的方法"><span class="nav-number">7.3.</span> <span class="nav-text">java内部类调用外部类的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于context"><span class="nav-number">7.4.</span> <span class="nav-text">关于context</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建议阅读"><span class="nav-number">7.4.1.</span> <span class="nav-text">建议阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Context是什么"><span class="nav-number">7.4.2.</span> <span class="nav-text">Context是什么</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于侦听器中的"><span class="nav-number">7.5.</span> <span class="nav-text">关于侦听器中的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this与activity-this"><span class="nav-number">7.6.</span> <span class="nav-text">this与activity.this</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题-amp-解决方法"><span class="nav-number">8.</span> <span class="nav-text">遇到的问题&amp;解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#“android-content-res-Resources-NotFoundException-String-resource-ID-0x2”错误"><span class="nav-number">8.1.</span> <span class="nav-text">“android.content.res.Resources$NotFoundException: String resource ID #0x2”错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#No-resource-identifier-found-for-attribute-‘roundIcon’-in-package-‘android’"><span class="nav-number">8.2.</span> <span class="nav-text">No resource identifier found for attribute ‘roundIcon’ in package ‘android’</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">8.2.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">8.2.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git如何将本地仓库合并到远程-未解决"><span class="nav-number">8.3.</span> <span class="nav-text">Git如何将本地仓库合并到远程(未解决)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装时遇到的问题"><span class="nav-number">8.4.</span> <span class="nav-text">安装时遇到的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建控件不显示"><span class="nav-number">8.5.</span> <span class="nav-text">创建控件不显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-1"><span class="nav-number">8.5.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方式"><span class="nav-number">8.5.2.</span> <span class="nav-text">解决方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">8.5.2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二-我使用的方法"><span class="nav-number">8.5.2.2.</span> <span class="nav-text">方法二(我使用的方法)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行项目问题1"><span class="nav-number">8.6.</span> <span class="nav-text">运行项目问题1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#activity响应http的action问题"><span class="nav-number">8.7.</span> <span class="nav-text">activity响应http的action问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-2"><span class="nav-number">8.7.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案-1"><span class="nav-number">8.7.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开对话框式的活动"><span class="nav-number">8.8.</span> <span class="nav-text">打开对话框式的活动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-3"><span class="nav-number">8.8.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案-2"><span class="nav-number">8.8.2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一-修改主题"><span class="nav-number">8.8.2.1.</span> <span class="nav-text">方法一 修改主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二-直接继承Activity"><span class="nav-number">8.8.2.2.</span> <span class="nav-text">方法二 直接继承Activity</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cannot-resolve-symbol-R"><span class="nav-number">8.9.</span> <span class="nav-text">Cannot resolve symbol R</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-4"><span class="nav-number">8.9.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案-3"><span class="nav-number">8.9.2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方案一"><span class="nav-number">8.9.2.1.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方案二"><span class="nav-number">8.9.2.2.</span> <span class="nav-text">方案二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方案三-重点"><span class="nav-number">8.9.2.3.</span> <span class="nav-text">方案三(重点)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cannot-set-the-value-of-read-only-property-‘outputFile’-待解决"><span class="nav-number">8.10.</span> <span class="nav-text">Cannot set the value of read-only property ‘outputFile’(待解决)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误描述"><span class="nav-number">8.10.1.</span> <span class="nav-text">错误描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案-4"><span class="nav-number">8.10.2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方案一-备用"><span class="nav-number">8.10.2.1.</span> <span class="nav-text">方案一(备用)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方案二-1"><span class="nav-number">8.10.2.2.</span> <span class="nav-text">方案二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必须定义为final变量"><span class="nav-number">8.11.</span> <span class="nav-text">必须定义为final变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误描述-1"><span class="nav-number">8.11.1.</span> <span class="nav-text">错误描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方式-1"><span class="nav-number">8.11.2.</span> <span class="nav-text">解决方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用adb-Shell拒绝"><span class="nav-number">8.12.</span> <span class="nav-text">使用adb Shell拒绝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误描述-2"><span class="nav-number">8.12.1.</span> <span class="nav-text">错误描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案-5"><span class="nav-number">8.12.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用sqlite3工具-not-found"><span class="nav-number">8.13.</span> <span class="nav-text">使用sqlite3工具 not found</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误描述-3"><span class="nav-number">8.13.1.</span> <span class="nav-text">错误描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案-6"><span class="nav-number">8.13.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">RECOMMEND</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">E1se</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">190.2k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>|
+</span>
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz',
+        appKey: '9wRib5jaIuQL2dVmtXx24smG',
+        placeholder: 'Just go go',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz", "9wRib5jaIuQL2dVmtXx24smG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+
+<!-- �Զ����js�ļ� -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+ 
+ <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+ 
+</body>
+</html>
+<!-- 页面点击价值观 -->
+<script type="text/javascript" src="/js/src/jiazhiguan.js"></script>
+
+ <!--动态背景轮播-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script>
+  $.backstretch([  
+          "/images/background/1.jpg",
+          "/images/background/2.jpg",
+          "/images/background/3.jpg"
+    ], { duration: 30000, fade: 1500 }); 
+</script>
+
+
+

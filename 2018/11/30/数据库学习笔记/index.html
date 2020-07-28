@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="google-site-verification" content="jIIp89W5czDndIpDpqacsdM_ooroPfoz-v_D4UrrwmM" />
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #a40000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #a40000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #a40000;    /*上边框颜色*/
+        border-left-color: #a40000;    /*左边框颜色*/
+    }
+</style>
+
+
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="mysql," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这是在360培训时学习数据库时的笔记,主要学习了Mysql,也包含部分oracle,sqlserver.">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库学习笔记">
+<meta property="og:url" content="https://e1sewhere.github.io/2018/11/30/数据库学习笔记/index.html">
+<meta property="og:site_name" content="E1sewhere">
+<meta property="og:description" content="这是在360培训时学习数据库时的笔记,主要学习了Mysql,也包含部分oracle,sqlserver.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://e1sewhere.github.io/images/groupconcat.png">
+<meta property="og:updated_time" content="2019-03-20T10:14:39.033Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库学习笔记">
+<meta name="twitter:description" content="这是在360培训时学习数据库时的笔记,主要学习了Mysql,也包含部分oracle,sqlserver.">
+<meta name="twitter:image" content="https://e1sewhere.github.io/images/groupconcat.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://e1sewhere.github.io/2018/11/30/数据库学习笔记/"/>
+
+
+
+
+
+  <title>数据库学习笔记 | E1sewhere</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+   
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    
+    <div class="top-scroll-bar"></div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">E1sewhere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header> 
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://e1sewhere.github.io/2018/11/30/数据库学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E1se">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/eva1.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E1sewhere">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据库学习笔记</h1>
+        
+
+        <div class="post-meta">
+		
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T10:28:37+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T18:14:39+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/30/数据库学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/30/数据库学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/30/数据库学习笔记/" class="leancloud_visitors" data-flag-title="数据库学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  8,016
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  32
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p>这是在360培训时学习数据库时的笔记,主要学习了Mysql,也包含部分oracle,sqlserver.<br><a id="more"></a></p>
+<h1 id="零散"><a href="#零散" class="headerlink" title="零散"></a>零散</h1><ul>
+<li>select后没有表中的字段时,结尾不使用from</li>
+<li>查询某个表不再当前数据库时,可以使用<code>[数据库名].[表名]</code>来使用这个表<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1></li>
+<li>字段：数据最小单位</li>
+<li>片段：若干字段组成描述一个实体</li>
+</ul>
+<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><ul>
+<li>关系：二维表</li>
+<li>元组：表中的一行</li>
+<li>属性：表中的一列</li>
+<li>主码：能唯一标识某元组的属性值</li>
+</ul>
+<h1 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="主键与外键"><a href="#主键与外键" class="headerlink" title="主键与外键"></a>主键与外键</h3><p>主关键字（主键，primary key）是被挑选出来， 主关键字作表的行的唯一标识的候选关键字。一个表只有一个主关键字。主关键字又可以称为主键。 主键可以由一个字段，也可以由多个字段组成，分别成为单字段主键或多字段主键。又称主码。并且它可以唯一确定表中的一行数据，或者可以唯一确定一个实体。<br><strong>主键必须唯一。但不一定是一个字段，比如复合主键。</strong></p>
+<h3 id="语句的分类"><a href="#语句的分类" class="headerlink" title="语句的分类"></a>语句的分类</h3><p>DDL:数据库定义语言,如创建,修改删除数据库对象.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table</span><br><span class="line">alter table</span><br><span class="line">drop table</span><br><span class="line">create index</span><br><span class="line">drop index</span><br></pre></td></tr></table></figure>
+<p>DML:数据库操作语言</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>DCL:数据库控制语言</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grant:授权</span><br><span class="line">reboke:撤销权限</span><br><span class="line">commit:提交事物</span><br><span class="line">rollback:事物处理回退</span><br></pre></td></tr></table></figure>
+<p>定义基本表:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NOT MULL</span><br><span class="line">DEFAULT:给定默认值</span><br><span class="line">UNIQUE:限制列取值不重复</span><br><span class="line">CHECK:限制列的取值范围</span><br><span class="line">PRIMARY KEY</span><br><span class="line">FOREIGN KEY:定义本列为外键</span><br></pre></td></tr></table></figure>
+<p>表其他<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc tablename :查看表</span><br><span class="line">show create table tablename:显示表的结构</span><br></pre></td></tr></table></figure></p>
+<h3 id="MySQL自带数据库"><a href="#MySQL自带数据库" class="headerlink" title="MySQL自带数据库"></a>MySQL自带数据库</h3><p>本条针对MySQL 官方 5.7.17版本,只有5.5以上的MySQL才有<code>information_schema</code></p>
+<h4 id="information-schema"><a href="#information-schema" class="headerlink" title="information_schema"></a>information_schema</h4><h5 id="什么是information-schema"><a href="#什么是information-schema" class="headerlink" title="什么是information_schema"></a>什么是information_schema</h5><p>information_schema数据库是MySQL系统自带的数据库，它提供了数据库元数据的访问方式。感觉information_schema就像是MySQL实例的一个百科全书，记录了数据库当中大部分我们需要了结的信息，比如字符集，权限相关，数据库实体对象信息，外检约束，分区，压缩表，表信息，索引信息，参数，优化，锁和事物等等<br>INFORMATION_SCHEMA提供对数据库元数据的访问，有关MySQL服务器信息，例如数据库或表的名称，列的数据类型或访问权限。<br>information_schema 中的表实际上是视图，而不是基本表，因此，文件系统上没有与之相关的文件</p>
+<h5 id="几个重要的表"><a href="#几个重要的表" class="headerlink" title="几个重要的表"></a>几个重要的表</h5><ul>
+<li>CHARACTER_SETS:提供了 mysql 可用字符集的信息。SHOW CHARACTER SET; 命令从这个表获取结果</li>
+<li>SCHEMATA:当前 mysql 实例中所有数据库的信息。SHOW DATABASES; 命令从这个表获取数据</li>
+<li>TABLES 表:存储数据库中的表信息（包括视图），包括表属于哪个数据库，表的类型、存储引擎、创建时间等信息。SHOW TABLES FROM XX; 命令从这个表获取结果</li>
+<li>COLUMNS 表:存储表中的列信息，包括表有多少列、每个列的类型等。SHOW COLUMNS FROM schemaname.tablename 命令从这个表获取结果</li>
+<li>STATISTICS 表:表索引的信息。SHOW INDEX FROM schemaname.tablename; 命令从这个表获取结果</li>
+<li>USER_PRIVILEGES 表:用户权限表。内容源自 mysql.user 授权表。是非标准表</li>
+<li>SCHEMA_PRIVILEGES 表:方案权限表。给出了关于方案（数据库）权限的信息。内容来自 mysql.db 授权表。是非标准表</li>
+<li>TABLE_PRIVILEGES 表:表权限表。给出了关于表权限的信息。内容源自 mysql.tables_priv 授权表。是非标准表</li>
+<li>COLUMN_PRIVILEGES 表:列权限表。给出了关于列权限的信息。内容源自 mysql.columns_priv 授权表。是非标准表</li>
+<li>COLLATIONS 表:提供了关于各字符集的对照信息。SHOW COLLATION; 命令从这个表获取结果</li>
+<li>TABLE_CONSTRAINTS 表:描述了存在约束的表。以及表的约束类型。</li>
+<li>KEY_COLUMN_USAGE 表:描述了具有约束的键列</li>
+<li>VIEWS 表:给出了关于数据库中的视图的信息。需要有 show views 权限，否则无法查看视图信息<h4 id="performance-schema"><a href="#performance-schema" class="headerlink" title="performance_schema"></a>performance_schema</h4></li>
+</ul>
+<h5 id="什么是performance-schema"><a href="#什么是performance-schema" class="headerlink" title="什么是performance_schema"></a>什么是performance_schema</h5><p>MySQL的performance schema 用于监控MySQL server在一个较低级别的运行过程中的资源消耗、资源等待等情况，它具有以下特点：</p>
+<ul>
+<li>提供了一种在数据库运行时实时检查server的内部执行情况的方法。performance_schema 数据库中的表使用performance_schema存储引擎。该数据库主要关注数据库运行过程中的性能相关的数据，与information_schema不同，information_schema主要关注server运行过程中的元数据信息</li>
+<li>performance_schema通过监视server的事件来实现监视server内部运行情况， “事件”就是server内部活动中所做的任何事情以及对应的时间消耗，利用这些信息来判断server中的相关资源消耗在了哪里？一般来说，事件可以是函数调用、操作系统的等待、SQL语句执行的阶段（如sql语句执行过程中的parsing 或 sorting阶段）或者整个SQL语句与SQL语句集合。事件的采集可以方便的提供server中的相关存储引擎对磁盘文件、表I/O、表锁等资源的同步调用信息。</li>
+<li>performance_schema中的事件与写入二进制日志中的事件（描述数据修改的events）、事件计划调度程序（这是一种存储程序）的事件不同。performance_schema中的事件记录的是server执行某些活动对某些资源的消耗、耗时、这些活动执行的次数等情况。</li>
+<li>performance_schema中的事件只记录在本地server的performance_schema中，其下的这些表中数据发生变化时不会被写入binlog中，也不会通过复制机制被复制到其他server中。<br>本段出自 独角的犀牛：<a href="https://www.jianshu.com/p/4c19af70c355" target="_blank" rel="noopener">https://www.jianshu.com/p/4c19af70c355</a></li>
+</ul>
+<p>对于performance_schema暂时不深入学习.之后需要学可以参看 独角的犀牛：<a href="https://www.jianshu.com/p/4c19af70c355" target="_blank" rel="noopener">https://www.jianshu.com/p/4c19af70c355</a></p>
+<h2 id="语句实例"><a href="#语句实例" class="headerlink" title="语句实例"></a>语句实例</h2><h3 id="数据库维护"><a href="#数据库维护" class="headerlink" title="数据库维护"></a>数据库维护</h3><h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database name;</span><br></pre></td></tr></table></figure>
+<h4 id="备份和恢复"><a href="#备份和恢复" class="headerlink" title="备份和恢复"></a>备份和恢复</h4><ul>
+<li><p>只备份数据表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump [-h主机名]  [-P端口] -u[username] -p[password] dbName &gt;  [存放路径]\name.sql --注意不在mysql里执行,直接在cmd下执行,且没有分号.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>备份整个库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump [-h主机名]  [-P端口] -u[username] -p[password] -B dbName &gt;  [存放路径]\name.sql --注意不在mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>source 命令导入 (使用navcat的cmd失败原因未知)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#需要先登录到mysql终端</span><br><span class="line">mysql&gt; create database abc;      # 创建数据库</span><br><span class="line">mysql&gt; use abc;                  # 使用已创建的数据库 </span><br><span class="line">mysql&gt; set names utf8;           # 设置编码</span><br><span class="line">mysql&gt; source /home/abc/abc.sql  # 导入备份数据库</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mysql命令导入整个数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u[username] -p[password] &lt; 路径\name.sql --直接在cmd执行,不进入mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前数据库下的用户:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user,host from mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个新用户:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user &apos;username&apos;@&apos;主机名&apos; identified by &apos;password&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改用户密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set password for &apos;[username]&apos;@&apos;host&apos;=password(&apos;[new_password]&apos;);  --mysql8.0以下版本</span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;你的密码&apos;;  --mysql8.0 ,with 后的字段是指定加密规则.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改用户账号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename user &apos;old_user&apos;@&apos;old_host&apos; to &apos;new_user&apos;@&apos;new_host&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user `user`@`host`;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h4><ul>
+<li><p>查看用户权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show grants for &apos;user&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加用户权限</p>
+<blockquote>
+<p>表权限:’Select’, ‘Insert’, ‘Update’, ‘Delete’, ‘Create’, ‘Drop’, ‘Grant’, ‘References’, ‘Index’, ‘Alter’<br>列权限:’Select’, ‘Insert’, ‘Update’, ‘References’<br>过程权限:’Execute’, ‘Alter Routine’, ‘Grant’</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grant [all privileges|select|create...] on [数据库名.表名] to &apos;username&apos;@&apos;hostname&apos; indentified by &apos;密码&apos; with grant [option]; --8.0之前的版本</span><br><span class="line">GRANT ALL ON *.* TO `wangwei`@`127.0.0.1` WITH GRANT OPTION;  --mysql8.0</span><br><span class="line">-- 给权限添加限制条件只需要在最后加个 `with [限制条件]`</span><br><span class="line">比如with max_queries_per_hour 1;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>刷新用户权限 刷新后权限生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回收用户权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">revoke delete on *.* from &apos;jack&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3><p>修改一行数据:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student set sno=&apos;s010&apos; where sno=&apos;s0010&apos;;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update [tablename] set [col1]=[newvalue1]，[col2]=[newvalue2]... where [col1]=[oldvalue1],[col2]=[oldvalue];</span><br></pre></td></tr></table></figure>
+<p>字符串连接:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student set birthday=concat((year(now())-sage),1010) where sno=&apos;s006&apos;; #使用concat(str1,str2)连接,不是字符串的转换为字符串.</span><br></pre></td></tr></table></figure></p>
+<h3 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h3><ul>
+<li><p>Check约束 限制列中的取值范围如果对一个表定义 CHECK 约束，那么此约束会在特定的列中对值进行限制<br>下面的 SQL 在 <code>Persons</code> 表创建时为 <code>Id_P</code>列创建 CHECK 约束。CHECK 约束规定 <code>Id_P</code> 列必须只包含大于 0 的整数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Persons  -- 创建表时添加约束</span><br><span class="line">(</span><br><span class="line">Id_P int NOT NULL,</span><br><span class="line">City varchar(255),</span><br><span class="line">CHECK (Id_P&gt;0)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果需要命名 CHECK 约束，以及为多个列定义 CHECK 约束，请使用下面的 SQL 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Persons</span><br><span class="line">(</span><br><span class="line">Id_P int NOT NULL,</span><br><span class="line">LastName varchar(255) NOT NULL,</span><br><span class="line">FirstName varchar(255),</span><br><span class="line">Address varchar(255),</span><br><span class="line">City varchar(255),</span><br><span class="line">CONSTRAINT chk_Person CHECK (Id_P&gt;0 AND City=&apos;Sandnes&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果在表已存在的情况下为 “Id_P” 列创建 CHECK 约束，请使用下面的 SQL：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE Persons</span><br><span class="line">ADD CHECK (Id_P&gt;0)</span><br><span class="line">或者</span><br><span class="line">ALTER TABLE Persons</span><br><span class="line">ADD CONSTRAINT chk_Person CHECK (Id_P&gt;0 AND City=&apos;Sandnes&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如需撤销 CHECK 约束，请使用下面的 SQL：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE Persons</span><br><span class="line">DROP CHECK chk_Person</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表的字符集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">语法：alter table 表名 convert to character set 字符集;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询所有表名： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看表结构：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置自增:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table(no int primary not null auto_increament);</span><br><span class="line"></span><br><span class="line">alter table student2 modify sno int primary key outo_increment;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改自增步长:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set auto_increment_increment=2;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改自增初值:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student auto_increment=10;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>修改数据：    update test set 字段1=’新值1’,字段2=’新值1’,…  where id=1;<br>修改表结构：  alter table student add 字段名 字段约束条件    //新增字段<br>              alter tabke 表名 drop 字段名          //删除字段<br>              alter table 表名 change 字段名 新字段名 字段约束条件  //修改字段<br>              alter table 表名 modify 字段名 字段约束条件    //修改字段约束条件<br>Change与modify的区别：Change可以修改字段的名称</p>
+<ul>
+<li>修改字段名称和属性：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将test字段改为test1</span><br><span class="line">ALTER TABLE 表名 CHANGE 原字段名 新字段名 字段类型 约束条件</span><br><span class="line">ALTER TABLE user10 CHANGE test test1 CHAR(32) NOT NULL DEFAULT &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改表名称<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER  TABLE admin_user RENAME TO a_user;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p>查询所有库名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure></p>
+<p>查看数据库的属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database test;</span><br></pre></td></tr></table></figure></p>
+<p>修改数据库属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter database test charset=utf8; or   alter database test character set utf8;</span><br></pre></td></tr></table></figure></p>
+<p>查看字符集:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show charset; -- GBK与GB2312的区别就在于:GBK能比GB2312显示更多的字符,要显示简体码的繁体字,就只能用GBK</span><br></pre></td></tr></table></figure></p>
+<p>创建字符集为utf8的数据库test：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database test charset utf8;</span><br></pre></td></tr></table></figure>
+<p>更改数据库属性： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter database test character set utf8; </span><br><span class="line">or alter tablename character set utf8; -- 这两个命令都没有更新已有记录的字符集，而只是对新创建的表或者记录生效。</span><br></pre></td></tr></table></figure>
+<h3 id="部分查询语句"><a href="#部分查询语句" class="headerlink" title="部分查询语句"></a>部分查询语句</h3><h4 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h4><p>ORDER BY 语句用于对结果集进行排序<br>语句用于根据指定的列对结果集进行排序,默认按照升序(asc)对记录进行排序,如果希望按照降序对记录进行排序，可以使用 DESC 关键字<br><strong><em>特殊的</em></strong>:<br>group by， order by 后面跟数字，指的是 select 后面选择的列（属性），1 代表第一个列（属性），依次类推。</p>
+<h3 id="复杂查询"><a href="#复杂查询" class="headerlink" title="复杂查询"></a>复杂查询</h3><h4 id="join-on-中-使用where"><a href="#join-on-中-使用where" class="headerlink" title="join on 中 使用where"></a>join on 中 使用where</h4><p>多表left join是会生成一张临时表，并返回给用户<br>on条件是对连接前的两个表进行条件过滤,不符合的行过滤掉(如果是外连接,则过滤一张表)<br>where条件是针对最后生成的这张临时表进行过滤，过滤掉不符合where条件的记录，是真正的不符合就过滤掉<br>外连接中(如左连接)where限制左表时,减少行数<br>外连接中(如左连接)where限制右表时,不减少行数,被过滤数据,有表过滤行显示null</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="字符连接"><a href="#字符连接" class="headerlink" title="字符连接"></a>字符连接</h4><h5 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat()"></a>group_concat()</h5><p><code>select  GROUP_CONCAT(col_name SEPARATOR &#39;|&#39;) FROM table_name</code><br>separator是指定连接符号</p>
+<p>通常会有这种用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">待查询的数据库</span><br><span class="line">+----+------+</span><br><span class="line">| no | name |</span><br><span class="line">+----+------+</span><br><span class="line">|  1 | mana |</span><br><span class="line">|  2 | mana |</span><br><span class="line">|  3 | lage |</span><br><span class="line">+----+------+</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select no,group_concat(sname separetor &apos;_&apos;) from ttable group by no;</span><br></pre></td></tr></table></figure>
+<p>查询结果是,按照<code>no</code>分组,同一<code>no</code>的<code>sname</code>合并,并使用<code>_</code>连接<br><img src="https://e1sewhere.github.io/images/groupconcat.png" alt="groupconcat.png"></p>
+<p>group_concat内还可以使用order by</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,group_concat(id order by id desc separetor &apos;_&apos;) from ttable group by name;</span><br></pre></td></tr></table></figure>
+<p>如果不使用分组(orderby),那么实际查询结果就是所有<code>group_concat()</code>所指定的字段的值,并使用连接符号连接(默认是逗号),此时<code>select</code>后只能有<code>group_concat()</code>这一个查询字段,如果要包含其他查询字段就必须使用<code>group by</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select group_concat(name) from ttable;</span><br><span class="line">+--------------------+</span><br><span class="line">| group_concat(name) |</span><br><span class="line">+--------------------+</span><br><span class="line">| mana,mana,lage     |</span><br><span class="line">+--------------------+</span><br></pre></td></tr></table></figure>
+<h4 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h4><h5 id="left"><a href="#left" class="headerlink" title="left()"></a>left()</h5><p>left(str, length) 从左截取n个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">left(&apos;sqlstudy.com&apos;, 3)</span><br></pre></td></tr></table></figure>
+<p>right(str, length) 从右截取n个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">right(&apos;sqlstudy.com&apos;, 3)</span><br></pre></td></tr></table></figure>
+<h5 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h5><p>在函数 substring(str,pos, len)中， pos 可以是负值，但 len 不能取负值</p>
+<p>substring(str, pos);<br>从字符串的第 4 个字符位置开始取，直到结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">substring(&apos;sqlstudy.com&apos;, 4)</span><br></pre></td></tr></table></figure>
+<p>substring(str, pos, len);<br>从字符串的第 4 个字符位置开始取，只取 2 个字符:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">substring(&apos;sqlstudy.com&apos;, 4, 2)</span><br></pre></td></tr></table></figure>
+<p>从字符串的第 4 个字符位置（倒数）开始取，直到结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring(&apos;sqlstudy.com&apos;, -4);</span><br></pre></td></tr></table></figure>
+<p>从字符串的第 4 个字符位置（倒数）开始取，只取 2 个字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring(&apos;sqlstudy.com&apos;, -4, 2);</span><br><span class="line"></span><br><span class="line">substring(&apos;sqlstudy.com&apos;, -4, 2)</span><br></pre></td></tr></table></figure></p>
+<h4 id="substring-index"><a href="#substring-index" class="headerlink" title="substring_index()"></a>substring_index()</h4><p>substring_index(str,delim,count)<br>截取第二个 ‘.’ 之前的所有字符:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring_index(&apos;www.sqlstudy.com.cn&apos;, &apos;.&apos;, 2);</span><br><span class="line"></span><br><span class="line">substring_index(&apos;www.sqlstudy.com.cn&apos;, &apos;.&apos;, 2)</span><br></pre></td></tr></table></figure></p>
+<p>截取第二个 ‘.’ （倒数）之后的所有字符:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring_index(&apos;www.sqlstudy.com.cn&apos;, &apos;.&apos;, -2);</span><br><span class="line"></span><br><span class="line">substring_index(&apos;www.sqlstudy.com.cn&apos;, &apos;.&apos;, -2)</span><br></pre></td></tr></table></figure></p>
+<p>如果在字符串中找不到 delim 参数指定的值，就返回整个字符串</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from haha -- 这是注释,前面要有一个空格</span><br></pre></td></tr></table></figure>
+<h4 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from haha #这是注释,不需要空格</span><br></pre></td></tr></table></figure>
+<h4 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from haha /*这是注释*/</span><br></pre></td></tr></table></figure>
+<h3 id="其他实例"><a href="#其他实例" class="headerlink" title="其他实例"></a>其他实例</h3><p>登录MYSQL：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql –u root –proot  -h 服务端ip地址 –P 端口</span><br></pre></td></tr></table></figure></p>
+<p>查看所有数据库:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure></p>
+<p>查看所有表:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables</span><br></pre></td></tr></table></figure></p>
+<p>查看一个表结构:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc student;</span><br></pre></td></tr></table></figure></p>
+<p>查看创建表的语句:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table student</span><br></pre></td></tr></table></figure></p>
+<p>创建表的时候声明默认字符集:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table student(no int,name char(20)) default charset=utf8;</span><br></pre></td></tr></table></figure></p>
+<p>添加非空约束:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student modify column sname char(8) not null;</span><br></pre></td></tr></table></figure></p>
+<p>查询班级为95031或者性别为女的所有信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student where class=95031 or ssex=&apos;女&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>查询不姓王的同学的信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * student where sname not like &apos;王%&apos;</span><br></pre></td></tr></table></figure></p>
+<p>查询表中每个同学的姓名和年龄(已知生日字段):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname,(year(curdate())-year(sbirthday)) from student</span><br></pre></td></tr></table></figure></p>
+<p>查询和’李军’同性别的所有sname:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname from student where ssex=(select ssex from student where sname=&apos;李军&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>复制表结构到新表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE 新表 LIKE 旧表 ; -- 复制所有字段类型(自增主键等)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE 新表 SELECT * FROM 旧表 WHERE 1=2; -- 主键类型,和自增不会复制过去</span><br></pre></td></tr></table></figure>
+<p>复制表结构及数据到新表()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE 新表 SELECT * FROM 旧表;</span><br></pre></td></tr></table></figure></p>
+<p>复制旧表数据到新表(两表结构相同)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO 新表 SELECT * FROM 旧表</span><br></pre></td></tr></table></figure></p>
+<p>查询男生女生人数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ssex,count(*) from student where ssex=&apos;男&apos; union select ssex,count(*) from student where ssex=&apos;女&apos;;</span><br></pre></td></tr></table></figure>
+<p>查询第四条之后3条数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from student limit 3,3;</span><br><span class="line">select * from student limit 3 offset 3;</span><br></pre></td></tr></table></figure>
+<p>内连接:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_a inner join table_b on table_a.a_id=table_b.b_id; -- 只显示符合on后面条件的结果,结果是a和b表的组合</span><br></pre></td></tr></table></figure></p>
+<p>外连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_a left join table_b on table_a.a_id=table_b.b_id; -- 左连接左边的全显示,右边的只显示符合on后条件的,不符合的显示null;右连接相反.</span><br></pre></td></tr></table></figure></p>
+<p>between 的范围是包含两边的边界值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg： id between 3 and 7 等价与 id &gt;=3 and id&lt;=7</span><br></pre></td></tr></table></figure></p>
+<p>not between 的范围是不包含边界值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg：id not between 3 and 7 等价与 id &lt;3 or id&gt;7</span><br></pre></td></tr></table></figure></p>
+<p>查询只出现一次的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sn from sc group by sn having count(sn)=1);</span><br></pre></td></tr></table></figure></p>
+<p>创建数据库后添加语句,避免乱码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set names utf8;</span><br></pre></td></tr></table></figure></p>
+<p>查询“c001”课程比“c002”课程成绩高的所有学生的学号:<br>| sno | cno | score |<br>| :— | :—-| :—- |<br>| s001 | c001 | 78 |<br>| s002 | c001 | 80 |<br>| s001 | c002 | 82 |<br>| s002 | c002 | 72 |<br>| s003 | c003 | 73 |<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select a.sno from (select * from sc8 where cno=&apos;c001&apos;) a join (select * from sc8 where cno=&apos;c002&apos;  )b on a.sno=b.sno and a.score&gt;b.score;</span><br><span class="line"># 类似的同一张表通过一列信息来限制另一列信息,将表拆分(差出两个表),然后查询,查询出来的表必需要设置表别名</span><br></pre></td></tr></table></figure></p>
+<p>限制查询结果不重复:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct name, id from table;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Web中间件"><a href="#Web中间件" class="headerlink" title="Web中间件"></a>Web中间件</h1><p><strong>定义</strong>中间件是一种独立的系统软件或服务程序,分布式应用软件借助这种软件在不同的技术之间共享资源.<br>用于提供系统软件和应用软件之间的连接,便于软件各部件之间的沟通,为一中或多种程序提供容器.<br><strong>作用</strong>:屏蔽网络硬件平台的差异性,和操作系统与应用网络的差异性,同时负责负载均衡,连接管理和调度.<br><strong>web服务器</strong>件用于提供http服务</p>
+<p><strong>Web应用的构成</strong>: web应用-&gt;中间件-&gt;数据库-&gt;操作系统</p>
+<p><strong>几个中间件的默认端口:</strong></p>
+<ul>
+<li>apache:80;</li>
+<li>nginx: 80;</li>
+<li>iis:80;</li>
+<li>tomcat:8080</li>
+<li>JBoss:8080</li>
+<li>weblogic:7001</li>
+</ul>
+<h2 id="web中间件-容器-服务器的区别"><a href="#web中间件-容器-服务器的区别" class="headerlink" title="web中间件,容器,服务器的区别"></a>web中间件,容器,服务器的区别</h2><p>web服务器用于提供http服务,或者把动态请求委托于其他程序.<br>web容器:用于给处于其中的应用程序组件(jsp,servlert)提供一个环境,是中间件的组成部分,实现了了对动态语言的解析,web容器属于中间件的组成部分(中间件可以没有)</p>
+<h2 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h2><p>优点:模块化网络核心,统一标准的Http管道</p>
+<h3 id="基本安装步骤"><a href="#基本安装步骤" class="headerlink" title="基本安装步骤"></a>基本安装步骤</h3><p><em>360实验平台,使用xp拓扑机</em></p>
+<ul>
+<li>控制面板-&gt;添加或删除程序-&gt;添加/删除win组件</li>
+<li>windows组件向导下,勾选 应用程序服务器,点击详细信息</li>
+<li>打开后勾选asp.net,取消勾选<code>internet信息服务(iis)</code>重新勾选后点击详细信息</li>
+<li>打开后,选择iis组件中的万维网服务,文件传输协议(ftp)服务,nntp service 和 smtp service 四个服务.点击确定</li>
+<li>下一步,要求插入光盘,选择路径<code>c/???</code>点击确定(需要选择并确定两次)</li>
+<li>点击完成,进入 控制面板-&gt;管理工具-&gt;internet服务管理器(iis管理器)</li>
+<li>进入后,网站-&gt;默认站点,右键打开,记录路径</li>
+<li>网站, 右键,新建网站</li>
+<li>进入网站创建向导-&gt;下一步</li>
+<li>输入网站描述,下一步</li>
+<li>ip: 127.0.0.1 , 端口: 80 下一步</li>
+<li>这里提前在c盘建立<code>any</code>文件夹,用于存放网站数据</li>
+<li>输入主目录路径<code>c:\any</code>,下一步</li>
+<li>勾选 读取,运行脚本,浏览 下一步</li>
+<li>完成</li>
+<li>internet信息服务(iis)管理器,可以产看到新建的网站,网站目录下为空</li>
+<li>将桌面的网站文件解压到any目录下</li>
+<li>回到iis管理器,any 右键 ,属性,主目录,配置,调试,勾选 启用asp服务… 启用asp 客户端….</li>
+<li>选项,勾选启用父路径 确定</li>
+<li>回到any属性-&gt;文档-&gt;添加,新增一个index.asp,确定,确定</li>
+<li>回到iis管理器,单击web服务扩展,允许 ‘active serverpages’ ‘asp.net v1.1.4322’ ‘webdav’ ‘在服务器端的包含文件’</li>
+<li>访问127.0.0.1</li>
+</ul>
+<h2 id="Apache与Tomcat"><a href="#Apache与Tomcat" class="headerlink" title="Apache与Tomcat"></a>Apache与Tomcat</h2><p>apache是<strong>web服务器</strong>,tomcat是<strong>应用服务器</strong><br>静态网页apache处理并返回,动态请求apache转发给tomcat,tomcat处理后返回给apache,然后apache返回结果</p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>全称:apache http server<br>apache是目前使用<strong>最广</strong>的web服务器,php是一种类似asp的<strong>服务器端</strong>脚本语言</p>
+<p><strong>Apache特点</strong>:简单,快速,稳定,可配置代理,强扩展,使用广泛,并发高,c实现</p>
+<p><em>使用360实验平台在windows 的配置方法</em></p>
+<ul>
+<li>双击apache安装包,开始apache安装</li>
+<li>next,接受协议,next,安装说明next</li>
+<li>信息填写界面,前三项随意填写,勾选’fro all users….’,next</li>
+<li>安装类型界面,典型安装,next</li>
+<li>选择安装目录,改为<code>c:\wamp\apache2.2\</code>,ok,next,install,finish</li>
+<li>安装完成,托盘栏目出现带绿色标志的红羽毛,表示apache正常启动</li>
+<li>开始配置php</li>
+<li>浏览127.0.0.1可看到默认欢迎界面,apache安装完毕</li>
+<li>将<code>php5.3.52-xxx.zip</code>解压到<code>c:\wamp\php</code></li>
+</ul>
+<p>php可以以两种方式运行：CGI(对应文件php5ts.dll文件)和SAPI方式。由于我们使用Apache，所以是以SAPI模块方式运行，对应文件是php5apache2_2.dll。配置php.ini文件，php提供了两个模板，php.ini-development和php.ini-production，前者适合开发程式使用（测试用），后者拥有较高的安全性设定，则适合上线当产品使用。这里我们将php.ini-development文件改为php.ini做配置文件使用，目录为C:\wamp\php，修改完成后打开该文件。</p>
+<ul>
+<li>打开<code>c:\wamp\php</code>目录中的<code>conf</code>目录下的<code>httpd.conf</code></li>
+<li><p>配置文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadModule php5_module &quot;c:/wamp/php/php5apache2_2.dll&quot;</span><br><span class="line">AddType application/x-httpd-php .php</span><br><span class="line">PHPIniDir &quot;c:/wamp/php/&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置主页文件</strong>:找到DirectoryIndex参数,在后面添加index.php,保存httpd.conf文件.</p>
+</li>
+<li>打开<code>c:\wamp\php</code>目录,将<code>php.ini-development</code>文件改为<code>php.ini</code>做配置文件使用,修改后打开它</li>
+<li>修改<code>dll</code>文件目录: 将 extendion_dir = “c:\wamp\php\ext” 赋值并取消前面的注释符号(分号)</li>
+<li>将 <code>doc_root = &quot;c:\wamp\Apache2.2\htdocs&quot;</code> 赋值并取消注释</li>
+<li>取消 <code>extension=php_mysql.dll</code>和<code>extension=php_mysqli.dll</code>的注释,保存php.ini文件</li>
+<li>开始加载MySQL模块</li>
+<li>解压”桌面–实验工具”中的<code>phpMyAdmin.....zip</code>到<code>c:\wamp\Apache2.2\htdocs</code></li>
+<li>进入htdocs,修改文件夹名为<code>phpMyAdmin</code></li>
+<li>右键右下角apache图标,单击open services打开服务窗口</li>
+<li>找到apache2.2服务,单击并重新启动此服务</li>
+<li>浏览器输入<code>127.0.0.1/phpmyadmin</code>访问,可以打开php页面,且当前拓扑机已经安装Mysql,用户名<code>root</code> 密码<code>123456</code>,点击执行</li>
+<li><strong>Apache端口号修改</strong>,打开<code>c:\wamp\Apache2.2\conf</code>目录下的<code>httpd.conf</code>文件.修改<code>Listen 80</code>为自己想要的端口数字如<code>Listen 8081</code>,保存</li>
+<li>开始-&gt;管理工具-&gt;服务,重启apache2.2</li>
+<li>重启后127.0.0.1无法连接,浏览器默认80端口,输入<code>127.0.0.1:8081</code>,可以运行,出现默认欢迎界面</li>
+<li>默认端口修改成功,修改apache网站根目录(c:\apache2.2)新建www文件夹,并在里面新建一个hellow.html写入欢迎内容.</li>
+<li><strong>网站根目录</strong>打开apache下的conf目录,打开httpd.conf,修改<code>DocumentRoot &quot;c:/Apache2.2/htdocs&quot;</code>为<code>DocumentRoot &quot;c:/Apache2.2/www&quot;</code></li>
+<li>将<code>Directory &quot;c:/apache2.2/htdocs&quot;</code>修改为<code>Directory &quot;c:/apache2.2/www&quot;</code></li>
+<li><strong>网站主页</strong><code>DirectoryIndex</code>添加<code>hellow.html</code>,保存关闭,重启apache,进入<code>172.0.0.1:8081</code>,就进入自建的欢迎页面</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>重要的配置是:</p>
+<ol>
+<li>httpd.conf-&gt;Listen 修改ip和端口<ol start="2">
+<li>例如<code>Listen 127.1.2.1.1:80</code>,也可以只改端口 Listen:800</li>
+</ol>
+</li>
+<li>httpd.conf-&gt;DocumentRoot 根目录<ol start="3">
+<li>httpd.conf-&gt;Directory  <del>根目录</del></li>
+</ol>
+</li>
+<li>httpd.conf-&gt;DirectoryIndex 网站主页</li>
+</ol>
+<p>主目录下重要的目录:</p>
+<ol>
+<li>logs 日志目录<ol start="2">
+<li>access.log 访问日志</li>
+<li>error.log 错误日志</li>
+<li>install.log 安装日志</li>
+</ol>
+</li>
+<li>conf 配置文件目录</li>
+<li>htdocs 默认网页文件目录</li>
+</ol>
+<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>几个环境变量的作用</p>
+<blockquote>
+<ul>
+<li>path: 配置cmd扫描执行文件的目录</li>
+<li>classpath: 是约定的一个可以设置我们自己的.class, jar文件所在目录的变量。不过某个Java程序可以自己决定取与不取这个变量。Tomcat 在某些情况下会去取，你自己的Java程序你不设置就会忽略它的。基本上用不到它</li>
+<li>java_home: JAVA_HOME是一个约定，通常它指的是JDK的目录。如果需要JDK的话，大部分程序会默认去环境变量中取JAVA_HOME这个变量</li>
+<li>jre_home:同样，这也是一个约定的变量，通常指JRE目录。其实大部分Java程序不需要JDK，而是只需要其子集JRE，所以很多程序也会去取这个变量来用。</li>
+<li>CATALINA_HOME:这是Tomcat用的,它的值代表当前tomat根目录，比如：E:\apache-tomcat-7.0.55。这个变量，仅当你移动了.bat/.sh等用来启动Tomcat的文件（就是不在原来的tomcat\bin下面了）时才需要指定。比如，在Linux中你将catalina.sh复制到/etc/rc.d/init.d/下做自启动服务时就需要设置一下</li>
+</ul>
+</blockquote>
+<p>配置上述环境变量的例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java_home:&apos;C:\Program File\Java\jdk1.7.0_79&apos;</span><br><span class="line">path:&apos;%java_home%\bin;%java_home%\jre\bin;&apos;  //配置jdk的</span><br><span class="line">classpath:&apos;.;%java_home%\lib;%java_home%\lib\tools.jar&apos;</span><br><span class="line">CATALINA_HOME:&apos;Tomcat主目录&apos;</span><br><span class="line">path:&apos;%CATALINA_HOME%\bin;%CATALINA_HOME%\lib&apos;   //tomcat的</span><br></pre></td></tr></table></figure>
+<h3 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h3><p><code>bin</code>目录存放启动关闭等脚本,内含计算机可以直接执行的二进制文件<br>完全配置好后执行<code>startup.bat</code>开启tomcat</p>
+<blockquote>
+<p>startup.bat文件会检查catalina.bat文件执行所需要的环境,并调用catalina.bat文件,catalina.bat负责启动tomcat.</p>
+</blockquote>
+<p>执行时可能出现的错误:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">java.net.BindException:Address already in use:JVM_Bind. </span><br><span class="line">//端口冲突,需要修改端口</span><br><span class="line"></span><br><span class="line">java.lang.OutOfMemoryError:Java heap space</span><br><span class="line">//内存溢出,Tomcat默认可以使用的内存为128MB，在较大型的应用项目中，这点内存是不够的，从而导致客户端显示500错误。</span><br><span class="line">//Windows环境下修改catalina.bat文件，在文件开头增加如下设置：set JAVA_OPTS=</span><br><span class="line">Xms256m-Xmx512m Linux 环境下修改catalina.sh文件，在文件开头增加如下设置：JAVAOPTS=&apos;-Xms256m</span><br><span class="line">-Xmx512m&apos;</span><br></pre></td></tr></table></figure>
+<p>将桌面——实验工具中的war包放到Tomcat主目录的webapps目录下<br>先查看启动时的端口号，conf目录下面的<code>server.xml</code>文件，用notepad++打开找到<code>Connector port</code>,这个就是端口号,默认为8080.</p>
+<p>用浏览器访问<code>http://localhost:8080/hello</code>看到的运行界面就打开了刚才的hello文件了<br>访问<code>http://localhost:8080</code>可以看到Tomcat的默认主页</p>
+<h2 id="NGINX"><a href="#NGINX" class="headerlink" title="NGINX"></a>NGINX</h2><p>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好<br>优点:高并发支持好,邮件代理,负载均衡,安装使用简便,热部署,热升级,不间断运行</p>
+<h3 id="安装NGINX"><a href="#安装NGINX" class="headerlink" title="安装NGINX"></a>安装NGINX</h3><ul>
+<li>将NGINX安装包解压到C盘,目录变为<code>c:\nginx-1.74\</code></li>
+<li>打开解压后的<strong>NGINX目录</strong>，可以看到NGINX的配置文件目录(conf)、默认网页目录(html)、日志目录(log)和启动文件(nginx.exe)</li>
+<li>cmd进入<code>c:\nginx-1.4.7\</code>执行<code>start nginx.exe</code>,打开浏览器访问127.0.0.1,出现欢迎页面</li>
+<li>命令<code>nginx.exe -s stop</code>关闭服务<br>简单的介绍一下NGINX的命令<br>启动：start nginx或nginx.exe<br>停止：nginx.exe -s stop或nginx.exe -s quit<br>注：stop是快速停止nginx，可能并不保存相关信息；quit是完整有序的停止nginx，并保存相关信息。<br>重新载入Nginx：nginx.exe -s reload<br>当配置信息修改，需要重新载入这些配置时使用此命令。<br>重新打开日志文件：nginx.exe -s reopen<br>查看Nginx版本：nginx -v</li>
+</ul>
+<h3 id="重要目录和文件"><a href="#重要目录和文件" class="headerlink" title="重要目录和文件"></a>重要目录和文件</h3><ul>
+<li>conf 配置文件目录<ul>
+<li>fastcgi.conf:fastcgi相关参数的配置文件</li>
+<li>mime.types:媒体类型</li>
+<li>nginx.conf:默认主配置文件</li>
+<li>scgi_params:scgi相关参数文件</li>
+</ul>
+</li>
+<li>logs 日志目录<ul>
+<li>access.log:访问日志</li>
+<li>error.log:错误日志</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改端口"><a href="#修改端口" class="headerlink" title="修改端口"></a>修改端口</h3><p>nginx的配置文件是conf目录下的nginx.conf，默认配置的nginx监听的端口为80<br>修改 <code>server</code>下的<code>listen</code>,来修改端口</p>
+<h3 id="修改网站目录"><a href="#修改网站目录" class="headerlink" title="修改网站目录"></a>修改网站目录</h3><p>默认的网页目录是html，默认主页是index.html和index.htm<br>同样是nginx.conf,修改<code>locatin</code>下的<code>root</code>网页根目录,和<code>index</code>默认主页</p>
+<h2 id="WebLogic"><a href="#WebLogic" class="headerlink" title="WebLogic"></a>WebLogic</h2><p>WebLogic是美国bea公司出品的一个application server，确切的说是一个基于Javaee架构的中间件，纯java开发的<br>多种标准支持,ejb,jsp,jms,jdbc,xml,wml. 极高的可扩展性,可靠性,快速开发,灵活性.<br><strong>优点</strong>:领先的标准,扩展性,快速开发,部署灵活,关键任务可靠</p>
+<p>直接使用安装包,取消勾选 更新, 典型安装,其他的都默认<br>安装完weblogic后，会弹出配置窗口，点击第一项开始进入配置</p>
+<ul>
+<li>域设置点击“下一步”</li>
+<li>点击“下一步”，配置weblogic账户密码，密码为weblogic123</li>
+<li>点击“下一步”，直到出现创建部署选项按钮</li>
+<li>创建部署选项,完成</li>
+<li>启动weblogic服务启动weblogic服务的路径C:\Oracle\Middleware\user_projects\domains\base_domain下的<code>startWebLogic.cmd</code>应用部署web应用</li>
+<li>们在网页浏览器中输入<code>http://localhost:7001/console</code>地址，就可以访问WebLogic的控制台了</li>
+<li>稍等一会之后，可以看到登陆界面，输入之前设置的账号密码登录</li>
+<li>点击左侧的部署</li>
+<li>我们选择在C盘创建一个test文件夹，并将实验工具中的hello.war包放到该文件夹中</li>
+<li>在右侧点击安装按钮，准备进行项目安装</li>
+<li>看到路径输入框，可以在下面选择要部署的项目的位置，我们选择刚才复制到test目录下的war包，点击下一步</li>
+<li>选择定位样式，这里选默认就行，点击下一步即可</li>
+<li>可选配置，直接使用默认，可以直接点击完成，也可以点击下一步到确认界面</li>
+<li>如果点击下一步，则可进入复查界面，这里将之前配置过的选项全都罗列出来，可以通过点击上一步进行修改，确认无误后，点击完成</li>
+<li>保存完成后，会看到激活更改的提示，且不需要重启</li>
+<li>这时便可以进行测试了，输入项目名称，看到了项目的欢迎页面，即项目部署成功。访问方式<code>http://127.0.0.1:7001/hello/</code>，其中hello为刚才部署的项目名称</li>
+</ul>
+<h3 id="重要目录"><a href="#重要目录" class="headerlink" title="重要目录"></a>重要目录</h3><h4 id="基本目录"><a href="#基本目录" class="headerlink" title="基本目录"></a>基本目录</h4><ul>
+<li>Coherrence 在集群协议,分布式的数据管理和缓存服务</li>
+<li>Logs 系统日志目录</li>
+<li>Modules weblogic运行时需要的jar文件</li>
+<li>user_projects 定义域存放的位置</li>
+<li>Utils 用户第三方工具包</li>
+<li>wlserver_10.3:weblogic主目录</li>
+</ul>
+<h4 id="User-projects目录"><a href="#User-projects目录" class="headerlink" title="User_projects目录"></a>User_projects目录</h4><ul>
+<li>Autodeploy:此目录下应用程序(ear,war)等被自动展开服务</li>
+<li>Bin:存放域中可执行文件</li>
+<li>Config:存放本域相关的配置文件</li>
+<li>Console-ext:控制台信息,只应用于adminServer</li>
+<li>Lib:库文件</li>
+<li>Security:安全相关</li>
+<li>Server:包含域的所有服务</li>
+<li>Startweblogic.cmd:用于win下WebLogic启动</li>
+<li>Startweblogic.sh:用于Linux下WebLogic启动<h2 id="JBoss"><a href="#JBoss" class="headerlink" title="JBoss"></a>JBoss</h2>jboss是一个基于J2EE的开放源代码的应用服务器。 JBoss代码遵循LGPL许可，可以在任何商业应用中免费使用。JBoss是一个管理EJB的容器和服务器，支持EJB 1.1、EJB 2.0和EJB3的规范。但JBoss<strong>核心</strong>服务不包括支持servlet/JSP的WEB容器，一般与Tomcat或Jetty绑定使用。(jboss也是web容器,jsp/servlet容器,是一个完整的j2ee容器,但是不是核心功能)<br><strong>优点</strong>:免费开源java,内存硬盘需求少,安装简单,热部署,运行效率高,安全.</li>
+</ul>
+<ul>
+<li>解压jboss包到<code>c:/jboss-as-7.1.1-Final</code></li>
+<li>安装好jdk配置好环境变量</li>
+<li><p>配置jboss环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JBOSS_HOME:&apos;c:\jboss-as-7.1.1-Final&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行之前必须添加用户,在JBoss的bin目录下找到<code>add-user.bat</code>运行,配置好用户名和密码</p>
+</li>
+<li>启动bin目录下的<code>standalone.bat</code></li>
+<li>访问127.0.0.1:8080,进入欢迎页面</li>
+<li>将要部署的war包放入<code>C:\jboss-as-7.1.1.Final\standalone\deployments</code></li>
+<li>然后通过浏览器访问网站: <a href="http://127.0.0.1/hell,看到自定义欢迎页面" target="_blank" rel="noopener">http://127.0.0.1/hell,看到自定义欢迎页面</a></li>
+</ul>
+<div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/12/27/使用PHPStudy后本机MySQL无法启动服务/">使用PHPStudy后本机MySQL无法启动服务</a></li><li><a href="https://e1sewhere.github.io/2019/03/18/获取MySQL执行的语句/">获取MySQL执行的语句</a></li><li><a href="https://heyizhang.github.io/2019/07/25/sql_injection/about_concat_func_of_mysql/">mysql中concat相关函数详解</a></li></ul></div>
+          
+          <div>    
+ 
+ 
+    <div class="post-copyright">
+    	如果文章有问题欢迎指出,或者你也可以联系我
+      <div class="post-copyright-author">
+          <strong>本文作者：</strong>E1se
+      </div>
+      <div class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/11/30/数据库学习笔记/" title="数据库学习笔记">2018/11/30/数据库学习笔记/</a>
+      </div>
+      <div class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"> <i class="fa fa-tag"></i>mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/28/myeclips-无法使用工作空间问题/" rel="next" title="myeclips 无法使用工作空间问题">
+                <i class="fa fa-chevron-left"></i> myeclips 无法使用工作空间问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/05/计算机网络基础/" rel="prev" title="计算机网络基础笔记">
+                计算机网络基础笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/eva1.ico"
+                alt="E1se" />
+            
+              <p class="site-author-name" itemprop="name">E1se</p>
+              <p class="site-description motion-element" itemprop="description">none</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/e1sewhere" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="elsewhere997@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐站点
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://e1sewhere.github.io/EdenPage/11111/" title="什么也没有" target="_blank">什么也没有</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("02/20/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+  
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#零散"><span class="nav-number">1.</span> <span class="nav-text">零散</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系模型"><span class="nav-number">2.1.</span> <span class="nav-text">关系模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySql"><span class="nav-number">3.</span> <span class="nav-text">MySql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">3.1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主键与外键"><span class="nav-number">3.1.1.</span> <span class="nav-text">主键与外键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语句的分类"><span class="nav-number">3.1.2.</span> <span class="nav-text">语句的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL自带数据库"><span class="nav-number">3.1.3.</span> <span class="nav-text">MySQL自带数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#information-schema"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">information_schema</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是information-schema"><span class="nav-number">3.1.3.1.1.</span> <span class="nav-text">什么是information_schema</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#几个重要的表"><span class="nav-number">3.1.3.1.2.</span> <span class="nav-text">几个重要的表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#performance-schema"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">performance_schema</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是performance-schema"><span class="nav-number">3.1.3.2.1.</span> <span class="nav-text">什么是performance_schema</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句实例"><span class="nav-number">3.2.</span> <span class="nav-text">语句实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库维护"><span class="nav-number">3.2.1.</span> <span class="nav-text">数据库维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据库"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备份和恢复"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">备份和恢复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#权限管理"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">权限管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据操作"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表操作"><span class="nav-number">3.2.3.</span> <span class="nav-text">数据表操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库操作"><span class="nav-number">3.2.4.</span> <span class="nav-text">数据库操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分查询语句"><span class="nav-number">3.2.5.</span> <span class="nav-text">部分查询语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#order-by"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">order by</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂查询"><span class="nav-number">3.2.6.</span> <span class="nav-text">复杂查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#join-on-中-使用where"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">join on 中 使用where</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">3.2.7.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符连接"><span class="nav-number">3.2.7.1.</span> <span class="nav-text">字符连接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#group-concat"><span class="nav-number">3.2.7.1.1.</span> <span class="nav-text">group_concat()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串截取"><span class="nav-number">3.2.7.2.</span> <span class="nav-text">字符串截取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#left"><span class="nav-number">3.2.7.2.1.</span> <span class="nav-text">left()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#substring"><span class="nav-number">3.2.7.2.2.</span> <span class="nav-text">substring()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substring-index"><span class="nav-number">3.2.7.3.</span> <span class="nav-text">substring_index()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">3.2.8.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种"><span class="nav-number">3.2.8.1.</span> <span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种"><span class="nav-number">3.2.8.2.</span> <span class="nav-text">第二种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三种"><span class="nav-number">3.2.8.3.</span> <span class="nav-text">第三种</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他实例"><span class="nav-number">3.2.9.</span> <span class="nav-text">其他实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web中间件"><span class="nav-number">4.</span> <span class="nav-text">Web中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web中间件-容器-服务器的区别"><span class="nav-number">4.1.</span> <span class="nav-text">web中间件,容器,服务器的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIS"><span class="nav-number">4.2.</span> <span class="nav-text">IIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本安装步骤"><span class="nav-number">4.2.1.</span> <span class="nav-text">基本安装步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache与Tomcat"><span class="nav-number">4.3.</span> <span class="nav-text">Apache与Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache"><span class="nav-number">4.4.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.4.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat"><span class="nav-number">4.5.</span> <span class="nav-text">Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">4.5.1.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Tomcat"><span class="nav-number">4.5.2.</span> <span class="nav-text">配置Tomcat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NGINX"><span class="nav-number">4.6.</span> <span class="nav-text">NGINX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装NGINX"><span class="nav-number">4.6.1.</span> <span class="nav-text">安装NGINX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重要目录和文件"><span class="nav-number">4.6.2.</span> <span class="nav-text">重要目录和文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改端口"><span class="nav-number">4.6.3.</span> <span class="nav-text">修改端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网站目录"><span class="nav-number">4.6.4.</span> <span class="nav-text">修改网站目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebLogic"><span class="nav-number">4.7.</span> <span class="nav-text">WebLogic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要目录"><span class="nav-number">4.7.1.</span> <span class="nav-text">重要目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本目录"><span class="nav-number">4.7.1.1.</span> <span class="nav-text">基本目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#User-projects目录"><span class="nav-number">4.7.1.2.</span> <span class="nav-text">User_projects目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JBoss"><span class="nav-number">4.8.</span> <span class="nav-text">JBoss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">RECOMMEND</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">E1se</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">190.2k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>|
+</span>
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz',
+        appKey: '9wRib5jaIuQL2dVmtXx24smG',
+        placeholder: 'Just go go',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz", "9wRib5jaIuQL2dVmtXx24smG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+
+<!-- �Զ����js�ļ� -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+ 
+ <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+ 
+</body>
+</html>
+<!-- 页面点击价值观 -->
+<script type="text/javascript" src="/js/src/jiazhiguan.js"></script>
+
+ <!--动态背景轮播-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script>
+  $.backstretch([  
+          "/images/background/1.jpg",
+          "/images/background/2.jpg",
+          "/images/background/3.jpg"
+    ], { duration: 30000, fade: 1500 }); 
+</script>
+
+
+

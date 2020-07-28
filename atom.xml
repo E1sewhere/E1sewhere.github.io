@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>E1sewhere</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://e1sewhere.github.io/"/>
+  <updated>2020-07-28T07:37:29.467Z</updated>
+  <id>https://e1sewhere.github.io/</id>
+  
+  <author>
+    <name>E1se</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10中Git代理设置（包括ssh）</title>
+    <link href="https://e1sewhere.github.io/2020/07/28/Win10%E4%B8%ADGit%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE%EF%BC%88%E5%8C%85%E6%8B%ACssh%EF%BC%89/"/>
+    <id>https://e1sewhere.github.io/2020/07/28/Win10中Git代理设置（包括ssh）/</id>
+    <published>2020-07-28T07:24:15.000Z</published>
+    <updated>2020-07-28T07:37:29.467Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>Hexo使用的时候，Git中代理设置总是失败，才想起来配置的是http实际协议是ssh，所以一直都用http登录github，虽然可以用带参数的脚本命令，但确实没有ssh用着舒服。所以把Git的代理配置研究记录一下。</p><a id="more"></a><h1 id="http-socks配置"><a href="#http-socks配置" class="headerlink" title="http/socks配置"></a>http/socks配置</h1><h2 id="http配置"><a href="#http配置" class="headerlink" title="http配置"></a>http配置</h2><p>http，包含了https所以无需单独配置https，注意自己代理监听的地址和端口必须一致</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:1080</span><br></pre></td></tr></table></figure><h2 id="socks"><a href="#socks" class="headerlink" title="socks"></a>socks</h2><p>一般使用这两种</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy socks5://127.0.0.1:1080</span><br><span class="line">git config --global http.proxy socks5h://127.0.0.1:1080</span><br></pre></td></tr></table></figure><p>第二种据说要好一点。</p><h1 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h1><p>来源：<a href="https://segmentfault.com/a/1190000021998129" target="_blank" rel="noopener">https://segmentfault.com/a/1190000021998129</a></p><p>在ssh配置文件：<code>~/.ssh/config</code>（不存在就手动创建）</p><p>增加如下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Host github.com *.github.com</span><br><span class="line">User git</span><br><span class="line">    # SSH默认端口22， HTTPS默认端口443</span><br><span class="line">    Port 22</span><br><span class="line">    Hostname %h</span><br><span class="line">    # 这里放你的SSH私钥</span><br><span class="line">    IdentityFile ~\.ssh\id_rsa</span><br><span class="line">    # 设置代理, 127.0.0.1:10808 换成你自己代理软件监听的本地地址</span><br><span class="line">    # HTTPS使用-H，SOCKS使用-S</span><br><span class="line">    ProxyCommand connect -S 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure><p>这里命令使用了<code>connect</code>中继，所以需要安装：<a href="https://bitbucket.org/gotoh/connect/src/default/" target="_blank" rel="noopener">connect</a></p><p>win10中把下载的connect解压，然后把<code>connect.exe</code>所在目录添加至环境变量的<code>Path</code>变量中即可</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo使用的时候，Git中代理设置总是失败，才想起来配置的是http实际协议是ssh，所以一直都用http登录github，虽然可以用带参数的脚本命令，但确实没有ssh用着舒服。所以把Git的代理配置研究记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="git" scheme="https://e1sewhere.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bartender安装基础使用及使用数据库字段循环递增</title>
+    <link href="https://e1sewhere.github.io/2020/05/30/Bartender%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%97%E6%AE%B5%E5%BE%AA%E7%8E%AF%E9%80%92%E5%A2%9E/"/>
+    <id>https://e1sewhere.github.io/2020/05/30/Bartender安装基础使用及使用数据库字段循环递增/</id>
+    <published>2020-05-30T09:57:57.000Z</published>
+    <updated>2020-05-30T11:00:41.091Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>​    第一次使用标签打印机，得力送的Bartender lite版本，无法链接数据库，遂下载官方2016版本，特殊地区无法连接到官方服务器，安装失败，直接使用完整版本的2019 r5安装包，打个补丁，没办法只能用了。只做测试学习使用，以后真要大量用再补票吧。</p><hr><a id="more"></a><hr><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在某外网搜索关键字，找到2019 R5版本，和补丁。执行安装程序后会有很大的延迟时间才弹出窗口，不知道是不是虚拟机的原因。无脑安装完整版，注册补丁解压到Bt的安装根目录，执行补丁程序（日常管理员权限执行），点击补丁窗口中间的一排蓝字。</p><p>安装完成</p><h1 id="连接打印机"><a href="#连接打印机" class="headerlink" title="连接打印机"></a>连接打印机</h1><h2 id="打印机注意事项"><a href="#打印机注意事项" class="headerlink" title="打印机注意事项"></a>打印机注意事项</h2><ul><li>DL-888t支持最大碳带宽度为110mm，最小为33.8mm，长度为90m，碳带卷芯内径为12.7mm，碳带为双轴，纸张最大也是110mm</li><li>定位块（黑色的滑块），要对准边缘的三角形标记</li><li>打印机首选项-》页面设置-》新建-》名称改为数字（不能为中文），标签大小按照实际标签设置。</li><li>配套的打印机设置工具中要添加打印机（不能使用默认的Auto），<code>设置打印机</code>按钮选项卡需要吧模式选择为对应的打印模式，热敏模式必须把碳带取出。</li></ul><h2 id="BT连接注意"><a href="#BT连接注意" class="headerlink" title="BT连接注意"></a>BT连接注意</h2><p>bt打印中纸张也要选择实际大小否则可能会连续出纸</p><h1 id="BT连接数据库（excel）"><a href="#BT连接数据库（excel）" class="headerlink" title="BT连接数据库（excel）"></a>BT连接数据库（excel）</h1><p>简单，网上大把教程，且根据日常操作逻辑就可以成功连接excel，唯一值得注意的是，需要使用office 2006之后版本创建的xls文件。</p><h1 id="使用数据库字段循环递增"><a href="#使用数据库字段循环递增" class="headerlink" title="使用数据库字段循环递增"></a>使用数据库字段循环递增</h1><p>BT模板使用数据库中的字段已经很简单了，但是实现这个递增还是挺难的（对我来说），我尝试使用Bt支持的vb来实现，但是功底太差实现不了，唯一能想出的解决办法，就是使用脚本直接把表格数据序列化，然后直接使用数据库中的字段。但是这太傻了。</p><p>最后在群里大佬花了几分钟给解决了。请大佬喝杯咖啡，然后把模板文件拿来研究。</p><p>由于使用的非官方BT，大佬的模板过来直接连接不了数据库，尝试安装了<code>AccessDatabaseEngine_X64.exe</code>就成功打开了。</p><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>要实现如图的把数量，按照数量的份数打印，然后每一份按照编号递增</p><p><img src="F:\Code\Github\myfirst_hexo\source\images\{K7FVW}H`8N46E%3I0YR[WJ.png" alt="img"></p><p><img src="F:\Code\Github\myfirst_hexo\source\images\456.jpg" alt="456"></p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>不需要使用VB，直接使用软件原生的序列化即可实现。</p><p>把文本的属性直接如下设置：</p><p><img src="F:\Code\Github\myfirst_hexo\source\images\IMG_20200530_172006.jpg" alt="IMG_20200530_172006"></p><p><img src="F:\Code\Github\myfirst_hexo\source\images\IMG_20200530_172014.jpg" alt="IMG_20200530_172014"></p><p><img src="F:\Code\Github\myfirst_hexo\source\images\IMG_20200530_172021.jpg" alt="IMG_20200530_172021"></p><p><img src="F:\Code\Github\myfirst_hexo\source\images\IMG_20200530_172028.jpg" alt="IMG_20200530_172028"></p><p><em>治疗颈椎病从我做起</em></p><p>大致的逻辑过程就是：<strong>序列号是一个队列，队列打印完了，一行数据就循环完毕，开始第二行，序号改变，数据重置为1，开始循环打印第二行。。。。。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​    第一次使用标签打印机，得力送的Bartender lite版本，无法链接数据库，遂下载官方2016版本，特殊地区无法连接到官方服务器，安装失败，直接使用完整版本的2019 r5安装包，打个补丁，没办法只能用了。只做测试学习使用，以后真要大量用再补票吧。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Google Play 无法下载应用</title>
+    <link href="https://e1sewhere.github.io/2020/03/12/Google-Play-%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E5%BA%94%E7%94%A8/"/>
+    <id>https://e1sewhere.github.io/2020/03/12/Google-Play-无法下载应用/</id>
+    <published>2020-03-12T13:36:22.000Z</published>
+    <updated>2020-05-30T10:05:19.192Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>自从换了miui官方系统,google play就时不时无法下载了.<br>首先,排除干扰因素,确保能够进入google play主页,开启数据下载开关,然后下载一直转圈.<br>分下一下原因,再找出解决办法.<br><a id="more"></a></p><h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>先直接开启全,.局代,.理.确保所有流量都向服务器发出.<br>我有两批节点,一批在服务器审计处限制了.cn等域名的代,.理,暂且称之为A组.另一批没有做任何限制,可以代,.理绝大多数.cn域名称之为B组.<br>所以猜测google play无法下载是因为发出的请求使用了.cn的域名<br>抓取google play的日志发现这两个地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">googleapis.cn</span><br><span class="line">services.googleapis.cn</span><br></pre></td></tr></table></figure><p>并不是正常的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">googleapis.com</span><br></pre></td></tr></table></figure></p><p>解析一下ip,ip地址,并查询ip归属.<br>归属地为北京,北京谷翔信息技术有限公司,应该是持有google中国icp拍照的公司,但是这个ip并不能获取任何play商店的内容.天眼查显示该公司google持股50%.大概不是什么钓鱼地址.手机没有解锁,所以我就不考虑重刷框架了.</p><p>所以大致知道了googplay时不时不能下载的原。节点的路由规则很简单,且切换策略使用的<code>url-test</code>当节点切换到B组的时候,<code>googleapis.cn</code>会被代,.理服务器解析到play市场正确的ip.而当使用A组的时候会被服务器拒绝解析.或者当你使用了一些不恰当的规则让<code>googleapis.cn</code>不走代,.理服务器,直接国内dns解析到了这个谷翔公司的ip.</p><p>所以我们要下载就需要满足两个条件:</p><ul><li>代,.理服务器没有把这两个域名加入审计</li><li>这两个域名通过代,.理访问</li></ul><p>那些使用国内版固件又能下载的老哥一定是满足了这两个条件.</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="更换代-理"><a href="#更换代-理" class="headerlink" title="更换代,.理"></a>更换代,.理</h2><p>找一个能够回国的节点用,比如我就在规则中把这两个.cn的地址分配给B组.</p><h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>群里发生这个问题的是国内固件,所以可以刷一个其他的固件,或者重装原版Google服务.</p><h2 id="adb删除不正确的地址"><a href="#adb删除不正确的地址" class="headerlink" title="adb删除不正确的地址"></a>adb删除不正确的地址</h2><p>可以用adb删除<code>googlexxx.cn</code>的xml文件.但是手机升级后肯定需要重新搞.</p><h2 id="更改dns-没试过"><a href="#更改dns-没试过" class="headerlink" title="更改dns(没试过)"></a>更改dns(没试过)</h2><p>直接使用国外的dns服务应该可以解决,因为我们只需要获取正确的ip,但是这样会导致国内服务缓慢.</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>还有什么关闭下载加速,清空数据的玄学艹作,这种一般都是没有把需要代理应用勾选完,或者节点质量差的原因.</p><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>ROOT后方法就太多了，由于没有root,所以最好的还是找一个可以回国的节点,然后在规则中将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">googleapis.cn</span><br><span class="line">services.googleapis.cn</span><br></pre></td></tr></table></figure></p><p>加入B组<br>除此之外,由于A组的流量多,是我的主要节点,B组是自己搭建的,落地服务器质量差,延迟奇高只是做备用的.<br>所以,我还需要把类似<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">translate.google.cn</span><br></pre></td></tr></table></figure></p><p>的域名加入B组规则.<br>百度某些api有地域歧视,我也把他们加入了B组,使用美,.帝的ip来访问.<br>台,.湾无法使用百度网盘(A组有tai,.弯节点),也得使用B组.<br>加了一大堆规则,头疼.所以建议使用clas,.h的老哥们还是用subconvert来拼接规则方便一点.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自从换了miui官方系统,google play就时不时无法下载了.&lt;br&gt;首先,排除干扰因素,确保能够进入google play主页,开启数据下载开关,然后下载一直转圈.&lt;br&gt;分下一下原因,再找出解决办法.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="解决方法" scheme="https://e1sewhere.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>牛角包一样的会计笔记</title>
+    <link href="https://e1sewhere.github.io/2020/01/27/%E7%89%9B%E8%A7%92%E5%8C%85%E4%B8%80%E6%A0%B7%E7%9A%84%E4%BC%9A%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
+    <id>https://e1sewhere.github.io/2020/01/27/牛角包一样的会计笔记/</id>
+    <published>2020-01-27T08:05:46.000Z</published>
+    <updated>2020-01-28T05:33:51.211Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>虽然大学学习了会计,但都是应付式的学习,完全以往,本书作为会计入门开始学习,之后希望对管理以及财务有更深入的了解.</p><a id="more"></a><p>思维导图的形式更加适合笔记，这种文字的形式似不太适合知识的梳理，所以这次试用了思维导图。思维导图使用不是很熟练，这是之后需要学习的地方。</p><p>这本书讲的很浅显，基本上就是一个帮助我想起之前学习知识的作用，而且似乎比之前学的东西还少很多，确实不够。但是作为一个外行的入门书籍还是可以的，很多理论知识点都放在了实际的业务行为里，让人更容易接受。</p><p>之后还是得找专业书籍系统学习。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然大学学习了会计,但都是应付式的学习,完全以往,本书作为会计入门开始学习,之后希望对管理以及财务有更深入的了解.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="会计" scheme="https://e1sewhere.github.io/tags/%E4%BC%9A%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚第一次拟化物理机 FAILED Unable to find the system volume, reconfiguration is not</title>
+    <link href="https://e1sewhere.github.io/2020/01/26/%E8%99%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8B%9F%E5%8C%96%E7%89%A9%E7%90%86%E6%9C%BA-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not/"/>
+    <id>https://e1sewhere.github.io/2020/01/26/虚第一次拟化物理机-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not/</id>
+    <published>2020-01-26T08:46:29.000Z</published>
+    <updated>2020-01-26T08:50:21.921Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>之前一直用的WTG炸了，实在没有心情再搞一个，没有做好备份实在是后悔。 想起来VMware似乎直接有一个虚拟化物理的功能，遂尝试把本地的win10(x64 190x版本)给虚拟化了。</p><a id="more"></a><p>使用的VMware vCenter CS 6.x的版本，没有中文，靠着小学的英语水平操作了一波。由于原硬盘很大，我直接把c盘和数据盘选择最小大小。 一个小时后虚拟化完成了，看看task摘要：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%98 FAILED: Unable to find the system volume, reconfiguration is not possible.</span><br></pre></td></tr></table></figure><p>失败了 先把已经完成的vmx等文件备份一下,开始Google,网页很少,就几个英文VM的论坛有相关信息,不过题主出的问题似乎和我差不多.靠着谷歌翻译和猜,把能做的操作都做了一遍,不知道原理反正做就是了.</p><p>启动一下,win10检测出启动问题,然后运行自带的修复程序.好了开机成功… 怀着疑问,我把之前没有操作过的虚拟机文件直接启动,win10修复后依然成功开机,也就是说前面一通操作完全没有必要,不得不说win10还是挺nb的.</p><p>开机后显卡驱动有问题,硬盘也搞得太小了.其他都还好,把更新禁止了,应该可以日用.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前一直用的WTG炸了，实在没有心情再搞一个，没有做好备份实在是后悔。 想起来VMware似乎直接有一个虚拟化物理的功能，遂尝试把本地的win10(x64 190x版本)给虚拟化了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="虚拟机" scheme="https://e1sewhere.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git代理设置失败</title>
+    <link href="https://e1sewhere.github.io/2020/01/26/Git%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE%E5%A4%B1%E8%B4%A5/"/>
+    <id>https://e1sewhere.github.io/2020/01/26/Git代理设置失败/</id>
+    <published>2020-01-26T07:29:43.000Z</published>
+    <updated>2020-01-26T08:50:29.333Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>为Git设置代理失败了,目前还没找到原因</p><a id="more"></a><p>win10,本地使用的v2ray做代理:socks5端口维1079,http端口为1080,<br>为git设置了代理</p><blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; git config --global http.proxy http://127.0.0.1:1080`</span><br><span class="line">&gt; `git config --global https.proxy http://127.0.0.1:1080</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></blockquote><p>然后又在<code>gitconfig</code>里查看,确实把代理添加好了.<br>git里使用命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.google.com</span><br></pre></td></tr></table></figure><p>timeout,同时监听代理完全没有对google的请求,基本可以断定git的请求没有走代理.<br>用同样的方法在cmd里设置了代理,cmd可以成功访问到google.</p><p>不知道我是什么问题,我也在<code>.ssh</code>内添加了config文件并按评论设置了内容,依然timeout.</p><p>然后用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>测试连通性是可以连通的。我迷了，不知道为什么</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为Git设置代理失败了,目前还没找到原因&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="git" scheme="https://e1sewhere.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10 连接局域网内的共享打印机</title>
+    <link href="https://e1sewhere.github.io/2019/12/31/Win10-%E8%BF%9E%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E7%9A%84%E5%85%B1%E4%BA%AB%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    <id>https://e1sewhere.github.io/2019/12/31/Win10-连接局域网内的共享打印机/</id>
+    <published>2019-12-31T02:54:29.000Z</published>
+    <updated>2019-12-31T08:19:26.186Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>连接共享打印机出现了很多问题记录一下成功连接的操作过程.<br>如果你出现了如下问题,参考此文档也许可以解决:</p><ul><li>无法连接到打印机 0x000003e3</li><li>网络和共享重看不到其他设备</li><li>打印机连接成功后打印任务无法完成</li><li>连接打印机无法登陆成功<a id="more"></a></li></ul><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul><li>共享的打印机</li><li>和共享打印机直接连接的Win10系统</li><li>需要通过局域网连接共享打印机的win10系统</li></ul><h1 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h1><p>参考(以下链接已经收录在有道笔记<code>搞机的网页简报</code>):</p><ul><li><a href="http://www.360doc.com/content/17/0609/03/6027731_661228667.shtml" target="_blank" rel="noopener">连接教程</a></li><li><a href="https://roov.org/2018/02/reslove-network-sharing-problem/" target="_blank" rel="noopener">解决网络和共享中看不到其他计算机的问题</a></li><li><a href="https://www.bilibili.com/video/av63413564/" target="_blank" rel="noopener">三步解决1903版本Win10无法连接共享打印机</a></li><li><a href="https://www.kddf.com/zx/47482.html" target="_blank" rel="noopener">无法连接到打印机操作失败错误为0x000003e3解决办法</a></li></ul><p>所有操作两台win10都做一遍(除了连接打印机的过程)</p><h2 id="首先取消禁用Guest用户"><a href="#首先取消禁用Guest用户" class="headerlink" title="首先取消禁用Guest用户"></a>首先取消禁用Guest用户</h2><p>计算机右键 管理 计算机管理 本地用户和组 用户 找到<code>Guest</code>用户.<br>双击<code>Guest</code>,确保<code>账户已禁用</code>选项没有被勾选.</p><h2 id="共享目标打印机"><a href="#共享目标打印机" class="headerlink" title="共享目标打印机"></a>共享目标打印机</h2><p>这个操作在直连的上做,找到<code>设备与打印机</code>选择<code>打印机和扫描仪</code>点击<code>设备和打印机</code>找到需要共享的打印机右键,<code>打印机属性</code>,切换到共享选项卡,勾选<code>共享这台打印机</code>确定.</p><h2 id="高级共享设置"><a href="#高级共享设置" class="headerlink" title="高级共享设置"></a>高级共享设置</h2><p>打开<code>网络和共享中心</code>,点击<code>更改高级共享设置</code><br>所有网络(专用,来并或者公用,所有网络)都有,勾选<code>启用网络发现</code>,<code>启用文件和打印机共享</code>,<code>关闭公用文件夹共享</code>,<code>启用128位加密....</code>,<code>关闭密码保护共享</code>.</p><h2 id="设置工作组"><a href="#设置工作组" class="headerlink" title="设置工作组"></a>设置工作组</h2><p>确保两个win10在同一局域网的同一个工作组.<br>两个win10都有:<br>此电脑,属性,更改计算机名和工作组设置.<br>修改两个计算机工作组相同(默认应该是相同的不用修改),保存(重启后生效)</p><h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><p>右键点击“此电脑”，选择“管理”，并依次进入：服务和应用程序 服务，确保 <code>TCP/IP NetBIOS Helper</code> 以及 <code>Computer Browser</code> 服务处于正在运行状态。如显示为已停止，点击启动即可.<br>进入：控制面板 程序 启用或关闭系统功能，选中 <code>SMB 1.0/CIFS</code> 文件共享支持，并点击确定(重启后生效)</p><p>进入本地策略组编辑器(win+R gpedit.msc),计算机设置,管理模板,网络,Lanman工作站,双击<code>启用不安全的来宾登陆</code>勾选<code>已启用</code>.</p><p>继续使用本地策略组编辑器,计算机配置-Windows设置-安全设置-本地策略-安全选项，点击安全选项后在右边找到【账户：使用空密码的本地账户只允许进行控制台登录】，双击这个选项,双击进去后，勾选【已禁用】，然后点击【确定】<br>在桌面鼠标右击计算机，在出来的菜单里点击【管理】,在计算机管理界面，系统工具-本地用户和组-用户，点击用户后在右边双击Guest,在Guest属性窗口，点击【隶属于】选项卡，在下面点击【添加】,在输入对象名称来选择框里面输入：users，然后点击【确定】,回到Guest属性窗口，在隶属于列表里面加入了users组，点击下面的【确定】.</p><h2 id="连接共享打印机"><a href="#连接共享打印机" class="headerlink" title="连接共享打印机"></a>连接共享打印机</h2><p>重启两台计算机.<br>在需要连接打印机的win10打开<code>设备和打印机</code>,添加打印机,没有找到的话,点击我所需要的打印机未列出,点击下一步,勾选<code>按名称选择共享打印机</code>,会跳转到<code>网络</code>,选择目标计算机,如果没有目标计算机,可以试着在地址栏输入<code>\\</code>+<code>目标计算机名</code>,然后选择共享的打印机.<br>选择好后会自动安装驱动连接.<br>测试打印页.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;连接共享打印机出现了很多问题记录一下成功连接的操作过程.&lt;br&gt;如果你出现了如下问题,参考此文档也许可以解决:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无法连接到打印机 0x000003e3&lt;/li&gt;
+&lt;li&gt;网络和共享重看不到其他设备&lt;/li&gt;
+&lt;li&gt;打印机连接成功后打印任务无法完成&lt;/li&gt;
+&lt;li&gt;连接打印机无法登陆成功
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="解决方法" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="坑" scheme="https://e1sewhere.github.io/tags/%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>管家婆安装&amp;启动</title>
+    <link href="https://e1sewhere.github.io/2019/12/31/%E7%AE%A1%E5%AE%B6%E5%A9%86%E5%AE%89%E8%A3%85-%E5%90%AF%E5%8A%A8/"/>
+    <id>https://e1sewhere.github.io/2019/12/31/管家婆安装-启动/</id>
+    <published>2019-12-31T02:49:33.000Z</published>
+    <updated>2020-01-26T08:51:10.304Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>这个是记录管家婆辉煌的安装以及第一次启动过程的文档.<br><a id="more"></a></p><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>Win10专业版<br>管家婆辉煌<br>关闭防火墙,或者把防火墙的211端口打开.</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先确保已经安装了mysql2000,如果不会安装可以参考:<a href="https://e1sewhere.github.io/2019/06/27/Win10%E5%AE%89%E8%A3%85-SQL-server-2000/">Win10安装 SQL server 2000</a><br>如果需要安装电子狗驱动程序依然可以参考上面的链接.</p><p>另外需要申明的一点是,为了尽可能避免未知错误,我们所有需要执行的程序都使用管理员执行.</p><h2 id="安装过程-1"><a href="#安装过程-1" class="headerlink" title="安装过程"></a>安装过程</h2><p>直接管理员执行安装程序,如果有批处理脚本可以不使用管理员模式,直接执行脚本.</p><p>安装时选择需要安装的路径,路径随意但最好为全英文.</p><p>安装时会选择安装的产品,按需选择,这里我选择了单机版,其他的如服务段,帮助文件等都安装,只有客户端是需要我们选择的.</p><p>基本无脑下一步.<br>如果需要输入服务器地址,输入<code>127.0.0.1</code>,如果输入密码就输入数据库密码,我的密码设置为空.</p><h2 id="第一次启动"><a href="#第一次启动" class="headerlink" title="第一次启动"></a>第一次启动</h2><p>安装完成后,我们把三个图标从菜单拖动到桌面:</p><ul><li>TCP/IP端口服务器</li><li>管家婆辉煌Ⅱ TOP+服务器</li><li>管家婆辉煌Ⅱ TOP+单机版(这个要看你安装的是什么)</li></ul><p>然后三个程序都在属性兼容性里勾选<code>以管理员身份运行此程序</code>.</p><p>在保证你的mysql2000正常启动后,首先管理员启动TCP/IP端口服务器,如果需要输入服务器同上.<br>启动后点开TCP/ip端口服务器的托盘,查看端口,正常情况应该是有且仅有<code>211</code>端口被侦听.</p><p>然后管理员权限启动管<code>家婆辉煌II服务器</code>,启动后点开托盘,设置,<code>设置数据库连接参数</code>,保证服务器为<code>127.0.0.1</code>,用户名为<code>sa</code>,密码为你设置的数据库密码,我的密码为空.</p><p>启动<code>管家婆辉煌Ⅱ TOP+单机版</code>,正常情况下应该可以启动了.</p><p>如果不行检查防火墙,以及这三个程序是否正常启动(包括参数):</p><ul><li>TCP/IP端口服务器</li><li>管家婆辉煌Ⅱ TOP+服务器</li><li>SQLserver服务管理器</li></ul><p>参考管家婆官方帮助文档也能解决一些疑难杂症.<br>如果还是不行,就联系客服解决吧.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这个是记录管家婆辉煌的安装以及第一次启动过程的文档.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>代理软件的一些设置</title>
+    <link href="https://e1sewhere.github.io/2019/12/24/%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE/"/>
+    <id>https://e1sewhere.github.io/2019/12/24/代理软件的一些设置/</id>
+    <published>2019-12-23T22:56:28.000Z</published>
+    <updated>2020-01-26T08:47:38.966Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>代理软件使用时一些不懂的地方,几个软件原理及使用原则都是大同小异的,详细介绍都在酸酸乳里,其他软件不再详细介绍.<br><a id="more"></a></p><h1 id="酸酸乳"><a href="#酸酸乳" class="headerlink" title="酸酸乳"></a>酸酸乳</h1><h2 id="系统代理模式和代理规则"><a href="#系统代理模式和代理规则" class="headerlink" title="系统代理模式和代理规则"></a>系统代理模式和代理规则</h2><p>系统代理模式用于判断请求是进入ssr的代理.<br>代理规则用于判断进入ssr的请求是否真的要走代理服务器.<br>PAC规则作用于系统代理模式,是系统代理的选项为PAC时的判断条件.</p><h2 id="几个代理基础开关"><a href="#几个代理基础开关" class="headerlink" title="几个代理基础开关"></a>几个代理基础开关</h2><h3 id="通常保持开关如下"><a href="#通常保持开关如下" class="headerlink" title="通常保持开关如下:"></a>通常保持开关如下:</h3><ul><li>系统代理模式: PAC</li><li>PAC: 更新PAC为gfwlist</li><li>代理规则:绕过局域网和大陆</li></ul><p>这样就可以保证gfwlist内的网站走代理,同时可以手动添加被墙的外国网站(注意是外国网站),假如国内ip的网站被墙了,在pac用户规则中添加是无效的.因为虽然请求到了ssr,但是代理规则会判断这个网站是大陆,不需走代理服务器.</p><h3 id="酸酸乳的一些常见设置"><a href="#酸酸乳的一些常见设置" class="headerlink" title="酸酸乳的一些常见设置"></a>酸酸乳的一些常见设置</h3><h4 id="添加国内ip到pac的方法"><a href="#添加国内ip到pac的方法" class="headerlink" title="添加国内ip到pac的方法"></a>添加国内ip到pac的方法</h4><h5 id="方法一-不满意的方法"><a href="#方法一-不满意的方法" class="headerlink" title="方法一(不满意的方法)"></a>方法一(不满意的方法)</h5><p>开关如下</p><ul><li>系统代理模式: PAC</li><li>PAC: 更新PAC为gfwlist</li><li>代理规则:绕过局域网  //这样通过pac规则的数据只要不是局域网就会走代理.</li></ul><p>同时编辑gfwlist用户规则,然后更新gfwlist.<br>如果添加的规则和gfwlist自带的规则有冲突,比如 <code>baidu.com</code><br>目前的方法只有删除gfwlist自带的那个冲突规则(@@||baidu.com)<br>然后正常添加用户规则(||pan.baidu.com^)</p><p>这个方法不太好,会导致baidu.com这个域名全部走代理,我实际只想让pan.baidu.com这个子域名走代理.而且每次更新pac自带的那一行又回来了,又得手动删除.</p><h1 id="V2rayN"><a href="#V2rayN" class="headerlink" title="V2rayN"></a>V2rayN</h1><p>开关:</p><ul><li>启用http代理</li><li>http代理模式:开启pac</li></ul><h2 id="常见设置"><a href="#常见设置" class="headerlink" title="常见设置"></a>常见设置</h2><h3 id="让指定国内网站走pac"><a href="#让指定国内网站走pac" class="headerlink" title="让指定国内网站走pac"></a>让指定国内网站走pac</h3><p>由于可以直接自定义路由规则,所以可以指定网站走代理.</p><p>进入主界面,参数设置,Core路由设置,路由模式:绕过局域网及大陆地址,在<code>代理的domain或ip</code>下添加你需要代理的网站域名或者ip.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;代理软件使用时一些不懂的地方,几个软件原理及使用原则都是大同小异的,详细介绍都在酸酸乳里,其他软件不再详细介绍.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>新博客建立</title>
+    <link href="https://e1sewhere.github.io/2019/11/29/%E6%96%B0%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/"/>
+    <id>https://e1sewhere.github.io/2019/11/29/新博客建立/</id>
+    <published>2019-11-29T07:09:51.000Z</published>
+    <updated>2020-01-26T08:47:48.351Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>重新搭建了一个新博客,用来写点日记<br><a id="more"></a><br>用来记日记,然后好久没搞这些,才发现Go爹的域名不支持@解析,用gitpage的弊端一下就显现出来了,哈哈.同时把这个博客里一些日记类型的文字删除了.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;重新搭建了一个新博客,用来写点日记&lt;br&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>小米6 云流量使用体验及建议</title>
+    <link href="https://e1sewhere.github.io/2019/11/29/%E5%B0%8F%E7%B1%B36-%E4%BA%91%E6%B5%81%E9%87%8F%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C%E5%8F%8A%E5%BB%BA%E8%AE%AE/"/>
+    <id>https://e1sewhere.github.io/2019/11/29/小米6-云流量使用体验及建议/</id>
+    <published>2019-11-29T07:06:52.000Z</published>
+    <updated>2019-11-29T07:49:05.810Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>米六用着还不错,我相信酷安应该还留存有相当一部分核(pin)心(qiong)米六用户.<br>因为某些原因我流量不够用了,尝试用应用变量修改机型成功的开启了云流量.当然还有使用magisk直接修改全局参数的方法,因为当时是自己想当然做的,把酷安下回来才发现大佬们几个月前就已经玩遍了,甚至搞出了锁流量.</p><p><img src="https://e1sewhere.github.io/images/photo_2019-11-29_14-23-19.jpg" alt="成功界面"><br><a id="more"></a></p><h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>会断开连接,但并不是很频繁,使用了不到十天的状况来看,掉了大概五六次,似乎连接外部电源后掉线次数会减少.<br>迫于硬件限制似乎必须连接wifi才能成功,我实际连接在跑到80%的时候主卡的4G信号就会断开,无法继续使用4G网络维持连接过程,所以只能用wifi连接.<br>进度到了80%之后,进度会变得奇慢无比,大概需要等两三分钟才能连接成功.<br>然后网速确实比较慢(下行11.7Mbps)但对我目前的环境来说足够用了.<br><img src="https://e1sewhere.github.io/images/photo_2019-11-29_14-48-44.jpg" alt=""></p><h1 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h1><h2 id="参考环境"><a href="#参考环境" class="headerlink" title="参考环境"></a>参考环境</h2><p>我列出了可能会影响成功率的一些环境</p><blockquote><p>手机: mi6<br>系统:miui11.0.2稳定版/Android 9<br>magisk:20.1<br>全球上网:5.6.2<br>全球上网云流量:1.0.5<br>全球上网工具插件:1.4.3<br>卡槽1:中国联通<br>卡槽2:中国电信(云流量指定卡槽)</p></blockquote><p>用到的软件地址:<a href="https://pan.baidu.com/s/1WcNwr28QI7AQvbBY_MxgEA" target="_blank" rel="noopener">magisk模块+全球上网云流量apk +全球上网apk</a><br>提取码:<code>p23m</code><br><em>由于<code>全球上网工具插件</code>可以直接从应用商店下载且不是必须的软件,这里不做分享 防吞:/s/1WcNwr28QI7AQvbBY_MxgEA  p23m</em></p><h2 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h2><p>没什么说的,三个软件安装上,模块开上(max3模块),设置界面看看自己手机型号,显示max3,就算成功修改机形了.</p><ul><li>wifi连好</li><li><p>安装软件成功后打开软件<code>全球上网</code><br><img src="https://e1sewhere.github.io/images/photo_2019-11-29_14-44-30.jpg" alt="1"></p></li><li><p>点击云流量按钮<br><img src="https://e1sewhere.github.io/images/photo_2019-11-29_14-45-33.jpg" alt="2"></p></li><li><p>然后直接点击连接,等就好了,成功后就可以关闭wifi了</p></li></ul><p>你需要购买套餐,不出意外会给你送个100g的体验套餐.</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>本来卡是无限流量100g限流的卡,晚上睡觉想着用网盘更新下视频(大概30g),谁知道pc自己把微力同步打开了,由于之前把同步的内容已经丢网盘,本地库就没有东西了,它直接给我把库又重新同步了一遍,120g流量直接没了.<br>下图罪魁祸首<br><img src="https://e1sewhere.github.io/images/251.png" alt="罪魁祸首"></p><p>这个乡下没有wifi,本来是没办法用这个云流量的.不过房子里有高中用过的一个三星机子,mi6里刚好有个电信卡(10g流量,但是这里电信只有3g网络(2g?),且速度奇慢).</p><p>找了个医院的电子卡,开始打磨sim卡套,照着卡槽开始打磨(幸好老机子可以取出电池直接看到卡槽),打磨花了大概两个小时,成功识别出信号,开启热点.<br>接下来就是继续完成刚才因为没有wifi卡在80%的后续步骤了.<br>完成后下回酷安,想炫耀下,发现别人早就玩烂了,同时也想起来magisk可以直接改机型,卸了xp,重新用magisk搞了一遍.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;米六用着还不错,我相信酷安应该还留存有相当一部分核(pin)心(qiong)米六用户.&lt;br&gt;因为某些原因我流量不够用了,尝试用应用变量修改机型成功的开启了云流量.当然还有使用magisk直接修改全局参数的方法,因为当时是自己想当然做的,把酷安下回来才发现大佬们几个月前就已经玩遍了,甚至搞出了锁流量.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://e1sewhere.github.io/images/photo_2019-11-29_14-23-19.jpg&quot; alt=&quot;成功界面&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="折腾" scheme="https://e1sewhere.github.io/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="android" scheme="https://e1sewhere.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10安装 SQL server 2000</title>
+    <link href="https://e1sewhere.github.io/2019/06/27/Win10%E5%AE%89%E8%A3%85-SQL-server-2000/"/>
+    <id>https://e1sewhere.github.io/2019/06/27/Win10安装-SQL-server-2000/</id>
+    <published>2019-06-27T06:55:57.000Z</published>
+    <updated>2019-12-29T10:52:47.361Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>由于需要在Win10上安装老旧的管理系统,尝试了在WIN10上安装SQL Server 2000.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">环境</span><br><span class="line">WIN10X64专业版</span><br><span class="line">SQL Server 2000个人版</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="确保之前的没有sqlserver安装残留"><a href="#确保之前的没有sqlserver安装残留" class="headerlink" title="确保之前的没有sqlserver安装残留"></a>确保之前的没有sqlserver安装残留</h1><p>之前的sqlserver没有卸载干净的话,很容易安装报错.确保之前的是删除干净的.</p><h1 id="替换sqlunirl-dll文件"><a href="#替换sqlunirl-dll文件" class="headerlink" title="替换sqlunirl.dll文件"></a>替换sqlunirl.dll文件</h1><p>将sql2000安装包下的<code>./x86/system/sqlunirl.dll</code>复制,粘贴到C盘的<code>./windows/syswow64/</code>下.<br>如果权限不足.进行一下步骤,没有则跳过下一项</p><h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>找到syswow64下的sqlunirl.dll文件→右键属性→安全→高级.<br>这时高级选项卡的<code>所有者</code>项目为<code>TrustedNstaller</code>,点击更改,在<code>输入要选择的对象名称</code>中输入当前用户名,通常如果是users用户组可以接输入<code>users</code>,点击检查名称,就会自动补全当前用户名→确定→确定</p><p>回到属性选项卡→安全→编辑,选择users用户组→<code>users的权限</code>选择<code>users</code>然后<code>允许:完全控制</code>(反正只是一个文件的操作权限,也可以只勾选修改权限)→确定</p><p>现在获得了操作权限,将<code>./syswow64/sqlunirl.dll</code>修改为<code>sqlunirl64.dll</code>作为备份,如果提示需要管理员权限一律选择允许,后面所有的步骤遇到管理员权限都选择允许.<br>然后重复最开始的复制操作.成功复制文件到系统下.</p><p>回到安装包,根目录下的<code>AUTORUN.exe</code>已经无法在64位下运行,直接运行setup程序.<br>进入安装包找到<code>./sqlserver2000/x86/setup/setupsql.exe</code>以管理员权限运行.<br>如果执行后提示有其他的安装正在执行之类的(记不到提示的什么了)可以尝试编辑注册表,没有则跳过下一项</p><h1 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h1><p>win+R运行<code>regedit</code>定位到<code>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager</code>在右边找到<code>PendingFileRenameOperations</code>项目,直接删除.(路径纯手打可能有错误)</p><h1 id="正常安装"><a href="#正常安装" class="headerlink" title="正常安装"></a>正常安装</h1><p>进入安装包找到<code>./sqlserver2000/x86/setup/setupsql.exe</code>以管理员权限运行.<br>几个选项:<br>本地账户,混合模式,无密码<br>安装好后,使用管理员启动,没有服务器,可以手动输入一个回环地址(127.0.0.1).</p><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>如果启动显示拒绝访问可以如下操作<br>在服务中找找到<code>sqlserveragent</code>服务,改为自动并启动它,然后试试启动服务,如果还是不行,进入企业管理器，在服务器右键点击“属性”，在“安全性”标签下，将身份验证改为“SQL Server和Windows”，然后打开查询分析器，使用”SQL Server身份验证”，默认情况下登陆名为“sa”，密码为空（假如你没有进行设置的话），就能够登陆了。简而言之，就是不用Windows验证，转弯用SQL Server验证.</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>管理系统需要用到的出了sqlserver2000还有驱动以及几个主程序,这两个程序的安装都是选择兼容模式位xp,然后管理员模式运行.<br>驱动的安装需要使用命令行添加<code>-i</code>参数,这里需要用管理员模式运行CMD,同时exe文件也需要在属性里添加管理员权限和xp兼容模式.<br>所有安装完成后.要正常运行管理系统需要三个程序</p><ul><li>TCP端口驱动程序</li><li>管理系统服务端</li><li>sqlserver服务端</li></ul><p>这三个程序在WIN10中设置了开机自启并不起作用.<br>把他们的快捷方式添加到<code>c:/users/你的名字/appdata/roamin/microsoft/windows/start menu/programs/startup/</code><br>文件夹下.这样开机就会自动启动了.</p><h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><p>搜索其他资源的时候,看到这样一个帖子,站长似乎做了一个集成安装程序.由于是付费入群下载,看更新日志似乎还是相当靠谱,支持xp~win10.</p><p>地址:<a href="https://www.flighty.cn/html/soft/20140119_219.html" target="_blank" rel="noopener">微软SQL2000+SP4集成安装版 v3.5 BY 少轻狂</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于需要在Win10上安装老旧的管理系统,尝试了在WIN10上安装SQL Server 2000.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;环境&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WIN10X64专业版&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SQL Server 2000个人版&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="win10" scheme="https://e1sewhere.github.io/tags/win10/"/>
+    
+      <category term="sqlserver" scheme="https://e1sewhere.github.io/tags/sqlserver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RD Client 简明教程</title>
+    <link href="https://e1sewhere.github.io/2019/05/23/RD-Client-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/"/>
+    <id>https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/</id>
+    <published>2019-05-23T06:02:45.000Z</published>
+    <updated>2019-05-23T06:51:17.484Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>最近学习中有手机远程控制的需求,体验勉勉强强吧.不过使用RD Client的时候居然还折腾了那么久…果然现在学习能力下降的有点剧烈.<br><a id="more"></a></p><p>只用于内网连接,公网没有这个需求,但是连接步骤都是一样的.<br>软件使用很简单,就是傻瓜式的下一步下一步…多数人失败都是没有达到使用要求</p><h1 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h1><ul><li>操作系统有相关组件(专业版,企业版)</li><li>开启了远程桌面</li><li>IP正确(或者内网设备名称正确)</li><li>账户正确,账户拥有权限</li></ul><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h2><p>家庭版似乎需要怎么折腾一下自己搜索吧,既然都玩win了反正都是白嫖,装机还是装专业企业版吧.</p><p><code>这台电脑</code> -&gt; <code>属性</code> -&gt; <code>远程设置</code> -&gt; <code>允许连接到此计算机</code> -&gt; <code>仅允许运行使用网络级别身份验证的远程桌面的计算机连接（建议）</code><br>既然都开启了远程桌面,远程协助也一块开了吧,反正也没有安全需求.</p><p><img src="https://e1sewhere.github.io/images/170.png" alt=""></p><p>这个界面也可以添加新的可连接账户,默认当前用户是有连接权限的</p><h2 id="查看当前用户"><a href="#查看当前用户" class="headerlink" title="查看当前用户"></a>查看当前用户</h2><p>你登陆windows时显示的名称有可能并不是当前账户的名称(除非是域账户)</p><p>cmd使用<code>whoami</code>命令可以查看当前用户名称,比如我现在的账户名称就是这个163邮箱</p><p><img src="https://e1sewhere.github.io/images/172.png" alt=""></p><h2 id="移动端app连接"><a href="#移动端app连接" class="headerlink" title="移动端app连接"></a>移动端app连接</h2><p>打开软件<br>右上角加号 -&gt; Desktop</p><p>这里如果是同一局域网下，可以直接scan你的设备名称，如果没扫出来，多扫以下就好了。实在扫不出来</p><p>pc上 cmd 执行 <code>ipconfig</code>命令查看下自己的局域网ip 然后移动端 手动输入ip</p><p><img src="https://e1sewhere.github.io/images/desktopscan.png" alt=""></p><p>上面添加了pc name后,添加user name  点击user name的下拉框 -&gt; add user account</p><p><img src="https://e1sewhere.github.io/images/addcount.png" alt=""></p><p>账户密码来一套, 确定后,右上角 林克斯大特~! (connect)</p><p>正常的话就连接了.</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>使用RD Client远程桌面,有时候分辨率会出问题,比如有些全屏游戏无法全屏,但是切换到pc就好了.</li><li>RD Client 似乎不能多账户运行,运行其他账户当前pc就会提示你注销.</li><li>如果想使用手机当分屏我建议使用<code>spacedesk</code>,体验还不错<br><img src="https://e1sewhere.github.io/images/173.png" alt=""></li></ul><div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/10/27/Win下批量-关闭-打开-进程/">Win下批量 关闭/打开 进程</a></li><li><a href="https://e1sewhere.github.io/2018/10/18/美化你的桌面-拯救你的开机时间/">美化你的桌面+拯救你的开机时间</a></li><li><a href="https://e1sewhere.github.io/2019/04/18/渗透常用操作系统命令/">渗透常用操作系统命令</a></li><li><a href="https://atomrq.gitee.io/2019-09-day/2019-09-17-Linux-Command/">Windows系统快捷键</a></li></ul></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近学习中有手机远程控制的需求,体验勉勉强强吧.不过使用RD Client的时候居然还折腾了那么久…果然现在学习能力下降的有点剧烈.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="windows" scheme="https://e1sewhere.github.io/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Office 使用遇到的问题</title>
+    <link href="https://e1sewhere.github.io/2019/05/11/office-%E4%BD%BF%E7%94%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://e1sewhere.github.io/2019/05/11/office-使用遇到的问题/</id>
+    <published>2019-05-11T10:00:22.000Z</published>
+    <updated>2019-06-04T08:01:08.330Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>这是在使用office过程中遇到问题,使用的一些解决方法的记录<br><a id="more"></a></p><h1 id="Word"><a href="#Word" class="headerlink" title="Word"></a>Word</h1><h2 id="自动生成目录-部分标题没有前导符"><a href="#自动生成目录-部分标题没有前导符" class="headerlink" title="自动生成目录,部分标题没有前导符"></a>自动生成目录,部分标题没有前导符</h2><p>如图<br><img src="https://e1sewhere.github.io/images/168.png" alt=""></p><p>在标题和页码之间输入Tab即可,如果没有成功,选中这一行右键 段落 制表位 ,其中前导符选中我们需要的那个,然后确定,重新插入Tab.</p><h2 id="正文页码从1开始"><a href="#正文页码从1开始" class="headerlink" title="正文页码从1开始"></a>正文页码从1开始</h2><p>把光标停在正文这一页的内容前面,然后选择 面布局–分隔符–分节符–下一页 </p><p>点击视图–页眉和页脚–插入页码</p><p>在设计中选择设置页码格式,起始页为1</p><p>选中正文的第一页的页脚,取消与上一节的链接</p><p>查看正文第一页页脚变为1</p><p>如果目录首页等还有页码,删除即可</p><h1 id="PowerPoint"><a href="#PowerPoint" class="headerlink" title="PowerPoint"></a>PowerPoint</h1><h2 id="提取背景图片"><a href="#提取背景图片" class="headerlink" title="提取背景图片"></a>提取背景图片</h2><p>将文件扩展名<code>ppt</code>或者<code>pptx</code>修改为<code>zip</code>然后解压缩,可以在解压后的文件里找到背景图,背景图位于<code>media</code>文件夹内.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是在使用office过程中遇到问题,使用的一些解决方法的记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="office" scheme="https://e1sewhere.github.io/tags/office/"/>
+    
+      <category term="word" scheme="https://e1sewhere.github.io/tags/word/"/>
+    
+      <category term="ppt" scheme="https://e1sewhere.github.io/tags/ppt/"/>
+    
+      <category term="excel" scheme="https://e1sewhere.github.io/tags/excel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>渗透常用操作系统命令</title>
+    <link href="https://e1sewhere.github.io/2019/04/18/%E6%B8%97%E9%80%8F%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/"/>
+    <id>https://e1sewhere.github.io/2019/04/18/渗透常用操作系统命令/</id>
+    <published>2019-04-18T05:10:26.000Z</published>
+    <updated>2019-04-18T06:10:52.382Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>转移自有道笔记-&gt;临时记录-&gt;操作时笔记<br>记录了渗透学习中linux和windows常用的命令,linux部分直接转载的,需要重新总结.<br><a id="more"></a></p><h1 id="WIN"><a href="#WIN" class="headerlink" title="WIN"></a>WIN</h1><h2 id="net"><a href="#net" class="headerlink" title="net"></a>net</h2><ul><li>查看共享连接<code>net use</code></li><li>增加远程共享<code>net use \host /u:user pw</code></li><li>查看域中当前主机列表<code>net view /domain</code></li><li>查看当前域中的用户<code>net user /domain</code></li><li>添加本地用户 <code>net users name pw /add</code> 其中的<code>add</code>也可以简写为<code>ad</code>(仅在win7下测试)</li><li>添加本地用户到本地管理员组<code>net localgroup Administrators username /add</code> 其中的<code>add</code>也可以简写为<code>ad</code>(仅在win7下测试)</li><li>查看组 <code>net localgroup</code></li><li>查看本地组<code>net localgroup groupname</code></li><li>查看域中组的信息<code>net group /domain</code></li><li>查看当前机器所在的域名<code>net config workstation</code></li><li>查看当前服务器所在域名<code>net config server</code></li></ul><h2 id="系统信息相关"><a href="#系统信息相关" class="headerlink" title="系统信息相关"></a>系统信息相关</h2><ul><li>显示系统信息(设备,补丁等)<code>systeminfo</code></li><li>查看远程主机的系统信息<code>systeminfo /S ip /U domainuser /P pw</code></li><li>显示进程和服务<code>tasklist /svc</code></li><li>显示所有进程和和Dll信息<code>tasklist /m</code></li><li>显示进程和所有者<code>tasklist /v</code></li><li>查看远程主机的进程列表<code>tasklist /S ip /v</code></li><li>搜索所有exe文件<code>dir /a /s /b c:.exe</code></li><li>显示服务信息<code>sc query</code></li><li>当前目录下(包含子目录,不区分大小写)找出内容包含’然并卵’字符串的文件<code>findstr /si 然并卵 *.txt</code></li><li>搜索当前目录下(包含子目录)敏感文件名称(还可以效防添加名称)<code>dir /s *pass == *cred == *vnc == *.config</code></li><li>设置当前配置禁用防火墙<code>netsh advfirewall set currentprofile state off</code></li><li>保存主机上所有wifi信息<code>netsh wlan export profile folder=. key=clear</code></li><li>设置端口转发<code>netsh interface portproxy add v4tov4 listenport=3000 listenaddress=l.l.l.l connectport=4000 connectaddress=2.2.2.2</code></li><li>启用远程访问<code>reg add &quot;HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlTerminal Server&quot; /v fDenyTSConnections /t REG_DWORD /d 0 /f</code></li><li>启用远程协助<code>reg add &quot;HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlTerminal Server&quot; /v fAllowToGetHelp /t REG_DWORD /d 1 /f</code></li><li>修改远程访问端口<code>reg add &quot;HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlTerminal ServerWinStationsRDP-Tcp&quot; /v PortNumber /t REG_DWORD /d 12345 /f</code></li></ul><h2 id="注册表相关操作"><a href="#注册表相关操作" class="headerlink" title="注册表相关操作"></a>注册表相关操作</h2><ul><li>查找注册表中的密码<code>reg query HKLM /f password /t REG_SZ /s</code></li></ul><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="查看操作系统信息"><a href="#查看操作系统信息" class="headerlink" title="查看操作系统信息"></a>查看操作系统信息</h2><ul><li>操作系统版本</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br><span class="line">cat /etc/*-release</span><br><span class="line">cat /etc/lsb-release      # Debian </span><br><span class="line">cat /etc/redhat-release   # Redhat</span><br></pre></td></tr></table></figure><ul><li>内核版本</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version</span><br><span class="line">uname -a</span><br><span class="line">uname -mrs</span><br><span class="line">rpm -q kernel</span><br><span class="line">dmesg | grep Linux</span><br><span class="line">ls /boot | grep vmlinuz-</span><br></pre></td></tr></table></figure><ul><li>环境变量</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/profile</span><br><span class="line">cat /etc/bashrc</span><br><span class="line">cat ~/.bash_profile</span><br><span class="line">cat ~/.bashrc</span><br><span class="line">cat ~/.bash_logout</span><br><span class="line">env</span><br><span class="line">set</span><br></pre></td></tr></table></figure><h2 id="应用和服务"><a href="#应用和服务" class="headerlink" title="应用和服务"></a>应用和服务</h2><ul><li>正在运行的程序和权限</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps aux</span><br><span class="line">ps -ef</span><br><span class="line">top</span><br><span class="line">cat /etc/services</span><br></pre></td></tr></table></figure><ul><li>如果要查询root权限运行的进程，可以补充为</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep root</span><br><span class="line">ps -ef | grep root</span><br></pre></td></tr></table></figure><ul><li>应用</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls -alh /usr/bin/</span><br><span class="line">ls -alh /sbin/</span><br><span class="line">dpkg -l</span><br><span class="line">rpm -qa</span><br><span class="line">ls -alh /var/cache/apt/archives</span><br><span class="line">ls -alh /var/cache/yum/</span><br></pre></td></tr></table></figure><ul><li>服务的配置文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/syslog.conf</span><br><span class="line">cat /etc/chttp.conf</span><br><span class="line">cat /etc/lighttpd.conf</span><br><span class="line">cat /etc/cups/cupsd.conf</span><br><span class="line">cat /etc/inetd.conf</span><br><span class="line">cat /etc/apache2/apache2.conf</span><br><span class="line">cat /etc/my.conf</span><br><span class="line">cat /etc/httpd/conf/httpd.conf</span><br><span class="line">cat /opt/lampp/etc/httpd.conf</span><br><span class="line">ls -aRl /etc/ | awk &apos;$1 ~ /^.*r.*/&apos;</span><br></pre></td></tr></table></figure><ul><li>计划任务</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br><span class="line">ls -alh /var/spool/cron</span><br><span class="line">ls -al /etc/ | grep cron</span><br><span class="line">ls -al /etc/cron*</span><br><span class="line">cat /etc/cron*</span><br><span class="line">cat /etc/at.allow</span><br><span class="line">cat /etc/at.deny</span><br><span class="line">cat /etc/cron.allow</span><br><span class="line">cat /etc/cron.deny</span><br><span class="line">cat /etc/crontab</span><br><span class="line">cat /etc/anacrontab</span><br><span class="line">cat /var/spool/cron/crontabs/root</span><br></pre></td></tr></table></figure><ul><li>存储的明文用户名，密码</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grep -i user [filename]</span><br><span class="line">grep -i pass [filename]</span><br><span class="line">grep -C 5 &quot;password&quot; [filename]</span><br><span class="line">find . -name &quot;*.php&quot; -print0 | xargs -0 grep -i -n &quot;var $password&quot;   # Joomla</span><br></pre></td></tr></table></figure><h2 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h2><ul><li>网络地址</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br><span class="line">cat /etc/network/interfaces</span><br><span class="line">cat /etc/sysconfig/network</span><br></pre></td></tr></table></figure><ul><li>网络配置,DNS,DHCP,网关</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/resolv.conf</span><br><span class="line">cat /etc/sysconfig/network</span><br><span class="line">cat /etc/networks</span><br><span class="line">iptables -L</span><br><span class="line">hostname</span><br><span class="line">dnsdomainname</span><br></pre></td></tr></table></figure><p>-网络通信</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lsof -i</span><br><span class="line">lsof -i :80</span><br><span class="line">grep 80 /etc/services</span><br><span class="line">netstat -antup</span><br><span class="line">netstat -antpx</span><br><span class="line">netstat -tulpn</span><br><span class="line">chkconfig --list</span><br><span class="line">chkconfig --list | grep 3:on</span><br><span class="line">last</span><br><span class="line">w</span><br></pre></td></tr></table></figure><p>-路由缓存</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arp -e</span><br><span class="line">route</span><br><span class="line">route -nee</span><br></pre></td></tr></table></figure><h2 id="用户相关"><a href="#用户相关" class="headerlink" title="用户相关"></a>用户相关</h2><ul><li>用户信息</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">id</span><br><span class="line">who</span><br><span class="line">w</span><br><span class="line">last</span><br><span class="line">cat /etc/passwd</span><br><span class="line">cat /etc/group</span><br><span class="line">cat /etc/shadow</span><br><span class="line">ls -alh /var/mail/</span><br><span class="line">grep -v -E &quot;^#&quot; /etc/passwd | awk -F: &apos;$3 == 0 &#123; print $1&#125;&apos;   # 列出超级用户</span><br><span class="line">awk -F: &apos;($3 == &quot;0&quot;) &#123;print&#125;&apos; /etc/passwd   #列出超级用户</span><br><span class="line">cat /etc/sudoers</span><br><span class="line">sudo -l</span><br></pre></td></tr></table></figure><ul><li>列主目录</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls -ahlR /root/</span><br><span class="line">ls -ahlR /home/</span><br><span class="line">其他用户的操作记录</span><br><span class="line">cat ~/.bash_history</span><br><span class="line">cat ~/.nano_history</span><br><span class="line">cat ~/.atftp_history</span><br><span class="line">cat ~/.mysql_history</span><br><span class="line">cat ~/.php_history</span><br></pre></td></tr></table></figure><ul><li>ssh私钥</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/authorized_keys</span><br><span class="line">cat ~/.ssh/identity.pub</span><br><span class="line">cat ~/.ssh/identity</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">cat ~/.ssh/id_rsa</span><br><span class="line">cat ~/.ssh/id_dsa.pub</span><br><span class="line">cat ~/.ssh/id_dsa</span><br><span class="line">cat /etc/ssh/ssh_config</span><br><span class="line">cat /etc/ssh/sshd_config</span><br><span class="line">cat /etc/ssh/ssh_host_dsa_key.pub</span><br><span class="line">cat /etc/ssh/ssh_host_dsa_key</span><br><span class="line">cat /etc/ssh/ssh_host_rsa_key.pub</span><br><span class="line">cat /etc/ssh/ssh_host_rsa_key</span><br><span class="line">cat /etc/ssh/ssh_host_key.pub</span><br><span class="line">cat /etc/ssh/ssh_host_key</span><br></pre></td></tr></table></figure><h2 id="文件系统相关"><a href="#文件系统相关" class="headerlink" title="文件系统相关"></a>文件系统相关</h2><ul><li>日志文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">ls -alh /var/log</span><br><span class="line">ls -alh /var/mail</span><br><span class="line">ls -alh /var/spool</span><br><span class="line">ls -alh /var/spool/lpd</span><br><span class="line">ls -alh /var/lib/pgsql</span><br><span class="line">ls -alh /var/lib/mysql</span><br><span class="line">cat /var/lib/dhcp3/dhclient.lea</span><br><span class="line">cat /etc/httpd/logs/access_log</span><br><span class="line">cat /etc/httpd/logs/access.log</span><br><span class="line">cat /etc/httpd/logs/error_log</span><br><span class="line">cat /etc/httpd/logs/error.log</span><br><span class="line">cat /var/log/apache2/access_log</span><br><span class="line">cat /var/log/apache2/access.log</span><br><span class="line">cat /var/log/apache2/error_log</span><br><span class="line">cat /var/log/apache2/error.log</span><br><span class="line">cat /var/log/apache/access_log</span><br><span class="line">cat /var/log/apache/access.log</span><br><span class="line">cat /var/log/auth.log</span><br><span class="line">cat /var/log/chttp.log</span><br><span class="line">cat /var/log/cups/error_log</span><br><span class="line">cat /var/log/dpkg.log</span><br><span class="line">cat /var/log/faillog</span><br><span class="line">cat /var/log/httpd/access_log</span><br><span class="line">cat /var/log/httpd/access.log</span><br><span class="line">cat /var/log/httpd/error_log</span><br><span class="line">cat /var/log/httpd/error.log</span><br><span class="line">cat /var/log/lastlog</span><br><span class="line">cat /var/log/lighttpd/access.log</span><br><span class="line">cat /var/log/lighttpd/error.log</span><br><span class="line">cat /var/log/lighttpd/lighttpd.access.log</span><br><span class="line">cat /var/log/lighttpd/lighttpd.error.log</span><br><span class="line">cat /var/log/messages</span><br><span class="line">cat /var/log/secure</span><br><span class="line">cat /var/log/syslog</span><br><span class="line">cat /var/log/wtmp</span><br><span class="line">cat /var/log/xferlog</span><br><span class="line">cat /var/log/yum.log</span><br><span class="line">cat /var/run/utmp</span><br><span class="line">cat /var/webmin/miniserv.log</span><br><span class="line">cat /var/www/logs/access_log</span><br><span class="line">cat /var/www/logs/access.log</span><br><span class="line">ls -alh /var/lib/dhcp3/</span><br><span class="line">ls -alh /var/log/postgresql/</span><br><span class="line">ls -alh /var/log/proftpd/</span><br><span class="line">ls -alh /var/log/samba/</span><br></pre></td></tr></table></figure><ul><li>网站文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls -alhR /var/www/</span><br><span class="line">ls -alhR /srv/www/htdocs/</span><br><span class="line">ls -alhR /usr/local/www/apache22/data/</span><br><span class="line">ls -alhR /opt/lampp/htdocs/</span><br><span class="line">ls -alhR /var/www/html/</span><br></pre></td></tr></table></figure><ul><li>文件挂载</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount</span><br><span class="line">df -h</span><br><span class="line">cat /etc/fstab</span><br></pre></td></tr></table></figure><ul><li>可写目录</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find / -writable -type d 2&gt;/dev/null      # 可写目录</span><br><span class="line">find / -perm -222 -type d 2&gt;/dev/null     # 可写目录 </span><br><span class="line">find / -perm -o w -type d 2&gt;/dev/null     # 可写目录</span><br><span class="line">find / -perm -o x -type d 2&gt;/dev/null     # 可执行目录</span><br><span class="line">find / \( -perm -o w -perm -o x \) -type d 2&gt;/dev/null   # 可写可执行目录</span><br></pre></td></tr></table></figure><h2 id="准备与攻击"><a href="#准备与攻击" class="headerlink" title="准备与攻击"></a>准备与攻击</h2><ul><li>语言支持</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find / -name perl*</span><br><span class="line">find / -name python*</span><br><span class="line">find / -name gcc*</span><br><span class="line">find / -name cc</span><br></pre></td></tr></table></figure><ul><li>上传方式</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find / -name wget</span><br><span class="line">find / -name nc*</span><br><span class="line">find / -name netcat*</span><br><span class="line">find / -name tftp*</span><br><span class="line">find / -name ftp</span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li><a href="http://www.myh0st.cn/index.php/archives/261/" target="_blank" rel="noopener">信安之路</a></li><li><a href="http://next.uuzdaisuki.com/2018/05/08/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%EF%BC%88linux%EF%BC%89/" target="_blank" rel="noopener">内网渗透常用命令总结（linux）</a></li></ul><div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/">RD Client 简明教程</a></li><li><a href="https://e1sewhere.github.io/2019/02/27/Linux-Vulhub安装过程的学习/">Linux Vulhub安装过程的学习</a></li><li><a href="https://e1sewhere.github.io/2019/03/11/Linux下安装redis/">Linux下安装redis</a></li><li><a href="https://atomrq.gitee.io/2019-09-day/2019-09-23-LinuxNoPASSWD/">Linux ssh免密码登录</a></li></ul></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转移自有道笔记-&amp;gt;临时记录-&amp;gt;操作时笔记&lt;br&gt;记录了渗透学习中linux和windows常用的命令,linux部分直接转载的,需要重新总结.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="windows" scheme="https://e1sewhere.github.io/tags/windows/"/>
+    
+      <category term="linux" scheme="https://e1sewhere.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>信息安全相关名词收集</title>
+    <link href="https://e1sewhere.github.io/2019/04/07/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E6%94%B6%E9%9B%86/"/>
+    <id>https://e1sewhere.github.io/2019/04/07/信息安全相关名词收集/</id>
+    <published>2019-04-07T09:03:01.000Z</published>
+    <updated>2019-04-09T08:13:46.459Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>收集学习中遇到不懂得信息安全相关的名词,其实google下就知道了,但是记个笔记以后可以忘了更快索引.杂乱收录就不做分类了.<br>今天居然忘了域名泛解是啥….看来还是有必要记录下.<br><a id="more"></a></p><h1 id="域名泛解析"><a href="#域名泛解析" class="headerlink" title="域名泛解析"></a>域名泛解析</h1><p>在域名前添加任何子域名，均可访问到所指向的WEB地址。也就是客户的域名<code>#.com</code>之下所设的<code>*.#.com</code>全部</p><h1 id="self-XSS"><a href="#self-XSS" class="headerlink" title="self-XSS"></a>self-XSS</h1><p>只在自己本地生效得XSS漏洞,直观看来没什么利用价值漏洞,但是通过巧妙得攻击思路,也许就能去掉self,把它变成真正有用得xss</p><h1 id="内容安全策略-CSP"><a href="#内容安全策略-CSP" class="headerlink" title="内容安全策略(CSP)"></a>内容安全策略(CSP)</h1><p>其实就是CSP的中文.<br>CSP 的实质就是白名单制度，开发者明确告诉客户端，哪些外部资源可以加载和执行，等同于提供白名单。它的实现和执行全部由浏览器完成，开发者只需提供配置。</p><p>CSP 大大增强了网页的安全性。攻击者即使发现了漏洞，也没法注入脚本，除非还控制了一台列入了白名单的可信主机。</p><p>来源:<a href="http://www.ruanyifeng.com/blog/2016/09/csp.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/09/csp.html</a></p><h1 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h1><p>CORS是跨源资源分享（Cross-Origin Resource Sharing）的缩写<br>它是W3C标准，是跨源AJAX请求的根本解决方法。相比JSONP只能发GET请求，CORS允许任何类型的请求。 CORS请求大致和ajax请求，但是在头信息中加上了Origin字段表明请求来自哪个源。如果orgin是许可范围之内的话，服务器返回的响应会多出<code>Acess-Control-Allow-*</code>的字段</p><p>CORS与JSONP的使用目的相同，但是比JSONP更强大。<br>JSONP只支持GET请求，CORS支持所有类型的HTTP请求。JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。</p><h1 id="RPO"><a href="#RPO" class="headerlink" title="RPO"></a>RPO</h1><p>RPO（Relative Path Overwrite）相对路径覆盖<br>主要是利用浏览器的一些特性和部分服务端的配置差异导致的漏洞，通过一些技巧，我们可以通过相对路径来引入其他的资源文件，以至于达成我们想要的目的.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;收集学习中遇到不懂得信息安全相关的名词,其实google下就知道了,但是记个笔记以后可以忘了更快索引.杂乱收录就不做分类了.&lt;br&gt;今天居然忘了域名泛解是啥….看来还是有必要记录下.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="整理" scheme="https://e1sewhere.github.io/tags/%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kali 专题</title>
+    <link href="https://e1sewhere.github.io/2019/03/29/kali-%E4%B8%93%E9%A2%98/"/>
+    <id>https://e1sewhere.github.io/2019/03/29/kali-专题/</id>
+    <published>2019-03-29T11:32:34.000Z</published>
+    <updated>2019-04-05T15:53:44.522Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><blockquote><p>这是关于kali的学习笔记,转移自有道笔记,之前的笔记比较零散,没有同步很多内容再别的机器上,之后把硬盘找到,会持续整理并添加新的内容<br>…emm发现完全没时间去整理这个,也没耐心去从头规规矩矩学一遍,零散的笔记也不好整理.暂时先搁置吧<br><a id="more"></a></p></blockquote><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/jiangliuzheng/article/details/50546783" target="_blank" rel="noopener">https://blog.csdn.net/jiangliuzheng/article/details/50546783</a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>略</p><h1 id="Metasploit漏洞集成平台"><a href="#Metasploit漏洞集成平台" class="headerlink" title="Metasploit漏洞集成平台"></a>Metasploit漏洞集成平台</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Metasploit是一款开源安全漏洞检测工具，附带数百个已知的软件漏洞，并保持频繁更新。被安全社区冠以“可以黑掉整个宇宙”之名的强大渗透测试框架.</p><h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><ul><li><p>渗透攻击（Exploit）,指由攻击者或渗透测试者利用一个系统、应用或服务中的安全漏洞，所进行的攻击行为。</p></li><li><p>攻击载荷（Payload），是我们期望目标系统在被渗透攻击之后去执行的代码。</p></li><li><p>Shellcode，是在渗透攻击是作为攻击载荷运行的一组机器指令，通常用汇编语言编写。</p></li><li><p>模块（Module），指Metasploit框架中所使用的一段软件代码组件，可用于发起渗透攻击或执行某些辅助攻击动作。</p></li><li><p>监听器（Listener），是Metasploit中用来等待网络连接的组件。</p></li></ul><h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><h2 id="局域网arp欺骗攻击"><a href="#局域网arp欺骗攻击" class="headerlink" title="局域网arp欺骗攻击"></a>局域网arp欺骗攻击</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这是关于kali的学习笔记,转移自有道笔记,之前的笔记比较零散,没有同步很多内容再别的机器上,之后把硬盘找到,会持续整理并添加新的内容&lt;br&gt;…emm发现完全没时间去整理这个,也没耐心去从头规规矩矩学一遍,零散的笔记也不好整理.暂时先搁置吧&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="kali" scheme="https://e1sewhere.github.io/tags/kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>google hack 笔记</title>
+    <link href="https://e1sewhere.github.io/2019/03/29/google-hack-%E7%AC%94%E8%AE%B0/"/>
+    <id>https://e1sewhere.github.io/2019/03/29/google-hack-笔记/</id>
+    <published>2019-03-29T07:30:55.000Z</published>
+    <updated>2019-03-29T08:08:33.806Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>关于google hack得笔记 从有道笔记转移<br><a id="more"></a></p><h1 id="基础关键字组合"><a href="#基础关键字组合" class="headerlink" title="基础关键字组合"></a>基础关键字组合</h1><ul><li><code>&quot;&quot;</code> 完全匹配(严格),双引号内的字符串不拆分.</li><li><code>+</code> 指定一个一定存在的关键词</li><li><code>-</code> 指定一个一定不存在的关键词</li><li><code>|</code> 或,满足其中一个关键词就可以.</li><li><code>AND</code> 所有关键词都必须满足(可以不像双引号一样必须连在一起)</li></ul><h1 id="Site"><a href="#Site" class="headerlink" title="Site:"></a>Site:</h1><p>搜索指定域名下的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site:domain</span><br><span class="line"></span><br><span class="line">site:baidu.com</span><br></pre></td></tr></table></figure><h1 id="inurl"><a href="#inurl" class="headerlink" title="inurl:"></a>inurl:</h1><p>搜索结果的url中一定有指定的内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inurl:str</span><br><span class="line"></span><br><span class="line">inurl:admin/login.php</span><br></pre></td></tr></table></figure><h1 id="intitle"><a href="#intitle" class="headerlink" title="intitle:"></a>intitle:</h1><p>搜索标题为指定内容的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">intitle:str</span><br><span class="line"></span><br><span class="line">intitle:后台管理</span><br></pre></td></tr></table></figure><h1 id="cache"><a href="#cache" class="headerlink" title="cache:"></a>cache:</h1><p>缓存搜索,类似百度的快照可以可以搜索到google记录的网页历史快照</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cache:url</span><br></pre></td></tr></table></figure><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>这个语法都可以自由自合<br>比如<br>搜索site为baidu.com 包含”有限公司”的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:baidu.com &quot;有限公司&quot;</span><br></pre></td></tr></table></figure><p>搜索site为baidu.com 标题中包含”有限公司”的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:baidu.com intitle:有限公司</span><br></pre></td></tr></table></figure><h1 id="实用搜例子"><a href="#实用搜例子" class="headerlink" title="实用搜例子"></a>实用搜例子</h1><ul><li>查找目标管理员<br><code>site:domain &quot;发布人&quot;</code><br>可以再网站中搜索<code>发布人</code>这个关键字,后面跟随的信息就是网站发布小心的用户,而这个用户很可能就是管理员</li><li>查找目标脚本语言<br><code>site:domain php</code><br>可以在网站中搜索类似<code>php</code>这样的脚本语言扩展名,对于某些伪静态网站(比如页面全是html的),如果搜到某种扩展名基本可以判断这个网站使用的脚本语言.</li><li>查找弱点站<br><code>inurl:ewebeditor admin</code><br>可以用来批量查找存在某些弱点的站点.比如上面这个就是查找ewbeditor编辑器的后台页面,这种后台通常存在弱口令.</li><li>寻找c段主机<br><code>site:49.122.21.*</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于google hack得笔记 从有道笔记转移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常见默认端口总结</title>
+    <link href="https://e1sewhere.github.io/2019/03/23/%E5%B8%B8%E8%A7%81%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E6%80%BB%E7%BB%93/"/>
+    <id>https://e1sewhere.github.io/2019/03/23/常见默认端口总结/</id>
+    <published>2019-03-23T03:53:49.000Z</published>
+    <updated>2019-04-13T08:21:27.224Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>总结一些服务,web应用,协议的默认端口<br><a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">80,21,22,23,25,53,110,443,1433,1863,2289,3306,5631,5632,5000,8080,9090,7001,20,2094,139,389,3389,5900,5632,81,9080,9081,3700,4848,1433,1521,6397,27017,143</span><br></pre></td></tr></table></figure><h1 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h1><p>来源:<a href="https://github.com/PyxYuYu/MyBlog/issues/104" target="_blank" rel="noopener">https://github.com/PyxYuYu/MyBlog/issues/104</a><br>没有过滤和下面重复的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"> 21 ftp      # 未授权访问（匿名登录），弱口令爆破</span><br><span class="line"> 22 SSH      # 弱口令爆破</span><br><span class="line"> 23 Telnet   # 弱口令爆破</span><br><span class="line"> 80 Web      # 常见Web漏洞，管理后台</span><br><span class="line"> 80-89 Web   # 常见Web漏洞，管理后台</span><br><span class="line"> 161 SNMP    # 默认口令:public/private ，弱口令爆破</span><br><span class="line"> 389 LDAP    # 未授权访问</span><br><span class="line"> 443 SSL     # 心脏滴血以及一些Web漏洞测试</span><br><span class="line"> 445 SMB     # 弱口令爆破，检测是否有ms_08067等溢出</span><br><span class="line"> 512,513,514 Rexec</span><br><span class="line"> 873 Rsync   # 未授权访问，弱口令爆破</span><br><span class="line"> 1025,111 NFS </span><br><span class="line"> 1433 MSSQL  # 弱口令爆破</span><br><span class="line"> 1521 Oracle:(iSqlPlus Port:5560,7778) # 弱口令爆破</span><br><span class="line"> 2082/2083 cpanel主机管理系统登陆 （国外用较多）</span><br><span class="line"> 2222 DA虚拟主机管理系统登陆 （国外用较多）</span><br><span class="line"> 2601,2604 zebra路由  # 默认密码zebra</span><br><span class="line"> 3128 squid  # 代理默认端口，如果没设置口令很可能就直接漫游内网了</span><br><span class="line"> 3306 MySQL  # 弱口令爆破</span><br><span class="line"> 3312/3311 kangle主机管理系统登陆 </span><br><span class="line"> 3389 远程桌面  # 弱口令爆破</span><br><span class="line"> 4440 rundeck  # 弱口令:admin/admin 参考WooYun: 借用新浪某服务成功漫游新浪内网</span><br><span class="line"> 4848 GlassFish  # Web中间件，弱口令:admin/adminadmin</span><br><span class="line"> 5432 PostgreSQL  # 弱口令爆破</span><br><span class="line"> 5900,5901,5902 vnc  # 弱口令爆破</span><br><span class="line"> 5984 CouchDB http://xxx:5984/_utils/</span><br><span class="line"> 6082 varnish # 参考WooYun: Varnish HTTP accelerator CLI 未授权访问易导致网站被直接篡改或者作为代理进入内网 </span><br><span class="line"> 6379 redis  # 未授权访问</span><br><span class="line">7001,7002 WebLogic  # 弱口令爆破，反序列，弱口令:weblogic/system/guest/portaladmin</span><br><span class="line">7778 Kloxo  # 主机控制面板登录 </span><br><span class="line">8000-9090 # 一些常见的Web端口，有些运维喜欢把管理后台开在这些非80的端口上</span><br><span class="line">8080 tomcat/WDCP主机管理系统  # 弱口令爆破，tomcat有很多漏洞</span><br><span class="line">8080,8089,9090 JBOSS   # 未授权访问，弱口令爆破，JBOSS有很多漏洞 </span><br><span class="line">8083 Vestacp  # 主机管理系统 （国外用较多）</span><br><span class="line">8649 ganglia </span><br><span class="line">8888 amh/LuManager  # 主机管理系统默认端口</span><br><span class="line">9000 fcgi  # fcgi php执行</span><br><span class="line">9200,9300 elasticsearch   # 代码执行，参考WooYun: 多玩某服务器ElasticSearch命令执行漏洞</span><br><span class="line">10000 Virtualmin/Webmin   # 服务器虚拟主机管理系统</span><br><span class="line">11211 memcache  # 未授权访问</span><br><span class="line">27017,27018 Mongodb  # 未授权访问</span><br><span class="line">28017 Mongodb  # 统计页面</span><br><span class="line">50000 SAP # 命令执行</span><br><span class="line">50070,50060,50030 hadoop # 默认端口未授权访问</span><br></pre></td></tr></table></figure><h1 id="文件共享服务端口"><a href="#文件共享服务端口" class="headerlink" title="文件共享服务端口"></a>文件共享服务端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">20/21/22/69</td><td style="text-align:left">ftp/tftp小型文件传输协议</td><td style="text-align:left">允许匿名上传下载爆破嗅探</td></tr><tr><td style="text-align:left">2094</td><td style="text-align:left">nfs服务(网络文件系统)</td><td style="text-align:left">xx</td></tr><tr><td style="text-align:left">139</td><td style="text-align:left">samba服务</td><td style="text-align:left">爆破,未授权访问,远程代码执行</td></tr><tr><td style="text-align:left">389</td><td style="text-align:left">ldap目录访问协议</td><td style="text-align:left">注入,匿名访问,弱口令</td></tr></tbody></table><h1 id="远程连接服务端口"><a href="#远程连接服务端口" class="headerlink" title="远程连接服务端口"></a>远程连接服务端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">22</td><td style="text-align:left">ssh远程连接</td><td style="text-align:left">爆破,shh内网代理转发,文件传输</td></tr><tr><td style="text-align:left">23</td><td style="text-align:left">telnet远程连接</td><td style="text-align:left">爆破,嗅探,弱口令</td></tr><tr><td style="text-align:left">3389</td><td style="text-align:left">rdp远程桌面连接</td><td style="text-align:left">shift后门,爆破</td></tr><tr><td style="text-align:left">5900</td><td style="text-align:left">vnc</td><td style="text-align:left">弱口令爆破</td></tr><tr><td style="text-align:left">5632</td><td style="text-align:left">PyAnywhere服务</td><td style="text-align:left">抓密码,代码执行</td></tr></tbody></table><h1 id="web应用端口"><a href="#web应用端口" class="headerlink" title="web应用端口"></a>web应用端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">80/81/443</td><td style="text-align:left">ISS</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">80/8080</td><td style="text-align:left">apache/tomcat/nginx/axis2</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">7001</td><td style="text-align:left">weblogic</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">8080</td><td style="text-align:left">jboss</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">9080/9081/9090</td><td style="text-align:left">Websphere</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">8080/3700/4848</td><td style="text-align:left">GlassFish</td></tr></tbody></table><h1 id="数据库端口"><a href="#数据库端口" class="headerlink" title="数据库端口"></a>数据库端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">3306</td><td style="text-align:left">mysql</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">1433</td><td style="text-align:left">mssql</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">1521</td><td style="text-align:left">oracle</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">6397</td><td style="text-align:left">redis</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">27017</td><td style="text-align:left">mongoDB</td></tr></tbody></table><h1 id="邮件服务端口"><a href="#邮件服务端口" class="headerlink" title="邮件服务端口"></a>邮件服务端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">25</td><td style="text-align:left">SMTP邮件服务</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">110</td><td style="text-align:left">POP3协议</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">143</td><td style="text-align:left">IMAP协议</td></tr></tbody></table><h1 id="网络常见协议端口"><a href="#网络常见协议端口" class="headerlink" title="网络常见协议端口"></a>网络常见协议端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">53</td><td style="text-align:left">Dns</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">67/68</td><td style="text-align:left">DHCP</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">161</td><td style="text-align:left">SNMP</td><td style="text-align:left"></td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结一些服务,web应用,协议的默认端口&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="端口" scheme="https://e1sewhere.github.io/tags/%E7%AB%AF%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取MySQL执行的语句</title>
+    <link href="https://e1sewhere.github.io/2019/03/18/%E8%8E%B7%E5%8F%96MySQL%E6%89%A7%E8%A1%8C%E7%9A%84%E8%AF%AD%E5%8F%A5/"/>
+    <id>https://e1sewhere.github.io/2019/03/18/获取MySQL执行的语句/</id>
+    <published>2019-03-18T03:23:41.000Z</published>
+    <updated>2019-03-20T10:22:18.559Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>windows下利用log监控本地运行的mysql服务所执行的语句<br><a id="more"></a></p><p>直接在mysql根目录下的<code>my.ini</code>中配置</p><p>在<code>[mysqld]</code>下添加一行<code>log</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log = &quot;C:\Users\Doll SY DA\Desktop\mysqllog\mysql_log.sql&quot;</span><br></pre></td></tr></table></figure><p>重启mysql服务<br>这样,本地执行的语句都会在这个文件中找到了.</p><p>为了更加方便我们使用工具:<a href="https://github.com/virink/vMysqlMonitoring/releases/tag/v2.0" target="_blank" rel="noopener">vMysqlMonitoring</a><br>打上断点,点击获取就可以刷新一次日志.</p><div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/12/27/使用PHPStudy后本机MySQL无法启动服务/">使用PHPStudy后本机MySQL无法启动服务</a></li><li><a href="https://e1sewhere.github.io/2018/11/30/数据库学习笔记/">数据库学习笔记</a></li><li><a href="https://heyizhang.github.io/2019/07/25/sql_injection/about_concat_func_of_mysql/">mysql中concat相关函数详解</a></li></ul></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;windows下利用log监控本地运行的mysql服务所执行的语句&lt;br&gt;
+    
+    </summary>
+    
+      <category term="解决方法" scheme="https://e1sewhere.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="mysql" scheme="https://e1sewhere.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+</feed>

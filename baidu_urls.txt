@@ -1,3 +1,4 @@
+https://e1sewhere.github.io/2020/07/28/VMware虚拟机设置选项/
 https://e1sewhere.github.io/2020/07/28/Win10中Git代理设置（包括ssh）/
 https://e1sewhere.github.io/2020/05/30/Bartender安装基础使用及使用数据库字段循环递增/
 https://e1sewhere.github.io/2020/03/12/Google-Play-无法下载应用/
@@ -7,4 +8,3 @@ https://e1sewhere.github.io/2020/01/26/Git代理设置失败/
 https://e1sewhere.github.io/2019/12/31/Win10-连接局域网内的共享打印机/
 https://e1sewhere.github.io/2019/12/31/管家婆安装-启动/
 https://e1sewhere.github.io/2019/12/24/代理软件的一些设置/
-https://e1sewhere.github.io/2019/11/29/新博客建立/

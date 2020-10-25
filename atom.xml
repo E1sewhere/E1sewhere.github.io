@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2020-07-28T07:57:17.443Z</updated>
+  <updated>2020-10-25T14:35:03.090Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10 安装cnckad16</title>
+    <link href="https://e1sewhere.github.io/2020/10/25/Win10-%E5%AE%89%E8%A3%85cnckad16/"/>
+    <id>https://e1sewhere.github.io/2020/10/25/Win10-安装cnckad16/</id>
+    <published>2020-10-25T14:15:31.000Z</published>
+    <updated>2020-10-25T14:35:03.090Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>cnckad 安装包是从同事那里搞来的破解包，实在不好意思问他怎么安装安装摸索了半个小时，网上没找到适用win10的教程。最后也算是安好了</p><a id="more"></a><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>win10，已经安装好常见的运行环境（3dm游戏包）</p><h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><p>安装步骤可能有冗余，反正最后安装好了，也不用去研究哪些操作是不必要的。</p><h2 id="安装软件主体"><a href="#安装软件主体" class="headerlink" title="安装软件主体"></a>安装软件主体</h2><p>直接运行<code></code>cnckadCD.exe`,操作都是下一步下一步，这部分过程可以搜索“cncKad16安装步骤”，有详细的安装步骤。</p><h2 id="替换破解文件"><a href="#替换破解文件" class="headerlink" title="替换破解文件"></a>替换破解文件</h2><p>这里参考安装包里的说明即可，主要步骤就是复制对于文件到安装路径的根目录</p><h2 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a>注册表</h2><p>打开目录<code>MulKLE_x64</code>运行<code>cncKad16_x64.reg</code></p><h2 id="安装虚拟驱动"><a href="#安装虚拟驱动" class="headerlink" title="安装虚拟驱动"></a>安装虚拟驱动</h2><p>安装好后在设备管理器中可以看到，虚拟驱动有三个<img src="https://e1sewhere.github.io\images\Snipaste_2020-10-25_22-25-32.png" alt="Snipaste_2020-10-25_22-25-32"></p><p>打开目录<code>MulKLE_x64</code>将内容直接复制到安装cnckad的根目录。</p><p>设置<code>devcon.exe</code>的兼容性为win7，勾选<code>管理员身份运行此程序</code></p><p>运行<code>install.cmd</code>。</p><p>如果运行没有反应。可以手动输入命令：</p><ul><li>当前目录shift右键打开powershell</li><li>输入命令</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.\remove root\MulKLE</span><br><span class="line">.\devcon install MulKLE.inf root\MulKLE</span><br></pre></td></tr></table></figure><ul><li>弹出安装驱动窗口，确定</li><li>安装完毕</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;cnckad 安装包是从同事那里搞来的破解包，实在不好意思问他怎么安装安装摸索了半个小时，网上没找到适用win10的教程。最后也算是安好了&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="https://e1sewhere.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="cnckad" scheme="https://e1sewhere.github.io/tags/cnckad/"/>
+    
+  </entry>
   
   <entry>
     <title>VMware虚拟机设置选项</title>
@@ -441,28 +463,6 @@
     
       <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>常见默认端口总结</title>
-    <link href="https://e1sewhere.github.io/2019/03/23/%E5%B8%B8%E8%A7%81%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E6%80%BB%E7%BB%93/"/>
-    <id>https://e1sewhere.github.io/2019/03/23/常见默认端口总结/</id>
-    <published>2019-03-23T03:53:49.000Z</published>
-    <updated>2019-04-13T08:21:27.224Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>总结一些服务,web应用,协议的默认端口<br><a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">80,21,22,23,25,53,110,443,1433,1863,2289,3306,5631,5632,5000,8080,9090,7001,20,2094,139,389,3389,5900,5632,81,9080,9081,3700,4848,1433,1521,6397,27017,143</span><br></pre></td></tr></table></figure><h1 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h1><p>来源:<a href="https://github.com/PyxYuYu/MyBlog/issues/104" target="_blank" rel="noopener">https://github.com/PyxYuYu/MyBlog/issues/104</a><br>没有过滤和下面重复的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"> 21 ftp      # 未授权访问（匿名登录），弱口令爆破</span><br><span class="line"> 22 SSH      # 弱口令爆破</span><br><span class="line"> 23 Telnet   # 弱口令爆破</span><br><span class="line"> 80 Web      # 常见Web漏洞，管理后台</span><br><span class="line"> 80-89 Web   # 常见Web漏洞，管理后台</span><br><span class="line"> 161 SNMP    # 默认口令:public/private ，弱口令爆破</span><br><span class="line"> 389 LDAP    # 未授权访问</span><br><span class="line"> 443 SSL     # 心脏滴血以及一些Web漏洞测试</span><br><span class="line"> 445 SMB     # 弱口令爆破，检测是否有ms_08067等溢出</span><br><span class="line"> 512,513,514 Rexec</span><br><span class="line"> 873 Rsync   # 未授权访问，弱口令爆破</span><br><span class="line"> 1025,111 NFS </span><br><span class="line"> 1433 MSSQL  # 弱口令爆破</span><br><span class="line"> 1521 Oracle:(iSqlPlus Port:5560,7778) # 弱口令爆破</span><br><span class="line"> 2082/2083 cpanel主机管理系统登陆 （国外用较多）</span><br><span class="line"> 2222 DA虚拟主机管理系统登陆 （国外用较多）</span><br><span class="line"> 2601,2604 zebra路由  # 默认密码zebra</span><br><span class="line"> 3128 squid  # 代理默认端口，如果没设置口令很可能就直接漫游内网了</span><br><span class="line"> 3306 MySQL  # 弱口令爆破</span><br><span class="line"> 3312/3311 kangle主机管理系统登陆 </span><br><span class="line"> 3389 远程桌面  # 弱口令爆破</span><br><span class="line"> 4440 rundeck  # 弱口令:admin/admin 参考WooYun: 借用新浪某服务成功漫游新浪内网</span><br><span class="line"> 4848 GlassFish  # Web中间件，弱口令:admin/adminadmin</span><br><span class="line"> 5432 PostgreSQL  # 弱口令爆破</span><br><span class="line"> 5900,5901,5902 vnc  # 弱口令爆破</span><br><span class="line"> 5984 CouchDB http://xxx:5984/_utils/</span><br><span class="line"> 6082 varnish # 参考WooYun: Varnish HTTP accelerator CLI 未授权访问易导致网站被直接篡改或者作为代理进入内网 </span><br><span class="line"> 6379 redis  # 未授权访问</span><br><span class="line">7001,7002 WebLogic  # 弱口令爆破，反序列，弱口令:weblogic/system/guest/portaladmin</span><br><span class="line">7778 Kloxo  # 主机控制面板登录 </span><br><span class="line">8000-9090 # 一些常见的Web端口，有些运维喜欢把管理后台开在这些非80的端口上</span><br><span class="line">8080 tomcat/WDCP主机管理系统  # 弱口令爆破，tomcat有很多漏洞</span><br><span class="line">8080,8089,9090 JBOSS   # 未授权访问，弱口令爆破，JBOSS有很多漏洞 </span><br><span class="line">8083 Vestacp  # 主机管理系统 （国外用较多）</span><br><span class="line">8649 ganglia </span><br><span class="line">8888 amh/LuManager  # 主机管理系统默认端口</span><br><span class="line">9000 fcgi  # fcgi php执行</span><br><span class="line">9200,9300 elasticsearch   # 代码执行，参考WooYun: 多玩某服务器ElasticSearch命令执行漏洞</span><br><span class="line">10000 Virtualmin/Webmin   # 服务器虚拟主机管理系统</span><br><span class="line">11211 memcache  # 未授权访问</span><br><span class="line">27017,27018 Mongodb  # 未授权访问</span><br><span class="line">28017 Mongodb  # 统计页面</span><br><span class="line">50000 SAP # 命令执行</span><br><span class="line">50070,50060,50030 hadoop # 默认端口未授权访问</span><br></pre></td></tr></table></figure><h1 id="文件共享服务端口"><a href="#文件共享服务端口" class="headerlink" title="文件共享服务端口"></a>文件共享服务端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">20/21/22/69</td><td style="text-align:left">ftp/tftp小型文件传输协议</td><td style="text-align:left">允许匿名上传下载爆破嗅探</td></tr><tr><td style="text-align:left">2094</td><td style="text-align:left">nfs服务(网络文件系统)</td><td style="text-align:left">xx</td></tr><tr><td style="text-align:left">139</td><td style="text-align:left">samba服务</td><td style="text-align:left">爆破,未授权访问,远程代码执行</td></tr><tr><td style="text-align:left">389</td><td style="text-align:left">ldap目录访问协议</td><td style="text-align:left">注入,匿名访问,弱口令</td></tr></tbody></table><h1 id="远程连接服务端口"><a href="#远程连接服务端口" class="headerlink" title="远程连接服务端口"></a>远程连接服务端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">22</td><td style="text-align:left">ssh远程连接</td><td style="text-align:left">爆破,shh内网代理转发,文件传输</td></tr><tr><td style="text-align:left">23</td><td style="text-align:left">telnet远程连接</td><td style="text-align:left">爆破,嗅探,弱口令</td></tr><tr><td style="text-align:left">3389</td><td style="text-align:left">rdp远程桌面连接</td><td style="text-align:left">shift后门,爆破</td></tr><tr><td style="text-align:left">5900</td><td style="text-align:left">vnc</td><td style="text-align:left">弱口令爆破</td></tr><tr><td style="text-align:left">5632</td><td style="text-align:left">PyAnywhere服务</td><td style="text-align:left">抓密码,代码执行</td></tr></tbody></table><h1 id="web应用端口"><a href="#web应用端口" class="headerlink" title="web应用端口"></a>web应用端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">80/81/443</td><td style="text-align:left">ISS</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">80/8080</td><td style="text-align:left">apache/tomcat/nginx/axis2</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">7001</td><td style="text-align:left">weblogic</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">8080</td><td style="text-align:left">jboss</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">9080/9081/9090</td><td style="text-align:left">Websphere</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">8080/3700/4848</td><td style="text-align:left">GlassFish</td></tr></tbody></table><h1 id="数据库端口"><a href="#数据库端口" class="headerlink" title="数据库端口"></a>数据库端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">3306</td><td style="text-align:left">mysql</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">1433</td><td style="text-align:left">mssql</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">1521</td><td style="text-align:left">oracle</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">6397</td><td style="text-align:left">redis</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">27017</td><td style="text-align:left">mongoDB</td></tr></tbody></table><h1 id="邮件服务端口"><a href="#邮件服务端口" class="headerlink" title="邮件服务端口"></a>邮件服务端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">25</td><td style="text-align:left">SMTP邮件服务</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">110</td><td style="text-align:left">POP3协议</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">143</td><td style="text-align:left">IMAP协议</td></tr></tbody></table><h1 id="网络常见协议端口"><a href="#网络常见协议端口" class="headerlink" title="网络常见协议端口"></a>网络常见协议端口</h1><table><thead><tr><th style="text-align:left">端口号</th><th style="text-align:left">端口说明</th><th style="text-align:left">攻击方向</th></tr></thead><tbody><tr><td style="text-align:left">53</td><td style="text-align:left">Dns</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">67/68</td><td style="text-align:left">DHCP</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">161</td><td style="text-align:left">SNMP</td><td style="text-align:left"></td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;总结一些服务,web应用,协议的默认端口&lt;br&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="端口" scheme="https://e1sewhere.github.io/tags/%E7%AB%AF%E5%8F%A3/"/>
     
   </entry>
   

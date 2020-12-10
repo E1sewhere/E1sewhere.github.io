@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2020-10-25T14:39:34.371Z</updated>
+  <updated>2020-12-10T11:51:08.147Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>企业基本信息搜集</title>
+    <link href="https://e1sewhere.github.io/2020/12/10/%E4%BC%81%E4%B8%9A%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
+    <id>https://e1sewhere.github.io/2020/12/10/企业基本信息搜集/</id>
+    <published>2020-12-10T11:34:18.000Z</published>
+    <updated>2020-12-10T11:51:08.147Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>最近经常需要对一个企业的工商信息做收集，所以做一下总结。</p><p>目前的总结其实就是一个网站整理，后期希望有一些检索技巧的罗列。</p><a id="more"></a><h1 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h1><h2 id="国家企业信用信息公示系统"><a href="#国家企业信用信息公示系统" class="headerlink" title="国家企业信用信息公示系统"></a>国家企业信用信息公示系统</h2><p>国家企业信用信息公示系统：<a href="http://xj.gsxt.gov.cn/" target="_blank" rel="noopener">http://xj.gsxt.gov.cn/</a></p><h3 id="使用范围技巧"><a href="#使用范围技巧" class="headerlink" title="使用范围技巧"></a>使用范围技巧</h3><p>用于查询企业基本的工商信息</p><p>包含了工商注册时基本的信息，也可查询到少量工商风险等，是对企业最初步的查询。</p><h2 id="中国裁判文书网"><a href="#中国裁判文书网" class="headerlink" title="中国裁判文书网"></a>中国裁判文书网</h2><p>中国裁判文书网：<a href="https://wenshu.court.gov.cn/" target="_blank" rel="noopener">https://wenshu.court.gov.cn/</a></p><h3 id="使用范围技巧-1"><a href="#使用范围技巧-1" class="headerlink" title="使用范围技巧"></a>使用范围技巧</h3><p>用于查询企业或者个人的司法纠纷，可以查询到部分公开的裁判文书。</p><p>可以用于分析一个公司的法务能力以及查看其潜在风险，通过分析裁判文书可以分析其法务常用主张，甚至可以可找到其常用代理人主体，利于后续我司维权。</p><h2 id="北大法宝"><a href="#北大法宝" class="headerlink" title="北大法宝"></a>北大法宝</h2><p>北大法宝ipv6：<a href="https://www.pkulaw.com/" target="_blank" rel="noopener">https://www.pkulaw.com/</a></p><p>北大法宝：<a href="http://www.pkulaw.cn/" target="_blank" rel="noopener">http://www.pkulaw.cn/</a></p><h3 id="使用范围技巧-2"><a href="#使用范围技巧-2" class="headerlink" title="使用范围技巧"></a>使用范围技巧</h3><p>可查询到法律文书，司法案例，合同范本，法规条约等。</p><p>收费后数据库才能完全使用，可以补充裁判文书网。</p><h2 id="天眼查"><a href="#天眼查" class="headerlink" title="天眼查"></a>天眼查</h2><p>天眼查：<a href="https://www.tianyancha.com/" target="_blank" rel="noopener">https://www.tianyancha.com/</a></p><h3 id="使用范围技巧-3"><a href="#使用范围技巧-3" class="headerlink" title="使用范围技巧"></a>使用范围技巧</h3><p>可以搜集到包括裁判文书，工商信息等信息。</p><p>且有网站自行整合分析的风险情况，购买vip后可省去很多分析过程。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近经常需要对一个企业的工商信息做收集，所以做一下总结。&lt;/p&gt;
+&lt;p&gt;目前的总结其实就是一个网站整理，后期希望有一些检索技巧的罗列。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="解决方法" scheme="https://e1sewhere.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="企业" scheme="https://e1sewhere.github.io/tags/%E4%BC%81%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>Win10 安装cnckad16</title>
@@ -443,26 +466,6 @@
     
     
       <category term="kali" scheme="https://e1sewhere.github.io/tags/kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>google hack 笔记</title>
-    <link href="https://e1sewhere.github.io/2019/03/29/google-hack-%E7%AC%94%E8%AE%B0/"/>
-    <id>https://e1sewhere.github.io/2019/03/29/google-hack-笔记/</id>
-    <published>2019-03-29T07:30:55.000Z</published>
-    <updated>2019-03-29T08:08:33.806Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>关于google hack得笔记 从有道笔记转移<br><a id="more"></a></p><h1 id="基础关键字组合"><a href="#基础关键字组合" class="headerlink" title="基础关键字组合"></a>基础关键字组合</h1><ul><li><code>&quot;&quot;</code> 完全匹配(严格),双引号内的字符串不拆分.</li><li><code>+</code> 指定一个一定存在的关键词</li><li><code>-</code> 指定一个一定不存在的关键词</li><li><code>|</code> 或,满足其中一个关键词就可以.</li><li><code>AND</code> 所有关键词都必须满足(可以不像双引号一样必须连在一起)</li></ul><h1 id="Site"><a href="#Site" class="headerlink" title="Site:"></a>Site:</h1><p>搜索指定域名下的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site:domain</span><br><span class="line"></span><br><span class="line">site:baidu.com</span><br></pre></td></tr></table></figure><h1 id="inurl"><a href="#inurl" class="headerlink" title="inurl:"></a>inurl:</h1><p>搜索结果的url中一定有指定的内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inurl:str</span><br><span class="line"></span><br><span class="line">inurl:admin/login.php</span><br></pre></td></tr></table></figure><h1 id="intitle"><a href="#intitle" class="headerlink" title="intitle:"></a>intitle:</h1><p>搜索标题为指定内容的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">intitle:str</span><br><span class="line"></span><br><span class="line">intitle:后台管理</span><br></pre></td></tr></table></figure><h1 id="cache"><a href="#cache" class="headerlink" title="cache:"></a>cache:</h1><p>缓存搜索,类似百度的快照可以可以搜索到google记录的网页历史快照</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cache:url</span><br></pre></td></tr></table></figure><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>这个语法都可以自由自合<br>比如<br>搜索site为baidu.com 包含”有限公司”的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:baidu.com &quot;有限公司&quot;</span><br></pre></td></tr></table></figure><p>搜索site为baidu.com 标题中包含”有限公司”的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:baidu.com intitle:有限公司</span><br></pre></td></tr></table></figure><h1 id="实用搜例子"><a href="#实用搜例子" class="headerlink" title="实用搜例子"></a>实用搜例子</h1><ul><li>查找目标管理员<br><code>site:domain &quot;发布人&quot;</code><br>可以再网站中搜索<code>发布人</code>这个关键字,后面跟随的信息就是网站发布小心的用户,而这个用户很可能就是管理员</li><li>查找目标脚本语言<br><code>site:domain php</code><br>可以在网站中搜索类似<code>php</code>这样的脚本语言扩展名,对于某些伪静态网站(比如页面全是html的),如果搜到某种扩展名基本可以判断这个网站使用的脚本语言.</li><li>查找弱点站<br><code>inurl:ewebeditor admin</code><br>可以用来批量查找存在某些弱点的站点.比如上面这个就是查找ewbeditor编辑器的后台页面,这种后台通常存在弱口令.</li><li>寻找c段主机<br><code>site:49.122.21.*</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于google hack得笔记 从有道笔记转移&lt;br&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
     
   </entry>
   

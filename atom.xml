@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2020-12-10T11:51:08.147Z</updated>
+  <updated>2021-01-15T13:08:47.244Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Surface Book全屏降低分辨率</title>
+    <link href="https://e1sewhere.github.io/2021/01/15/Surface-Book%E5%85%A8%E5%B1%8F%E9%99%8D%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87/"/>
+    <id>https://e1sewhere.github.io/2021/01/15/Surface-Book全屏降低分辨率/</id>
+    <published>2021-01-15T12:18:34.000Z</published>
+    <updated>2021-01-15T13:08:47.244Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>本文记录了如何降低surface分辨率并让其全屏</p><a id="more"></a><h1 id="需求原因"><a href="#需求原因" class="headerlink" title="需求原因"></a>需求原因</h1><p>surface 设置中自带的分辨率选项除了默认的最大分辨率，其他分辨率都没有3：2的比例，这就导致了其他所有分辨率均无法全屏。</p><p>降低分辨率的目的是提升续航，提升续航大最有效的方法大致有这几个：</p><ul><li>更改电源策略为省电</li><li>降低屏幕亮度</li><li>通过软件调整cpu电压</li><li>降低显示器分辨率</li></ul><p>其中最有效的为电源策略和屏幕亮度。cpu电压调整由于个人能力原因一直会导致其他问题，或者调整后省电感知不强，如果有朋友知道该怎么弄欢迎留言指导。降低显示器分辨率能提升续航，但也不是很大，不过在运行某些软件时降低分辨率可以使软件更流畅。</p><p>降低分辨率网上有两个思路，一个是修改注册表，对注册表不了解，所以这个操作搞不来。虽然网上有现成修改好的注册表，但使用后并没有作用。</p><p>另一个思路是直接使用intel官方驱动代替surface的定制显卡驱动，官方驱动有自定义分辨率功能，但surface不支持直接安装包安装Intel显卡驱动，遂需要手动安装。</p><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><p>首先确认自己的cpu型号，我的cpu为<code>i5-6300k</code>,在intel官网中分类为<code>i5</code> <code>6代</code></p><p>然后在<code>设备管理器</code> -<code>显示适配器</code>中查看目前驱动型号，我的型号为<code>intelR HD graphics 520</code></p><p>拥有这两个信息后就可以找到自己cpu对应的intel官方驱动了</p><p>直接去intel驱动官网：<a href="https://www.intel.cn/content/www/cn/zh/support/products/80939/graphics.html" target="_blank" rel="noopener">https://www.intel.cn/content/www/cn/zh/support/products/80939/graphics.html</a></p><p>我的cpu就是，<code>适用于第 6 代英特尔® 处理器的显卡</code>-<code>英特尔核芯显卡520</code></p><p>点开后会有适用本cpu的所有驱动，选择一个适合的（说明中会有适用描述，正常情况应该所有驱动都可以，随便选一个就好）</p><p>我选择的是<a href="https://downloadcenter.intel.com/zh-cn/download/29972/-Windows-Graphics-Driver-15-45-" target="_blank" rel="noopener">适用于 Windows * 的英特尔® Graphics Driver [15.45]</a></p><p>下载win64前缀，zip后缀的压缩包，不要下载exe文件，exe文件是无法安装的。</p><p>我下载的是：<a href="https://downloadmirror.intel.com/29972/a08/win64_15.45.33.5164.zip" target="_blank" rel="noopener">win64_15.45.33.5164.zip</a></p><p>下载后解压</p><p>然后回到<code>设备管理器</code> -<code>显示适配器</code>对着显卡驱动右键-属性，选择<code>驱动程序</code>选项卡，点击<code>更新驱动程序</code>，选择<code>浏览我的电脑以查找驱动程序</code>，点击<code>让我从计算机上的可用驱动程序列表中选取</code>选择<code>从磁盘安装</code>然后选择解压目录中的<code>igdlh64.inf</code>文件,通常该文件在<code>Graphics</code>文件夹中。后续就是下一步下一步了。安装后重启。  </p><p>重启后可在显卡自定义中设置分辨率，只要分辨率为3：2即可。</p><p>我常用的为：</p><ul><li>1080：720</li><li>1920：1280</li><li>900：600</li></ul><p>自定义分辨率其他的参数：刷新率为60.其他的不要动。</p><p>自定义分辨率设置完成后就可以在系统的<code>显示设置</code>中随时更改分辨率啦。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文记录了如何降低surface分辨率并让其全屏&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>企业基本信息搜集</title>
@@ -443,29 +463,6 @@
     
     
       <category term="整理" scheme="https://e1sewhere.github.io/tags/%E6%95%B4%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kali 专题</title>
-    <link href="https://e1sewhere.github.io/2019/03/29/kali-%E4%B8%93%E9%A2%98/"/>
-    <id>https://e1sewhere.github.io/2019/03/29/kali-专题/</id>
-    <published>2019-03-29T11:32:34.000Z</published>
-    <updated>2019-04-05T15:53:44.522Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><blockquote><p>这是关于kali的学习笔记,转移自有道笔记,之前的笔记比较零散,没有同步很多内容再别的机器上,之后把硬盘找到,会持续整理并添加新的内容<br>…emm发现完全没时间去整理这个,也没耐心去从头规规矩矩学一遍,零散的笔记也不好整理.暂时先搁置吧<br><a id="more"></a></p></blockquote><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/jiangliuzheng/article/details/50546783" target="_blank" rel="noopener">https://blog.csdn.net/jiangliuzheng/article/details/50546783</a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>略</p><h1 id="Metasploit漏洞集成平台"><a href="#Metasploit漏洞集成平台" class="headerlink" title="Metasploit漏洞集成平台"></a>Metasploit漏洞集成平台</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Metasploit是一款开源安全漏洞检测工具，附带数百个已知的软件漏洞，并保持频繁更新。被安全社区冠以“可以黑掉整个宇宙”之名的强大渗透测试框架.</p><h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><ul><li><p>渗透攻击（Exploit）,指由攻击者或渗透测试者利用一个系统、应用或服务中的安全漏洞，所进行的攻击行为。</p></li><li><p>攻击载荷（Payload），是我们期望目标系统在被渗透攻击之后去执行的代码。</p></li><li><p>Shellcode，是在渗透攻击是作为攻击载荷运行的一组机器指令，通常用汇编语言编写。</p></li><li><p>模块（Module），指Metasploit框架中所使用的一段软件代码组件，可用于发起渗透攻击或执行某些辅助攻击动作。</p></li><li><p>监听器（Listener），是Metasploit中用来等待网络连接的组件。</p></li></ul><h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><h2 id="局域网arp欺骗攻击"><a href="#局域网arp欺骗攻击" class="headerlink" title="局域网arp欺骗攻击"></a>局域网arp欺骗攻击</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这是关于kali的学习笔记,转移自有道笔记,之前的笔记比较零散,没有同步很多内容再别的机器上,之后把硬盘找到,会持续整理并添加新的内容&lt;br&gt;…emm发现完全没时间去整理这个,也没耐心去从头规规矩矩学一遍,零散的笔记也不好整理.暂时先搁置吧&lt;br&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="kali" scheme="https://e1sewhere.github.io/tags/kali/"/>
     
   </entry>
   

@@ -1,3 +1,4 @@
+https://e1sewhere.github.io/2021/01/15/Surface-Book全屏降低分辨率/
 https://e1sewhere.github.io/2020/12/10/企业基本信息搜集/
 https://e1sewhere.github.io/2020/10/25/Win10-安装cnckad16/
 https://e1sewhere.github.io/2020/07/28/VMware虚拟机设置选项/
@@ -7,4 +8,3 @@ https://e1sewhere.github.io/2020/03/12/Google-Play-无法下载应用/
 https://e1sewhere.github.io/2020/01/27/牛角包一样的会计笔记/
 https://e1sewhere.github.io/2020/01/26/虚第一次拟化物理机-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not/
 https://e1sewhere.github.io/2020/01/26/Git代理设置失败/
-https://e1sewhere.github.io/2019/12/31/Win10-连接局域网内的共享打印机/

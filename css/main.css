@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #83600b;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3064,7 +3064,7 @@ body {
 .vcard {
   background: rgba(255,255,255,0.95) none repeat scroll !important;
 }
-posts {
+.conversation {
   background: rgba(255,255,255,0.95) none repeat scroll !important;
 }
 .content {

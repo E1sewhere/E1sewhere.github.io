@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="google-site-verification" content="jIIp89W5czDndIpDpqacsdM_ooroPfoz-v_D4UrrwmM" />
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #a40000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #a40000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #a40000;    /*上边框颜色*/
+        border-left-color: #a40000;    /*左边框颜色*/
+    }
+</style>
+
+
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="折腾,windows,wtg," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文记录了我安装WTG系统的坑与过程,使用的WTG辅助工具,写本文时还没体验系统,目前使用了U盘和机械硬盘.到目前为止这个文章记录的WTG系统是可以日常使用的状态,做了基本的优化,之后我会继续按照使用更新. 本文仅针对win电脑.如果你是一个小白而且不想看大段文字只是想体验下WTG,那么和 我的环境 保持一致,然后严格按照我的操作步骤就好">
+<meta name="keywords" content="折腾,windows,wtg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows To Go系统安装记录">
+<meta property="og:url" content="https://e1sewhere.github.io/2018/10/15/Windows-To-Go系统安装记录/index.html">
+<meta property="og:site_name" content="E1sewhere">
+<meta property="og:description" content="本文记录了我安装WTG系统的坑与过程,使用的WTG辅助工具,写本文时还没体验系统,目前使用了U盘和机械硬盘.到目前为止这个文章记录的WTG系统是可以日常使用的状态,做了基本的优化,之后我会继续按照使用更新. 本文仅针对win电脑.如果你是一个小白而且不想看大段文字只是想体验下WTG,那么和 我的环境 保持一致,然后严格按照我的操作步骤就好">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://e1sewhere.github.io/images/什么磁盘.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/高级设置1.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/高级设置2.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/高级设置3.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/高级设置4.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/高级设置5.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/成功窗口.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/内存盘1.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/内存盘2.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/拔出冻结.jpg">
+<meta property="og:image" content="https://e1sewhere.github.io/images/BOOTICE.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/扩展卷.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/镜像文件.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/重设容量.png">
+<meta property="og:updated_time" content="2019-03-20T10:13:14.239Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows To Go系统安装记录">
+<meta name="twitter:description" content="本文记录了我安装WTG系统的坑与过程,使用的WTG辅助工具,写本文时还没体验系统,目前使用了U盘和机械硬盘.到目前为止这个文章记录的WTG系统是可以日常使用的状态,做了基本的优化,之后我会继续按照使用更新. 本文仅针对win电脑.如果你是一个小白而且不想看大段文字只是想体验下WTG,那么和 我的环境 保持一致,然后严格按照我的操作步骤就好">
+<meta name="twitter:image" content="https://e1sewhere.github.io/images/什么磁盘.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://e1sewhere.github.io/2018/10/15/Windows-To-Go系统安装记录/"/>
+
+
+
+
+
+  <title>Windows To Go系统安装记录 | E1sewhere</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+   
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    
+    <div class="top-scroll-bar"></div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">E1sewhere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header> 
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://e1sewhere.github.io/2018/10/15/Windows-To-Go系统安装记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E1se">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/eva1.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E1sewhere">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Windows To Go系统安装记录</h1>
+        
+
+        <div class="post-meta">
+		
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T20:23:06+08:00">
+                2018-10-15
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T18:13:14+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/15/Windows-To-Go系统安装记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/15/Windows-To-Go系统安装记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/15/Windows-To-Go系统安装记录/" class="leancloud_visitors" data-flag-title="Windows To Go系统安装记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6,274
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p>本文记录了我安装WTG系统的坑与过程,使用的WTG辅助工具,<del>写本文时还没体验系统</del>,目前使用了U盘和机械硬盘.<br>到目前为止这个文章记录的WTG系统是可以日常使用的状态,做了基本的优化,之后我会继续按照使用更新.</p>
+<p><strong>本文仅针对win电脑.</strong><br><strong>如果你是一个小白而且不想看大段文字只是想体验下WTG,那么和 <a href="#jump06">我的环境</a> 保持一致,然后严格按照我的<a href="#jump0">操作步骤</a>就好</strong><br><a id="more"></a></p>
+<h1 id="某些重要的修改日志"><a href="#某些重要的修改日志" class="headerlink" title="某些重要的修改日志"></a>某些重要的修改日志</h1><p><em>之前文章出现的错误或之后进行优化的步骤,在此记录</em></p>
+<blockquote>
+<p>20181022 不再建议使用1703版本制作WTG<br>20181022第一次WTG开机后注意将自动更新关闭或者修改注册表<a href="#jump5">开启更新</a>,否则可能导致无限重启</p>
+</blockquote>
+<h1 id="Windows-To-GO-WTG-介绍"><a href="#Windows-To-GO-WTG-介绍" class="headerlink" title="Windows To GO(WTG)介绍"></a>Windows To GO(WTG)介绍</h1><p> 官方介绍是啥自己去百度,我的理解WTG系统就是一个超级完整能够日用的PE系统.</p>
+<h1 id="移动设备"><a href="#移动设备" class="headerlink" title="移动设备"></a>移动设备</h1><p>经费不多,移动硬盘体积太大,并非重度用户只是体验系统,所以我选择了<code>cz73 64g</code>版本,此时价格89RMB,实际容量58G.4k读写上稍微低于WTG最低性能要求.不过应该还是可以用.<br>闪迪没有量产工具,所以装机有很多问题,这些问题我之后会说到.<br>之后使用了机械硬盘,<del>目前为止机械硬盘我还没有体验</del>.</p>
+<ul>
+<li>WTG制作,移动设备比较看重4K性能.</li>
+<li>使用辅助工具可以在大多数存储设备上制作WTG系统,所以你在用来换盆的手机上做也可以,不过肯定会卡的怀疑人生</li>
+<li>建议存储空间至少大于16G,不过我看到有个老哥用8GU盘也做了一个,没有屏蔽本地磁盘,还欢快的打着LOL</li>
+</ul>
+<h1 id="需要知道的WTG辅助工具高级选项-必读"><a href="#需要知道的WTG辅助工具高级选项-必读" class="headerlink" title="需要知道的WTG辅助工具高级选项(必读)"></a><span id="jump1">需要知道的WTG辅助工具高级选项(必读)</span></h1><ul>
+<li>本教程全程使用的WTG辅助工具,官方工具没有使用,Dism++制作并手动添加引导也一直失败,具体问题我也没去研究</li>
+<li><strong>制作后会格式化移动设备的所有分区,做好备份</strong></li>
+<li>常用中,<code>传统</code>模式只能用于识别为本地磁盘的设备,<code>VHD&amp;VHDX</code>只能制作Win8以上的系统,且得使用win7以上的系统环境写入.</li>
+<li><code>传统模式</code>可能会无法安装一些较大的软件</li>
+<li>选中固定大小会提高系统的效率,但是虚拟硬盘中的空闲空间就不能使用了.</li>
+<li>只有传统模式可以不重新分区,但是我建议小白都勾选上<code>重新分区</code>,避免莫名其妙的问题.</li>
+<li>只有传统模式下可以使用<code>Bitlocker</code>,它可以保护WTG文件系统在其他系统中不损坏,你只要不去刻意修改WTG系统文件通常是不会坏的的,但是可能会和还原软件冲突.</li>
+<li>禁用UASP会略微降低移动存储设备性能,禁用后的WTG系统(可能会)支持拔出冻结,就是运行WTG系统拔出后PC不蓝屏,再次插入后会弹出一个警告,告诉你拔出可能会损失数据.之后可以看这里<a href="#jump3">UASP详细</a></li>
+<li>分卷选项选啥都无所谓</li>
+<li>UEFI+GPT:支持UEFI模式启动</li>
+<li>UEFI+MBR:可支持UEFI和传统双启动,有的主板不支持或者没有设置为UEFI,所以如果你想把U盘带到学校机房,最好使用这个模式.</li>
+<li>VHD选项只有选择<code>VHD&amp;VHDX</code>模式才能使用</li>
+<li>使用<code>VHD&amp;VHDX</code>模式后如果你不手动添加分区会有两个分区一个<code>efi分区</code>一个系统分区,可能还会剩余一部分未分配区域,我多次尝试后发现未分配区域不会超过总容量的一半.识别为本地磁盘的设备目前没发现会剩余未分配空间.</li>
+<li><code>虚拟硬盘大小</code>为0时是自动大小</li>
+<li><code>VHD分区表</code>默认,或者和前面<code>常用</code>选项卡的设置保持一致.</li>
+<li><code>VHD</code>中转目录通常不用管,只是一个缓冲目录</li>
+<li><code>系统</code>选项卡我也不太了解,或者说是用不到</li>
+<li><code>修复盘符</code>可以解决一些启动问题</li>
+<li><code>屏蔽本机硬盘</code>：在WINDOWS TO GO系统启动后不加载本机硬盘，避免某些还原软件出错.注意：如果本机系统版本低于优盘系统版本，则不能使用此选项.</li>
+<li><code>无默认盘符</code>：每次优盘插入后，不会自动分配盘符</li>
+<li><code>分区选项卡</code>我的U盘不能分区,移动硬盘可以分区,原因未知,分区后系统图会自动装入第一个容量不为0的分区</li>
+<li><code>EFI分区大小</code>默认350m即可.</li>
+<li><code>磁盘</code>选项卡我不做介绍,如果移动存储设备性能不够好保持默认就好,如果读写速度够快可以勾选<code>不中转VHD</code>,前提是你使用的VHD&amp;VHDX模式.</li>
+</ul>
+<h1 id="其他注意与建议-必读"><a href="#其他注意与建议-必读" class="headerlink" title="其他注意与建议(必读)"></a><span id="jump2">其他注意与建议(必读)</span></h1><ol>
+<li>wtg要放在纯英文目录下</li>
+<li>如果制作失败(闪退报错),可以再大力点鼠标键盘再试一次</li>
+<li>如果要使用其他系统镜像,最好使用企业版,会避免很多问题.</li>
+<li>不建议在虚拟机中写入,我使用VM,WTG系统出现了几次玄学闪黑</li>
+<li>安装后WTG系统请使用本地(域)账户,否者你的WTG系统更换PC机器后会出问题</li>
+<li>有些软件通过机器mac地址与账户绑定,登录会出错,所以更换机器后可能需要重新登录</li>
+<li>第一次WTG开机后注意将自动更新关闭,或者修改注册表<a href="#jump5">开启更新</a>,否则可能导致无限重启.</li>
+</ol>
+<h1 id="统一环境"><a href="#统一环境" class="headerlink" title="统一环境"></a><span id="jump06">统一环境</span></h1><p><em>这里列出我的环境,为了避免遇到其他的坑,如果你的环境和这个一样,也许会和我遇到同样的问题,下面的步骤会尽量避开我遇到过的问题</em><br><strong>如果你是一个小白而且不想看前面的必读只是想体验下WTG,那么和我的环境保持一致,然后严格按照我的操作步骤就好</strong></p>
+<ul>
+<li>intel cpu,amd我没有机器做测试.</li>
+<li>没有安装NVIDA显卡驱动</li>
+<li>WTG辅助工具:<a href="https://bbs.luobotou.org/thread-761-1-1.html" target="_blank" rel="noopener">https://bbs.luobotou.org/thread-761-1-1.html</a> 我使用的<code>4.8.2.0</code>版本</li>
+<li><del>win10 1703镜像:<a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=17755&amp;fromuid=1" target="_blank" rel="noopener">https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=17755&amp;fromuid=1</a></del></li>
+<li>使用win10 1803 镜像,可在<a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">I Tell You</a>找到原版镜像.</li>
+<li>你可能会用到分区精灵,这个是<a href="https://pan.baidu.com/s/1opLjAVMOdhYz1JUpbz2S7A" target="_blank" rel="noopener">我使用的某版本</a> 提取码<code>vczc</code>,免费版已经完全够用不建议使用破解版,有机会还请支持这种良心软件.</li>
+<li>使用WIN10x64 1809企业版系统写入</li>
+<li>不建议在虚拟机中写入</li>
+</ul>
+<h1 id="开始制作"><a href="#开始制作" class="headerlink" title="开始制作"></a>开始制作</h1><p><strong>请确保你已经阅读完 <a href="#jump1">需要知道的WTG辅助工具高级选项</a> 和 <a href="#jump2">其他注意</a> </strong><br><strong>不保证操作的安全性,有可能损坏硬盘,且已知有人使用WTG系统烧坏主板,请明确风险,制作的WTG中造成的任何损失与本文作者无关.</strong><br>之后的制作过程只讲述怎么操作,你可以和我的设置一样也可以自己按照需求制作,经过n次反复重装我认为这是最适合我的的配置,阅读完上面的必读你应该能够自己按需要设置.<br><strong>如果你是一个小白而且不想看前面的必读只是想体验下WTG,那么和我的环境保持一致,然后严格按照我的操作步骤就好</strong></p>
+<h2 id="使用U盘制作"><a href="#使用U盘制作" class="headerlink" title="使用U盘制作"></a>使用U盘制作</h2><h3 id="问题与使用描述"><a href="#问题与使用描述" class="headerlink" title="问题与使用描述"></a>问题与使用描述</h3><p>设备识别为<code>可移动磁盘</code>所以只能使用<code>VHD&amp;VHDX</code>模式,且由于是U盘,磁盘分区后不能给剩余空间的分区分配盘符,多余的空间就无法利用,所以我们通常会想把法让WTG系统占用全部的空间.或者使用量产工具让U盘识别成<code>本地磁盘</code>(自行百度),不幸的是我的闪迪没有量产工具.</p>
+<p><img src="https://e1sewhere.github.io/images/什么磁盘.png" alt="什么磁盘"></p>
+<p>实际上使用WTG辅助工具制作的时候,总会剩余很大一部分未分配空间.使用不同模式<code>GTP</code>或者<code>MBR</code>都会剩余只是剩余空间不同,<code>GTP</code>会剩余的比较少大概5GB内,<code>MBR</code>会剩余一半空间.<br>且这部分空间我按照教程使用<code>DiskGenius</code>合并到系统分区时会报错错误log为<code>文件分配表中有标记为已使用的未用簇</code>百度上的处理办法使用了几个都未解决<br>之后手动删除分区合并再克隆分区,导致系统启动蓝屏,理论上这个思路是对的,但是之后没有耐心研究哪里出问题,遂放弃.<br>我最开始使用<code>UEFI+GTP</code>选项制作,因为这个选项剩余未分配空间少,大约3g,但是不支持传统启动,拿去实验室机房,那个方正主板,直接开机开了4个小时还在黑屏.<br>后来就使用的<code>UEFI+MBR</code>,实验室方正电脑就能用,但是直接29G的未分配空间我不能利用,简直浪费,目前还没找到解决办法(这个应该是这辅助工具的bug看N大啥时候解决?)<br>根据<code>WTG辅助工具</code>的说明使用<code>传统</code>写入模式才会出现软件无法安装的问题,但是我用下面的步骤(VHDX)制作完成后也会有一部分软件不能使用,不知道是不是自己硬件问题还是操作问题,错误log多与<code>windows installer</code>有关.<br>不过主流软件都是可以使用的,qq,网易云,chrome啥的,一颗利普斯也能安装.lol能够运行,</p>
+<p>office 2016不能安装用wps代替,还有一些我自己常使用的小工具软件.有的软件无法自启会报注册表错误,只能把需要开机启动的软件写个脚本,开机了手动执行下.<br>cmd有概率无法打开,power shell 没有这个问题.<br>学校的usb2.0使用我的cz73,依然能够使用Chrome开几个标签,同时打开QQ,S酸R,百度云.使用时没有明显卡顿,但是打开软件时会卡很久,系统内通过软件传输数据可以达到5m/s,我的U盘写入上限是20m/s,学校网速上限也是20m/s.在自己的3.0pc上就完全不卡了.<br>总之如果你没有重度需求,日用处理资料是够了.</p>
+<p>吐槽下学校方正电脑,系统还原卡居然用弱密码口令,手动输了大概5个密码就打开管理员权限了,装个win10配置好,美滋滋,WTG系统什么的都不需要了,以后每次去都用同一台电脑.昨天一个漂亮妹子坐在那里,但是我很气愤,以”这个是我上午用的座位”把她赶跑了,这么好的位置让她用岂不是浪费!</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤 "></a><span id="jump0">操作步骤 </span></h3><p>未说明的选项请保持默认</p>
+<ol>
+<li>装载镜像,使用虚拟光驱软件,在win10下可以直接双击装载.</li>
+<li>打开wtg辅助工具在<code>浏览</code>的选框中选择装载镜像内的 <code>sources/install.vim</code></li>
+<li><code>性能测试</code>前的选框,选择需要写入的移动设备</li>
+<li><code>常用</code>:选择<code>VHDX</code>,分卷默认,勾选<code>UEFI+MBR</code>,勾选<code>禁用UASP</code>(这里也可以不选)</li>
+<li>勾选<code>固定大小</code></li>
+<li><code>VHD</code>:<code>虚拟硬盘大小</code>0gb,这个看U盘实际情况,后续如果不够还可以<a href="#jump4">修改容量</a></li>
+<li>系统选择<code>屏蔽本机硬盘</code>,不屏蔽有概率破坏本机文件系统,勾选<code>修复盘符</code></li>
+<li>点击创建,就开始制作了!</li>
+<li>等待创建完成</li>
+<li>最后的成功提示和设置如下图</li>
+</ol>
+<p><img src="https://e1sewhere.github.io/images/高级设置1.png" alt="高级设置1"></p>
+<p><img src="https://e1sewhere.github.io/images/高级设置2.png" alt="高级设置2"></p>
+<p><img src="https://e1sewhere.github.io/images/高级设置3.png" alt="高级设置3"></p>
+<p><img src="https://e1sewhere.github.io/images/高级设置4.png" alt="高级设置4"></p>
+<p><img src="https://e1sewhere.github.io/images/高级设置5.png" alt="高级设置5"></p>
+<p><img src="https://e1sewhere.github.io/images/成功窗口.png" alt="成功窗口"></p>
+<p>创建完成后里BIOS调整你的移动设备最前,就启动了,如果不会可以参考这个帖子:<a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=804&amp;fromuid=1" target="_blank" rel="noopener">https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=804&amp;fromuid=1</a><br>其实百度更好,这帖子图好伤眼睛.<br>启动后和一般win系统使用没有差别,因为是新系统所以需要初始设置后面的章节会详细介绍.</p>
+<h2 id="使用移动硬盘制作"><a href="#使用移动硬盘制作" class="headerlink" title="使用移动硬盘制作"></a>使用移动硬盘制作</h2><p>东芝 2t usb3.0</p>
+<h3 id="问题与使用描述-1"><a href="#问题与使用描述-1" class="headerlink" title="问题与使用描述"></a>问题与使用描述</h3><p>目前只是安装好了还没长时间测试使用效果,明显感觉移动硬盘启动速度快于U盘.没有剩余空间(即使有也可以合并到系统分区,或者自己给他分配盘符当存储使用),而且如果对便携性没有太大要求使用移动硬盘体验好很多,长时间使用没那么容易掉速,毕竟有大缓存,当然你也可以使用WTG土豪专用U盘.</p>
+<h3 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>和U盘制作步骤一样</p>
+<ol>
+<li>装载镜像,使用虚拟光驱软件,在win10下可以直接双击装载.</li>
+<li>打开wtg辅助工具在<code>浏览</code>的选框中选择装载镜像内的 <code>sources/install.vim</code></li>
+<li><code>性能测试</code>前的选框,选择需要写入的移动设备</li>
+<li><code>常用</code>:选择<code>VHDX</code>,分卷默认,勾选<code>UEFI+MBR</code>,勾选<code>禁用UASP</code></li>
+<li>勾选<code>固定大小</code></li>
+<li><code>VHD</code>:<code>虚拟硬盘大小</code>0gb,这个看U盘实际情况,后续如果不够还可以<a href="#jump4">修改容量</a></li>
+<li>EFI分区大小默认,分区一<code>407726</code>,分区二<code>1500000</code>,分区三<code>0</code>.分区一占了1/4,是系统盘,分区二是存储资料的区占3/4,不包含在WTG内,WTG依然可以使用它安装软件,交换数据.</li>
+<li>系统选择<code>屏蔽本机硬盘</code>,不屏蔽可能主机原本的文件系统,勾选<code>修复盘符</code></li>
+<li>勾选<code>不中转VHD</code>,可以更快速创建.</li>
+<li>点击创建,就开始制作了!</li>
+<li>等待创建完成</li>
+</ol>
+<p>创建完成后里BIOS调整你的移动设备最前,就启动了,如果不会可以参考这个帖子:<a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=804&amp;fromuid=1" target="_blank" rel="noopener">https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=804&amp;fromuid=1</a><br>其实百度更好,这帖子图好伤眼睛.<br>启动后和一般win系统使用没有差别,因为是新系统所以需要初始设置后面的章节会详细介绍.</p>
+<h1 id="基础优化与后期设置"><a href="#基础优化与后期设置" class="headerlink" title="基础优化与后期设置"></a>基础优化与后期设置</h1><p>软妹魔方地址:<a href="http://mofang.ruanmei.com/" target="_blank" rel="noopener">http://mofang.ruanmei.com/</a><br>这软件现在有点流氓,下载绿色版吧.有广告没啥,篡改主页真的烦人,特别是我这种啥安全软件都没装的人.</p>
+<h2 id="关闭不必要的服务项"><a href="#关闭不必要的服务项" class="headerlink" title="关闭不必要的服务项"></a>关闭不必要的服务项</h2><p>以下服务都可以关闭:</p>
+<blockquote>
+<p>Windows search<br>Windows Error Reporting Service<br>Background Intelligent Transfer Service<br>HomeGroup Listener<br>HomeGroup Provider<br>windows update<br>Windows Event Log<br>Superfetch<br>Windows Defender Service<br>Security Center<br>Shell Hardware Detection</p>
+</blockquote>
+<h2 id="关闭系统休眠"><a href="#关闭系统休眠" class="headerlink" title="关闭系统休眠"></a>关闭系统休眠</h2><p>系统休眠会在WTG系统中发生一些问题</p>
+<ol>
+<li>WTG系统下用系统管理员打开cmd</li>
+<li>输入<code>powercfg -h off</code></li>
+<li>打开<code>控制面板</code>-&gt;<code>控制面板\所有控制面板项\电源选项\编辑计划设置`</code>关闭显示器<code>和</code>进入休眠状态<code>都设为</code>永不`</li>
+</ol>
+<h2 id="关闭磁盘整理"><a href="#关闭磁盘整理" class="headerlink" title="关闭磁盘整理"></a>关闭磁盘整理</h2><p>自动磁盘整理会拖慢系统速度,而且如果是非机械硬盘磁盘整理只能消耗磁盘寿命.如果需要整理手动就好</p>
+<ol>
+<li>对着需要关闭的磁盘右键属性</li>
+<li><code>工具</code>-&gt;<code>优化</code>-&gt;<code>关闭</code>自动优化</li>
+</ol>
+<h2 id="关闭系统视觉效果"><a href="#关闭系统视觉效果" class="headerlink" title="关闭系统视觉效果"></a>关闭系统视觉效果</h2><p>降低性能消耗</p>
+<ol>
+<li><code>此电脑</code>右键属性-&gt;高级系统设置-&gt;高级-&gt;<code>性能</code>groupbox-&gt;设置-&gt;视觉效果-&gt;调整为最佳性能</li>
+<li>确定</li>
+</ol>
+<h2 id="使用内存虚拟硬盘"><a href="#使用内存虚拟硬盘" class="headerlink" title="使用内存虚拟硬盘"></a>使用内存虚拟硬盘</h2><p>使用软妹魔方内存盘将系统临时文件放进去,如果你内存够大也可以把其他软件的临时缓存放进去,这样工作量就太大了,这里只事例一个系统临时文件,其他软件同理.</p>
+<ol>
+<li>进入WTG系统</li>
+<li>打开魔方内存盘(ramdisk)点击<code>创建内存</code>,内存盘大小根据自己内存大小决定由于我要在学校机房使用,所以我只设置了250m</li>
+<li>勾选开机启动加载此内存盘,关机保存看自己,我选择不保存.确定</li>
+<li>打开魔方设置大师(winmaster)-&gt;<code>系统文件夹设置</code></li>
+<li>取消勾选<code>只显示推荐修改的项目</code></li>
+<li>修改<code>临时文件夹</code>的<code>目标路径</code>为<code>Z:\TEMP</code>,这里的<code>z</code>为你创建的内存盘的盘符</li>
+<li>修改<code>当前用户临时文件夹</code>的<code>目标路径</code>为<code>Z:\Temp</code></li>
+<li>修改<code>IE的Cookies</code>的<code>目标路径</code>为<code>Z:\ieCookies</code></li>
+<li>点击开始转移</li>
+<li>设置完成</li>
+</ol>
+<p><img src="https://e1sewhere.github.io/images/内存盘1.jpg" alt="内存盘1"></p>
+<p><img src="https://e1sewhere.github.io/images/内存盘2.jpg" alt="内存盘2.jpg"></p>
+<h2 id="系统更新"><a href="#系统更新" class="headerlink" title="系统更新"></a><span id="jump5">系统更新</span></h2><p>WTG系统是不能自动更新的,可以用如下步骤实现自动更新</p>
+<ol>
+<li>进入WTG系统</li>
+<li><code>win+r</code>输入<code>regedit</code>,回车</li>
+<li>修改注册表,定位到<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PortableOperatingSystem</code>记住现在的数值(我的数值为1),然后将值改为0(16进制).</li>
+<li>这样就可以正常更新系统了,更新完成后一定要记得改原来的值.</li>
+</ol>
+<h2 id="无UASP实现拔出冻结"><a href="#无UASP实现拔出冻结" class="headerlink" title="无UASP实现拔出冻结"></a><span id="jump3">无UASP实现拔出冻结</span></h2><p>拔出冻结功能很有意思,我可以拔出U盘然后去吃饭不用担心别人动我的电脑,应为他操作不了.回来插上就可以继续使用,是不是很炫酷.好吧我承认没什么卵用,但是<code>我可以不用但不能没有</code>.<br>其实还是可以防止不小心碰到U盘让系统崩溃.<br>而且老主机如果不禁用UASP系统容易崩溃(说的就是你方正电脑),所以我个人是建议禁用UASP的.牺牲点速度换取与稳定与安全.</p>
+<p>前人测试,要想支持拔出冻结有下面几个条件,但有人反馈支持uasp的设备不禁用uasp也可以实现拔出冻结.</p>
+<blockquote>
+<p>移动存储设备在资源管理器中识别为<code>本地磁盘</code>,U盘可使用量产工具实现<br>有些主机为USB 2.0接口(说的就是你方正主板)似乎也不能支持,所以两端都为USB3.0更好<br>不能支持UASP,如果你的设备支持那么就要禁用.</p>
+</blockquote>
+<p>制作时勾选<code>禁用UASP</code>,成功制作WTG并运行后桌面上将会出现<code>DisableUASPHost.exe</code>，运行它后重启即可禁用UASP.</p>
+<p><img src="https://e1sewhere.github.io/images/拔出冻结.jpg" alt="拔出冻结"></p>
+<h2 id="更改VHD虚拟硬盘容量"><a href="#更改VHD虚拟硬盘容量" class="headerlink" title="更改VHD虚拟硬盘容量"></a>更改VHD虚拟硬盘容量</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><code>虚拟硬盘大小</code>选项可以自己设置虚拟硬盘大小,之后系统使用中也可以修改(不会重装系统损失文件)<br>下面介绍设置为<code>0</code>的情况,为<code>0</code>代表自动大小.(前提是你没有勾选<code>固定大小</code>)<br>如果自动分配了20g,你的系统使用了10g在WTG系统中看你就有10g剩余空间(不包含空闲空间和你自己没有给wtg系统的分区),但是这个移动磁盘插在电脑上直接看容量就使用了20g,当你把剩余10g空间使用完,虚拟硬盘就会自动扩充(如果你物理磁盘分区还有可用空间的话).</p>
+<p>假设你的U盘只有两个物理分区,一个系统分区,一个efi分区,那么在<code>VHD&amp;VHDX</code>模式制作下进入WTG系统你就可以在资源管理中看到两个盘,一个C盘是系统盘,一个D盘几乎被占满.</p>
+<p>如果你给U盘三个物理分区,一个系统分区,一个efi,一个自己存储文件的分区,并且没有勾选<code>无默认盘符</code>,那么进入WTG后就有三个分区,多一个你自己存储文件的分区,这个分区可以用于WTG系统和主机系统交换文件,且即使占满也不会影响WTG系统.</p>
+<h3 id="更改容量"><a href="#更改容量" class="headerlink" title="更改容量"></a><span id="jump4">更改容量</span></h3><p>如果我们新建的VHD磁盘容量不够了，或者VHD磁盘占用了优盘较多空间，可以使用如下方法调整,不会损失文件.<br><strong>已经差分的VHD不能随意调整容量，需要先合并VHD或删掉子VHD！</strong><br><strong>在本机系统中操作不能再WTG系统中操作</strong><br>使用<code>bootice</code>,在WTG辅助工具的,<code>工具</code>中,我的BOOTICE版本为<code>1.3.4</code></p>
+<p><img src="https://e1sewhere.github.io/images/BOOTICE.png" alt="BOOTICE"></p>
+<ol>
+<li>打开本机系统后,插上WTG的U盘</li>
+<li><code>物理磁盘</code>-&gt;<code>目标磁盘</code>选择WTG的磁盘</li>
+<li><code>磁盘镜像</code>-&gt;<code>镜像文件</code>选择你的WTG系统分区里的<code>wtg.vhdx</code>,类似的文件,如果你是按照我的步骤做的,应该是这个文件名.</li>
+<li>点击<code>VHD文件信息</code>,选择<code>重设容量</code>,设置一个比你需要的容量,注意单位,最好扩大,缩小可能导致数据丢失,且win8以上的系统才支持缩小.</li>
+<li>点击`设定,可能会等很久,取决于你修改的大小和系统配置.</li>
+<li>修改完成后<strong>进入WTG系统</strong>,对<code>此电脑</code>右键,<code>管理</code>-&gt;<code>存储</code>-&gt;<code>磁盘管理</code></li>
+<li>对你安装WTG系统的磁盘的,系统分区(通常c盘)右键<code>扩展卷</code></li>
+<li>下一步-&gt;下一步-&gt;完成</li>
+</ol>
+<p><img src="https://e1sewhere.github.io/images/扩展卷.png" alt="扩展卷"></p>
+<p><img src="https://e1sewhere.github.io/images/镜像文件.png" alt="镜像文件"></p>
+<p><img src="https://e1sewhere.github.io/images/重设容量.png" alt="重设容量"></p>
+<h2 id="备份与恢复系统"><a href="#备份与恢复系统" class="headerlink" title="备份与恢复系统"></a>备份与恢复系统</h2><p>备份的方法有很多,GHOST,Dism的wim,还有直接备份VHD文件<br>Dism可以直接用Dism++制作备份文件,还原时直接用ＷＴＧ辅助工具按照同制作WTG的方法一样,制作就好.<br>GHOST不介绍了<br>这里讲VHD文件备份,只适用于VHD&amp;VHDX模式.</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><ol>
+<li>将移动磁盘内的<code>xx.vhd</code>或者<code>xx.vhdx</code>文件复制到需要备份的位置</li>
+<li>备份完成</li>
+</ol>
+<p>是不是炒鸡简单</p>
+<h3 id="还原"><a href="#还原" class="headerlink" title="还原"></a>还原</h3><ol>
+<li>打开WTG辅助工具选择还原的移动磁盘</li>
+<li>选择<code>xx.vhd</code>&amp;<code>xx.vhdx</code>文件为安装镜像(需要更改筛选为所有文件).</li>
+<li>右侧参数和你制作系统是保持一致</li>
+<li>点击制作</li>
+</ol>
+<h1 id="关于这个介绍帖子的提问"><a href="#关于这个介绍帖子的提问" class="headerlink" title="关于这个介绍帖子的提问"></a>关于这个介绍帖子的提问</h1><p>Q:WTG需要手动安装驱动么?<br>A:<em>不需要,win10会自动打上必要的驱动,如果你要玩游戏或者做图形编辑需要手动装显卡驱动.</em></p>
+<p>Q:为什么不用官方工具?<br>A:<em>用不了,官方工具有U盘限制,买不起那种U盘.</em></p>
+<p>Q:安装WTG后可以同时装PE么?<br>A:<em>可以,参看<a href="https://bbs.luobotou.org/thread-43681-1-1.html" target="_blank" rel="noopener">U盘安装win+ubuntu+winpe教程</a>.</em></p>
+<p>Q:可以用安卓手机制作WTG系统么?<br>A:<em>可以但你只能用安卓手机当存储设备,写入还是得用win,使用辅助工具可以在大多数存储设备上制作WTG系统,所以你在用来换盆的手机上做也可以,有老哥成功过,不过肯定会卡的怀疑人生.</em></p>
+<p>Q:WTG系统可以更新么?<br>A:<em>可以,查看<a href="#jump5">系统更新</a>.</em></p>
+<p>Q:WTG用起来卡么?<br>A:<em>我可以用移动硬盘做的系统打 无主之地,这取决于你机器的性能和U盘的读写能力.</em></p>
+<p>Q:哪些U盘可以适合做WTG系统<br>A:<em>参看<a href="https://bbs.luobotou.org/thread-10680-1-1.html" target="_blank" rel="noopener">适合WTG的USB闪存盘大排名</a>.</em></p>
+<p>Q:WTG写入U盘很久都没完成怎么办?<br>A:<em>等待,如果超过一个小时还没完成,尝试删除所有分区格式化后再使用WTG辅助工具写入,如果还是不行,很可能是你的U盘不适合做WTG系统</em></p>
+<p>Q:WTG系统很久都没有启动<br>A:<em>等待,确实需要启动很久,如果出现了微软的flag标识应该就是能够成功启动的,超过30分钟没成功就要考虑重启,或者重新制作了.</em></p>
+<h1 id="其他你可能需要的链接"><a href="#其他你可能需要的链接" class="headerlink" title="其他你可能需要的链接"></a>其他你可能需要的链接</h1><p>这里列出我省略的一些操作,我上文写的内容都是我自己测试过没有问题的,下面这些多是我测试后没有成功,或者没有什么效果的还有一些其他的科普向链接.如果你想尝试可以从下面快速导视,我将论坛主要的帖子列了出来,方便自己以后查看.</p>
+<ul>
+<li><a href="https://bbs.luobotou.org/thread-1625-1-1.html" target="_blank" rel="noopener"> Windows To Go 制作帮助（FAQ、常见故障)</a></li>
+<li><a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=12453" target="_blank" rel="noopener">禁用UASP 实现”拔出冻结”功能</a></li>
+<li><a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=16248&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D161" target="_blank" rel="noopener">使用WTGA部署WTG工作区后剩余未分配空间的解决方法</a> <strong>此方法已经有多人会遇到<code>产生文件分配表中有标记为已使用的未用簇</code></strong></li>
+<li><a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=31670&amp;page=1&amp;extra=#pid77322" target="_blank" rel="noopener">未分配空间的另一种解决方法</a></li>
+<li><a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=6098" target="_blank" rel="noopener">WTG辅助工具高级选项说明</a></li>
+<li><a href="https://bbs.luobotou.org/forum.php?mod=viewthread&amp;tid=12415&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D161" target="_blank" rel="noopener">Windows To Go 系统备份还原</a></li>
+<li><a href="https://bbs.luobotou.org/thread-6587-1-1.html" target="_blank" rel="noopener">EWF与FBWF相关教程</a> EWF能够提速,我没有使用</li>
+</ul>
+<div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/10/02/跳过谷歌开机验证的方法/">跳过谷歌开机验证的方法</a></li><li><a href="https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/">RD Client 简明教程</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="http://broken-year.github.io/2022/03/24/back-door/">系统后门</a></li></ul></div>
+          
+          <div>    
+ 
+ 
+    <div class="post-copyright">
+    	如果文章有问题欢迎指出,或者你也可以联系我
+      <div class="post-copyright-author">
+          <strong>本文作者：</strong>E1se
+      </div>
+      <div class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/10/15/Windows-To-Go系统安装记录/" title="Windows To Go系统安装记录">2018/10/15/Windows-To-Go系统安装记录/</a>
+      </div>
+      <div class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/折腾/" rel="tag"> <i class="fa fa-tag"></i>折腾</a>
+          
+            <a href="/tags/windows/" rel="tag"> <i class="fa fa-tag"></i>windows</a>
+          
+            <a href="/tags/wtg/" rel="tag"> <i class="fa fa-tag"></i>wtg</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/14/Adobe-CC2018-破解步骤/" rel="next" title="Adobe CC2018 破解步骤">
+                <i class="fa fa-chevron-left"></i> Adobe CC2018 破解步骤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/27/Win下批量-关闭-打开-进程/" rel="prev" title="Win下批量 关闭/打开 进程">
+                Win下批量 关闭/打开 进程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/eva1.ico"
+                alt="E1se" />
+            
+              <p class="site-author-name" itemprop="name">E1se</p>
+              <p class="site-description motion-element" itemprop="description">none</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/e1sewhere" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="elsewhere997@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐站点
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://e1sewhere.github.io/EdenPage/11111/" title="什么也没有" target="_blank">什么也没有</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("02/20/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+  
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#某些重要的修改日志"><span class="nav-number">1.</span> <span class="nav-text">某些重要的修改日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows-To-GO-WTG-介绍"><span class="nav-number">2.</span> <span class="nav-text">Windows To GO(WTG)介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动设备"><span class="nav-number">3.</span> <span class="nav-text">移动设备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要知道的WTG辅助工具高级选项-必读"><span class="nav-number">4.</span> <span class="nav-text">需要知道的WTG辅助工具高级选项(必读)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意与建议-必读"><span class="nav-number">5.</span> <span class="nav-text">其他注意与建议(必读)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统一环境"><span class="nav-number">6.</span> <span class="nav-text">统一环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始制作"><span class="nav-number">7.</span> <span class="nav-text">开始制作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用U盘制作"><span class="nav-number">7.1.</span> <span class="nav-text">使用U盘制作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题与使用描述"><span class="nav-number">7.1.1.</span> <span class="nav-text">问题与使用描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作步骤"><span class="nav-number">7.1.2.</span> <span class="nav-text">操作步骤 </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用移动硬盘制作"><span class="nav-number">7.2.</span> <span class="nav-text">使用移动硬盘制作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题与使用描述-1"><span class="nav-number">7.2.1.</span> <span class="nav-text">问题与使用描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作步骤-1"><span class="nav-number">7.2.2.</span> <span class="nav-text">操作步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础优化与后期设置"><span class="nav-number">8.</span> <span class="nav-text">基础优化与后期设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭不必要的服务项"><span class="nav-number">8.1.</span> <span class="nav-text">关闭不必要的服务项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭系统休眠"><span class="nav-number">8.2.</span> <span class="nav-text">关闭系统休眠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭磁盘整理"><span class="nav-number">8.3.</span> <span class="nav-text">关闭磁盘整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭系统视觉效果"><span class="nav-number">8.4.</span> <span class="nav-text">关闭系统视觉效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用内存虚拟硬盘"><span class="nav-number">8.5.</span> <span class="nav-text">使用内存虚拟硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统更新"><span class="nav-number">8.6.</span> <span class="nav-text">系统更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无UASP实现拔出冻结"><span class="nav-number">8.7.</span> <span class="nav-text">无UASP实现拔出冻结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改VHD虚拟硬盘容量"><span class="nav-number">8.8.</span> <span class="nav-text">更改VHD虚拟硬盘容量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">8.8.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改容量"><span class="nav-number">8.8.2.</span> <span class="nav-text">更改容量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份与恢复系统"><span class="nav-number">8.9.</span> <span class="nav-text">备份与恢复系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备份"><span class="nav-number">8.9.1.</span> <span class="nav-text">备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还原"><span class="nav-number">8.9.2.</span> <span class="nav-text">还原</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于这个介绍帖子的提问"><span class="nav-number">9.</span> <span class="nav-text">关于这个介绍帖子的提问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他你可能需要的链接"><span class="nav-number">10.</span> <span class="nav-text">其他你可能需要的链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">RECOMMEND</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">E1se</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">52.0k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>|
+</span>
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://Elsewhere.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://e1sewhere.github.io/2018/10/15/Windows-To-Go系统安装记录/';
+          this.page.identifier = '2018/10/15/Windows-To-Go系统安装记录/';
+          this.page.title = 'Windows To Go系统安装记录';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Elsewhere.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz", "9wRib5jaIuQL2dVmtXx24smG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+
+<!-- �Զ����js�ļ� -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+ 
+ <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+ 
+</body>
+</html>
+<!-- 页面点击价值观 -->
+<script type="text/javascript" src="/js/src/jiazhiguan.js"></script>
+
+ <!--动态背景轮播-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script>
+  $.backstretch([  
+          "/images/background/1.jpg",
+          "/images/background/2.jpg",
+          "/images/background/3.jpg"
+    ], { duration: 30000, fade: 1500 }); 
+</script>
+
+
+

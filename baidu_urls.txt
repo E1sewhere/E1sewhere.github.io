@@ -1,3 +1,4 @@
+https://e1sewhere.github.io/2023/03/03/迁移平台后第一篇日记/
 https://e1sewhere.github.io/2023/02/26/虚第一次拟化物理机-FAILED-Unable-to-find-the-system-volume-reconfiguration-is-not/
 https://e1sewhere.github.io/2023/02/26/管家婆安装-启动/
 https://e1sewhere.github.io/2023/02/26/Google-Play-无法下载应用/
@@ -7,4 +8,3 @@ https://e1sewhere.github.io/2023/02/26/Win10中Git代理设置（包括ssh）/
 https://e1sewhere.github.io/2023/02/26/Win10-安装cnckad16/
 https://e1sewhere.github.io/2023/02/26/Surface-Book全屏降低分辨率/
 https://e1sewhere.github.io/2023/02/26/Windows休眠倒计时用bat实现/
-https://e1sewhere.github.io/2023/02/26/上古卷轴5卡任务使用控制台强制完成/

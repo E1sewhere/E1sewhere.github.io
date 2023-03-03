@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2023-03-03T07:14:50.494Z</updated>
+  <updated>2023-03-03T10:30:27.536Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://e1sewhere.github.io/2023/03/03/%E5%81%9A%E4%B8%80%E4%B8%AA%E8%A3%85%E6%9C%BA%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6/"/>
     <id>https://e1sewhere.github.io/2023/03/03/做一个装机镜像文件/</id>
     <published>2023-03-03T07:10:53.000Z</published>
-    <updated>2023-03-03T07:14:50.494Z</updated>
+    <updated>2023-03-03T10:30:27.536Z</updated>
     
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>  准备做一个装机镜像文件，主要是每次换电脑都要重装软件太麻烦了，不如直接一步到位把软件装好，也懒得去研究怎么弄好了，直接打包成wim文件完事，反正win10驱动适配还是很强的。<br><a id="more"></a></p><h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><ul><li>新硬盘装win10<ul><li>条件所有软件装到C盘，无其他盘</li></ul></li><li>关闭win10更新</li><li>win10激活，并放置激活文件</li><li>进行必要设置（dism++）</li><li>安装必要软件<ul><li>驱动管理软件（360驱动）</li><li></li></ul></li><li>放置可选软件安装包</li><li>检查所有设置，打包wim</li></ul>]]></content>
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>  准备做一个装机镜像文件，主要是每次换电脑都要重装软件太麻烦了，不如直接一步到位把软件装好，也懒得去研究怎么弄好了，直接打包成wim文件完事，反正win10驱动适配还是很强的。<br><a id="more"></a></p><h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="打包系统"><a href="#打包系统" class="headerlink" title="打包系统"></a>打包系统</h2><ul><li>新硬盘装win10<ul><li>条件所有软件装到C盘，无其他盘</li></ul></li><li>关闭win10更新</li><li>win10激活，并放置激活文件以及其他暂时不安装但可能需要的驱动文件(文件不能放在桌面上及用户文件夹下，建议c盘创建个文件夹单独放)</li><li>进行必要设置（dism++，dism++放到c盘）</li><li>安装必要软件<ul><li>驱动管理软件（360驱动）</li></ul></li><li>放置可选软件安装包</li><li>win+r 输入sysprep启动，勾选<code>通用</code>，选择 <code>退出</code> 执行</li><li>重启到pe系统，打开原系统的dism++，选择需要备份的系统（默认加载的是pe系统，往右边看就是硬盘的系统），什么都不勾选，选择保存位置，就可以开始备份了</li><li>备份完成后，后续新电脑就可以使用wim文件恢复了</li></ul><h2 id="恢复系统"><a href="#恢复系统" class="headerlink" title="恢复系统"></a>恢复系统</h2><ul><li>给需要安装的软件使用pe快速分区</li><li>进入移动硬盘内的dism++（pe内的dism++可能空间不足）</li><li>选择恢复用的wim文件，选择恢复到那个硬盘</li><li>勾选添加引导，确定，等待完成</li><li>完成后开机进入新系统，选择一个账户，会让你创建新账户，创建后登录</li><li>登录后会有两个多的账户（如果备份前注销了本地账户启用admin就不会多），右键此电脑，管理，本地用户和组，用户中删除多余的两个账户（貌似是default0，和你之前备份的账户），如果提示账户活动中，不管还是删除，重启。</li><li>重启后删除用户下多余的用户文件夹，只保留当前用户和公共用户。</li></ul>]]></content>
     
     <summary type="html">
     

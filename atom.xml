@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2023-03-03T11:19:26.349Z</updated>
+  <updated>2023-03-06T14:06:04.417Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>明确：变强</title>
+    <link href="https://e1sewhere.github.io/2023/03/06/%E6%98%8E%E7%A1%AE%EF%BC%9A%E5%8F%98%E5%BC%BA/"/>
+    <id>https://e1sewhere.github.io/2023/03/06/明确：变强/</id>
+    <published>2023-03-06T13:18:17.000Z</published>
+    <updated>2023-03-06T14:06:04.417Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>  我想从今天开始变强，为此我已经几乎做好了所有能做到的准备。<br><a id="more"></a><br>  本次开始其实依然是在《SJ》基础上，但是除了严格执行外，还设置了多个禁忌与一个自我疏导周期。到底管不管用，大概率是不管用，这些努力总是远达不到期望，但我也确实是在这些努力下一点点变成现在这个还不算糟糕透顶的状态。没有这个努力的话，连现在都只能仰望。<br>  已存在的计划是35岁之前完拜托现在这个让人耗尽精力的工作。为此我需要在最开始两年完成资源的积累，包括：健康的身体、丰富的社会关系、能够维持现状的金钱、为工作服务的知识、某些额外的技能。<br>  虽然我很贪婪地写出了这么多，但我的诉求很简单，我只要认认真真的朝着这个方向努力，不断的自我修正，即使达不到目的也足够了，至少我不会再有任何期望与谴责。我已经受够了无法实现的期望与回看过去的追悔。<br>    我数次希望能够给现状做个了断，然后突然开始变强。我自信明天就可以做到，但这个“明天”还没到来。时间就这样，感知越来越弱，懒散的一天努力的一天似乎一天就无聊的重复着，一晃T恤变成了羽绒服，再审视一下自己，已经过了快二分之一的人生。<br>  变强一个庞杂的开始，但先还是从一件小事，早睡早起开始吧。时间总是不知不觉，如果能够切实的完成一个个小事，变强也会是不知不觉。<br>  我为什么想变强呢？我想要一个满意舒适的生活，这份焦虑是否是应该存在的？说实话我完全没有想明白，我从未想过完成什么来实现人生的价值，我只是想挣钱然后好好享受罢了。欲望是永无止境的，所以我给自己设置了一个时限。如果达到目的那就开始享受不再这么辛苦，如果达不到目的那就只能接受事实继续为金钱奋斗。<br>  要说的就是这些。希望能够坚持一段时间，这样即使中途放弃了也能很快重新开始，如果没多久就放弃了，恐怕我的结局就这样了吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  我想从今天开始变强，为此我已经几乎做好了所有能做到的准备。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://e1sewhere.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>做一个装机镜像文件</title>
@@ -410,28 +430,6 @@
     
     
       <category term="mysql" scheme="https://e1sewhere.github.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub使用技巧</title>
-    <link href="https://e1sewhere.github.io/2019/02/24/GitHub%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    <id>https://e1sewhere.github.io/2019/02/24/GitHub使用技巧/</id>
-    <published>2019-02-24T02:29:22.000Z</published>
-    <updated>2019-11-02T06:48:46.765Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>本文记录了github使用中发现的好的用法.以及遇到的问题解决的过程<br><a id="more"></a></p><h1 id="使用GiThub直接访问html文件"><a href="#使用GiThub直接访问html文件" class="headerlink" title="使用GiThub直接访问html文件"></a>使用GiThub直接访问html文件</h1><p>我们先上传文件(这个很简单不再叙述)<br>然后进入我们需要访问的预览管理页面<br><img src="https://e1sewhere.github.io/images/013.png" alt=""></p><p>直接在这个页面的url前添加<code>htmlpreview.github.io/?</code>访问,就可以访问我们的html了.<br><img src="https://e1sewhere.github.io/images/014.png" alt=""></p><h1 id="一台设备绑定两个Git账号"><a href="#一台设备绑定两个Git账号" class="headerlink" title="一台设备绑定两个Git账号"></a>一台设备绑定两个Git账号</h1><p>本条参考:</p><blockquote><p><a href="https://www.jianshu.com/p/3fc93c16ad2d" target="_blank" rel="noopener">https://www.jianshu.com/p/3fc93c16ad2d</a><br><a href="https://blog.csdn.net/jifaliwo123/article/details/79126785" target="_blank" rel="noopener">https://blog.csdn.net/jifaliwo123/article/details/79126785</a></p></blockquote><h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ul><li>本机两个密钥对</li><li>push时每个仓库使用独立账户</li></ul><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ol><li>查看密钥 <code>ls ~/.ssh/</code> ,看到 <code>id_rsa</code> 与 <code>id_rsa_pub</code> 则说明已经有一对密钥.</li><li>生成新的公钥<code>ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C &quot;yourmail@xxx.com&quot;</code>,我按照默认命名指派名称为<code>id_rsa_2</code>,也可以取一个有意义的名称.询问密码设置我直接为空(回车两下).</li><li>再次用ls查询,和上一次比较多出了<code>id_rsa_2</code> 与 <code>id_rsa_pub_2</code>,密钥成功创建了.</li><li>在<code>.ssh</code>文件夹下新建config文件(无扩展名)添加内容,另不同 Host 实际映射到同一 HostName，但密钥文件不同.Host 前缀可自定义，例子中ieit</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># default                                                                       </span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"># two                                                                           </span><br><span class="line">Host ieit.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_2</span><br></pre></td></tr></table></figure><ol start="5"><li>将公钥内容添加到GitHub上,参考:<a href="https://link.jianshu.com/?t=http://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html" target="_blank" rel="noopener">使用SSH密钥连接Github【图文教程】</a></li><li>测试 ssh 链接</li></ol><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@ieit.github.com</span><br><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="comment"># Hi IEIT! You've successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="comment"># 出现上边这句，表示链接成功</span></span><br></pre></td></tr></table></figure><ol start="7"><li>取消全局 用户名/邮箱设置，并进入项目文件夹单独设置</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 取消全局 用户名/邮箱 配置</span><br><span class="line">git config –-global -–unset user.name</span><br><span class="line">git config –-global –-unset user.email</span><br><span class="line"># 单独设置每个repo 用户名/邮箱</span><br><span class="line">git inti</span><br><span class="line">git config user.email “xxxx@xx.com”</span><br><span class="line">git config user.name “xxxx”</span><br></pre></td></tr></table></figure><p>添加账户后无法<code>ssh -T git@github.com</code>成攻击,但原来的哪个配置好的账户是直接push是可以的,新建的密钥账户就无法push.弄了很久没解决,加之这里网络有问题,挂了代理也有毛病,遂放弃.以后有时间了再来看看.暂时先用虚拟机代替.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文记录了github使用中发现的好的用法.以及遇到的问题解决的过程&lt;br&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="github" scheme="https://e1sewhere.github.io/tags/github/"/>
     
   </entry>
   

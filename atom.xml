@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2023-03-06T14:09:59.514Z</updated>
+  <updated>2023-03-14T14:13:36.298Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>群内响应周总结20230314</title>
+    <link href="https://e1sewhere.github.io/2023/03/14/%E7%BE%A4%E5%86%85%E5%93%8D%E5%BA%94%E5%91%A8%E6%80%BB%E7%BB%9320230314/"/>
+    <id>https://e1sewhere.github.io/2023/03/14/群内响应周总结20230314/</id>
+    <published>2023-03-14T13:43:51.000Z</published>
+    <updated>2023-03-14T14:13:36.298Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>本周总结，实际是上周总结<br><a id="more"></a></p><h2 id="本周总结"><a href="#本周总结" class="headerlink" title="本周总结"></a>本周总结</h2><p>  这周工作上的事情把我的时间全部占领，从去年开始这就是一个周期性事件，然后又会有一段时间很闲。由此导致我的日常规划（区别于工作规划的个人成长计划）会完全停滞，这个在本周来说算是不可抗力，因为目前为止我的工作还是最重要的。但是实际上这是可以避免的，大部分紧急的事件都是可以预见，可以提前完成或者作出一些提前准备的。但是在事件还没有升级成紧急事件之前都是一直能拖就拖。<br>  现在让我焦虑的原因构成如下：放纵自己贪玩占比20%，复杂困难的事件拖延占比70%，做事效率低下占比10%。我虽然有时也会摆烂去做一些毫无收益的偷懒行为（譬如刷视频），但最让我焦虑的还是拖延，不敢面对一些困难的事件。<br>  这周任务几乎没有完成，这个周规划看起来像个笑话，周计划还是高估了自己，如果没有这么忙估计周计划也完成不了。相应的我也完成了很多周计划外的任务，所以本周虽然会处罚，但是还是按照最低处罚来。另外下周（本周）又少了两天，为了确保任务完成率，我会大量减少包含每日任务在内的任务。</p><h2 id="本周任务复盘"><a href="#本周任务复盘" class="headerlink" title="本周任务复盘"></a>本周任务复盘</h2><p><img src="https://s2.loli.net/2023/03/14/DHK94ByNbEkjrow.jpg" alt="Snipaste_2023-03-14_21-55-30.jpg"><br>以下为本周任务情况分析：</p><blockquote><p>首先是可选每日，每日运动 吉他 英语，其中只有英语可以随时拿出来学习（背单词）所以勉强完成了几次，其他的动都没动。<br>早睡早起几乎是由加班占据了<br>其他任务均在执行中但未执行完成不做点评<br>另外本周有一天，回家后是一点，本来应该尽早入睡结果居然玩手机到了两点半才睡，罚该罚！！！！</p></blockquote><h2 id="下周任务"><a href="#下周任务" class="headerlink" title="下周任务"></a>下周任务</h2><ul><li>[ ] 每日尽量完成项目：吉他，英语，每日运动</li><li>[ ] 每周必完成任务：早睡早起</li><li>[ ] 会计初步交接（2/2）</li><li>[ ] FC起诉资料全部准备完成</li><li>[ ] 准备接入在线生产管理系统2/2</li><li>[ ] 建业众二次投标完成</li><li>[ ] 2022遗留3167表整理完成</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本周总结，实际是上周总结&lt;br&gt;
+    
+    </summary>
+    
+      <category term="周记" scheme="https://e1sewhere.github.io/categories/%E5%91%A8%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>明确：变强</title>
@@ -408,28 +428,6 @@
     
       <category term="笔记" scheme="https://e1sewhere.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>获取MySQL执行的语句</title>
-    <link href="https://e1sewhere.github.io/2019/03/18/%E8%8E%B7%E5%8F%96MySQL%E6%89%A7%E8%A1%8C%E7%9A%84%E8%AF%AD%E5%8F%A5/"/>
-    <id>https://e1sewhere.github.io/2019/03/18/获取MySQL执行的语句/</id>
-    <published>2019-03-18T03:23:41.000Z</published>
-    <updated>2019-03-20T10:22:18.559Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>windows下利用log监控本地运行的mysql服务所执行的语句<br><a id="more"></a></p><p>直接在mysql根目录下的<code>my.ini</code>中配置</p><p>在<code>[mysqld]</code>下添加一行<code>log</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log = &quot;C:\Users\Doll SY DA\Desktop\mysqllog\mysql_log.sql&quot;</span><br></pre></td></tr></table></figure><p>重启mysql服务<br>这样,本地执行的语句都会在这个文件中找到了.</p><p>为了更加方便我们使用工具:<a href="https://github.com/virink/vMysqlMonitoring/releases/tag/v2.0" target="_blank" rel="noopener">vMysqlMonitoring</a><br>打上断点,点击获取就可以刷新一次日志.</p><div><h1>RECOMMEND</h1><ul><li><a href="http://broken-year.github.io/2022/03/22/php-sql/">php和数据库</a></li></ul></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;windows下利用log监控本地运行的mysql服务所执行的语句&lt;br&gt;
-    
-    </summary>
-    
-      <category term="解决方法" scheme="https://e1sewhere.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    
-    
-      <category term="mysql" scheme="https://e1sewhere.github.io/tags/mysql/"/>
     
   </entry>
   

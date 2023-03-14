@@ -1,3 +1,4 @@
+https://e1sewhere.github.io/2023/03/14/群内响应周总结20230314/
 https://e1sewhere.github.io/2023/03/06/明确：变强/
 https://e1sewhere.github.io/2023/03/03/做一个装机镜像文件/
 https://e1sewhere.github.io/2023/03/03/迁移平台后第一篇日记/
@@ -7,4 +8,3 @@ https://e1sewhere.github.io/2023/02/26/Google-Play-无法下载应用/
 https://e1sewhere.github.io/2023/02/26/VMware虚拟机设置选项/
 https://e1sewhere.github.io/2023/02/26/Bartender安装基础使用及使用数据库字段循环递增/
 https://e1sewhere.github.io/2023/02/26/Win10中Git代理设置（包括ssh）/
-https://e1sewhere.github.io/2023/02/26/Win10-安装cnckad16/

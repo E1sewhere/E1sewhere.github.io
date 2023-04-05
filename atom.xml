@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2023-03-26T15:27:38.168Z</updated>
+  <updated>2023-04-05T15:07:20.768Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>群内响应周总结20230405</title>
+    <link href="https://e1sewhere.github.io/2023/04/05/%E7%BE%A4%E5%86%85%E5%93%8D%E5%BA%94%E5%91%A8%E6%80%BB%E7%BB%9320230405/"/>
+    <id>https://e1sewhere.github.io/2023/04/05/群内响应周总结20230405/</id>
+    <published>2023-04-05T14:41:09.000Z</published>
+    <updated>2023-04-05T15:07:20.768Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>本周不好评价<br><a id="more"></a></p><h1 id="本周复盘"><a href="#本周复盘" class="headerlink" title="本周复盘"></a>本周复盘</h1><ul><li>[ ] 每日英语0/1</li><li>[ ] 每日室内运动 0/1</li><li>[ ] wzcg清单表整理并收录更多信息（第一阶段：创建合理清单模板）</li><li>[x] jh、jt、klrk、hfl合作框架制定 50%完成</li></ul><blockquote><p>禁忌事项</p><ul><li>[x] 床上玩手机</li><li>[ ] 折腾电脑<br>评分 60 </li></ul></blockquote><p>本周完全在加班中度过（上周与本周，本总结实际为上周总结），今天10点回家，已经是最早的一天。计划外的任务一个接一个。本周 的任务几乎是没有完成的，触发了禁忌事项，但还有一个没有触发，可以说是进步了。我对禁忌事项的设置规律为：很难控制但任然有可能控制自己的事。那些完全无法控制，或者很好控制的事情都不会放进来了。<br>本周处罚5元，其实这周自己几乎没有放松，处罚全在熬夜上，是有些冤罪的……吗？<br>不对，应该处罚10元，被业务上的朋友叫去完游戏了，虽然是为了工作拉近关系，但是我早就完全禁止了游戏的。</p><p>对于下周我没有一个好的规划，只能维持现状先，然后处理之前没完成的任务。</p><h1 id="下周计划20230403"><a href="#下周计划20230403" class="headerlink" title="下周计划20230403"></a>下周计划20230403</h1><ul><li>[ ] 每日英语 0/1</li><li>[ ] 每日室内运动 0/1</li><li>[ ] jh、jt、klrk、hfl合作框架制定 剩余50%</li><li>[ ] 王会计清单交接，工资交接</li><li>[ ] 城建集团及潘总系列事项（紧急）</li></ul><blockquote><p>禁忌事项</p><ul><li>[ ] 床上玩手机</li><li>[ ] 折腾电脑</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本周不好评价&lt;br&gt;
+    
+    </summary>
+    
+      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>群内响应周总结20230325</title>
@@ -398,28 +418,6 @@
       <category term="win10" scheme="https://e1sewhere.github.io/tags/win10/"/>
     
       <category term="sqlserver" scheme="https://e1sewhere.github.io/tags/sqlserver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RD Client 简明教程</title>
-    <link href="https://e1sewhere.github.io/2019/05/23/RD-Client-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/"/>
-    <id>https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/</id>
-    <published>2019-05-23T06:02:45.000Z</published>
-    <updated>2019-05-23T06:51:17.484Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>最近学习中有手机远程控制的需求,体验勉勉强强吧.不过使用RD Client的时候居然还折腾了那么久…果然现在学习能力下降的有点剧烈.<br><a id="more"></a></p><p>只用于内网连接,公网没有这个需求,但是连接步骤都是一样的.<br>软件使用很简单,就是傻瓜式的下一步下一步…多数人失败都是没有达到使用要求</p><h1 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h1><ul><li>操作系统有相关组件(专业版,企业版)</li><li>开启了远程桌面</li><li>IP正确(或者内网设备名称正确)</li><li>账户正确,账户拥有权限</li></ul><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h2><p>家庭版似乎需要怎么折腾一下自己搜索吧,既然都玩win了反正都是白嫖,装机还是装专业企业版吧.</p><p><code>这台电脑</code> -&gt; <code>属性</code> -&gt; <code>远程设置</code> -&gt; <code>允许连接到此计算机</code> -&gt; <code>仅允许运行使用网络级别身份验证的远程桌面的计算机连接（建议）</code><br>既然都开启了远程桌面,远程协助也一块开了吧,反正也没有安全需求.</p><p><img src="https://e1sewhere.github.io/images/170.png" alt=""></p><p>这个界面也可以添加新的可连接账户,默认当前用户是有连接权限的</p><h2 id="查看当前用户"><a href="#查看当前用户" class="headerlink" title="查看当前用户"></a>查看当前用户</h2><p>你登陆windows时显示的名称有可能并不是当前账户的名称(除非是域账户)</p><p>cmd使用<code>whoami</code>命令可以查看当前用户名称,比如我现在的账户名称就是这个163邮箱</p><p><img src="https://e1sewhere.github.io/images/172.png" alt=""></p><h2 id="移动端app连接"><a href="#移动端app连接" class="headerlink" title="移动端app连接"></a>移动端app连接</h2><p>打开软件<br>右上角加号 -&gt; Desktop</p><p>这里如果是同一局域网下，可以直接scan你的设备名称，如果没扫出来，多扫以下就好了。实在扫不出来</p><p>pc上 cmd 执行 <code>ipconfig</code>命令查看下自己的局域网ip 然后移动端 手动输入ip</p><p><img src="https://e1sewhere.github.io/images/desktopscan.png" alt=""></p><p>上面添加了pc name后,添加user name  点击user name的下拉框 -&gt; add user account</p><p><img src="https://e1sewhere.github.io/images/addcount.png" alt=""></p><p>账户密码来一套, 确定后,右上角 林克斯大特~! (connect)</p><p>正常的话就连接了.</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>使用RD Client远程桌面,有时候分辨率会出问题,比如有些全屏游戏无法全屏,但是切换到pc就好了.</li><li>RD Client 似乎不能多账户运行,运行其他账户当前pc就会提示你注销.</li><li>如果想使用手机当分屏我建议使用<code>spacedesk</code>,体验还不错<br><img src="https://e1sewhere.github.io/images/173.png" alt=""></li></ul><div><h1>RECOMMEND</h1><ul><li><a href="https://e1sewhere.github.io/2018/10/27/Win下批量-关闭-打开-进程/">Win下批量 关闭/打开 进程</a></li><li><a href="https://e1sewhere.github.io/2018/10/15/Windows-To-Go系统安装记录/">Windows To Go系统安装记录</a></li><li><a href="https://e1sewhere.github.io/2018/09/02/Win磁盘MBR转换为GUID/">Win磁盘MBR转换为GUID</a></li><li><a href="http://broken-year.github.io/2022/03/24/back-door/">系统后门</a></li></ul></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近学习中有手机远程控制的需求,体验勉勉强强吧.不过使用RD Client的时候居然还折腾了那么久…果然现在学习能力下降的有点剧烈.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="https://e1sewhere.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="windows" scheme="https://e1sewhere.github.io/tags/windows/"/>
     
   </entry>
   

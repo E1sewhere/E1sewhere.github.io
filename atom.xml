@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://e1sewhere.github.io/"/>
-  <updated>2023-04-28T15:28:09.867Z</updated>
+  <updated>2023-06-22T14:33:13.029Z</updated>
   <id>https://e1sewhere.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>群内响应周总结20230622 阶段汇总</title>
+    <link href="https://e1sewhere.github.io/2023/06/22/%E7%BE%A4%E5%86%85%E5%93%8D%E5%BA%94%E5%91%A8%E6%80%BB%E7%BB%9320230622-%E9%98%B6%E6%AE%B5%E6%B1%87%E6%80%BB/"/>
+    <id>https://e1sewhere.github.io/2023/06/22/群内响应周总结20230622-阶段汇总/</id>
+    <published>2023-06-22T13:33:15.000Z</published>
+    <updated>2023-06-22T14:33:13.029Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>我大约有快一个月没有周总结了吧。<br><a id="more"></a><br>总结对于现在的我是一个非常矛盾的事情，我希望通过总结来不断修正自己的生活，但现在我疲于完成繁重的任务，总结对现在的我来说是累赘。俗说“磨刀不误砍柴工”，如果总结真的像磨刀一样确实的可以利器，我会毫不犹豫停下来“磨刀”，可惜的是“总结”是一个很难看到效果或者说是短时间内很难看到效果的。</p><p>通过总结而给自己制定的规则，又会在下一个周期不断被突发情况打破。每一天都是靠着打破规则勉强过去，规则除了加重我的心理负担没起到什么实质上的正向作用。<br>我现在对自己不满意的地方不是现状未达到我的目标。让我不满且混乱是：我虽然极尽努力却只比混日子好不了多少。我忍耐那么多的辛苦，这让人很难接受。</p><p>再来说说熬夜，这段时间几乎是每天都熬夜，最严重的这次，连续四天睡眠不足4小时，终于是撑不住生病了，也就是这样我才停下来做个总结。无论有什么理由，熬夜都不能再进行了。</p><p>能力上的不足只靠区区勤奋是无法补足的。</p><p>首先保证身体健康，其他的再说吧。</p><h1 id="本段时间复盘"><a href="#本段时间复盘" class="headerlink" title="本段时间复盘"></a>本段时间复盘</h1><p>无</p><h1 id="下周计划（622-630）"><a href="#下周计划（622-630）" class="headerlink" title="下周计划（622-630）"></a>下周计划（622-630）</h1><ul><li>下周开始更换任务模式，开始清空现有任务栈</li><li>保证至少4天11：30前入睡</li></ul><h1 id="同桌评价"><a href="#同桌评价" class="headerlink" title="同桌评价"></a>同桌评价</h1><p>无</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我大约有快一个月没有周总结了吧。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="周总结" scheme="https://e1sewhere.github.io/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>群内响应周总结20230428</title>
@@ -384,26 +404,6 @@
     <updated>2023-02-26T14:17:23.532Z</updated>
     
     <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>有休眠需求，本来以为和shutdown一样直接简单命令就行了，可是要调用可执行程序，命令有点长干脆写个bat算了，bat命令如下：</p><p>title 定时休眠<br>@ECHO OFF&amp;SETLOCAL ENABLEDELAYEDEXPANSION<br>SET /p t=请输入休眠时间（单位秒,只输入数字）：<br>SET /a s=t+1<br>FOR /l %%i in (1,1,!s!) do (<br>    SET /a s-=1<br>    ping -n 2 127.1&gt;nul<br>    title 休眠倒计时： !s! 需要终止请直接关闭控制台<br>)</p><p>START “” rundll32.exe powrprof.dll,SetSuspendState 0,1,0<br>直接cmd里执行或者创建一个bat后缀文件复制上述内容即可。其中有中文回显注意编码否则会乱码。<br>既然写了那也付一个关机倒计时吧，同理可得</p><p>title 定时关机<br>@ECHO OFF&amp;SETLOCAL ENABLEDELAYEDEXPANSION<br>SET /p t=请输入关机时间（单位秒,只输入数字）：<br>SET /a s=t+1<br>FOR /l %%i in (1,1,!s!) do (<br>    SET /a s-=1<br>    ping -n 2 127.1&gt;nul<br>    title 关机倒计时： !s! 需要终止请直接关闭控制台<br>)<br>shutdown -s -t 1</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;无格式迁移&lt;br&gt;
-    
-    </summary>
-    
-      <category term="默认" scheme="https://e1sewhere.github.io/categories/%E9%BB%98%E8%AE%A4/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>上古卷轴5卡任务使用控制台强制完成</title>
-    <link href="https://e1sewhere.github.io/2023/02/26/%E4%B8%8A%E5%8F%A4%E5%8D%B7%E8%BD%B45%E5%8D%A1%E4%BB%BB%E5%8A%A1%E4%BD%BF%E7%94%A8%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%BC%BA%E5%88%B6%E5%AE%8C%E6%88%90/"/>
-    <id>https://e1sewhere.github.io/2023/02/26/上古卷轴5卡任务使用控制台强制完成/</id>
-    <published>2023-02-26T13:55:03.000Z</published>
-    <updated>2023-02-26T14:17:33.641Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>无格式迁移<br><a id="more"></a><br>网上搜了一圈全是复制粘贴的一个方式，由于使用了整合MOD整合了很多任务包，sqt这种获取原版任务的命令没用。害得去外网。<br>方法如下：<br>首先~进入控制台，输入如下命令并回车</p><p>save funclist 1<br>之后会弹出一个txt文档，如果没有弹出，到盘符:\Documents\My Games\Skyrim Special Edition\saves里或者是盘符:\Documents\My Games\Skyrim\saves里不出意外里面会有一个文档funclist.ess.txt<br>如果使用了MO管理器则会在MO的类型…\profiles...\saves\目录下，建议还是直接用everything之类的索引搜索软件直接搜索文件名称funclist.ess.txt<br>使用记事本打开此文件可以看到形如如下内容</p><p>  FE012800  5930/5930  14000002  78 PyP_Legendary                           - Quest Flags(2)           Quest Already Run(1)     Quest Runtime Data(5914)<br>  1A07A334   814/814   BC000002  78 人生如梦                            - Quest Flags(2)           Quest Already Run(1)     Quest Instance Data(14)  Quest Runtime Data(618)  Quest Objectives(9)      Quest Stages(157)<br>  0B0CE0F1   662/662   9C000002  78 被缚的风暴斗篷                   - Quest Flags(2)           Quest Already Run(1)     Quest Instance Data(28)  Quest Runtime Data(449)  Quest Stages(169)<br>首列的就是任务代码，如果没有看到如此结构的内容，直接文本内ctrfl+F搜索你卡关的任务名称，譬如我的是人生如梦，定位到任务处，注意该行一定要有quest字样才是任务行，否则可能是其他同名称的对象，比如某个物品名称代号也叫人生如梦。<br>人生如梦的任务代码为1A07A334,记录下来。<br>人后回到游戏，进入控制台，输入sqs 1A07A334查询任务阶段<br>控制台回显如下：</p><p>Stage 1:1<br>Stage 2:1<br>Stage 10:0<br>…<br>冒号候的1代表已经完成，0代表未完成，冒号前的代表任务阶段，数字递增但不一定是以1自然递增，有可能是100，200也肯是10，20等等。<br>我是第三个未完成所以输入如下命令</p><p>setstage 1A07A334 10<br>关掉控制台，任务就已经完成了。此方法适用部分卡关任务，运气好就过了，运气不好重开，重装吧。</p><p>注意：</p><p>任务按阶段进行，不要跳过中间状态<br>任务最好把行为作完避免后面bug率提高，比如要kill某怪物，最好把怪物先killed了<br>大小写我不知道有没有影响，最好保持一致吧<br>completequest 1A07A334 为强制结束该任务，可以试试</p>]]></content>
     
     <summary type="html">
     
